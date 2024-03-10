@@ -8,5 +8,18 @@ using UnityEngine;
 [RequireComponent(typeof(CharStats))]
 public class Character : MonoBehaviour
 {
+    //estado atual (coisas como atacando, levando dano, desviando, bloqueando)
+    private CharStateBase _currentState;
+    public CharStateBase CurrentState { 
+        get => _currentState;
+        
+        set{
+            _currentState.BeforeChangeState();
+            _currentState = value;
+            _currentState.OnEnterState();
+        }
+    }
+
+
     
 }
