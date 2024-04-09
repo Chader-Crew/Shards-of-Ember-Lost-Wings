@@ -9,9 +9,10 @@ public interface IDamageable
     public float HP
     {
         get;
-    } 
+    }
+    
     //metodo de levar dano
-    public void TakeDamage(int ammount);
+    public void GetHit(SkillData data);
     //metodo de destruir
     public void Die();
 }

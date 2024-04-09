@@ -6,5 +6,5 @@ using UnityEngine;
 public class CharStats : MonoBehaviour
 {
     public float hp;
-    public int atk, def, spd;
+    public int atk, def, spd, maxHp;
 }

@@ -1,0 +1,53 @@
+using System.Collections;
+using System.Collections.Generic;
+using System.Linq;
+using UnityEngine;
+
+//Hitbox para ativacao de ataques baseados em animacao
+public class Hitbox : MonoBehaviour
+{
+    [SerializeField] private Character owner;   //Dono da hitbox, usado para atribuir propriedade a skill
+    [SerializeField] private string[] tags;     //Tags de personagem que a hitbox acerta.
+
+    [Header("Hitbox Attributes")]   //Atributos do OverlapBox
+    [SerializeField] private Vector3 offset;
+    [SerializeField] private Vector3 dimensions;
+
+
+    //mostra a hitbox quando selecionada no modo editor
+    private void OnDrawGizmosSelected() 
+    {
+        #if UNITY_EDITOR
+        Gizmos.color = Color.red;
+        
+        Gizmos.DrawWireCube(transform.position + offset, dimensions);
+        #endif
+    }
+
+    //Ativa a hitbox, colocando todos os personagens acertados numa SkillData e enviando para a SkillBase designada.
+    private void Activate(SkillBase skill) 
+    {
+        //criacao da SkillData e inicializacao de variaveis
+        SkillData context = new SkillData();
+        context.owner = owner;
+        context.targets = new List<Character>();
+
+        //overlapbox e atribuicao de lista de alvos
+        Collider[] colliders = Physics.OverlapBox(transform.position + offset, dimensions/2);
+
+        foreach(Collider collider in colliders)
+        {
+                if(tags.Contains(collider.tag))
+                { context.targets.Add(collider.GetComponent<Character>()); }
+        }
+        
+        skill.Activate(context);
+    }
+
+    //coisa de teste pra deletar depois
+    [SerializeField] private SkillBase skill;
+    private void Update() 
+    {
+        if(Input.GetKeyDown(KeyCode.Space)) { Activate(skill); }
+    }
+}
