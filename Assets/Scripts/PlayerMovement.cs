@@ -15,7 +15,7 @@ public class PlayerMovement : MonoBehaviour
         rb = GetComponent<Rigidbody>();
     }
 
-    public void SetVel(Vector3 velocity)
+    public void Move(Vector3 velocity)
     {
         rb.velocity = velocity;
     }
