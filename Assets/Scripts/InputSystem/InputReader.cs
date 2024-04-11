@@ -3,16 +3,18 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+//Classe "parser" das informacoes do input system. Tem eventos customizados que apenas passam as partes importantes do contexto.
 [CreateAssetMenu(menuName = "ScriptableObjects/inputReader")]
 public class InputReader : ScriptableObject, PlayerInput.IPlayerActions, PlayerInput.IUIActions
 {
-    public event Action<Vector2> OnMovePlayer;
-    public event Action OnActivateDash;
     private PlayerInput playerInput;
 
+    //eventos
+    public event Action<Vector2> OnMovePlayer;
+    public event Action OnActivateDash;
 
-    #region IPlayerActions
 
+    //inicializacao
     private void OnEnable()
     {
         if(playerInput == null)
@@ -26,6 +28,7 @@ public class InputReader : ScriptableObject, PlayerInput.IPlayerActions, PlayerI
         SetGameplay();
     }
 
+    //troca de action map
     public void SetGameplay()
     {
         playerInput.Player.Enable();
@@ -37,13 +40,13 @@ public class InputReader : ScriptableObject, PlayerInput.IPlayerActions, PlayerI
         playerInput.UI.Enable();
     }
 
+    //interfaces (funcoes callback)
+    #region IPlayerActions
     public void OnMove(UnityEngine.InputSystem.InputAction.CallbackContext context)
     {
-            Debug.Log(context.ReadValue<Vector2>());
-        if(context.performed)
-        {
-            OnMovePlayer(context.ReadValue<Vector2>());
-        }
+        
+        Debug.Log(context.ReadValue<Vector2>());
+        OnMovePlayer(context.ReadValue<Vector2>());
     }
 
     public void OnDash(UnityEngine.InputSystem.InputAction.CallbackContext context)

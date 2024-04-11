@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+//classe controladora do player, qualquer comunicacao entre componentes deve passar por aqui.
 [RequireComponent(typeof(PlayerMovement))]
 public class PlayerController : MonoBehaviour
 {
