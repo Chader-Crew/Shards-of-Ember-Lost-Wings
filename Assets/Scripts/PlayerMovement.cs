@@ -18,5 +18,8 @@ public class PlayerMovement : MonoBehaviour
     public void Move(Vector3 velocity)
     {
         rb.velocity = velocity;
+
+        Vector3 movement = velocity * speed * Time.deltaTime;
+        rb.velocity = Vector3.ClampMagnitude(rb.velocity + movement, speed);
     }
 }
