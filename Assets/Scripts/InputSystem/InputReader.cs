@@ -10,8 +10,13 @@ public class InputReader : ScriptableObject, PlayerInput.IPlayerActions, PlayerI
     private PlayerInput playerInput;
 
     //eventos
-    public event Action<Vector2> OnMovePlayer;
-    public event Action OnActivateDash;
+    public event Action<Vector2> OnMoveEvent;
+    public event Action OnDashEvent;
+    public event Action OnAttackEvent;
+    public event Action<int> OnDragonStateEvent;    //0,1,2 sao cada um dos estados
+    public event Action<Vector2> OnSkillChangeEvent;
+    public event Action OnSkillUseEvent;
+    public event Action OnPauseEvent;
 
 
     //inicializacao
@@ -46,7 +51,7 @@ public class InputReader : ScriptableObject, PlayerInput.IPlayerActions, PlayerI
     {
         
         Debug.Log(context.ReadValue<Vector2>());
-        OnMovePlayer(context.ReadValue<Vector2>());
+        OnMoveEvent(context.ReadValue<Vector2>());
     }
 
     public void OnDash(UnityEngine.InputSystem.InputAction.CallbackContext context)

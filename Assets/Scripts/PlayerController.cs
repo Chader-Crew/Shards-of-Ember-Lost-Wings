@@ -9,11 +9,13 @@ public class PlayerController : MonoBehaviour
     bool _staggered;
     private PlayerMovement movement;
     [SerializeField] private InputReader input;
+
     private void Awake() 
     {
         movement = GetComponent<PlayerMovement>();
 
-        input.OnMovePlayer += MoveInput;
+        input.OnMoveEvent += MoveInput;
+        input.OnAttackEvent += AttackInput;
     }
 
     public void MoveInput(Vector2 dir)
@@ -22,5 +24,10 @@ public class PlayerController : MonoBehaviour
         {
             movement.Move(new Vector3(dir.x, 0, dir.y));
         }
+    }
+
+    public void AttackInput()
+    {
+
     }
 }
