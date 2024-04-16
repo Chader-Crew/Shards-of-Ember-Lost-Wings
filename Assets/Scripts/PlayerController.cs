@@ -23,11 +23,13 @@ public class PlayerController : MonoBehaviour
         if (!_staggered)
         {
             movement.Move(new Vector3(dir.x, 0, dir.y));
-        }
+        } 
     }
 
     public void AttackInput()
     {
-
+        if(!_staggered){
+            movement.animator.SetBool("ataka", true);
+        }
     }
 }

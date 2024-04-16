@@ -49,7 +49,7 @@ public class InputReader : ScriptableObject, PlayerInput.IPlayerActions, PlayerI
     #region IPlayerActions
     public void OnMove(UnityEngine.InputSystem.InputAction.CallbackContext context)
     {
-        
+         
         Debug.Log(context.ReadValue<Vector2>());
         OnMoveEvent(context.ReadValue<Vector2>());
     }
@@ -60,8 +60,10 @@ public class InputReader : ScriptableObject, PlayerInput.IPlayerActions, PlayerI
     }
 
     public void OnAttack(UnityEngine.InputSystem.InputAction.CallbackContext context)
-    {
-        throw new System.NotImplementedException();
+    {   
+        if(context.performed){
+            OnAttackEvent?.Invoke();
+        }
     }
 
     public void OnDragonStateGamepad(UnityEngine.InputSystem.InputAction.CallbackContext context)
