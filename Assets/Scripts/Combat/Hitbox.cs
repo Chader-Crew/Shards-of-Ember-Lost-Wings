@@ -17,10 +17,18 @@ public class Hitbox : MonoBehaviour
     //mostra a hitbox quando selecionada no modo editor
     private void OnDrawGizmosSelected() 
     {
+        //gizmos
         #if UNITY_EDITOR
         Gizmos.color = Color.red;
         
-        Gizmos.DrawWireCube(transform.position + offset, dimensions);
+        //posicao
+        Vector3 boxPosition = transform.position + transform.forward * offset.z + transform.right * offset.x + transform.up * offset.y;
+        boxPosition = transform.InverseTransformPoint(boxPosition); //nao entendi direito o pq mas essa rotacao faz ter que tirar o inverso da posicao local
+
+        Matrix4x4 prevMatrix = Gizmos.matrix;           //cache da rotacao pra n dar ruim
+        Gizmos.matrix = transform.localToWorldMatrix;   //rotacao do gizmo
+        Gizmos.DrawWireCube(boxPosition, dimensions);   //draw
+        Gizmos.matrix = prevMatrix;                     //restaura a rotacao
         #endif
     }
 
@@ -33,7 +41,10 @@ public class Hitbox : MonoBehaviour
         context.targets = new List<Character>();
 
         //overlapbox e atribuicao de lista de alvos
-        Collider[] colliders = Physics.OverlapBox(transform.position + offset, dimensions/2);
+        Collider[] colliders = Physics.OverlapBox(transform.position +
+        transform.forward * offset.z + transform.right * offset.x + transform.up * offset.y,    //offset rodado pra local position
+        dimensions/2,
+        transform.rotation);
 
         foreach(Collider collider in colliders)
         {

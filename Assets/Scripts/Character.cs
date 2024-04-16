@@ -23,7 +23,7 @@ public class Character : MonoBehaviour, IDamageable
         stats = GetComponent<CharStats>();
         rb = GetComponent<Rigidbody>();
         col = GetComponent<Collider>();
-        stateMachine = GetComponent<PlayerStateMachine>();
+        //stateMachine = GetComponent<PlayerStateMachine>();
     }
 
     #region Interfaces
@@ -52,7 +52,7 @@ public class Character : MonoBehaviour, IDamageable
         Debug.Log($"levou {totalDamage} de dano");
         if(stats.hp <= 0) { Die(); }
 
-        if(data.stagger > 0) { stateMachine.Stagger(data.stagger); }
+        //if(data.stagger > 0) { stateMachine.Stagger(data.stagger); }
     }
     #endregion
 }
