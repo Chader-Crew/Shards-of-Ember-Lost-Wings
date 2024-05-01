@@ -10,15 +10,13 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] [Range(0,1)] private float acceleration;
     [SerializeField] private float maxSpeed;
     private Vector3 moveVector;
-    public Transform player;
-    public Animator animator;
-    public float moveRotationSpeed = 5.0f;
+    [SerializeField] private Transform player;
+    [SerializeField] private float moveRotationSpeed = 5.0f;
     private Rigidbody rb;
 
     private void Awake() 
     {
         rb = GetComponent<Rigidbody>();
-        animator = GetComponent<Animator>();
     }
 
     private void Update() 
@@ -33,16 +31,8 @@ public class PlayerMovement : MonoBehaviour
         }
     }
 
-    public void Move(Vector3 velocity)
+    public void Move(Vector3 vector)
     {
-        moveVector = velocity;
-
-        if (velocity.magnitude == 0) { 
-            moveVector = Vector3.zero; 
-            animator.SetBool("isRunning", false);
-        }
-        else{
-        animator.SetBool("isRunning", true);
-        }
+        moveVector = vector;
     }
 }

@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class PlayerStateMachine : MonoBehaviour
 {
-    //estado inicial (atribui no awake e nao executa o BeforeChangeState)
+    /* //estado inicial (atribui no awake e nao executa o BeforeChangeState)
     [SerializeField] private CharStateBase startingState;
     [SerializeField] private CharStateBase staggerState;
 
@@ -38,5 +38,5 @@ public class PlayerStateMachine : MonoBehaviour
             yield return new WaitForSeconds(time);
             CurrentState = startingState;
         }
-    }
+    } */
 }
