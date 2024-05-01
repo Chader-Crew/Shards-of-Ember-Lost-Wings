@@ -10,7 +10,7 @@ using UnityEngine;
 public class PlayerController : MonoBehaviour
 {
     private PlayerMovement movement;
-    bool _canMove;
+    bool _canMove = true;
     [SerializeField] private InputReader input;
     private Animator animator;
     private AtakaStateBehaviour atakaState;
@@ -27,28 +27,30 @@ public class PlayerController : MonoBehaviour
         atakaState = animator.GetBehaviour<AtakaStateBehaviour>();
         atakaState.AttackEndAction = AttackEnd;
 
-        //inicializacao misc
+        
         _canMove = true;
     }
 
     //chamado quando o animator sai do state de ataque
     private void AttackEnd()
     {
+        Debug.Log("Attack End");
         _canMove = true;
+        
     }
 
     public void MoveInput(Vector2 dir)
     {
         if (_canMove)
         {
-            if(dir.magnitude != 0)
+            if(dir.magnitude == 0)
             {
                 animator.SetBool("isRunning", false);
-            }
-            else
+            }else
             {
-                movement.Move(new Vector3(dir.x, 0, dir.y));
+                animator.SetBool("isRunning", true);
             }
+            movement.Move(new Vector3(dir.x, 0, dir.y));
         } 
     }
 
@@ -57,6 +59,7 @@ public class PlayerController : MonoBehaviour
         if(_canMove)
         {
             animator.SetBool("ataka", true);
+            movement.Move(Vector3.zero);
             _canMove = false;
         }
 

@@ -24,7 +24,7 @@ public class PlayerMovement : MonoBehaviour
         Vector3 targetVelocity = moveVector * maxSpeed;
         rb.velocity = Vector3.Lerp(rb.velocity, targetVelocity, acceleration);
         
-         if (moveVector.magnitude > 0.1f)
+        if (moveVector.magnitude > 0.1f)
         {
             Quaternion targetRotation = Quaternion.LookRotation(moveVector, Vector3.up);
             player.rotation = Quaternion.Slerp(player.rotation, targetRotation, moveRotationSpeed * Time.deltaTime);
