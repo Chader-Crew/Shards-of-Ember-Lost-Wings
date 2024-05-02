@@ -10,7 +10,6 @@ using UnityEngine;
 public class PlayerController : MonoBehaviour
 {
     private PlayerMovement movement;
-    bool _canMove = true;
     [SerializeField] private InputReader input;
     private Animator animator;
     private AtakaStateBehaviour atakaState;
@@ -26,56 +25,47 @@ public class PlayerController : MonoBehaviour
         input.OnAttackEvent += AttackInput;
         atakaState = animator.GetBehaviour<AtakaStateBehaviour>();
         atakaState.AttackEndAction = AttackEnd;
-
-        
-        _canMove = true;
     }
 
-    //chamado quando o animator sai do state de ataque
+    //chamado quando o animator sai do state de ataque para destravar movimento (provavelmente devia ser mudado para |quando entra em idle|)
     private void AttackEnd()
     {
-        Debug.Log("Attack End");
-        _canMove = true;
-        
+        movement.LockMovement(false);
     }
 
     public void MoveInput(Vector2 dir)
     {
-        if (_canMove)
+        if(dir.magnitude == 0)
         {
-            if(dir.magnitude == 0)
-            {
-                animator.SetBool("isRunning", false);
-            }else
-            {
-                animator.SetBool("isRunning", true);
-            }
-            movement.Move(new Vector3(dir.x, 0, dir.y));
-        } 
+            animator.SetBool("isRunning", false);
+        }else
+        {
+            animator.SetBool("isRunning", true);
+        }
+        movement.Move(new Vector3(dir.x, 0, dir.y));
     }
 
+    //ativa o ataque no animator e trava o movimento
     public void AttackInput()
     {
-        if(_canMove)
-        {
-            animator.SetBool("ataka", true);
-            movement.Move(Vector3.zero);
-            _canMove = false;
-        }
-
+        animator.SetBool("ataka", true);
+        movement.LockMovement(true);
     }
 
 
-    //ativa stagger, depois de x segundos desabilita.
+    //ativa stagger e trava o movimento, depois de x segundos desabilita.
     public void Stagger(float seconds)
     {
         StartCoroutine("Stagger", seconds);
+
         IEnumerator timer(float seconds)
         {
-            _canMove = false;
+            movement.LockMovement(true);
             animator.SetBool("isStaggered", true);
+
             yield return new WaitForSeconds(seconds);
-            _canMove = true;
+            
+            movement.LockMovement(false);
             animator.SetBool("isStaggered", false);
         }
     }

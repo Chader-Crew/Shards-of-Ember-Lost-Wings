@@ -13,17 +13,24 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private Transform player;
     [SerializeField] private float moveRotationSpeed = 5.0f;
     private Rigidbody rb;
+    private bool _movementLocked;
 
     private void Awake() 
     {
         rb = GetComponent<Rigidbody>();
     }
 
-    private void Update() 
+    private void FixedUpdate() 
     {
+        MovementUpdate();
+    }
+
+    //todos os calculos e atribuicoes de velocidade por frame.
+    private void MovementUpdate()
+    {
+        if(_movementLocked){ return; }
         Vector3 targetVelocity = moveVector * maxSpeed;
         rb.velocity = Vector3.Lerp(rb.velocity, targetVelocity, acceleration);
-        
         if (moveVector.magnitude > 0.1f)
         {
             Quaternion targetRotation = Quaternion.LookRotation(moveVector, Vector3.up);
@@ -34,5 +41,11 @@ public class PlayerMovement : MonoBehaviour
     public void Move(Vector3 vector)
     {
         moveVector = vector;
+    }
+
+    public void LockMovement(bool value)
+    {
+        _movementLocked = value;
+        rb.velocity = value? Vector3.zero : rb.velocity;
     }
 }
