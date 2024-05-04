@@ -1,0 +1,22 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2ab5ea88d27f9d3418cddfc13e179bdb, type: 3}
+  m_Name: Health
+  m_EditorClassIdentifier: 
+  slotPrefab: {fileID: 4609914701197719679, guid: d0776957970f9144489819212c804d63,
+    type: 3}
+  type: 1
+  description: "Po\xE7\xE3o para recuperar parte da sua vida."
+  restoreHealthValue: 5
+  strenghtBuffValue: 0
+  defenseBuffValue: 0
+  speedBonusValue: 0
