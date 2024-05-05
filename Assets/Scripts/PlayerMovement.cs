@@ -10,7 +10,7 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] [Range(0,1)] private float acceleration;
     [SerializeField] private float maxSpeed;
     private Vector3 moveVector;
-    [SerializeField] private Transform player;
+    [SerializeField] private Transform model;
     [SerializeField] private float moveRotationSpeed = 5.0f;
     private Rigidbody rb;
     private bool _movementLocked;
@@ -34,7 +34,7 @@ public class PlayerMovement : MonoBehaviour
         if (moveVector.magnitude > 0.1f)
         {
             Quaternion targetRotation = Quaternion.LookRotation(moveVector, Vector3.up);
-            player.rotation = Quaternion.Slerp(player.rotation, targetRotation, moveRotationSpeed * Time.deltaTime);
+            model.rotation = Quaternion.Slerp(model.rotation, targetRotation, moveRotationSpeed * Time.deltaTime);
         }
     }
 

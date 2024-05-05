@@ -54,11 +54,4 @@ public class Hitbox : MonoBehaviour
         
         skill.Activate(context);
     }
-
-    //coisa de teste pra deletar depois
-    [SerializeField] private SkillBase skill;
-    private void Update() 
-    {
-        if(Input.GetKeyDown(KeyCode.Space)) { Activate(skill); }
-    }
 }

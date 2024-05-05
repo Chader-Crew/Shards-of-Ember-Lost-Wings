@@ -1,17 +1,12 @@
-using System;
 using System.Collections;
 using System.Collections.Generic;
-using UnityEditorInternal;
 using UnityEngine;
 
-//classe controladora do player, qualquer comunicacao entre componentes deve passar por aqui.
 [RequireComponent(typeof(PlayerMovement))]
 [RequireComponent(typeof(Animator))]
-public class PlayerController : MonoBehaviour
+public class NPCController : MonoBehaviour
 {
     private PlayerMovement movement;
-    private Character character;
-    [SerializeField] private InputReader input;
     private Animator animator;
     private AtakaStateBehaviour atakaState;
 
@@ -19,14 +14,9 @@ public class PlayerController : MonoBehaviour
     {
         //get components
         movement = GetComponent<PlayerMovement>();
-        character = GetComponent<Character>();
         animator = GetComponent<Animator>();
 
         //inscricao em eventos e atribuicao de actions
-        input.OnMoveEvent += MoveInput;
-        input.OnAttackEvent += AttackInput;
-        character.OnGotHitEvent += SkillHit;
-
         atakaState = animator.GetBehaviour<AtakaStateBehaviour>();
         atakaState.AttackEndAction = AttackEnd;
     }
@@ -37,7 +27,7 @@ public class PlayerController : MonoBehaviour
         movement.LockMovement(false);
     }
 
-    private void MoveInput(Vector2 dir)
+    public void MoveInput(Vector2 dir)
     {
         if(dir.magnitude == 0)
         {
@@ -50,25 +40,27 @@ public class PlayerController : MonoBehaviour
     }
 
     //ativa o ataque no animator e trava o movimento
-    private void AttackInput()
+    public void AttackInput()
     {
         animator.SetBool("ataka", true);
         movement.LockMovement(true);
     }
 
-    private void SkillHit(SkillData skill)
-    {
-        StartCoroutine(Stagger(skill.stagger));
-    }
 
     //ativa stagger e trava o movimento, depois de x segundos desabilita.
-    IEnumerator Stagger(float seconds)
+    public void Stagger(float seconds)
     {
-        movement.LockMovement(true);
-        animator.SetBool("isStaggered", true);
-        yield return new WaitForSeconds(seconds);
-        
-        movement.LockMovement(false);
-        animator.SetBool("isStaggered", false);
+        StartCoroutine("Stagger", seconds);
+
+        IEnumerator timer(float seconds)
+        {
+            movement.LockMovement(true);
+            animator.SetBool("isStaggered", true);
+
+            yield return new WaitForSeconds(seconds);
+            
+            movement.LockMovement(false);
+            animator.SetBool("isStaggered", false);
+        }
     }
 }

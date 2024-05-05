@@ -1,29 +1,27 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-//classe para personagens envolvidos em combate.
-[RequireComponent(typeof(Rigidbody))]
+//classe para personagens envolvidos em combate/dano.
 [RequireComponent(typeof(Collider))]
 [RequireComponent(typeof(CharStats))]
-[RequireComponent(typeof(PlayerStateMachine))]
 public class Character : MonoBehaviour, IDamageable
 {
     #region Declarations
+    //vars
     [SerializeField] protected CharStats stats;   //Stat sheet
-    [SerializeField] protected Rigidbody rb;      //Rigidbody para movimentacao
-    [SerializeField] protected Collider col;      //Colisao de combate (hurtbox) (vai ser a mesma que a de navegacao pq a gente nao precisa dessa complexidade)
-    [SerializeField] protected PlayerStateMachine stateMachine; //state machine que leva stagger
-    
+    [SerializeField] protected Collider col;      //Colisao de combate (hurtbox)
+
+    //events
+    public event Action<SkillData> OnGotHitEvent;
     #endregion
     
     private void Awake() 
     {
         //getcomponents
         stats = GetComponent<CharStats>();
-        rb = GetComponent<Rigidbody>();
         col = GetComponent<Collider>();
-        //stateMachine = GetComponent<PlayerStateMachine>();
     }
 
     #region Interfaces
@@ -38,7 +36,7 @@ public class Character : MonoBehaviour, IDamageable
     public virtual void GetHit(SkillData data)
     {
         /*
-        calculo padrao de dano. 
+        calculo padrao de dano.
         funcao linear de dano otimizada pq risk of rain 2 jogo bom (nao consegui achar funcao barata que faz com a proporcao certinha)
         cada ponto de defesa adicional diminui o ataque recebido em uma proporcao similar a anterior.
         com uma proporcao de 0.05 cada ponto de dano reduz o dano em cerca de 5%, e essa proporcao reduz quanto mais def.
@@ -50,9 +48,9 @@ public class Character : MonoBehaviour, IDamageable
 
         stats.hp -= totalDamage;
         Debug.Log($"levou {totalDamage} de dano");
-        if(stats.hp <= 0) { Die(); }
+        OnGotHitEvent(data);
 
-        //if(data.stagger > 0) { stateMachine.Stagger(data.stagger); }
+        if(stats.hp <= 0) { Die(); }
     }
     #endregion
 }
