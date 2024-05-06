@@ -56,7 +56,7 @@ public class PlayerController : MonoBehaviour
         movement.LockMovement(true);
     }
 
-    private void SkillHit(SkillData skill)
+    private void SkillHit(SkillData skill, float damage)
     {
         StartCoroutine(Stagger(skill.stagger));
     }

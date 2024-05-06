@@ -14,7 +14,7 @@ public class Character : MonoBehaviour, IDamageable
     [SerializeField] protected Collider col;      //Colisao de combate (hurtbox)
 
     //events
-    public event Action<SkillData> OnGotHitEvent;
+    public event Action<SkillData, float> OnGotHitEvent;
     #endregion
     
     private void Awake() 
@@ -48,7 +48,7 @@ public class Character : MonoBehaviour, IDamageable
 
         stats.hp -= totalDamage;
         Debug.Log($"levou {totalDamage} de dano");
-        OnGotHitEvent(data);
+        OnGotHitEvent(data, totalDamage);
 
         if(stats.hp <= 0) { Die(); }
     }
