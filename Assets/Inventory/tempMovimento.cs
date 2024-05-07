@@ -11,6 +11,6 @@ public class tempMovimento : MonoBehaviour
         float h = Input.GetAxis("Horizontal");
         float v = Input.GetAxis("Vertical");
 
-        transform.position = transform.position + new Vector3(h * speed * Time.deltaTime, v * speed * Time.deltaTime, 0f);
+        transform.position = transform.position + new Vector3(h * speed * Time.deltaTime, 0f, v * speed * Time.deltaTime);
     }
 }
