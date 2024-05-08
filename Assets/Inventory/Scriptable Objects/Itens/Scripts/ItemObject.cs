@@ -5,7 +5,16 @@ using UnityEngine;
 public enum ItemType{ //Tipo do item
     EnemyDrop,
     Potion,
-    Default
+    Bomb
+
+    /* poção de vida
+    buff de força
+    bomba de atração de inimigo - atrai o inimigo pro lugar do estouro
+    bomba de gelo - congela os inimigos 
+    cauda do magago - buff de veneno
+    pó da gárgula - buff de resistência, imune a stagger
+    */
+
 }
 
 public abstract class ItemObject : ScriptableObject
