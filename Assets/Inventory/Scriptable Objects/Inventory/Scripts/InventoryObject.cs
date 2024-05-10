@@ -12,6 +12,7 @@ public class InventoryObject : ScriptableObject, ISerializationCallbackReceiver
     private ItemDatabaseObject database;
     public List<InventorySlot> Container = new List<InventorySlot>();
 
+    //pra poder funiconar quando buildar e sem precisar passar o database no inspetor
     private void OnEnable(){
     #if UNITY_EDITOR
         database = (ItemDatabaseObject)AssetDatabase.LoadAssetAtPath("Assets/Resources/Databse.asset", typeof(ItemDatabaseObject));
@@ -28,7 +29,7 @@ public class InventoryObject : ScriptableObject, ISerializationCallbackReceiver
                 return;
             }
         }
-        Container.Add(new InventorySlot(database.GetId[_item], _item, _amount));
+        Container.Add(new InventorySlot(/*database.GetId[_item],*/ _item, _amount));
     }
 
     //save e load nao tem erro, mas nao ta funcionando ainda
@@ -58,7 +59,7 @@ public class InventoryObject : ScriptableObject, ISerializationCallbackReceiver
         }
     }
 
-    public void OnBeforeSerialize(){}
+    public void OnBeforeSerialize(){} //dependencia, nao apagar
 }
 
 [System.Serializable] //Serializa e mostra no editor quando está em um objeto da cena
@@ -66,8 +67,8 @@ public class InventorySlot{ //O inventario guarda slots
     public int ID;
     public ItemObject item;
     public int amount;
-    public InventorySlot(int _id, ItemObject _item, int _amount){
-        ID = _id;
+    public InventorySlot(/*int _id,*/ ItemObject _item, int _amount){
+        //ID = _id;
         item = _item;
         amount = _amount;
     }
