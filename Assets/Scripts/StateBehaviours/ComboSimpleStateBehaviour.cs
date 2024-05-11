@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 //comportamento de parte de combo linear. Desliga o trigger de proximo ataque se nao tiver apertado durante a janela de buffer.
-public class Combo1StateBehaviour : StateMachineBehaviour
+public class ComboSimpleStateBehaviour : StateMachineBehaviour
 {
     [SerializeField] private float bufferTime;
     private float normalizedBuffer;
