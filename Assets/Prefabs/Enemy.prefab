@@ -253,8 +253,9 @@ MonoBehaviour:
   owner: {fileID: 4532138567757995341}
   tags:
   - Player
-  offset: {x: 0, y: 1, z: 0.8}
-  dimensions: {x: 0.6, y: 1, z: 0.4}
+  pivot: {fileID: 2386289167039054573}
+  offset: {x: 0, y: 0, z: 0}
+  dimensions: {x: 0.4, y: 0.6, z: 0.4}
 --- !u!114 &4532138567757995341
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -425,6 +426,12 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: dff0418d1087d9e45856e0c5c3995c41, type: 3}
+--- !u!4 &2386289167039054573 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 1852576806548013000, guid: dff0418d1087d9e45856e0c5c3995c41,
+    type: 3}
+  m_PrefabInstance: {fileID: 4082620337572953381}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &4549437088221584078 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: dff0418d1087d9e45856e0c5c3995c41,

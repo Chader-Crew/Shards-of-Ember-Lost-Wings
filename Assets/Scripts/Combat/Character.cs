@@ -14,7 +14,8 @@ public class Character : MonoBehaviour, IDamageable
     [SerializeField] protected Collider col;      //Colisao de combate (hurtbox)
 
     //events
-    public event Action<SkillData, float> OnGotHitEvent;
+    public event Action<SkillData, float> OnGotHitEvent;    //O FLOAT É A QUANTIDADE DE DANO LEVADO. É diferente do valor de dano na SkillData, que não leva em conta a defesa do personagem.
+    public event Action OnDiedEvent = ()=>{};
     #endregion
     
     private void Awake() 
@@ -30,6 +31,7 @@ public class Character : MonoBehaviour, IDamageable
 
     public virtual void Die()
     {
+        OnDiedEvent();
         Debug.Log("Personagem morreu");
     }
 

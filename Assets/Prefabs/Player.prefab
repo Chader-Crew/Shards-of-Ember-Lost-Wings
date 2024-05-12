@@ -258,8 +258,9 @@ MonoBehaviour:
   owner: {fileID: 335508968489987520}
   tags:
   - Enemy
-  offset: {x: 0, y: 0, z: 0.8}
-  dimensions: {x: 1, y: 1, z: 1}
+  pivot: {fileID: 1007835357878642306}
+  offset: {x: 0, y: -0.1, z: 0}
+  dimensions: {x: 0.3, y: 0.8, z: 0.3}
 --- !u!1001 &1461734881691474250
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -328,6 +329,12 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 04f7f5bd87b38654f97e71ba7530e341, type: 3}
+--- !u!4 &1007835357878642306 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 1852576806548013000, guid: 04f7f5bd87b38654f97e71ba7530e341,
+    type: 3}
+  m_PrefabInstance: {fileID: 1461734881691474250}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &1424150528228196001 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 04f7f5bd87b38654f97e71ba7530e341,
