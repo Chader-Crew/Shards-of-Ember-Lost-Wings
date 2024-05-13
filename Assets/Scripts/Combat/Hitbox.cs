@@ -7,7 +7,6 @@ using UnityEngine;
 //Hitbox para ativacao de ataques baseados em animacao
 public class Hitbox : MonoBehaviour
 {
-
     [SerializeField] private Character owner;   //Dono da hitbox, usado para atribuir propriedade a skill
     [SerializeField] private string[] tags;     //Tags de personagem que a hitbox acerta.
 
@@ -16,13 +15,16 @@ public class Hitbox : MonoBehaviour
     [SerializeField] private Vector3 offset;
     [SerializeField] private Vector3 dimensions;
 
+    
+    private Color gizmoColor = Color.yellow;    //para debug
+
 
     //mostra a hitbox quando selecionada no modo editor
     private void OnDrawGizmosSelected() 
     {
         //gizmos
         #if UNITY_EDITOR
-        Gizmos.color = Color.red;
+        Gizmos.color = gizmoColor;
         
         //posicao
         Vector3 boxPosition = pivot.position + pivot.forward * offset.z + pivot.right * offset.x + pivot.up * offset.y;
@@ -35,24 +37,33 @@ public class Hitbox : MonoBehaviour
         #endif
     }
 
-    //Ativa a hitbox, iniciando a checagem pelo tempo designado.
-    private void Activate(SkillBase skill)  //(SkillBase skill, float seconds) NAO TA FUNCIONANDO POR QUE O ANIMATOR SO CHAMA METODO COM 1 PARAMETRO MAX
+    //Ativa a hitbox, se ja estiver ativada com alguma skill, adiciona na lista de chamada, mas não reinicia a hitbox.
+    public void Activate(SkillBase skill) 
     {
         //criacao da SkillData e inicializacao de variaveis
         SkillData context = new SkillData();
         context.owner = owner;
-        StartCoroutine(ActiveCollision(skill, context, 0.5f));
+        StartCoroutine(ActiveCollision(skill, context));
+
+        gizmoColor = Color.red;     //para debug
+    }
+
+    public void Deactivate()
+    {
+        StopAllCoroutines();
+
+        gizmoColor = Color.yellow;  //para debug
     }
 
     //checa acerto em cada frame de física por um tempo designado. Coloca os Characters acertados na lista targets da SkillData.
-    private IEnumerator ActiveCollision(SkillBase skill, SkillData context, float seconds)
+    private IEnumerator ActiveCollision(SkillBase skill, SkillData context)
     {
-        float timer = 0;                                    //timer pra saber quando parar de ativar essa skill
         List<Collider> hitColliders = new List<Collider>(); //lista de colisores ja acertados, para evitar multihit indesejado.
 
         context.targets = new List<Character>();            //inicializa a lista de alvos da SkillData.
 
-        while (timer <= seconds){
+        while (true)
+        {
 
             context.targets.Clear();                        //limpa a lista de target antes de toda checagem para nao ativar duplicado.
 
@@ -83,8 +94,7 @@ public class Hitbox : MonoBehaviour
                 skill.Activate(context);
             }
 
-            yield return new WaitForFixedUpdate();  //espera pelo proximo update de fisica e atualiza o timer
-            timer += Time.fixedDeltaTime;
+            yield return new WaitForFixedUpdate();  //espera pelo proximo update de fisica
         }
     }
 }
