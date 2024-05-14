@@ -2143,6 +2143,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   stats: {fileID: 3211709652089618572}
   col: {fileID: 6502523263126015848}
+  _invul: 0
 --- !u!1 &337154975128057126
 GameObject:
   m_ObjectHideFlags: 0
@@ -3215,6 +3216,14 @@ MonoBehaviour:
   maxSpeed: 4
   model: {fileID: 7118136812237029165}
   moveRotationSpeed: 5
+  inAirTimer: 0
+  leapingVelocity: 0
+  fallingSpeed: 0
+  groundLayer:
+    serializedVersion: 2
+    m_Bits: 0
+  rayCastHeightOffSet: 0.5
+  isGrounded: 0
 --- !u!1 &2212682249065457465
 GameObject:
   m_ObjectHideFlags: 0
@@ -4317,6 +4326,14 @@ MonoBehaviour:
   maxSpeed: 6
   model: {fileID: 1424150528110280697}
   moveRotationSpeed: 8
+  inAirTimer: 0
+  leapingVelocity: 0
+  fallingSpeed: 0
+  groundLayer:
+    serializedVersion: 2
+    m_Bits: 0
+  rayCastHeightOffSet: 0.5
+  isGrounded: 0
 --- !u!4 &4115910467319605105
 Transform:
   m_ObjectHideFlags: 0
@@ -6269,6 +6286,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   stats: {fileID: 5446396419655298115}
   col: {fileID: 1172236381863872893}
+  _invul: 0
 --- !u!4 &7181741900342936204
 Transform:
   m_ObjectHideFlags: 0
@@ -7406,7 +7424,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   esse: {fileID: 20592509879359255}
-  vida: 0
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0

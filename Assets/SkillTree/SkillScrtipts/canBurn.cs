@@ -9,11 +9,6 @@ public class canBurn : MonoBehaviour
     
     public GameObject esse;
 
-    public float vida;
-    void Start()
-    {
-        vida=esse.GetComponent<CharStats>().hp;
-    }
     // Start is called before the first frame update
     public void Burn(float duracao)
     {
@@ -22,10 +17,11 @@ public class canBurn : MonoBehaviour
     }
     private  void TakeBurn()
     {
-        
-        vida--;
+        SkillData skillData= new SkillData();
+        skillData.damage = 1;
+
         Debug.Log("burn baby burn");
-        esse.GetComponent<CharStats>().hp -= (esse.GetComponent<CharStats>().hp-vida);
+        esse.GetComponent<Character>().GetHit(skillData);
         if(counter<=0)
         {
             CancelInvoke("TakeBurn");
