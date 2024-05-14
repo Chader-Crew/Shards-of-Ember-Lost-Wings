@@ -11,6 +11,7 @@ public class PlayerController : MonoBehaviour
 {
     private PlayerMovement movement;
     private Character character;
+    private CapsuleCollider cc;
     [SerializeField] private InputReader input;
     private Animator animator;
     private AtakaStateBehaviour atakaState;
@@ -26,6 +27,7 @@ public class PlayerController : MonoBehaviour
         input.OnMoveEvent += MoveInput;
         input.OnAttackEvent += AttackInput;
         character.OnGotHitEvent += SkillHit;
+        character.OnDiedEvent += Die;
 
         atakaState = animator.GetBehaviour<AtakaStateBehaviour>();
         atakaState.AttackEndAction = AttackEnd;
@@ -61,6 +63,11 @@ public class PlayerController : MonoBehaviour
         StartCoroutine(Stagger(skill.stagger));
     }
 
+    private void Die(){
+        animator.SetTrigger("Die");
+        character.enabled = false;
+    }
+
     //ativa stagger e trava o movimento, depois de x segundos desabilita.
     IEnumerator Stagger(float seconds)
     {
@@ -71,4 +78,6 @@ public class PlayerController : MonoBehaviour
         movement.LockMovement(false);
         animator.SetBool("isStaggered", false);
     }
+
+
 }

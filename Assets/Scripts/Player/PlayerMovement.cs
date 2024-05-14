@@ -13,13 +13,22 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private Transform model;
     [SerializeField] private float moveRotationSpeed = 5.0f;
     private Rigidbody rb;
+    public float inAirTimer;
+    public float leapingVelocity;
+    public float fallingSpeed;
+    public LayerMask groundLayer;
+    public float rayCastHeightOffSet = 0.5f;
     private bool _movementLocked;
+    public bool isGrounded;
 
     private void Awake() 
     {
         rb = GetComponent<Rigidbody>();
     }
 
+    public void Update(){
+        Falling();
+    }
     private void FixedUpdate() 
     {
         MovementUpdate();
@@ -47,5 +56,30 @@ public class PlayerMovement : MonoBehaviour
     {
         _movementLocked = value;
         rb.velocity = value? Vector3.zero : rb.velocity;
+    }
+
+    public void Falling(){
+
+        RaycastHit hit;
+        Vector3 rayCastOrigin = transform.position;
+        rayCastOrigin.y = rayCastOrigin.y + rayCastHeightOffSet;
+
+        if(!isGrounded){
+
+            inAirTimer = inAirTimer + Time.deltaTime;
+            rb.AddForce(transform.forward * leapingVelocity);
+            rb.AddForce(-Vector3.up * fallingSpeed * inAirTimer);
+        }
+
+        if(Physics.SphereCast(rayCastOrigin, 0.5f, -Vector3.up, out hit, groundLayer)){
+
+            inAirTimer = 0;
+            isGrounded = true;
+        }
+        else{
+
+            isGrounded = false;
+        }
+
     }
 }
