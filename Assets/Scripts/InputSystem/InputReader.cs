@@ -17,6 +17,7 @@ public class InputReader : ScriptableObject, PlayerInput.IPlayerActions, PlayerI
     public event Action<Vector2> OnSkillChangeEvent;
     public event Action OnSkillUseEvent;
     public event Action OnPauseEvent;
+    public event Action<int> OnInventoryInteractEvent;
 
 
     //inicializacao
@@ -61,6 +62,25 @@ public class InputReader : ScriptableObject, PlayerInput.IPlayerActions, PlayerI
     {   
         if(context.performed){
             OnAttackEvent?.Invoke();
+        }
+    }
+
+    public void OnInventoryInteract(UnityEngine.InputSystem.InputAction.CallbackContext context){
+        if(context.performed){
+            switch(context.ReadValue<Vector2>()){
+                case Vector2 v when v.Equals(Vector3.up):
+                    OnInventoryInteractEvent(0);
+                    break;
+                case Vector2 v when v.Equals(Vector3.right):
+                    OnInventoryInteractEvent(1);
+                    break;
+                case Vector2 v when v.Equals(Vector3.down):
+                    OnInventoryInteractEvent(2);
+                    break;
+                case Vector2 v when v.Equals(Vector3.left):
+                    OnInventoryInteractEvent(3);
+                    break;
+            }
         }
     }
 

@@ -13,6 +13,9 @@ public class Character : MonoBehaviour, IDamageable
     [SerializeField] protected CharStats stats;   //Stat sheet
     [SerializeField] protected Collider col;      //Colisao de combate (hurtbox)
 
+    public bool _invul; 
+    
+
     //events
     public event Action<SkillData, float> OnGotHitEvent;    //O FLOAT É A QUANTIDADE DE DANO LEVADO. É diferente do valor de dano na SkillData, que não leva em conta a defesa do personagem.
     public event Action OnDiedEvent = ()=>{};
@@ -23,6 +26,7 @@ public class Character : MonoBehaviour, IDamageable
         //getcomponents
         stats = GetComponent<CharStats>();
         col = GetComponent<Collider>();
+        _invul = false;
     }
 
     #region Interfaces
@@ -45,6 +49,11 @@ public class Character : MonoBehaviour, IDamageable
 
         DanoFinal = dano/(proporcao * defesa + 1)
         */
+
+        if(_invul){
+            return;
+        }
+
         float totalDamage = data.damage/(0.05f * stats.def + 1);
         totalDamage = Mathf.Round(totalDamage * 100)/100;
         if(skilltreeManager.skill1==true|| this.tag=="Enemy")
@@ -57,6 +66,8 @@ public class Character : MonoBehaviour, IDamageable
         OnGotHitEvent(data, totalDamage);
 
         if(stats.hp <= 0) { Die(); }
+
+        
     }
     #endregion
 }

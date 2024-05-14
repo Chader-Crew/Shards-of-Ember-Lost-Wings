@@ -73,7 +73,7 @@ public partial class @PlayerInput: IInputActionCollection2, IDisposable
                     ""initialStateCheck"": true
                 },
                 {
-                    ""name"": ""DragonStateKeyboard"",
+                    ""name"": ""InventoryInteract"",
                     ""type"": ""Value"",
                     ""id"": ""190b28d8-96fd-4280-84e0-cd504aeceae6"",
                     ""expectedControlType"": ""Vector2"",
@@ -355,46 +355,57 @@ public partial class @PlayerInput: IInputActionCollection2, IDisposable
                     ""isPartOfComposite"": false
                 },
                 {
-                    ""name"": ""Keyboard"",
-                    ""id"": ""413aa789-450e-4f34-b540-23e22b10e0e2"",
+                    ""name"": ""Consumiveis"",
+                    ""id"": ""a2ff2d48-d58c-47c9-99f5-8fe48a7e3f14"",
                     ""path"": ""2DVector"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
-                    ""action"": ""DragonStateKeyboard"",
+                    ""action"": ""InventoryInteract"",
                     ""isComposite"": true,
                     ""isPartOfComposite"": false
                 },
                 {
                     ""name"": ""up"",
-                    ""id"": ""e6e506e1-3117-49f3-b56e-d66768f3b5bb"",
-                    ""path"": ""<Keyboard>/2"",
+                    ""id"": ""18f18c00-744c-4abf-901d-c8148a7d2b50"",
+                    ""path"": ""<Keyboard>/1"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
-                    ""action"": ""DragonStateKeyboard"",
+                    ""action"": ""InventoryInteract"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""down"",
+                    ""id"": ""3aaa8d4a-08f8-4cf8-b4cc-36d5bc5f96f4"",
+                    ""path"": ""<Keyboard>/3"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""InventoryInteract"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": true
                 },
                 {
                     ""name"": ""left"",
-                    ""id"": ""bf353662-533b-4563-97bc-80e3bb81c165"",
-                    ""path"": ""<Keyboard>/1"",
+                    ""id"": ""4f9a1d61-926a-4a57-aa33-d84f5c8f2348"",
+                    ""path"": ""<Keyboard>/4"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
-                    ""action"": ""DragonStateKeyboard"",
+                    ""action"": ""InventoryInteract"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": true
                 },
                 {
                     ""name"": ""right"",
-                    ""id"": ""de976de9-d84d-48ee-95e4-96587e34cb62"",
-                    ""path"": ""<Keyboard>/3"",
+                    ""id"": ""cb84af6b-42f0-4925-b6a1-b95ae3c67a9a"",
+                    ""path"": ""<Keyboard>/2"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
-                    ""action"": ""DragonStateKeyboard"",
+                    ""action"": ""InventoryInteract"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": true
                 }
@@ -535,7 +546,7 @@ public partial class @PlayerInput: IInputActionCollection2, IDisposable
         m_Player_Pause = m_Player.FindAction("Pause", throwIfNotFound: true);
         m_Player_Attack = m_Player.FindAction("Attack", throwIfNotFound: true);
         m_Player_DragonStateGamepad = m_Player.FindAction("DragonStateGamepad", throwIfNotFound: true);
-        m_Player_DragonStateKeyboard = m_Player.FindAction("DragonStateKeyboard", throwIfNotFound: true);
+        m_Player_InventoryInteract = m_Player.FindAction("InventoryInteract", throwIfNotFound: true);
         m_Player_SkillChange = m_Player.FindAction("SkillChange", throwIfNotFound: true);
         m_Player_UseSkill = m_Player.FindAction("UseSkill", throwIfNotFound: true);
         // UI
@@ -608,7 +619,7 @@ public partial class @PlayerInput: IInputActionCollection2, IDisposable
     private readonly InputAction m_Player_Pause;
     private readonly InputAction m_Player_Attack;
     private readonly InputAction m_Player_DragonStateGamepad;
-    private readonly InputAction m_Player_DragonStateKeyboard;
+    private readonly InputAction m_Player_InventoryInteract;
     private readonly InputAction m_Player_SkillChange;
     private readonly InputAction m_Player_UseSkill;
     public struct PlayerActions
@@ -620,7 +631,7 @@ public partial class @PlayerInput: IInputActionCollection2, IDisposable
         public InputAction @Pause => m_Wrapper.m_Player_Pause;
         public InputAction @Attack => m_Wrapper.m_Player_Attack;
         public InputAction @DragonStateGamepad => m_Wrapper.m_Player_DragonStateGamepad;
-        public InputAction @DragonStateKeyboard => m_Wrapper.m_Player_DragonStateKeyboard;
+        public InputAction @InventoryInteract => m_Wrapper.m_Player_InventoryInteract;
         public InputAction @SkillChange => m_Wrapper.m_Player_SkillChange;
         public InputAction @UseSkill => m_Wrapper.m_Player_UseSkill;
         public InputActionMap Get() { return m_Wrapper.m_Player; }
@@ -647,9 +658,9 @@ public partial class @PlayerInput: IInputActionCollection2, IDisposable
             @DragonStateGamepad.started += instance.OnDragonStateGamepad;
             @DragonStateGamepad.performed += instance.OnDragonStateGamepad;
             @DragonStateGamepad.canceled += instance.OnDragonStateGamepad;
-            @DragonStateKeyboard.started += instance.OnDragonStateKeyboard;
-            @DragonStateKeyboard.performed += instance.OnDragonStateKeyboard;
-            @DragonStateKeyboard.canceled += instance.OnDragonStateKeyboard;
+            @InventoryInteract.started += instance.OnInventoryInteract;
+            @InventoryInteract.performed += instance.OnInventoryInteract;
+            @InventoryInteract.canceled += instance.OnInventoryInteract;
             @SkillChange.started += instance.OnSkillChange;
             @SkillChange.performed += instance.OnSkillChange;
             @SkillChange.canceled += instance.OnSkillChange;
@@ -675,9 +686,9 @@ public partial class @PlayerInput: IInputActionCollection2, IDisposable
             @DragonStateGamepad.started -= instance.OnDragonStateGamepad;
             @DragonStateGamepad.performed -= instance.OnDragonStateGamepad;
             @DragonStateGamepad.canceled -= instance.OnDragonStateGamepad;
-            @DragonStateKeyboard.started -= instance.OnDragonStateKeyboard;
-            @DragonStateKeyboard.performed -= instance.OnDragonStateKeyboard;
-            @DragonStateKeyboard.canceled -= instance.OnDragonStateKeyboard;
+            @InventoryInteract.started -= instance.OnInventoryInteract;
+            @InventoryInteract.performed -= instance.OnInventoryInteract;
+            @InventoryInteract.canceled -= instance.OnInventoryInteract;
             @SkillChange.started -= instance.OnSkillChange;
             @SkillChange.performed -= instance.OnSkillChange;
             @SkillChange.canceled -= instance.OnSkillChange;
@@ -762,7 +773,7 @@ public partial class @PlayerInput: IInputActionCollection2, IDisposable
         void OnPause(InputAction.CallbackContext context);
         void OnAttack(InputAction.CallbackContext context);
         void OnDragonStateGamepad(InputAction.CallbackContext context);
-        void OnDragonStateKeyboard(InputAction.CallbackContext context);
+        void OnInventoryInteract(InputAction.CallbackContext context);
         void OnSkillChange(InputAction.CallbackContext context);
         void OnUseSkill(InputAction.CallbackContext context);
     }
