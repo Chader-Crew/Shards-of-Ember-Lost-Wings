@@ -58,7 +58,7 @@ public class Character : MonoBehaviour, IDamageable
         totalDamage = Mathf.Round(totalDamage * 100)/100;
         /*if(skilltreeManager.skill1==true|| this.tag=="Enemy")
         {
-            float dur=10;
+            float dur=3;
             this.gameObject.GetComponent<canBurn>().Burn(dur);
         }*/
         stats.hp -= totalDamage;
