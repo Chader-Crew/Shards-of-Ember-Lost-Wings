@@ -51,7 +51,7 @@
                     "initialStateCheck": true
                 },
                 {
-                    "name": "DragonStateKeyboard",
+                    "name": "InventoryInteract",
                     "type": "Value",
                     "id": "190b28d8-96fd-4280-84e0-cd504aeceae6",
                     "expectedControlType": "Vector2",
@@ -333,46 +333,57 @@
                     "isPartOfComposite": false
                 },
                 {
-                    "name": "Keyboard",
-                    "id": "413aa789-450e-4f34-b540-23e22b10e0e2",
+                    "name": "Consumiveis",
+                    "id": "a2ff2d48-d58c-47c9-99f5-8fe48a7e3f14",
                     "path": "2DVector",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "DragonStateKeyboard",
+                    "action": "InventoryInteract",
                     "isComposite": true,
                     "isPartOfComposite": false
                 },
                 {
                     "name": "up",
-                    "id": "e6e506e1-3117-49f3-b56e-d66768f3b5bb",
-                    "path": "<Keyboard>/2",
+                    "id": "18f18c00-744c-4abf-901d-c8148a7d2b50",
+                    "path": "<Keyboard>/1",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "DragonStateKeyboard",
+                    "action": "InventoryInteract",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "down",
+                    "id": "3aaa8d4a-08f8-4cf8-b4cc-36d5bc5f96f4",
+                    "path": "<Keyboard>/3",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "InventoryInteract",
                     "isComposite": false,
                     "isPartOfComposite": true
                 },
                 {
                     "name": "left",
-                    "id": "bf353662-533b-4563-97bc-80e3bb81c165",
-                    "path": "<Keyboard>/1",
+                    "id": "4f9a1d61-926a-4a57-aa33-d84f5c8f2348",
+                    "path": "<Keyboard>/4",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "DragonStateKeyboard",
+                    "action": "InventoryInteract",
                     "isComposite": false,
                     "isPartOfComposite": true
                 },
                 {
                     "name": "right",
-                    "id": "de976de9-d84d-48ee-95e4-96587e34cb62",
-                    "path": "<Keyboard>/3",
+                    "id": "cb84af6b-42f0-4925-b6a1-b95ae3c67a9a",
+                    "path": "<Keyboard>/2",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "DragonStateKeyboard",
+                    "action": "InventoryInteract",
                     "isComposite": false,
                     "isPartOfComposite": true
                 }

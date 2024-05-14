@@ -47,4 +47,14 @@ public class InventoryItem : MonoBehaviour, IBeginDragHandler, IDragHandler, IEn
         image.raycastTarget = true;
         countText.raycastTarget = true;
     }
+
+    public void UseItem(){
+        Debug.Log("Count: " + count);
+        count--;
+        if(count <= 0){
+            Destroy(gameObject);
+        }
+
+        UpdateCount();
+    }
 }

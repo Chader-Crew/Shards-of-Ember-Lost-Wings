@@ -8,8 +8,10 @@ public class InventoryManager : MonoBehaviour
 
     public InventorySlot[] inventorySlots;
     public GameObject inventoryItemPrefab;
+    [SerializeField] private InputReader input;
 
     private void Awake(){
+        input.OnInventoryInteractEvent += UseItemFromSlot;
         instance = this;
     }
 
@@ -44,7 +46,22 @@ public class InventoryManager : MonoBehaviour
         inventoryItem.InitializeItem(item);
     }
 
-    //definir o botao pra usar cada item e chamar essa funcao nele
+    public void UseItemFromSlot(int slotIndex)
+    {
+        if (slotIndex >= 0 && slotIndex < inventorySlots.Length)
+        {
+            InventorySlot slot = inventorySlots[slotIndex];
+            InventoryItem itemInSlot = slot.GetComponentInChildren<InventoryItem>();
+            Debug.Log("Usou item " + slotIndex);
+            if (itemInSlot != null)
+            {
+                // Chama o método de uso do item
+                itemInSlot.UseItem();
+            }
+        }
+    }
+
+    /*//definir o botao pra usar cada item e chamar essa funcao nele
     public void UseItem(InventoryItem item){
         if(item.count <= 0){
             Destroy(item.gameObject);
@@ -54,4 +71,8 @@ public class InventoryManager : MonoBehaviour
 
         item.UpdateCount();
     }
+
+    public void GetSlotItem(){
+
+    }*/
 }
