@@ -47,7 +47,11 @@ public class Character : MonoBehaviour, IDamageable
         */
         float totalDamage = data.damage/(0.05f * stats.def + 1);
         totalDamage = Mathf.Round(totalDamage * 100)/100;
-
+        if(skilltreeManager.skill1==true|| this.tag=="Enemy")
+        {
+            float dur=10;
+            this.gameObject.GetComponent<canBurn>().Burn(dur);
+        }
         stats.hp -= totalDamage;
         Debug.Log($"levou {totalDamage} de dano");
         OnGotHitEvent(data, totalDamage);
