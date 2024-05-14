@@ -11,6 +11,7 @@ public class Character : MonoBehaviour, IDamageable
     #region Declarations
     //vars
     [SerializeField] protected CharStats stats;   //Stat sheet
+    [SerializeField] public CharStats Stats { get { return stats;} }    //Propriedade publica readonly
     [SerializeField] protected Collider col;      //Colisao de combate (hurtbox)
 
     public bool _invul; 
