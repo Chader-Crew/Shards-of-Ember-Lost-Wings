@@ -270,6 +270,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   stats: {fileID: 1621040735751555488}
   col: {fileID: 5597681442913168542}
+  _invul: 0
 --- !u!114 &1621040735751555488
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -282,11 +283,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 04750555ff2348747846cf298aa532a7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hp: 0
+  hp: 15
   atk: 1
   def: 1
   spd: 1
-  maxHp: 10
+  maxHp: 15
 --- !u!54 &8158389758618172765
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -330,6 +331,14 @@ MonoBehaviour:
   maxSpeed: 4
   model: {fileID: 4549437088221584078}
   moveRotationSpeed: 5
+  inAirTimer: 0
+  leapingVelocity: 0
+  fallingSpeed: 0
+  groundLayer:
+    serializedVersion: 2
+    m_Bits: 0
+  rayCastHeightOffSet: 0.5
+  isGrounded: 0
 --- !u!114 &2464221749690624492
 MonoBehaviour:
   m_ObjectHideFlags: 0

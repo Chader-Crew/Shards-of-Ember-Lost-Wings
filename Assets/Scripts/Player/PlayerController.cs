@@ -1,7 +1,6 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
-using UnityEditorInternal;
 using UnityEngine;
 
 //classe controladora do player, qualquer comunicacao entre componentes deve passar por aqui.

@@ -9,16 +9,19 @@ public class NPCController : MonoBehaviour
     private PlayerMovement movement;
     private Animator animator;
     private AtakaStateBehaviour atakaState;
+    private Character character;
 
     private void Awake() 
     {
         //get components
         movement = GetComponent<PlayerMovement>();
         animator = GetComponent<Animator>();
+        character = GetComponent<Character>();
 
         //inscricao em eventos e atribuicao de actions
         atakaState = animator.GetBehaviour<AtakaStateBehaviour>();
         atakaState.AttackEndAction = AttackEnd;
+        character.OnDiedEvent += EnemyDie;
     }
 
     //chamado quando o animator sai do state de ataque para destravar movimento (provavelmente devia ser mudado para |quando entra em idle|)
@@ -44,6 +47,11 @@ public class NPCController : MonoBehaviour
     {
         animator.SetBool("ataka", true);
         movement.LockMovement(true);
+    }
+
+    //morte do inimigo
+    public void EnemyDie(){
+        Destroy(gameObject);
     }
 
 
