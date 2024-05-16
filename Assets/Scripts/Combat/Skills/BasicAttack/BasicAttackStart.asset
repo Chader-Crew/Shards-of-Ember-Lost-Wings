@@ -9,10 +9,8 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9e37a1a00174e184bb1d5e6a0906974b, type: 3}
-  m_Name: DamageTargetScaleAtk
+  m_Script: {fileID: 11500000, guid: 1b1417dc0d89c34489218dee268cf635, type: 3}
+  m_Name: BasicAttackStart
   m_EditorClassIdentifier: 
-  damage: 0
-  perAtkDamage: 1
-  perDefDamage: 0
-  stagger: 0
+  nextSkills:
+  - {fileID: 11400000, guid: 5fd9825dbf3fb0a4288da66d107156e7, type: 2}

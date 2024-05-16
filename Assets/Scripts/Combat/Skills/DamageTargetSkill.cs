@@ -6,6 +6,8 @@ using UnityEngine;
 [CreateAssetMenu(menuName = "ScriptableObjects/Skills/Damage Targets")]
 public class DamageTargetSkill : SkillBase
 {
+    [Header("Essa Skill Requer Target")]
+    [Space(15)]
     [Tooltip("Valor de dano PURO. Nao escala com ataque.")]
     [SerializeField] private float damage;
 

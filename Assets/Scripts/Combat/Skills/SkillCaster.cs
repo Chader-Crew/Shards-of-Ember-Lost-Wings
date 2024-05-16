@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-//ativador de skill incorporeo.
+//ativador de skill incorporeo. Existe por motivos de teste.
 [RequireComponent(typeof(Character))]
 public class SkillCaster : MonoBehaviour
 {
