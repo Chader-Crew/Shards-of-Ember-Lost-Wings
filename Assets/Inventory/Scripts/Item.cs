@@ -7,14 +7,13 @@ using UnityEngine.UI;
 public class Item : ScriptableObject
 {
     [Header("Item Description")]
-    public string name;
+    public string itemName;
     [TextArea(10,10)]
     public string description;
     public ItemType type;
 
     public Sprite image;
 
-    //public abstract void Usage();
 }
 
 public enum ItemType{

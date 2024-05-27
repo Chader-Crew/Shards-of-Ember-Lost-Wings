@@ -9,10 +9,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4b89d2d48a743574a9e6cfd05cdd422c, type: 3}
-  m_Name: BuffPotion
-  m_EditorClassIdentifier: 
-  name: BuffPotion
-  description: "Aumenta sua for\xE7a"
+  m_Script: {fileID: 0}
+  m_Name: Health Potion
+  m_EditorClassIdentifier: Assembly-CSharp::HealthPotion
+  itemName: 
+  description: 
   type: 1
-  image: {fileID: 21300000, guid: 8339dd0ccac10c14e917a1e280284685, type: 3}
+  image: {fileID: 21300000, guid: dc2d66b0ba5092b4aa1c7783e1bce80b, type: 3}
+  healthRestoreAmount: 3

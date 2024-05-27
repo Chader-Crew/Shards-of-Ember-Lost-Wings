@@ -48,13 +48,24 @@ public class InventoryItem : MonoBehaviour, IBeginDragHandler, IDragHandler, IEn
         countText.raycastTarget = true;
     }
 
-    public void UseItem(){
+    public void UseItem()
+    {
         Debug.Log("Count: " + count);
-        count--;
-        if(count <= 0){
-            Destroy(gameObject);
-        }
 
-        UpdateCount();
+        if (item is UsableItem usableItem)
+        {
+            usableItem.Use();
+            count--;
+            if (count <= 0)
+            {
+                Destroy(gameObject);
+            }
+
+            UpdateCount();
+        }
+        else
+        {
+            Debug.Log("Este item não pode ser usado.");
+        }
     }
 }
