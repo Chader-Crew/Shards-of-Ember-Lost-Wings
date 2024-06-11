@@ -994,10 +994,10 @@ MonoBehaviour:
   character: {fileID: 5510674912999221541}
   stateMachine: {fileID: 2551282358385066452}
   aggroTarget: {fileID: 0}
-  _doCharDetection: 0
-  charDetectedState: {fileID: 0}
-  charDetectionRadius: 0
-  aggroTargetTag: 
+  _doCharDetection: 1
+  charDetectedState: {fileID: 11400000, guid: 89761b62944c223429934601dca073f8, type: 2}
+  charDetectionRadius: 8
+  aggroTargetTag: Player
 --- !u!114 &2551282358385066452
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1019,7 +1019,6 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 8eccac19b33f09746a56a5818e8f81c6, type: 2}
   cycleAttackTimer: 0
   waypoints:
-  - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
   waypointIndex: 0
@@ -1098,7 +1097,7 @@ Rigidbody:
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 0
+  m_Constraints: 112
   m_CollisionDetection: 0
 --- !u!114 &3828533008394005226
 MonoBehaviour:

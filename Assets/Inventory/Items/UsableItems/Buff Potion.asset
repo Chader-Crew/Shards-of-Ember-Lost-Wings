@@ -9,11 +9,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 0}
+  m_Script: {fileID: 11500000, guid: ca86df1758e8db940b032b93e2ed5f73, type: 3}
   m_Name: Buff Potion
-  m_EditorClassIdentifier: Assembly-CSharp::BuffPotion
-  itemName: 
+  m_EditorClassIdentifier: 
+  itemName: buff
   description: 
   type: 1
-  image: {fileID: 21300000, guid: 0b53a5b5845561e45998eebd3365f0be, type: 3}
-  damageBuffAmount: 5
+  image: {fileID: 21300000, guid: 606b04b3b76269142b2dc03a8d212b4e, type: 3}
+  damageBuffAmount: 3

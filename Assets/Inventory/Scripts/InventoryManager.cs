@@ -8,10 +8,12 @@ public class InventoryManager : MonoBehaviour
 
     public InventorySlot[] inventorySlots;
     public GameObject inventoryItemPrefab;
+    public GameObject mainInventoryPanel;
     [SerializeField] private InputReader input;
 
     private void Awake(){
         input.OnInventoryInteractEvent += UseItemFromSlot;
+        input.OnPauseEvent += OpenInventory;
         instance = this;
     }
 
@@ -44,6 +46,9 @@ public class InventoryManager : MonoBehaviour
         GameObject newItemObj = Instantiate(inventoryItemPrefab, slot.transform);
         InventoryItem inventoryItem = newItemObj.GetComponent<InventoryItem>();
         inventoryItem.InitializeItem(item);
+
+        // Ajusta a rotação dependendo do slot
+        AdjustItemRotation(inventoryItem, slot);
     }
 
     public void UseItemFromSlot(int slotIndex)
@@ -58,6 +63,29 @@ public class InventoryManager : MonoBehaviour
                 // Chama o método de uso do item
                 itemInSlot.UseItem();
             }
+        }
+    }
+
+    void AdjustItemRotation(InventoryItem inventoryItem, InventorySlot slot)
+    {
+        // Ajuste a rotação conforme necessário. Aqui estamos assumindo que slots de toolbar e inventário são diferenciados por tags ou outro identificador.
+        if (slot.CompareTag("MainInventorySlot"))
+        {
+            // Ajusta a rotação para a toolbar
+            inventoryItem.transform.rotation = Quaternion.Euler(0, 0, 0);
+        }
+        else
+        {
+            // Reseta a rotação para o inventário normal
+            inventoryItem.transform.rotation = Quaternion.identity;
+        }
+    }
+
+    public void OpenInventory(){
+        if(mainInventoryPanel.activeSelf){
+            mainInventoryPanel.SetActive(false);
+        }else{
+            mainInventoryPanel.SetActive(true);
         }
     }
 

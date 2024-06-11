@@ -69,16 +69,16 @@ public class InputReader : ScriptableObject, PlayerInput.IPlayerActions, PlayerI
         if(context.performed){
             switch(context.ReadValue<Vector2>()){
                 case Vector2 v when v.Equals(Vector3.up):
-                    OnInventoryInteractEvent(0);
+                    OnInventoryInteractEvent(1);
                     break;
                 case Vector2 v when v.Equals(Vector3.right):
-                    OnInventoryInteractEvent(1);
+                    OnInventoryInteractEvent(3);
                     break;
                 case Vector2 v when v.Equals(Vector3.down):
                     OnInventoryInteractEvent(2);
                     break;
                 case Vector2 v when v.Equals(Vector3.left):
-                    OnInventoryInteractEvent(3);
+                    OnInventoryInteractEvent(0);
                     break;
             }
         }
@@ -106,7 +106,9 @@ public class InputReader : ScriptableObject, PlayerInput.IPlayerActions, PlayerI
 
     public void OnPause(UnityEngine.InputSystem.InputAction.CallbackContext context)
     {
-        throw new System.NotImplementedException();
+        if(context.performed){
+            OnPauseEvent();
+        }
     }
 
     #endregion
