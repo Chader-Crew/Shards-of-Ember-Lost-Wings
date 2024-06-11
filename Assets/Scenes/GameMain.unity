@@ -259,7 +259,6 @@ GameObject:
   - component: {fileID: 243077590}
   - component: {fileID: 243077589}
   - component: {fileID: 243077588}
-  - component: {fileID: 243077587}
   m_Layer: 0
   m_Name: BaixoCasa2
   m_TagString: Untagged
@@ -282,19 +281,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1668040316}
   m_LocalEulerAnglesHint: {x: -90, y: 0, z: -155.435}
---- !u!114 &243077587
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 243077585}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 82ba4454015b48045992bc9135e60605, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  houseTop: {fileID: 1675624114}
 --- !u!65 &243077588
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -641,6 +627,8 @@ GameObject:
   - component: {fileID: 430869557}
   - component: {fileID: 430869559}
   - component: {fileID: 430869558}
+  - component: {fileID: 430869560}
+  - component: {fileID: 430869561}
   m_Layer: 0
   m_Name: CimaCasa2
   m_TagString: Untagged
@@ -720,6 +708,44 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 430869556}
   m_Mesh: {fileID: -3346141338559564478, guid: 050de33d532c17c419a04c749e31c384, type: 3}
+--- !u!64 &430869560
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 430869556}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 5
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: -3346141338559564478, guid: 050de33d532c17c419a04c749e31c384, type: 3}
+--- !u!114 &430869561
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 430869556}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: af957319b4d1c434cb72d3416c4682a7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Renderers: []
+  Position: {x: 0, y: 0, z: 0}
+  Materials: []
+  InitialAlpha: 0
 --- !u!1 &454954775
 GameObject:
   m_ObjectHideFlags: 0
@@ -1400,6 +1426,8 @@ GameObject:
   - component: {fileID: 631645192}
   - component: {fileID: 631645194}
   - component: {fileID: 631645193}
+  - component: {fileID: 631645195}
+  - component: {fileID: 631645196}
   m_Layer: 0
   m_Name: CimaCasa1
   m_TagString: Untagged
@@ -1476,6 +1504,44 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 631645191}
   m_Mesh: {fileID: -129155241591397767, guid: 050de33d532c17c419a04c749e31c384, type: 3}
+--- !u!64 &631645195
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 631645191}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 5
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: -129155241591397767, guid: 050de33d532c17c419a04c749e31c384, type: 3}
+--- !u!114 &631645196
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 631645191}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: af957319b4d1c434cb72d3416c4682a7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Renderers: []
+  Position: {x: 0, y: 0, z: 0}
+  Materials: []
+  InitialAlpha: 0
 --- !u!1 &638236027
 GameObject:
   m_ObjectHideFlags: 0
@@ -1741,7 +1807,6 @@ GameObject:
   - component: {fileID: 671606173}
   - component: {fileID: 671606172}
   - component: {fileID: 671606171}
-  - component: {fileID: 671606170}
   m_Layer: 0
   m_Name: BaixoCasa1
   m_TagString: Untagged
@@ -1764,19 +1829,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1594169606}
   m_LocalEulerAnglesHint: {x: -90, y: 0, z: -110.41}
---- !u!114 &671606170
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 671606168}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 82ba4454015b48045992bc9135e60605, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  houseTop: {fileID: 1016428561}
 --- !u!65 &671606171
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -2275,7 +2327,7 @@ Transform:
   m_GameObject: {fileID: 885577533}
   serializedVersion: 2
   m_LocalRotation: {x: 0.25881913, y: 3e-45, z: -1e-45, w: 0.9659258}
-  m_LocalPosition: {x: -40, y: 22.01, z: 42.33975}
+  m_LocalPosition: {x: -38.1, y: 20.300003, z: 45.03975}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -2376,7 +2428,6 @@ GameObject:
   - component: {fileID: 957375604}
   - component: {fileID: 957375603}
   - component: {fileID: 957375602}
-  - component: {fileID: 957375601}
   m_Layer: 0
   m_Name: BaixoCasa1
   m_TagString: Untagged
@@ -2399,19 +2450,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 611905902}
   m_LocalEulerAnglesHint: {x: -90, y: 0, z: -110.41}
---- !u!114 &957375601
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 957375599}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 82ba4454015b48045992bc9135e60605, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  houseTop: {fileID: 631645191}
 --- !u!65 &957375602
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -2640,6 +2678,8 @@ GameObject:
   - component: {fileID: 1016428562}
   - component: {fileID: 1016428564}
   - component: {fileID: 1016428563}
+  - component: {fileID: 1016428565}
+  - component: {fileID: 1016428566}
   m_Layer: 0
   m_Name: CimaCasa1
   m_TagString: Untagged
@@ -2716,6 +2756,44 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1016428561}
   m_Mesh: {fileID: -129155241591397767, guid: 050de33d532c17c419a04c749e31c384, type: 3}
+--- !u!64 &1016428565
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1016428561}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 5
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: -129155241591397767, guid: 050de33d532c17c419a04c749e31c384, type: 3}
+--- !u!114 &1016428566
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1016428561}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: af957319b4d1c434cb72d3416c4682a7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Renderers: []
+  Position: {x: 0, y: 0, z: 0}
+  Materials: []
+  InitialAlpha: 0
 --- !u!1 &1020778961
 GameObject:
   m_ObjectHideFlags: 0
@@ -2727,6 +2805,8 @@ GameObject:
   - component: {fileID: 1020778962}
   - component: {fileID: 1020778964}
   - component: {fileID: 1020778963}
+  - component: {fileID: 1020778965}
+  - component: {fileID: 1020778966}
   m_Layer: 0
   m_Name: Arvore (1)
   m_TagString: Untagged
@@ -2799,6 +2879,44 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1020778961}
   m_Mesh: {fileID: -2123691343515589935, guid: 9008e37f423eb9a4c8732c967dc8522b, type: 3}
+--- !u!64 &1020778965
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1020778961}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 5
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: -2123691343515589935, guid: 9008e37f423eb9a4c8732c967dc8522b, type: 3}
+--- !u!114 &1020778966
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1020778961}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: af957319b4d1c434cb72d3416c4682a7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Renderers: []
+  Position: {x: 0, y: 0, z: 0}
+  Materials: []
+  InitialAlpha: 0
 --- !u!1 &1057535107
 GameObject:
   m_ObjectHideFlags: 0
@@ -2914,6 +3032,8 @@ GameObject:
   - component: {fileID: 1083302480}
   - component: {fileID: 1083302482}
   - component: {fileID: 1083302481}
+  - component: {fileID: 1083302483}
+  - component: {fileID: 1083302484}
   m_Layer: 0
   m_Name: Arvore (2)
   m_TagString: Untagged
@@ -2986,6 +3106,44 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1083302479}
   m_Mesh: {fileID: -2123691343515589935, guid: 9008e37f423eb9a4c8732c967dc8522b, type: 3}
+--- !u!64 &1083302483
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1083302479}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 5
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: -2123691343515589935, guid: 9008e37f423eb9a4c8732c967dc8522b, type: 3}
+--- !u!114 &1083302484
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1083302479}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: af957319b4d1c434cb72d3416c4682a7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Renderers: []
+  Position: {x: 0, y: 0, z: 0}
+  Materials: []
+  InitialAlpha: 0
 --- !u!1 &1161953836
 GameObject:
   m_ObjectHideFlags: 0
@@ -3237,6 +3395,8 @@ GameObject:
   - component: {fileID: 1316569711}
   - component: {fileID: 1316569713}
   - component: {fileID: 1316569712}
+  - component: {fileID: 1316569714}
+  - component: {fileID: 1316569715}
   m_Layer: 0
   m_Name: TorreMenor (1)
   m_TagString: Untagged
@@ -3310,6 +3470,44 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1316569710}
   m_Mesh: {fileID: 7311800384240987793, guid: 9008e37f423eb9a4c8732c967dc8522b, type: 3}
+--- !u!64 &1316569714
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1316569710}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 5
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 7311800384240987793, guid: 9008e37f423eb9a4c8732c967dc8522b, type: 3}
+--- !u!114 &1316569715
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1316569710}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: af957319b4d1c434cb72d3416c4682a7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Renderers: []
+  Position: {x: 0, y: 0, z: 0}
+  Materials: []
+  InitialAlpha: 0
 --- !u!1001 &1346328991
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4212,7 +4410,6 @@ GameObject:
   - component: {fileID: 1604232770}
   - component: {fileID: 1604232769}
   - component: {fileID: 1604232768}
-  - component: {fileID: 1604232767}
   m_Layer: 0
   m_Name: BaixoCasa2
   m_TagString: Untagged
@@ -4235,19 +4432,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1347030836}
   m_LocalEulerAnglesHint: {x: -90, y: 0, z: -155.435}
---- !u!114 &1604232767
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1604232765}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 82ba4454015b48045992bc9135e60605, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  houseTop: {fileID: 430869556}
 --- !u!65 &1604232768
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -4520,7 +4704,10 @@ GameObject:
   m_Component:
   - component: {fileID: 1675624115}
   - component: {fileID: 1675624117}
+  - component: {fileID: 1675624118}
   - component: {fileID: 1675624116}
+  - component: {fileID: 1675624119}
+  - component: {fileID: 1675624120}
   m_Layer: 0
   m_Name: CimaCasa2
   m_TagString: Untagged
@@ -4600,6 +4787,60 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1675624114}
   m_Mesh: {fileID: -3346141338559564478, guid: 050de33d532c17c419a04c749e31c384, type: 3}
+--- !u!114 &1675624118
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1675624114}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: af957319b4d1c434cb72d3416c4682a7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Renderers: []
+  Position: {x: 0, y: 0, z: 0}
+  Materials: []
+  InitialAlpha: 0
+--- !u!64 &1675624119
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1675624114}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 5
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: -3346141338559564478, guid: 050de33d532c17c419a04c749e31c384, type: 3}
+--- !u!114 &1675624120
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1675624114}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: af957319b4d1c434cb72d3416c4682a7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Renderers: []
+  Position: {x: 0, y: 0, z: 0}
+  Materials: []
+  InitialAlpha: 0
 --- !u!1001 &1684827980
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4820,6 +5061,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1719107808}
   - component: {fileID: 1719107807}
+  - component: {fileID: 1719107809}
   m_Layer: 0
   m_Name: Virtual Camera
   m_TagString: Untagged
@@ -4875,13 +5117,35 @@ Transform:
   m_GameObject: {fileID: 1719107806}
   serializedVersion: 2
   m_LocalRotation: {x: 0.25881913, y: 3e-45, z: -1e-45, w: 0.9659258}
-  m_LocalPosition: {x: -40, y: 22.01, z: 42.33975}
+  m_LocalPosition: {x: -38.1, y: 20.300003, z: 45.03975}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1715135738}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 30, y: 0, z: 0}
+--- !u!114 &1719107809
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1719107806}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a13b0f36e502a0a4eb2e3c49cc5a9854, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  LayerMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  Target: {fileID: 1252173707}
+  Camera: {fileID: 885577537}
+  FadedAlpha: 0.33
+  RetainShadows: 1
+  TargetPositionOffset: {x: 0, y: 1, z: 0}
+  FadeSpeed: 1
+  ObjectsBlockingView: []
 --- !u!114 &1806184384 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 8513945664413355386, guid: c11b0df2665bf9b41afd5a429e2b5146,
@@ -5622,6 +5886,8 @@ GameObject:
   - component: {fileID: 4259837246923514351}
   - component: {fileID: 8116029332957953009}
   - component: {fileID: 798392289582171612}
+  - component: {fileID: 8116029332957953010}
+  - component: {fileID: 8116029332957953011}
   m_Layer: 0
   m_Name: CimaCasa1
   m_TagString: Untagged
@@ -5658,6 +5924,7 @@ GameObject:
   - component: {fileID: 8571843063158840327}
   - component: {fileID: 2236424175973237674}
   - component: {fileID: 8777913851334331721}
+  - component: {fileID: 8777913851334331722}
   m_Layer: 0
   m_Name: Arvore
   m_TagString: Untagged
@@ -6014,6 +6281,9 @@ GameObject:
   - component: {fileID: 2114242580540581727}
   - component: {fileID: 5221274291966153072}
   - component: {fileID: 6665689558268230873}
+  - component: {fileID: 6665689558268230874}
+  - component: {fileID: 6665689558268230875}
+  - component: {fileID: 6665689558268230876}
   m_Layer: 0
   m_Name: CimaCasa2
   m_TagString: Untagged
@@ -7610,6 +7880,60 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!114 &6665689558268230874
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2133701885505236133}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: af957319b4d1c434cb72d3416c4682a7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Renderers: []
+  Position: {x: 0, y: 0, z: 0}
+  Materials: []
+  InitialAlpha: 0
+--- !u!64 &6665689558268230875
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2133701885505236133}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 5
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: -3346141338559564478, guid: 050de33d532c17c419a04c749e31c384, type: 3}
+--- !u!114 &6665689558268230876
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2133701885505236133}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: af957319b4d1c434cb72d3416c4682a7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Renderers: []
+  Position: {x: 0, y: 0, z: 0}
+  Materials: []
+  InitialAlpha: 0
 --- !u!1001 &6758077076903931165
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -7709,17 +8033,17 @@ PrefabInstance:
     - target: {fileID: 4485043409896424950, guid: f020d8f38d821274f9011d9ee6cee02a,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -40
+      value: -38.1
       objectReference: {fileID: 0}
     - target: {fileID: 4485043409896424950, guid: f020d8f38d821274f9011d9ee6cee02a,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 17.01
+      value: 15.3
       objectReference: {fileID: 0}
     - target: {fileID: 4485043409896424950, guid: f020d8f38d821274f9011d9ee6cee02a,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 51
+      value: 53.7
       objectReference: {fileID: 0}
     - target: {fileID: 4485043409896424950, guid: f020d8f38d821274f9011d9ee6cee02a,
         type: 3}
@@ -7772,6 +8096,8 @@ GameObject:
   - component: {fileID: 6401209061900307461}
   - component: {fileID: 4996751463342598606}
   - component: {fileID: 2245259671790986993}
+  - component: {fileID: 7044997081612170882}
+  - component: {fileID: 7044997081612170883}
   m_Layer: 0
   m_Name: TorreMenor
   m_TagString: Untagged
@@ -7779,6 +8105,44 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!64 &7044997081612170882
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7044997081612170881}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 5
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 7311800384240987793, guid: 9008e37f423eb9a4c8732c967dc8522b, type: 3}
+--- !u!114 &7044997081612170883
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7044997081612170881}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: af957319b4d1c434cb72d3416c4682a7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Renderers: []
+  Position: {x: 0, y: 0, z: 0}
+  Materials: []
+  InitialAlpha: 0
 --- !u!23 &7059021059846932286
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -8372,7 +8736,6 @@ GameObject:
   - component: {fileID: 8911201473067129581}
   - component: {fileID: 16795273830794671}
   - component: {fileID: 8911201473067129583}
-  - component: {fileID: 8911201473067129582}
   m_Layer: 0
   m_Name: BaixoCasa1
   m_TagString: Untagged
@@ -8392,7 +8755,6 @@ GameObject:
   - component: {fileID: 1631072266299072177}
   - component: {fileID: 7131909674990296028}
   - component: {fileID: 7920815630880202043}
-  - component: {fileID: 7920815630880202042}
   m_Layer: 0
   m_Name: BaixoCasa2
   m_TagString: Untagged
@@ -8400,19 +8762,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &7920815630880202042
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7920815630880202041}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 82ba4454015b48045992bc9135e60605, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  houseTop: {fileID: 2133701885505236133}
 --- !u!65 &7920815630880202043
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -8504,6 +8853,44 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1194624619341540645}
   m_Mesh: {fileID: -129155241591397767, guid: 050de33d532c17c419a04c749e31c384, type: 3}
+--- !u!64 &8116029332957953010
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1194624619341540645}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 5
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: -129155241591397767, guid: 050de33d532c17c419a04c749e31c384, type: 3}
+--- !u!114 &8116029332957953011
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1194624619341540645}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: af957319b4d1c434cb72d3416c4682a7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Renderers: []
+  Position: {x: 0, y: 0, z: 0}
+  Materials: []
+  InitialAlpha: 0
 --- !u!4 &8219195333554795435
 Transform:
   m_ObjectHideFlags: 0
@@ -8798,6 +9185,28 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!64 &8777913851334331722
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1535571456704843123}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 5
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: -2123691343515589935, guid: 9008e37f423eb9a4c8732c967dc8522b, type: 3}
 --- !u!4 &8818596977882532998
 Transform:
   m_ObjectHideFlags: 0
@@ -8821,19 +9230,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7908676540562621182}
   m_Mesh: {fileID: -1523547815608311314, guid: 050de33d532c17c419a04c749e31c384, type: 3}
---- !u!114 &8911201473067129582
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7908676540562621182}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 82ba4454015b48045992bc9135e60605, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  houseTop: {fileID: 1194624619341540645}
 --- !u!65 &8911201473067129583
 BoxCollider:
   m_ObjectHideFlags: 0

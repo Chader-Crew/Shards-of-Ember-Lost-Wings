@@ -7,79 +7,59 @@ using UnityEngine.InputSystem;
 [RequireComponent(typeof(Rigidbody))]
 public class PlayerMovement : MonoBehaviour
 {
-    [SerializeField] [Range(0,1)] private float acceleration;
-    [SerializeField] private float maxSpeed;
-    private Vector3 moveVector;
-    [SerializeField] private Transform model;
-    [SerializeField] private float moveRotationSpeed = 5.0f;
-    private Rigidbody rb;
-    public float inAirTimer;
-    public float leapingVelocity;
-    public float fallingSpeed;
-    public LayerMask groundLayer;
-    public float rayCastHeightOffSet = 0.5f;
-    private bool _movementLocked;
-    public bool isGrounded;
+    public float speed = 7f;
+    public float currentVelocity;
+    public float smoothTime = 0.05f;
+    public float gravity = -9.81f;
+    public float gravityMutiplier = 3.0f;
+    public Vector3 movement;
+    public float velocity;
+    public bool _canMov;
+    CharacterController characterController;
 
-    private void Awake() 
+    void Awake()
     {
-        rb = GetComponent<Rigidbody>();
+        characterController = GetComponent<CharacterController>();
     }
 
-    public void Update(){
-        Falling();
-    }
-    private void FixedUpdate() 
+     void Update()
     {
-        MovementUpdate();
+        Movement();
+        Rotation();
+        Gravity();
     }
 
-    //todos os calculos e atribuicoes de velocidade por frame.
-    private void MovementUpdate()
+    private void Movement()
     {
-        if(_movementLocked){ return; }
-        Vector3 targetVelocity = moveVector * maxSpeed;
-        rb.velocity = Vector3.Lerp(rb.velocity, targetVelocity, acceleration);
-        if (moveVector.magnitude > 0.1f)
+        if(_canMov){return;}
+        characterController.Move(movement * speed * Time.deltaTime);
+    }
+    private void Rotation()
+    {
+        if(movement.magnitude == 0) return;
+        Debug.Log(movement.sqrMagnitude);
+        var targetAngle = Mathf.Atan2(movement.x, movement.z) * Mathf.Rad2Deg;
+        var angle = Mathf.SmoothDampAngle(transform.eulerAngles.y, targetAngle, ref currentVelocity, smoothTime);
+        transform.rotation = Quaternion.Euler(0.0f, angle, 0.0f);
+    }
+
+    private void Gravity()
+    {
+        characterController.Move(velocity * Vector3.up);
+
+        if(characterController.isGrounded && velocity < 0.0f)
         {
-            Quaternion targetRotation = Quaternion.LookRotation(moveVector, Vector3.up);
-            model.rotation = Quaternion.Slerp(model.rotation, targetRotation, moveRotationSpeed * Time.deltaTime);
+            velocity = 0.0f;
+            Debug.Log(characterController.isGrounded);
+        }
+        else
+        {
+            velocity += gravity * gravityMutiplier * Time.deltaTime;
         }
     }
 
-    public void Move(Vector3 vector)
+    public void LockMovement(bool _lockMov)
     {
-        moveVector = vector;
-    }
-
-    public void LockMovement(bool value)
-    {
-        _movementLocked = value;
-        rb.velocity = value? Vector3.zero : rb.velocity;
-    }
-
-    public void Falling(){
-
-        RaycastHit hit;
-        Vector3 rayCastOrigin = transform.position;
-        rayCastOrigin.y = rayCastOrigin.y + rayCastHeightOffSet;
-
-        if(!isGrounded){
-
-            inAirTimer = inAirTimer + Time.deltaTime;
-            rb.AddForce(transform.forward * leapingVelocity);
-            rb.AddForce(-Vector3.up * fallingSpeed * inAirTimer);
-        }
-
-        if(Physics.SphereCast(rayCastOrigin, 0.5f, -Vector3.up, out hit, groundLayer)){
-
-            inAirTimer = 0;
-            isGrounded = true;
-        }
-        else{
-
-            isGrounded = false;
-        }
-
+        _canMov = _lockMov;
     }
 }

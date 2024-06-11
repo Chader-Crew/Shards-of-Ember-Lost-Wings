@@ -8,9 +8,8 @@ using UnityEngine;
 [RequireComponent(typeof(Animator))]
 public class PlayerController : MonoBehaviour
 {
-    private PlayerMovement movement;
+    private PlayerMovement mov;
     private Character character;
-    private CapsuleCollider cc;
     [SerializeField] private InputReader input;
     private Animator animator;
     private AtakaStateBehaviour atakaState;
@@ -18,7 +17,7 @@ public class PlayerController : MonoBehaviour
     private void Awake() 
     {
         //get components
-        movement = GetComponent<PlayerMovement>();
+        mov = GetComponent<PlayerMovement>();
         character = GetComponent<Character>();
         animator = GetComponent<Animator>();
 
@@ -35,26 +34,26 @@ public class PlayerController : MonoBehaviour
     //chamado quando o animator sai do state de ataque para destravar movimento (provavelmente devia ser mudado para |quando entra em idle|)
     private void AttackEnd()
     {
-        movement.LockMovement(false);
+        mov.LockMovement(false);
     }
 
-    private void MoveInput(Vector2 dir)
+    private void MoveInput(Vector2 vector2)
     {
-        if(dir.magnitude == 0)
+        if(vector2.magnitude == 0)
         {
             animator.SetBool("isRunning", false);
         }else
         {
             animator.SetBool("isRunning", true);
         }
-        movement.Move(new Vector3(dir.x, 0, dir.y));
+        mov.movement = new Vector3(vector2.x, 0, vector2.y);
     }
 
     //ativa o ataque no animator e trava o movimento
     private void AttackInput()
     {
         animator.SetBool("ataka", true);
-        movement.LockMovement(true);
+        mov.LockMovement(true);
     }
 
     private void SkillHit(SkillData skill, float damage)
@@ -70,11 +69,11 @@ public class PlayerController : MonoBehaviour
     //ativa stagger e trava o movimento, depois de x segundos desabilita.
     IEnumerator Stagger(float seconds)
     {
-        movement.LockMovement(true);
+        mov.LockMovement(true);
         animator.SetBool("isStaggered", true);
         yield return new WaitForSeconds(seconds);
         
-        movement.LockMovement(false);
+        mov.LockMovement(false);
         animator.SetBool("isStaggered", false);
     }
 
