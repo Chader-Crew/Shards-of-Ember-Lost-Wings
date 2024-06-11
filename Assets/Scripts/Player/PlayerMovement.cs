@@ -50,7 +50,7 @@ public class PlayerMovement : MonoBehaviour
         if(characterController.isGrounded && velocity < 0.0f)
         {
             velocity = 0.0f;
-            Debug.Log(characterController.isGrounded);
+            
         }
         else
         {

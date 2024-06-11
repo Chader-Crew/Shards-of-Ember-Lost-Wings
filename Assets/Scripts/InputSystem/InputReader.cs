@@ -101,7 +101,10 @@ public class InputReader : ScriptableObject, PlayerInput.IPlayerActions, PlayerI
 
     public void OnUseSkill(UnityEngine.InputSystem.InputAction.CallbackContext context)
     {
-        throw new System.NotImplementedException();
+        if(context.performed)
+        {
+            OnSkillUseEvent();
+        }
     }
 
     public void OnPause(UnityEngine.InputSystem.InputAction.CallbackContext context)

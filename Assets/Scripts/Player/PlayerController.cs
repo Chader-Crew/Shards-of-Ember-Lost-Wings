@@ -13,6 +13,7 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private InputReader input;
     private Animator animator;
     private AtakaStateBehaviour atakaState;
+    private SkillBase selectedSkill;
 
     private void Awake() 
     {
@@ -25,6 +26,7 @@ public class PlayerController : MonoBehaviour
         input.OnMoveEvent += MoveInput;
         input.OnAttackEvent += AttackInput;
         character.OnGotHitEvent += SkillHit;
+        input.OnSkillUseEvent += Cast;
         character.OnDiedEvent += Die;
 
         atakaState = animator.GetBehaviour<AtakaStateBehaviour>();
@@ -56,6 +58,7 @@ public class PlayerController : MonoBehaviour
         mov.LockMovement(true);
     }
 
+
     private void SkillHit(SkillData skill, float damage)
     {
         StartCoroutine(Stagger(skill.stagger));
@@ -75,6 +78,15 @@ public class PlayerController : MonoBehaviour
         
         mov.LockMovement(false);
         animator.SetBool("isStaggered", false);
+    }
+    private void Cast()
+    {
+        selectedSkill= this.gameObject.GetComponent<SelectedSkill>().skill;
+        SkillData data = new SkillData();
+        data.owner = character;
+        selectedSkill.Activate(data);
+
+
     }
 
 
