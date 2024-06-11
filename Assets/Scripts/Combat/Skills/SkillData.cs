@@ -10,5 +10,9 @@ public class SkillData
     public float stagger;
     public List<Character> targets;     //lista de alvos
 
-    
+    public SkillData Damage(float damage)
+    {
+        this.damage = damage;
+        return this;
+    }
 }

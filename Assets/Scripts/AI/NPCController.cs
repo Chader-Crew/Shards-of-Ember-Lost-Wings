@@ -1,74 +1,101 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.AI;
 
-[RequireComponent(typeof(PlayerMovement))]
+[RequireComponent(typeof(NavMeshAgent))]
 [RequireComponent(typeof(Animator))]
+[RequireComponent(typeof(Character))]
+[RequireComponent(typeof(AIStateMachine))]
 public class NPCController : MonoBehaviour
 {
-    private PlayerMovement movement;
-    private Animator animator;
-    private AtakaStateBehaviour atakaState;
-    private Character character;
+    [SerializeField] public NavMeshAgent navAgent;
+    [SerializeField] public Animator animator;
+    [SerializeField] private Character character;
+    [SerializeField] private AIStateMachine stateMachine;
 
-    private void Awake() 
+    //deteccao de personagem pra aggro
+    [Space(15)]
+    [HideInInspector] public Character aggroTarget;
+    [SerializeField] public bool _doCharDetection;
+    [SerializeField] private AIStateBase charDetectedState;
+    [SerializeField] private float charDetectionRadius;
+    [SerializeField] private string aggroTargetTag;
+
+    private void Awake()
     {
-        //get components
-        movement = GetComponent<PlayerMovement>();
-        animator = GetComponent<Animator>();
-        character = GetComponent<Character>();
-
-        //inscricao em eventos e atribuicao de actions
-        atakaState = animator.GetBehaviour<AtakaStateBehaviour>();
-        atakaState.AttackEndAction = AttackEnd;
-        character.OnDiedEvent += EnemyDie;
+        navAgent = GetComponent<NavMeshAgent>();
     }
 
-    //chamado quando o animator sai do state de ataque para destravar movimento (provavelmente devia ser mudado para |quando entra em idle|)
-    private void AttackEnd()
+    private void Update()
     {
-        movement.LockMovement(false);
+
     }
 
-    public void MoveInput(Vector2 dir)
+    private void FixedUpdate()
     {
-        if(dir.magnitude == 0)
+        if(aggroTarget == null)
         {
-            animator.SetBool("isRunning", false);
-        }else
-        {
-            animator.SetBool("isRunning", true);
+            DetectCharacters();
         }
-        movement.Move(new Vector3(dir.x, 0, dir.y));
     }
 
-    //ativa o ataque no animator e trava o movimento
-    public void AttackInput()
+    private void DetectCharacters()
     {
-        animator.SetBool("ataka", true);
-        movement.LockMovement(true);
-    }
-
-    //morte do inimigo
-    public void EnemyDie(){
-        Destroy(gameObject);
-    }
-
-
-    //ativa stagger e trava o movimento, depois de x segundos desabilita.
-    public void Stagger(float seconds)
-    {
-        StartCoroutine("Stagger", seconds);
-
-        IEnumerator timer(float seconds)
+        Collider[] colliders = Physics.OverlapSphere(transform.position, charDetectionRadius);
+        foreach(Collider collider in colliders)
         {
-            movement.LockMovement(true);
-            animator.SetBool("isStaggered", true);
+            if(collider.CompareTag(aggroTargetTag))
+            {
+                Character otherChar = collider.GetComponent<Character>();
+                aggroTarget = otherChar;
 
-            yield return new WaitForSeconds(seconds);
-            
-            movement.LockMovement(false);
-            animator.SetBool("isStaggered", false);
+                if(charDetectedState != null)
+                {
+                    stateMachine.EnterState(charDetectedState);
+                }else{
+                    stateMachine.EnterState(AIStateBase.AIStateType.CHASING);
+                }
+                break;
+            }
         }
+    }
+
+    public void SetDestination(Vector3 targetPos)
+    {
+        navAgent.SetDestination(targetPos);
+    }
+
+    private void ResetAttack()
+    {
+        if(aggroTarget != null)
+        {
+            if(charDetectedState != null)
+            {
+                    stateMachine.EnterState(charDetectedState);
+                }else{
+                    stateMachine.EnterState(AIStateBase.AIStateType.CHASING);
+            }
+        }else{
+            stateMachine.EnterState(AIStateBase.AIStateType.IDLE);
+        }
+
+        stateMachine.ChooseAttack();
+    }
+
+    public float DistanceToTarget()
+    {
+        return Vector3.Distance(transform.position, aggroTarget.transform.position);
+    }
+    private void OnDrawGizmosSelected()
+    {
+        Gizmos.color = Color.yellow;
+        Gizmos.DrawWireSphere(transform.position, charDetectionRadius);
+    }
+
+    internal void FleeFrom(Vector3 targetPos)
+    {
+        navAgent.SetDestination(transform.position - targetPos);
     }
 }
