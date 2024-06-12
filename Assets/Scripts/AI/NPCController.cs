@@ -26,6 +26,18 @@ public class NPCController : MonoBehaviour
     private void Awake()
     {
         navAgent = GetComponent<NavMeshAgent>();
+
+        character.OnDiedEvent += Die;
+    }
+
+    private void Die()
+    {
+        animator.Play("Die");
+    }
+
+    private void RemoveBody()
+    {
+        Destroy(gameObject);
     }
 
     private void Update()

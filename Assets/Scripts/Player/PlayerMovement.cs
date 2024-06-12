@@ -37,7 +37,6 @@ public class PlayerMovement : MonoBehaviour
     private void Rotation()
     {
         if(movement.magnitude == 0) return;
-        Debug.Log(movement.sqrMagnitude);
         var targetAngle = Mathf.Atan2(movement.x, movement.z) * Mathf.Rad2Deg;
         var angle = Mathf.SmoothDampAngle(transform.eulerAngles.y, targetAngle, ref currentVelocity, smoothTime);
         transform.rotation = Quaternion.Euler(0.0f, angle, 0.0f);
@@ -50,7 +49,7 @@ public class PlayerMovement : MonoBehaviour
         if(characterController.isGrounded && velocity < 0.0f)
         {
             velocity = 0.0f;
-            Debug.Log(characterController.isGrounded);
+            
         }
         else
         {

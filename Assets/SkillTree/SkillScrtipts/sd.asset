@@ -9,13 +9,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8a870cd8e0c6f934c974f0964222812a, type: 3}
-  m_Name: ZombieAttack
+  m_Script: {fileID: 11500000, guid: 259d75a6f3ee75448bd2869a20774e6d, type: 3}
+  m_Name: sd
   m_EditorClassIdentifier: 
-  animationStateName: Claw Attack
-  attackRange: 10
-  avoidRange: 6
-  cycleTimer: 100
-  adjustRotSpeed: 2
-  adjustRotDuration: 3
-  _stopMoving: 1
+  bola: {fileID: 2812856055069624381, guid: 8861b439d291c3b4e9eada2834a25982, type: 3}
