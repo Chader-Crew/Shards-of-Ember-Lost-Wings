@@ -98,6 +98,15 @@ public partial class @PlayerInput: IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""ItemInteract"",
+                    ""type"": ""Button"",
+                    ""id"": ""8296ae04-891c-4b04-b940-7fa7f057de6d"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
@@ -408,6 +417,17 @@ public partial class @PlayerInput: IInputActionCollection2, IDisposable
                     ""action"": ""InventoryInteract"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""35ee3b09-c9a3-4296-9432-30a7d0f661f5"",
+                    ""path"": ""<Keyboard>/f"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""ItemInteract"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         },
@@ -549,6 +569,7 @@ public partial class @PlayerInput: IInputActionCollection2, IDisposable
         m_Player_InventoryInteract = m_Player.FindAction("InventoryInteract", throwIfNotFound: true);
         m_Player_SkillChange = m_Player.FindAction("SkillChange", throwIfNotFound: true);
         m_Player_UseSkill = m_Player.FindAction("UseSkill", throwIfNotFound: true);
+        m_Player_ItemInteract = m_Player.FindAction("ItemInteract", throwIfNotFound: true);
         // UI
         m_UI = asset.FindActionMap("UI", throwIfNotFound: true);
         m_UI_Menu = m_UI.FindAction("Menu", throwIfNotFound: true);
@@ -622,6 +643,7 @@ public partial class @PlayerInput: IInputActionCollection2, IDisposable
     private readonly InputAction m_Player_InventoryInteract;
     private readonly InputAction m_Player_SkillChange;
     private readonly InputAction m_Player_UseSkill;
+    private readonly InputAction m_Player_ItemInteract;
     public struct PlayerActions
     {
         private @PlayerInput m_Wrapper;
@@ -634,6 +656,7 @@ public partial class @PlayerInput: IInputActionCollection2, IDisposable
         public InputAction @InventoryInteract => m_Wrapper.m_Player_InventoryInteract;
         public InputAction @SkillChange => m_Wrapper.m_Player_SkillChange;
         public InputAction @UseSkill => m_Wrapper.m_Player_UseSkill;
+        public InputAction @ItemInteract => m_Wrapper.m_Player_ItemInteract;
         public InputActionMap Get() { return m_Wrapper.m_Player; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -667,6 +690,9 @@ public partial class @PlayerInput: IInputActionCollection2, IDisposable
             @UseSkill.started += instance.OnUseSkill;
             @UseSkill.performed += instance.OnUseSkill;
             @UseSkill.canceled += instance.OnUseSkill;
+            @ItemInteract.started += instance.OnItemInteract;
+            @ItemInteract.performed += instance.OnItemInteract;
+            @ItemInteract.canceled += instance.OnItemInteract;
         }
 
         private void UnregisterCallbacks(IPlayerActions instance)
@@ -695,6 +721,9 @@ public partial class @PlayerInput: IInputActionCollection2, IDisposable
             @UseSkill.started -= instance.OnUseSkill;
             @UseSkill.performed -= instance.OnUseSkill;
             @UseSkill.canceled -= instance.OnUseSkill;
+            @ItemInteract.started -= instance.OnItemInteract;
+            @ItemInteract.performed -= instance.OnItemInteract;
+            @ItemInteract.canceled -= instance.OnItemInteract;
         }
 
         public void RemoveCallbacks(IPlayerActions instance)
@@ -776,6 +805,7 @@ public partial class @PlayerInput: IInputActionCollection2, IDisposable
         void OnInventoryInteract(InputAction.CallbackContext context);
         void OnSkillChange(InputAction.CallbackContext context);
         void OnUseSkill(InputAction.CallbackContext context);
+        void OnItemInteract(InputAction.CallbackContext context);
     }
     public interface IUIActions
     {

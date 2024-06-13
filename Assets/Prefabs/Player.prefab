@@ -107,6 +107,10 @@ MonoBehaviour:
       m_Calls: []
     m_ActionId: c97542aa-d67c-410c-82a8-2a331882462d
     m_ActionName: UI/Nav[/Keyboard/upArrow,/Keyboard/downArrow,/Keyboard/leftArrow,/Keyboard/rightArrow]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 8296ae04-891c-4b04-b940-7fa7f057de6d
+    m_ActionName: Player/ItemInteract[/Keyboard/f]
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
   m_DefaultActionMap: Player
@@ -280,7 +284,7 @@ GameObject:
   - component: {fileID: 8405477880963603764}
   - component: {fileID: 8063228765251332076}
   - component: {fileID: 1290367107894752696}
-  - component: {fileID: 1904893440880027099}
+  - component: {fileID: 9014085558669815485}
   m_Layer: 0
   m_Name: InterectableCollider
   m_TagString: Untagged
@@ -351,7 +355,7 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 94
   m_CollisionDetection: 0
---- !u!114 &1904893440880027099
+--- !u!114 &9014085558669815485
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -360,10 +364,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 6625181408386316080}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 49637ed6424e41349a013fcedf769301, type: 3}
+  m_Script: {fileID: 11500000, guid: 2e0218afa3f2cf24a9fe0c6fde2bc8d8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   inventoryManager: {fileID: 0}
+  input: {fileID: 11400000, guid: bdef362854adb524f97a969cb260ed82, type: 2}
 --- !u!1001 &1461734881691474250
 PrefabInstance:
   m_ObjectHideFlags: 0

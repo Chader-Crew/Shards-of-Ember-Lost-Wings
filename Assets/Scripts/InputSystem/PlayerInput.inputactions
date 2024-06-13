@@ -76,6 +76,15 @@
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": false
+                },
+                {
+                    "name": "ItemInteract",
+                    "type": "Button",
+                    "id": "8296ae04-891c-4b04-b940-7fa7f057de6d",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
                 }
             ],
             "bindings": [
@@ -386,6 +395,17 @@
                     "action": "InventoryInteract",
                     "isComposite": false,
                     "isPartOfComposite": true
+                },
+                {
+                    "name": "",
+                    "id": "35ee3b09-c9a3-4296-9432-30a7d0f661f5",
+                    "path": "<Keyboard>/f",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "ItemInteract",
+                    "isComposite": false,
+                    "isPartOfComposite": false
                 }
             ]
         },
