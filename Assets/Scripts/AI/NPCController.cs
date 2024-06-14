@@ -33,6 +33,10 @@ public class NPCController : MonoBehaviour
     private void Die()
     {
         animator.Play("Die");
+        this.enabled = false;
+        character.enabled = false;
+        navAgent.enabled = false;
+        stateMachine.enabled = false;
     }
 
     private void RemoveBody()

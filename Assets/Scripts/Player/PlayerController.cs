@@ -21,6 +21,10 @@ public class PlayerController : MonoBehaviour
         mov = GetComponent<PlayerMovement>();
         character = GetComponent<Character>();
         animator = GetComponent<Animator>();
+        atakaState = animator.GetBehaviour<AtakaStateBehaviour>();
+
+        //restart da input
+        input.Initialize();
 
         //inscricao em eventos e atribuicao de actions
         input.OnMoveEvent += MoveInput;
@@ -28,8 +32,8 @@ public class PlayerController : MonoBehaviour
         character.OnGotHitEvent += SkillHit;
         input.OnSkillUseEvent += Cast;
         character.OnDiedEvent += Die;
+        character.OnDiedEvent += FindObjectOfType<DeathScreenBehaviour>().OnPlayerDeath;
 
-        atakaState = animator.GetBehaviour<AtakaStateBehaviour>();
         atakaState.AttackEndAction = AttackEnd;
     }
 
@@ -67,6 +71,8 @@ public class PlayerController : MonoBehaviour
     private void Die(){
         animator.SetTrigger("Die");
         character.enabled = false;
+        character._invul = true;
+        input.SetUI();
     }
 
     //ativa stagger e trava o movimento, depois de x segundos desabilita.

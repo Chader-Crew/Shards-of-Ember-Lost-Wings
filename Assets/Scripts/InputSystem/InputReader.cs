@@ -22,8 +22,9 @@ public class InputReader : ScriptableObject, PlayerInput.IPlayerActions, PlayerI
 
 
     //inicializacao
-    private void OnEnable()
+    public void Initialize()
     {
+        ClearEvents();
         if(playerInput == null)
         {
             playerInput = new PlayerInput();
@@ -33,6 +34,19 @@ public class InputReader : ScriptableObject, PlayerInput.IPlayerActions, PlayerI
         }
 
         SetGameplay();
+    }
+
+    private void ClearEvents()
+    {
+        OnMoveEvent = (v)=>{};
+        OnDashEvent = ()=>{};
+        OnAttackEvent = ()=>{};
+        OnDragonStateEvent = (x)=>{};
+        OnSkillChangeEvent = (v)=>{};
+        OnSkillUseEvent = ()=>{};
+        OnPauseEvent = ()=>{};
+        OnItemInteractEvent = ()=>{};
+        OnInventoryInteractEvent = (x)=>{};
     }
 
     //troca de action map
