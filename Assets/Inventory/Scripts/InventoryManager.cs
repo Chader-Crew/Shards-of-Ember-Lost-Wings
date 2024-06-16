@@ -1,6 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
+using UnityEngine.UI;
 
 public class InventoryManager : MonoBehaviour
 {
@@ -10,6 +12,12 @@ public class InventoryManager : MonoBehaviour
     public GameObject inventoryItemPrefab;
     public GameObject mainInventoryPanel;
     [SerializeField] private InputReader input;
+    
+    [Header("Panel de item coletado")]
+    public TMP_Text itemTextObj;
+    [SerializeField] private Image imageObj;
+    public GameObject itemCollected;
+
 
     private void Awake(){
         input.OnInventoryInteractEvent += UseItemFromSlot;
@@ -25,6 +33,7 @@ public class InventoryManager : MonoBehaviour
             if(itemInSlot != null && itemInSlot.item == item){
                 itemInSlot.count++;
                 itemInSlot.UpdateCount();
+                ShowCollected(item);
                 return true;
             }
         }
@@ -35,6 +44,7 @@ public class InventoryManager : MonoBehaviour
             InventoryItem itemInSlot = slot.GetComponentInChildren<InventoryItem>();
             if(itemInSlot == null){
                 SpawnNewItem(item, slot);
+                ShowCollected(item);
                 return true;
             }
         }
@@ -77,6 +87,19 @@ public class InventoryManager : MonoBehaviour
         }else{
             mainInventoryPanel.SetActive(true);
         }
+    }
+
+    public void ShowCollected(Item item){
+        itemCollected.SetActive(true);
+        itemTextObj.text = item.itemName + " coletado";
+        imageObj.sprite = item.image;
+
+        StartCoroutine("DesactiveCollected");
+    }
+
+    IEnumerator DesactiveCollected(){
+        yield return new WaitForSeconds(2);
+        itemCollected.SetActive(false);
     }
 
     /*//definir o botao pra usar cada item e chamar essa funcao nele
