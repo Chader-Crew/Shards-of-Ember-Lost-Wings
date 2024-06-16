@@ -1,0 +1,20 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7670cbf4186899f4a8c1ad59240b51ea, type: 3}
+  m_Name: RaioTree
+  m_EditorClassIdentifier: 
+  skills: []
+  stateIMG: {fileID: 21300000, guid: dee0aba2f1467b44eb2236f3d86b6629, type: 3}
+  prev: {fileID: 11400000, guid: ea4c87e26a527534da7bc8acfb0a130e, type: 2}
+  next: {fileID: 11400000, guid: 16df847f65d884a41bc8eac587e4b7ae, type: 2}
+  activeSkill: {fileID: 0}
+  nameState: Raio

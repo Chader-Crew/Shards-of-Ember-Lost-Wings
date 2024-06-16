@@ -108,7 +108,10 @@ public class InputReader : ScriptableObject, PlayerInput.IPlayerActions, PlayerI
 
     public void OnDragonStateGamepad(UnityEngine.InputSystem.InputAction.CallbackContext context)
     {
-        throw new System.NotImplementedException();
+        if (context.performed)
+        {
+            OnDragonStateEvent((int)context.ReadValue<float>());
+        }
     }
 
     public void OnDragonStateKeyboard(UnityEngine.InputSystem.InputAction.CallbackContext context)

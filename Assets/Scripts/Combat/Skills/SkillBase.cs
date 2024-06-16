@@ -10,4 +10,5 @@ public abstract class SkillBase : ScriptableObject
     #region Activation Methods
     public abstract void Activate(SkillData context);
     #endregion
+    public abstract void Comprado(CharStats player);
 }

@@ -35,4 +35,9 @@ public class DamageTargetSkill : SkillBase
             target.GetHit(context);
         }
     }
+
+    public override void Comprado(CharStats player)
+    {
+        
+    }
 }

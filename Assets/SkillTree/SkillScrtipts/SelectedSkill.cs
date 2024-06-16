@@ -5,4 +5,5 @@ using UnityEngine;
 public class SelectedSkill : MonoBehaviour
 {
     public SkillBase skill;
+
 }
