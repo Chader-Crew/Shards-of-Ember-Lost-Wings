@@ -6,10 +6,10 @@ using UnityEngine;
 //classe controladora do player, qualquer comunicacao entre componentes deve passar por aqui.
 [RequireComponent(typeof(PlayerMovement))]
 [RequireComponent(typeof(Animator))]
-public class PlayerController : MonoBehaviour
+public class PlayerController : Singleton<PlayerController>
 {
     private PlayerMovement mov;
-    private Character character;
+    public Character character;
     [SerializeField] private InputReader input;
     private Animator animator;
     private AtakaStateBehaviour atakaState;
@@ -91,9 +91,5 @@ public class PlayerController : MonoBehaviour
         SkillData data = new SkillData();
         data.owner = character;
         selectedSkill.Activate(data);
-
-
     }
-
-
 }

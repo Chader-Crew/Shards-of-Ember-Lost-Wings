@@ -9,8 +9,7 @@ public class HealthPotion : UsableItem
 
     public override void Use()
     {
-        //colocar no player instance ou game manager a funcao de aumentar vida, aumentar dano e etc
-        //ainda vou fazer tudo relaxa
+        PlayerController.Instance.character.restoreLife(healthRestoreAmount);
         Debug.Log("vida restaurada: " + healthRestoreAmount);
     }
 }

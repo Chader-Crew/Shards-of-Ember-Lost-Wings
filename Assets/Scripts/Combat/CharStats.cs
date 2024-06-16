@@ -8,4 +8,5 @@ public class CharStats : MonoBehaviour
 {
     public float hp;
     public int atk, def, spd, maxHp;
+
 }
