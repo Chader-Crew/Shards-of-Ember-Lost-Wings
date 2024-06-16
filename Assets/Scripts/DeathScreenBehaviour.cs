@@ -12,5 +12,11 @@ public class DeathScreenBehaviour : MonoBehaviour
     public void OnPlayerDeath()
     {
         screen.SetActive(true);
+        StartCoroutine("timeZero");
+    }
+
+    IEnumerator timeZero(){
+        yield return new WaitForSeconds(3);
+        Time.timeScale = 0;
     }
 }

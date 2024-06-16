@@ -71,4 +71,19 @@ public class Character : MonoBehaviour, IDamageable
         
     }
     #endregion
+
+    public void restoreLife(float value){
+        stats.hp += value;
+    }
+
+    public void activeBuff(int amount){
+        StartCoroutine(buffPotion(amount));
+    }
+
+    IEnumerator buffPotion(int _amount){
+        stats.atk += _amount;
+        yield return new WaitForSeconds(6);
+        stats.atk -= _amount;
+    }
+
 }

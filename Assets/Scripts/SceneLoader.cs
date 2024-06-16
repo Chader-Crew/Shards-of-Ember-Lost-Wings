@@ -9,5 +9,6 @@ public class SceneLoader : MonoBehaviour
     public void LoadScene()
     {
         SceneManager.LoadScene(sceneName);
+        Time.timeScale = 1; //toda cena que loadar o time scale volta pra 1
     }
 }

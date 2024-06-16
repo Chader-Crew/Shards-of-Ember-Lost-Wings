@@ -51,32 +51,22 @@ public class InventoryManager : MonoBehaviour
         AdjustItemRotation(inventoryItem, slot);
     }
 
-    public void UseItemFromSlot(int slotIndex)
-    {
-        if (slotIndex >= 0 && slotIndex < inventorySlots.Length)
-        {
+    public void UseItemFromSlot(int slotIndex){
+        if (slotIndex >= 0 && slotIndex < inventorySlots.Length){
             InventorySlot slot = inventorySlots[slotIndex];
             InventoryItem itemInSlot = slot.GetComponentInChildren<InventoryItem>();
             Debug.Log("Usou item " + slotIndex);
-            if (itemInSlot != null)
-            {
+            if (itemInSlot != null){
                 // Chama o método de uso do item
                 itemInSlot.UseItem();
             }
         }
     }
 
-    void AdjustItemRotation(InventoryItem inventoryItem, InventorySlot slot)
-    {
-        // Ajuste a rotação conforme necessário. Aqui estamos assumindo que slots de toolbar e inventário são diferenciados por tags ou outro identificador.
-        if (slot.CompareTag("MainInventorySlot"))
-        {
-            // Ajusta a rotação para a toolbar
+    void AdjustItemRotation(InventoryItem inventoryItem, InventorySlot slot){
+        if (slot.CompareTag("MainInventorySlot")){
             inventoryItem.transform.rotation = Quaternion.Euler(0, 0, 0);
-        }
-        else
-        {
-            // Reseta a rotação para o inventário normal
+        }else{
             inventoryItem.transform.rotation = Quaternion.identity;
         }
     }
