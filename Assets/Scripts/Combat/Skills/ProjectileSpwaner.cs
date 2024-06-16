@@ -18,4 +18,9 @@ public class ProjectileSpwaner : SkillBase
             projetil.skillDT=context;
         }
     }
+
+    public override void Comprado(CharStats player)
+    {
+        
+    }
 }

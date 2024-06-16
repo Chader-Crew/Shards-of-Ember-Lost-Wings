@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 //classe controladora do player, qualquer comunicacao entre componentes deve passar por aqui.
 [RequireComponent(typeof(PlayerMovement))]
@@ -10,13 +11,16 @@ public class PlayerController : Singleton<PlayerController>
 {
     private PlayerMovement mov;
     public Character character;
+    [SerializeField]private SkillTreeHolder state;
     [SerializeField] private InputReader input;
     private Animator animator;
+    [SerializeField] Image stateIMG;
     private AtakaStateBehaviour atakaState;
     private SkillBase selectedSkill;
 
     private void Awake() 
     {
+        stateIMG.sprite = state.stateIMG;
         //get components
         mov = GetComponent<PlayerMovement>();
         character = GetComponent<Character>();
@@ -31,6 +35,7 @@ public class PlayerController : Singleton<PlayerController>
         input.OnAttackEvent += AttackInput;
         character.OnGotHitEvent += SkillHit;
         input.OnSkillUseEvent += Cast;
+        input.OnDragonStateEvent += ChangeState;
         character.OnDiedEvent += Die;
         character.OnDiedEvent += FindObjectOfType<DeathScreenBehaviour>().OnPlayerDeath;
 
@@ -90,6 +95,25 @@ public class PlayerController : Singleton<PlayerController>
         selectedSkill= this.gameObject.GetComponent<SelectedSkill>().skill;
         SkillData data = new SkillData();
         data.owner = character;
+        selectedSkill=state.activeSkill;
         selectedSkill.Activate(data);
     }
+    private void ChangeState(int i)
+    {
+        if(i==(-1))
+        {
+            state=state.prev;
+            state.Enter();
+            stateIMG.sprite = state.stateIMG;
+        }
+        else if(i==(1))
+        {
+            state=state.next;
+            state.Enter();
+            stateIMG.sprite = state.stateIMG;
+
+        }
+    }
+
+
 }

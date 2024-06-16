@@ -15,4 +15,9 @@ public class CompoundSkill : SkillBase
             skill.Activate(nextContext);
         }
     }
+
+    public override void Comprado(CharStats player)
+    {
+        
+    }
 }
