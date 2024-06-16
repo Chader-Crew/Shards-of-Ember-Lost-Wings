@@ -10,6 +10,6 @@ public class BuffPotion : UsableItem
     public override void Use()
     {
         PlayerController.Instance.character.activeBuff(damageBuffAmount);
-        Debug.Log("mais " + damageBuffAmount + " de dano");
+        //Debug.Log("mais " + damageBuffAmount + " de dano");
     }
 }
