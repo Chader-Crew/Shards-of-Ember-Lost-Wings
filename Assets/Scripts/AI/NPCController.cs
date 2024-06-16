@@ -112,6 +112,6 @@ public class NPCController : MonoBehaviour
 
     internal void FleeFrom(Vector3 targetPos)
     {
-        navAgent.SetDestination(transform.position - targetPos);
+        navAgent.SetDestination(transform.position - (transform.position - targetPos));
     }
 }
