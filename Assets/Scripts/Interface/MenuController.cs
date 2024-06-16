@@ -6,12 +6,7 @@ using UnityEngine;
 public class MenuController : MonoBehaviour
 {
     public GameObject panelSettings;
-
-    public void PlayGame()
-    {
-        SceneManager.LoadScene("GameMain");
-    }
-
+    
     public void OpenSettings()
     {
         if(panelSettings.activeSelf)
