@@ -6,7 +6,8 @@ using UnityEngine;
 public class MenuController : MonoBehaviour
 {
     public GameObject panelSettings;
-    
+    public GameObject panelCredits;
+
     public void OpenSettings()
     {
         if(panelSettings.activeSelf)
@@ -16,6 +17,18 @@ public class MenuController : MonoBehaviour
         else
         {
             panelSettings.SetActive(true);
+        }
+    }
+
+    public void OpenCredits()
+    {
+          if(panelCredits.activeSelf)
+        {
+            panelCredits.SetActive(false);
+        }
+        else
+        {
+            panelCredits.SetActive(true);
         }
     }
     
