@@ -45,7 +45,7 @@ public class InputReader : ScriptableObject, PlayerInput.IPlayerActions, PlayerI
         OnSkillChangeEvent = (v)=>{};
         OnSkillUseEvent = ()=>{};
         OnPauseEvent = ()=>{};
-        OnItemInteractEvent = ()=>{};
+        //OnItemInteractEvent = ()=>{};
         OnInventoryInteractEvent = (x)=>{};
     }
 

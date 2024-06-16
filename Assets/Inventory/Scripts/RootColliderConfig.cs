@@ -16,7 +16,7 @@ public class RootColliderConfig : MonoBehaviour
         input.OnItemInteractEvent -= HandleItemInteract;
     }
 
-    void OnTriggerStay(Collider other){
+    void OnTriggerEnter(Collider other){
         var item = other.GetComponent<GroundItem>();
         if(item){
             currentItem = item;
