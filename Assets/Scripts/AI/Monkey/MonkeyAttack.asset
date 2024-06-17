@@ -13,9 +13,9 @@ MonoBehaviour:
   m_Name: MonkeyAttack
   m_EditorClassIdentifier: 
   animationStateName: MeleeAttack
-  attackRange: 0
-  avoidRange: 0
-  cycleTimer: 0
-  adjustRotSpeed: 0
-  adjustRotDuration: 0
-  _stopMoving: 0
+  attackRange: 2.5
+  avoidRange: 1.5
+  cycleTimer: 10
+  adjustRotSpeed: 5
+  adjustRotDuration: 0.5
+  _stopMoving: 1

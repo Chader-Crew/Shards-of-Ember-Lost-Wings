@@ -136,10 +136,10 @@ NavMeshAgent:
   m_Enabled: 1
   m_AgentTypeID: 0
   m_Radius: 0.5
-  m_Speed: 3.5
+  m_Speed: 5
   m_Acceleration: 8
   avoidancePriority: 50
-  m_AngularSpeed: 120
+  m_AngularSpeed: 300
   m_StoppingDistance: 0
   m_AutoTraverseOffMeshLink: 1
   m_AutoBraking: 1
@@ -206,7 +206,7 @@ MonoBehaviour:
   atk: 3
   def: 0
   spd: 0
-  maxHp: 0
+  maxHp: 15
 --- !u!114 &8335379430622440880
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -245,10 +245,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: fe7faa9482881864195d43f2c74b98ac, type: 2}
   cycleAttackTimer: 0
   timeInState: 0
-  waypoints:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
+  waypoints: []
   waypointIndex: 0
 --- !u!114 &3136884784955652219
 MonoBehaviour:

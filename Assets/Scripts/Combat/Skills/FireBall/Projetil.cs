@@ -19,11 +19,11 @@ public class Projetil : MonoBehaviour
     }
     void OnCollisionEnter(Collision other)
     {
-        if(other.gameObject.tag==targetTag)
+        if(other.gameObject.CompareTag(targetTag))
         {
-            skillDT.targets.Add(other.gameObject.GetComponent<Character>());
+            skillDT.Target(other.gameObject.GetComponent<Character>());
             skill.Activate(skillDT);
-            Destroy(gameObject);
         }
+        Destroy(gameObject);
     }
 }

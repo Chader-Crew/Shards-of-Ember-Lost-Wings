@@ -14,8 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   animationStateName: RangedAttack
   attackRange: 8
-  avoidRange: 0
-  cycleTimer: 0
-  adjustRotSpeed: 0
-  adjustRotDuration: 0
-  _stopMoving: 0
+  avoidRange: 6
+  cycleTimer: 10
+  adjustRotSpeed: 7
+  adjustRotDuration: 0.8
+  _stopMoving: 1

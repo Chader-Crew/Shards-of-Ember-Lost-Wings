@@ -66,7 +66,7 @@ public class Character : MonoBehaviour, IDamageable
         }*/
         stats.hp -= totalDamage;
         Debug.Log($"levou {totalDamage} de dano");
-        OnGotHitEvent(data, totalDamage);
+        //nGotHitEvent(data, totalDamage);
 
         if(stats.hp <= 0) { Die(); }
 
