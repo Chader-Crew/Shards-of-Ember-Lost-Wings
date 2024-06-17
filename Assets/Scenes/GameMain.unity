@@ -416,10 +416,10 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Buff coletado
+  m_text: espinho coletado
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 0}
+  m_sharedMaterial: {fileID: 0}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -9241,11 +9241,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Bomba
       objectReference: {fileID: 0}
-    - target: {fileID: 4087384156722273480, guid: 5ededcd4a1fb90242a6dca5c73b04ab2,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -9950,17 +9945,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 7860060996853458313, guid: f020d8f38d821274f9011d9ee6cee02a,
-        type: 3}
-      propertyPath: state
-      value: 
-      objectReference: {fileID: 11400000, guid: ea4c87e26a527534da7bc8acfb0a130e,
-        type: 2}
-    - target: {fileID: 7860060996853458313, guid: f020d8f38d821274f9011d9ee6cee02a,
-        type: 3}
-      propertyPath: stateIMG
-      value: 
-      objectReference: {fileID: 1449354314}
     - target: {fileID: 9014085558669815485, guid: f020d8f38d821274f9011d9ee6cee02a,
         type: 3}
       propertyPath: inventoryManager
