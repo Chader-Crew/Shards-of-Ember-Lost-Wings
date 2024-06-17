@@ -6,7 +6,8 @@ public class RootColliderConfig : MonoBehaviour
 {
     public InventoryManager inventoryManager;
     [SerializeField] private InputReader input;
-    private GroundItem currentItem;
+    public GroundItem currentItem;
+    private ItemFeedback itemFeedback;
 
     private void Awake(){
         input.OnItemInteractEvent += HandleItemInteract;
@@ -37,6 +38,7 @@ public class RootColliderConfig : MonoBehaviour
             // animacao
             bool result = inventoryManager.AddItem(currentItem.item);
             if(result){
+                //itemFeedback.DisplayItem(currentItem.item);
                 Destroy(currentItem.gameObject);
                 currentItem.buttonCanva.SetActive(false);
             }
