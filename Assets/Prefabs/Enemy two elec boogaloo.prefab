@@ -1017,6 +1017,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 89761b62944c223429934601dca073f8, type: 2}
   - {fileID: 11400000, guid: 8eccac19b33f09746a56a5818e8f81c6, type: 2}
   cycleAttackTimer: 0
+  timeInState: 0
   waypoints:
   - {fileID: 0}
   - {fileID: 0}
@@ -1066,11 +1067,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 04750555ff2348747846cf298aa532a7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hp: 15
+  hp: 5
   atk: 1
   def: 1
   spd: 1
-  maxHp: 15
+  maxHp: 5
 --- !u!54 &2202364111534717963
 Rigidbody:
   m_ObjectHideFlags: 0

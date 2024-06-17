@@ -18,6 +18,7 @@ GameObject:
   - component: {fileID: 3211709653011759572}
   - component: {fileID: 335508968489987520}
   - component: {fileID: 478047664254817321}
+  - component: {fileID: 5091327978499221569}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -182,7 +183,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   character: {fileID: 335508968489987520}
-  state: {fileID: 0}
+  state: {fileID: 11400000, guid: ea4c87e26a527534da7bc8acfb0a130e, type: 2}
   input: {fileID: 11400000, guid: bdef362854adb524f97a969cb260ed82, type: 2}
   stateIMG: {fileID: 0}
 --- !u!114 &4084811269178262149
@@ -276,6 +277,28 @@ MonoBehaviour:
   pivot: {fileID: 1007835357878642306}
   offset: {x: 0, y: -0.1, z: 0}
   dimensions: {x: 0.3, y: 0.8, z: 0.3}
+--- !u!114 &5091327978499221569
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3244464699610620306}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a13b0f36e502a0a4eb2e3c49cc5a9854, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  LayerMask:
+    serializedVersion: 2
+    m_Bits: 8
+  Target: {fileID: 4485043409896424950}
+  Camera: {fileID: 0}
+  FadedAlpha: 0.33
+  RetainShadows: 1
+  TargetPositionOffset: {x: 0, y: 1, z: 0}
+  FadeSpeed: 0.5
+  ObjectsBlockingView: []
 --- !u!1 &6625181408386316080
 GameObject:
   m_ObjectHideFlags: 0
