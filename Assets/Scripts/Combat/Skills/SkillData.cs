@@ -15,4 +15,19 @@ public class SkillData
         this.damage = damage;
         return this;
     }
+
+    public SkillData Target(Character target)
+    {
+        targets = new List<Character>
+        {
+            target
+        };
+        return this;
+    }
+
+    public SkillData Owner(Character owner)
+    {
+        this.owner = owner;
+        return this;
+    }
 }

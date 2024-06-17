@@ -10,6 +10,7 @@ public class AIPatrolState : AIStateBase
     private bool walkPointSet;
     public bool _transitionsBetweenWaypoints;
     [SerializeField] private AIStateType stateToTransition;
+    [SerializeField] private float speedMod = 1;
 
     public override void OnStateEnter(AIStateMachine stateMachine)
     {
@@ -17,6 +18,8 @@ public class AIPatrolState : AIStateBase
         walkPointSet = false;
         
         stateMachine.controller.animator.Play(StateType.ToString());
+
+        stateMachine.controller.navAgent.speed = stateMachine.controller.navAgent.speed * speedMod;
     }
 
     public override void StateUpdate(AIStateMachine stateMachine)
@@ -46,5 +49,7 @@ public class AIPatrolState : AIStateBase
         base.OnStateExit(stateMachine);
 
         stateMachine.controller.SetDestination(stateMachine.transform.position);
+
+        stateMachine.controller.navAgent.speed = stateMachine.controller.navAgent.speed * (1/speedMod);
     }
 }
