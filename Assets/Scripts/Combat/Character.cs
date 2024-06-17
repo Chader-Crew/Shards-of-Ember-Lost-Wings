@@ -28,6 +28,8 @@ public class Character : MonoBehaviour, IDamageable
         stats = GetComponent<CharStats>();
         col = GetComponent<Collider>();
         _invul = false;
+
+        stats.hp = stats.maxHp;
     }
 
     #region Interfaces
@@ -64,7 +66,7 @@ public class Character : MonoBehaviour, IDamageable
         }*/
         stats.hp -= totalDamage;
         Debug.Log($"levou {totalDamage} de dano");
-        OnGotHitEvent(data, totalDamage);
+        //nGotHitEvent(data, totalDamage);
 
         if(stats.hp <= 0) { Die(); }
 

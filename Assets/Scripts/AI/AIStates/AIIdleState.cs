@@ -9,12 +9,10 @@ public class AIIdleState : AIStateBase
 
     [SerializeField] private AIStateType stateToTransition;
     [SerializeField] private float idleDuration;
-    private float timer;
 
     public override void OnStateEnter(AIStateMachine stateMachine)
     {
         base.OnStateEnter(stateMachine);
-        timer = 0;
         
         stateMachine.controller.animator.Play(StateType.ToString());
         stateMachine.controller.SetDestination(stateMachine.transform.position);
@@ -22,9 +20,8 @@ public class AIIdleState : AIStateBase
     public override void StateUpdate(AIStateMachine stateMachine)
     {
         base.OnStateEnter(stateMachine);
-        timer += Time.fixedDeltaTime;
 
-        if(timer >= idleDuration)
+        if(stateMachine.timeInState >= idleDuration)
         {
             stateMachine.EnterState(stateToTransition);
         }

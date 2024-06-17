@@ -20,6 +20,7 @@ public class AIStateMachine : MonoBehaviour
     private AIAttackingState nextAttack;
     public AIAttackingState NextAttack { get => nextAttack; }
     [HideInInspector] public float cycleAttackTimer;
+    [HideInInspector] public float timeInState;
     Dictionary<AIStateBase.AIStateType, AIStateBase> stateDictionary;
 
     
@@ -59,6 +60,8 @@ public class AIStateMachine : MonoBehaviour
     private void FixedUpdate() 
     {
         currentState.StateUpdate(this);
+        cycleAttackTimer -= Time.fixedDeltaTime;
+        timeInState += Time.fixedDeltaTime;
     }
 
     public void EnterState(AIStateBase state)
@@ -69,6 +72,7 @@ public class AIStateMachine : MonoBehaviour
         }
         currentState = state;
         currentState.OnStateEnter(this);
+        timeInState = 0;
     }
 
     public void EnterState(AIStateBase.AIStateType type)

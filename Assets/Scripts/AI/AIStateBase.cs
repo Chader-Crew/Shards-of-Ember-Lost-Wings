@@ -12,6 +12,7 @@ public abstract class AIStateBase : ScriptableObject
         CHASING,
         ATTACKING,
         STAGGERED,
+        FLEEING,
     }
     public abstract AIStateType StateType{get;}
     public virtual void OnStateEnter(AIStateMachine stateMachine)

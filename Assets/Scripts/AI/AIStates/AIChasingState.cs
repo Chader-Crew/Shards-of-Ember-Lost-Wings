@@ -20,10 +20,9 @@ public class AIChasingState : AIStateBase
     {
         base.StateUpdate(stateMachine);
 
-        stateMachine.cycleAttackTimer -= Time.fixedDeltaTime;
         if(stateMachine.cycleAttackTimer <= 0)
         {
-
+            stateMachine.ChooseAttack();
         }
 
         if(stateMachine.controller.DistanceToTarget() > stateMachine.NextAttack.attackRange)
