@@ -181,7 +181,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 970305695c267aa4aabe5582c5b74c2e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  character: {fileID: 335508968489987520}
+  state: {fileID: 0}
   input: {fileID: 11400000, guid: bdef362854adb524f97a969cb260ed82, type: 2}
+  stateIMG: {fileID: 0}
 --- !u!114 &4084811269178262149
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -235,11 +238,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 04750555ff2348747846cf298aa532a7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hp: 6
+  hp: 20
   atk: 1
   def: 1
   spd: 2
-  maxHp: 6
+  maxHp: 20
 --- !u!114 &335508968489987520
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -369,6 +372,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   inventoryManager: {fileID: 0}
   input: {fileID: 11400000, guid: bdef362854adb524f97a969cb260ed82, type: 2}
+  currentItem: {fileID: 0}
 --- !u!1001 &1461734881691474250
 PrefabInstance:
   m_ObjectHideFlags: 0

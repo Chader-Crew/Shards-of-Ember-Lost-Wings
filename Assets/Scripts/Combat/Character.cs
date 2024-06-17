@@ -18,7 +18,7 @@ public class Character : MonoBehaviour, IDamageable
     
 
     //events
-    public event Action<SkillData, float> OnGotHitEvent;    //O FLOAT É A QUANTIDADE DE DANO LEVADO. É diferente do valor de dano na SkillData, que não leva em conta a defesa do personagem.
+    public event Action<SkillData, float> OnGotHitEvent = (s,f)=>{};    //O FLOAT É A QUANTIDADE DE DANO LEVADO. É diferente do valor de dano na SkillData, que não leva em conta a defesa do personagem.
     public event Action OnDiedEvent = ()=>{};
     #endregion
     
@@ -66,7 +66,7 @@ public class Character : MonoBehaviour, IDamageable
         }*/
         stats.hp -= totalDamage;
         Debug.Log($"levou {totalDamage} de dano");
-        //nGotHitEvent(data, totalDamage);
+        OnGotHitEvent(data, totalDamage);
 
         if(stats.hp <= 0) { Die(); }
 
