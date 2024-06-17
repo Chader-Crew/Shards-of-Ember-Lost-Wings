@@ -28,6 +28,8 @@ public class Character : MonoBehaviour, IDamageable
         stats = GetComponent<CharStats>();
         col = GetComponent<Collider>();
         _invul = false;
+
+        stats.hp = stats.maxHp;
     }
 
     #region Interfaces
