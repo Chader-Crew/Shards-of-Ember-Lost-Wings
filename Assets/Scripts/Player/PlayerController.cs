@@ -10,7 +10,7 @@ using UnityEngine.UI;
 public class PlayerController : Singleton<PlayerController>
 {
     private PlayerMovement mov;
-    private Character character;
+    public Character character;
     [SerializeField]private SkillTreeHolder state;
     [SerializeField] private InputReader input;
     private Animator animator;
