@@ -33,7 +33,7 @@ public class AIPatrolState : AIStateBase
         if (distanceToWalkPoint.magnitude < 1f)
         {
             walkPointSet = false;
-            stateMachine.EnterState(stateToTransition);
+            stateMachine.EnterStateType(stateToTransition);
         }
         //pega o proximo waypoint
         void NextWalkPoint()

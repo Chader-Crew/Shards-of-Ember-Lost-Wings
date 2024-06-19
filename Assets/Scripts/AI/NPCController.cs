@@ -71,7 +71,7 @@ public class NPCController : MonoBehaviour
                 {
                     stateMachine.EnterState(charDetectedState);
                 }else{
-                    stateMachine.EnterState(AIStateBase.AIStateType.CHASING);
+                    stateMachine.EnterStateType(AIStateBase.AIStateType.CHASING);
                 }
                 break;
             }
@@ -91,10 +91,10 @@ public class NPCController : MonoBehaviour
             {
                     stateMachine.EnterState(charDetectedState);
                 }else{
-                    stateMachine.EnterState(AIStateBase.AIStateType.CHASING);
+                    stateMachine.EnterStateType(AIStateBase.AIStateType.CHASING);
             }
         }else{
-            stateMachine.EnterState(AIStateBase.AIStateType.IDLE);
+            stateMachine.EnterStateType(AIStateBase.AIStateType.IDLE);
         }
 
         stateMachine.ChooseAttack();
@@ -112,6 +112,6 @@ public class NPCController : MonoBehaviour
 
     internal void FleeFrom(Vector3 targetPos)
     {
-        navAgent.SetDestination(transform.position - (transform.position - targetPos));
+        navAgent.SetDestination(transform.position + (transform.position - targetPos));
     }
 }

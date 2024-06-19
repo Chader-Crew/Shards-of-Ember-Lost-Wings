@@ -75,7 +75,7 @@ public class AIStateMachine : MonoBehaviour
         timeInState = 0;
     }
 
-    public void EnterState(AIStateBase.AIStateType type)
+    public void EnterStateType(AIStateBase.AIStateType type)
     {
         if(stateDictionary.ContainsKey(type))
         {
