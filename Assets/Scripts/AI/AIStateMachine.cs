@@ -62,6 +62,7 @@ public class AIStateMachine : MonoBehaviour
         currentState.StateUpdate(this);
         cycleAttackTimer -= Time.fixedDeltaTime;
         timeInState += Time.fixedDeltaTime;
+        if(cycleAttackTimer < 0) { ChooseAttack(); }
     }
 
     public void EnterState(AIStateBase state)
