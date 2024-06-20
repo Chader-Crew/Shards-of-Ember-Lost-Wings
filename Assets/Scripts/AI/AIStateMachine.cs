@@ -86,26 +86,27 @@ public class AIStateMachine : MonoBehaviour
 
     public void ChooseAttack()
     {
-        List<AIAttackingState> inRangeAttacks = new List<AIAttackingState>();
-        float targetDistance = controller.DistanceToTarget();
+        if (controller.aggroTarget != null) {
+            List<AIAttackingState> inRangeAttacks = new List<AIAttackingState>();
 
-        foreach(AIAttackingState attack in attackStates)
-        {
-            if(targetDistance < attack.attackRange && targetDistance > attack.avoidRange)
+            float targetDistance = controller.DistanceToTarget();
+
+            foreach(AIAttackingState attack in attackStates)
             {
-                inRangeAttacks.Add(attack);
+                if(targetDistance < attack.attackRange && targetDistance > attack.avoidRange)
+                {
+                    inRangeAttacks.Add(attack);
+                }
+            }
+
+            if(inRangeAttacks.Count > 0)
+            {
+                nextAttack = inRangeAttacks[UnityEngine.Random.Range(0, inRangeAttacks.Count)];
+            }
+            else
+            {
+                nextAttack = attackStates[UnityEngine.Random.Range(0, attackStates.Count)];
             }
         }
-
-        if(inRangeAttacks.Count > 0)
-        {
-            nextAttack = inRangeAttacks[UnityEngine.Random.Range(0, inRangeAttacks.Count)];
-        }
-        else
-        {
-            nextAttack = attackStates[UnityEngine.Random.Range(0, attackStates.Count)];
-        }
-
-        cycleAttackTimer = nextAttack.cycleTimer;
     }
 }
