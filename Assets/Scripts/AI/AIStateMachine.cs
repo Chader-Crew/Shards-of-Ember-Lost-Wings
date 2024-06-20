@@ -62,6 +62,7 @@ public class AIStateMachine : MonoBehaviour
         currentState.StateUpdate(this);
         cycleAttackTimer -= Time.fixedDeltaTime;
         timeInState += Time.fixedDeltaTime;
+        if(cycleAttackTimer < 0) { ChooseAttack(); }
     }
 
     public void EnterState(AIStateBase state)
@@ -75,7 +76,7 @@ public class AIStateMachine : MonoBehaviour
         timeInState = 0;
     }
 
-    public void EnterState(AIStateBase.AIStateType type)
+    public void EnterStateType(AIStateBase.AIStateType type)
     {
         if(stateDictionary.ContainsKey(type))
         {

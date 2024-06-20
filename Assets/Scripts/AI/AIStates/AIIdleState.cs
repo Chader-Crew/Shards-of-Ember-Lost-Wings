@@ -23,7 +23,7 @@ public class AIIdleState : AIStateBase
 
         if(stateMachine.timeInState >= idleDuration)
         {
-            stateMachine.EnterState(stateToTransition);
+            stateMachine.EnterStateType(stateToTransition);
         }
     }
 }
