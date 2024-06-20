@@ -84,16 +84,16 @@ public class InputReader : ScriptableObject, PlayerInput.IPlayerActions, PlayerI
         if(context.performed){
             switch(context.ReadValue<Vector2>()){
                 case Vector2 v when v.Equals(Vector3.up):
-                    OnInventoryInteractEvent(1);
+                    OnInventoryInteractEvent(0);
                     break;
                 case Vector2 v when v.Equals(Vector3.right):
-                    OnInventoryInteractEvent(3);
+                    OnInventoryInteractEvent(1);
                     break;
                 case Vector2 v when v.Equals(Vector3.down):
                     OnInventoryInteractEvent(2);
                     break;
                 case Vector2 v when v.Equals(Vector3.left):
-                    OnInventoryInteractEvent(0);
+                    OnInventoryInteractEvent(3);
                     break;
             }
         }

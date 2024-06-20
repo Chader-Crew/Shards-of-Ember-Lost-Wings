@@ -76,6 +76,7 @@ public class Character : MonoBehaviour, IDamageable
 
     public void restoreLife(float value){
         stats.hp += value;
+        HPGambiarra.instance.RestoreBar(stats.hp);
     }
 
     public void activeBuff(int amount){
