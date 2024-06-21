@@ -274,8 +274,12 @@ MonoBehaviour:
   owner: {fileID: 335508968489987520}
   tags:
   - Enemy
-  pivot: {fileID: 1007835357878642306}
-  offset: {x: 0, y: -0.1, z: 0}
+  pivotArray:
+  - {fileID: 6887072077173988917}
+  - {fileID: 4024668615174581474}
+  - {fileID: 8259144645832255411}
+  pivot: {fileID: 4024668615174581474}
+  offsets: {x: 0, y: 0.3, z: 0}
   dimensions: {x: 0.3, y: 0.8, z: 0.3}
 --- !u!114 &5091327978499221569
 MonoBehaviour:
@@ -468,15 +472,27 @@ PrefabInstance:
       addedObject: {fileID: 8405477880963603764}
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 04f7f5bd87b38654f97e71ba7530e341, type: 3}
---- !u!4 &1007835357878642306 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 1852576806548013000, guid: 04f7f5bd87b38654f97e71ba7530e341,
-    type: 3}
-  m_PrefabInstance: {fileID: 1461734881691474250}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &1424150528228196001 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 04f7f5bd87b38654f97e71ba7530e341,
+    type: 3}
+  m_PrefabInstance: {fileID: 1461734881691474250}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &4024668615174581474 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 2563496969622287784, guid: 04f7f5bd87b38654f97e71ba7530e341,
+    type: 3}
+  m_PrefabInstance: {fileID: 1461734881691474250}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &6887072077173988917 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 5465940246521907071, guid: 04f7f5bd87b38654f97e71ba7530e341,
+    type: 3}
+  m_PrefabInstance: {fileID: 1461734881691474250}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &8259144645832255411 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: -1812909498023395591, guid: 04f7f5bd87b38654f97e71ba7530e341,
     type: 3}
   m_PrefabInstance: {fileID: 1461734881691474250}
   m_PrefabAsset: {fileID: 0}

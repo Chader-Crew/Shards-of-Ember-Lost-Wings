@@ -11,8 +11,10 @@ public class Hitbox : MonoBehaviour
     [SerializeField] private string[] tags;     //Tags de personagem que a hitbox acerta.
 
     [Header("Hitbox Attributes")]               //Atributos do OverlapBox
+    [SerializeField] private Transform[] pivotArray;    //lista de pivos para animar as hitboxes
+    [Header("For previewing")]
     [SerializeField] private Transform pivot;
-    [SerializeField] private Vector3 offset;
+    [SerializeField] private Vector3 offsets;
     [SerializeField] private Vector3 dimensions;
 
     
@@ -27,7 +29,7 @@ public class Hitbox : MonoBehaviour
         Gizmos.color = gizmoColor;
         
         //posicao
-        Vector3 boxPosition = pivot.position + pivot.forward * offset.z + pivot.right * offset.x + pivot.up * offset.y;
+        Vector3 boxPosition = pivot.position + pivot.forward * offsets.z + pivot.right * offsets.x + pivot.up * offsets.y;
         boxPosition = pivot.InverseTransformPoint(boxPosition); //nao entendi direito o pq mas essa rotacao faz ter que tirar o inverso da posicao local
 
         Matrix4x4 prevMatrix = Gizmos.matrix;                   //cache da rotacao pra n dar ruim
@@ -35,6 +37,38 @@ public class Hitbox : MonoBehaviour
         Gizmos.DrawWireCube(boxPosition, dimensions);           //draw
         Gizmos.matrix = prevMatrix;                             //restaura a rotacao
         #endif
+    }
+
+    //Atribuicao de pivo para evento de animacao
+    public void SetPivot(int index)
+    {
+        pivot = pivotArray[index];
+    }
+    //Atribuicoes de offset para evento de animacao (sim so da pra passar 1 por ves)
+    public void SetOffsetX(float offset)
+    {
+        offsets.x = offset;
+    }
+    public void SetOffsetY(float offset)
+    {
+        offsets.y = offset;
+    }
+    public void SetOffsetZ(float offset)
+    {
+        offsets.z = offset;
+    }
+    //Atribuicoes de escala para evento de animacao (sim so da pra passar 1 por ves)
+    public void SetDimensionX(float dimension)
+    {
+        dimensions.x = dimension;
+    }
+    public void SetDimensionY(float dimension)
+    {
+        dimensions.y = dimension;
+    }
+    public void SetDimensionZ(float dimension)
+    {
+        dimensions.z = dimension;
     }
 
     //Ativa a hitbox, se ja estiver ativada com alguma skill, adiciona na lista de chamada, mas não reinicia a hitbox.
@@ -70,7 +104,7 @@ public class Hitbox : MonoBehaviour
             //OverlapBox
             List<Collider> colliders = Physics.OverlapBox(
             pivot.position +    //posicao do pivot
-            pivot.forward * offset.z + pivot.right * offset.x + pivot.up * offset.y,    //offset rodado pra local position
+            pivot.forward * offsets.z + pivot.right * offsets.x + pivot.up * offsets.y,    //offset rodado pra local position
             dimensions/2,       //tamanho do quadrado
             pivot.rotation)     //rotacao do pivot
             .ToList();      
