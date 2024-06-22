@@ -19,6 +19,7 @@ public class Character : MonoBehaviour, IDamageable
 
     //events
     public event Action<SkillData, float> OnGotHitEvent = (s,f)=>{};    //O FLOAT É A QUANTIDADE DE DANO LEVADO. É diferente do valor de dano na SkillData, que não leva em conta a defesa do personagem.
+    public event Action<float> OnHealEvent = (f) => {};
     public event Action OnDiedEvent = ()=>{};
     #endregion
     
@@ -75,8 +76,9 @@ public class Character : MonoBehaviour, IDamageable
     #endregion
 
     public void restoreLife(float value){
-        stats.hp += value;
-        HPGambiarra.instance.RestoreBar(stats.hp);
+        float healVal = Mathf.Clamp(value, 0, stats.maxHp - stats.hp);
+        stats.hp += healVal;
+        OnHealEvent(healVal);
     }
 
     public void activeBuff(int amount){
