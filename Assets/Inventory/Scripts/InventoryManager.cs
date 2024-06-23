@@ -21,7 +21,7 @@ public class InventoryManager : MonoBehaviour
 
     private void Awake(){
         input.OnInventoryInteractEvent += UseItemFromSlot;
-        input.OnPauseEvent += OpenInventory;
+        //input.OnPauseEvent += OpenInventory;
         instance = this;
     }
 
@@ -81,13 +81,13 @@ public class InventoryManager : MonoBehaviour
         }
     }
 
-    public void OpenInventory(){
+    /*public void OpenInventory(){
         if(mainInventoryPanel.activeSelf){
             mainInventoryPanel.SetActive(false);
         }else{
             mainInventoryPanel.SetActive(true);
         }
-    }
+    }*/
 
     public void ShowCollected(Item item){
         itemCollected.SetActive(true);
