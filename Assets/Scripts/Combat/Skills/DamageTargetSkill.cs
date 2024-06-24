@@ -33,6 +33,11 @@ public class DamageTargetSkill : SkillBase
         foreach (Character target in context.targets)
         {
             target.GetHit(context);
+
+            if (context.owner.IsPoisonBuffActive()){
+                PoisonEffect poisonEffect = target.gameObject.AddComponent<PoisonEffect>(); //adiciona o codigo de veneno no target
+                poisonEffect.Initialize(context.owner.GetPoisonDamagePerSecond(), context.owner.GetPoisonDuration(), target); //inicializa o codigo
+            }
         }
     }
 

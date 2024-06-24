@@ -14,7 +14,10 @@ public class Character : MonoBehaviour, IDamageable
     [SerializeField] public CharStats Stats { get { return stats;} }    //Propriedade publica readonly
     [SerializeField] protected Collider col;      //Colisao de combate (hurtbox)
 
-    public bool _invul; 
+    public bool _invul;
+    private bool isPoisonBuffActive;
+    private float poisonDuration = 2f; // Duração do efeito de veneno em segundos
+    private float poisonDamagePerSecond = 0.5f; // Dano do veneno por segundo
     
 
     //events
@@ -89,6 +92,28 @@ public class Character : MonoBehaviour, IDamageable
         stats.atk += _amount;
         yield return new WaitForSeconds(6);
         stats.atk -= _amount;
+    }
+
+    public void ActivatePoisonBuff(float duration){
+        StartCoroutine(PoisonBuffCoroutine(duration));
+    }
+
+    private IEnumerator PoisonBuffCoroutine(float duration){
+        isPoisonBuffActive = true;
+        yield return new WaitForSeconds(duration);
+        isPoisonBuffActive = false;
+    }
+
+    public bool IsPoisonBuffActive(){
+        return isPoisonBuffActive;
+    }
+
+    public float GetPoisonDamagePerSecond(){
+        return poisonDamagePerSecond;
+    }
+
+    public float GetPoisonDuration(){
+        return poisonDuration;
     }
 
 }
