@@ -52,19 +52,15 @@ public class InventoryItem : MonoBehaviour, IBeginDragHandler, IDragHandler, IEn
     {
         Debug.Log("Count: " + count);
 
-        if (item is UsableItem usableItem)
-        {
+        if (item is UsableItem usableItem){
             usableItem.Use();
             count--;
-            if (count <= 0)
-            {
+            if (count <= 0){
                 Destroy(gameObject);
             }
 
             UpdateCount();
-        }
-        else
-        {
+        }else{
             Debug.Log("Este item não pode ser usado.");
         }
     }

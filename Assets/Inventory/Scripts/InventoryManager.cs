@@ -101,19 +101,4 @@ public class InventoryManager : MonoBehaviour
         yield return new WaitForSeconds(2);
         itemCollected.SetActive(false);
     }
-
-    /*//definir o botao pra usar cada item e chamar essa funcao nele
-    public void UseItem(InventoryItem item){
-        if(item.count <= 0){
-            Destroy(item.gameObject);
-        }else{
-            item.count--;
-        }
-
-        item.UpdateCount();
-    }
-
-    public void GetSlotItem(){
-
-    }*/
 }
