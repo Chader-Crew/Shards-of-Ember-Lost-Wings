@@ -8,6 +8,7 @@ public class BombItem : MonoBehaviour
     public float explosionRadius = 5f; // Raio da explosão
     public float explosionForce = 700f; // Força da explosão
     public int damage = 2; // Dano da explosão
+    public ParticleSystem explosionVFX;
 
     private void Start(){
         StartCoroutine(ExplodeAfterDelay());
@@ -15,6 +16,7 @@ public class BombItem : MonoBehaviour
 
     private IEnumerator ExplodeAfterDelay(){
         yield return new WaitForSeconds(explosionDelay);
+        explosionVFX.Play();
         Explode();
     }
 
