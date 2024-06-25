@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -15,11 +16,15 @@ public class PlayerController : Singleton<PlayerController>
     [SerializeField] private InputReader input;
     private Animator animator;
     [SerializeField] Image stateIMG;
+    [SerializeField] GameObject skilltree;
+    [SerializeField] TMP_Text spText;
     private AtakaStateBehaviour atakaState;
     private SkillBase selectedSkill;
+    public int skillpoints;
 
     private void Awake() 
     {
+        skillpoints=5;
         stateIMG.sprite = state.stateIMG;
         //get components
         mov = GetComponent<PlayerMovement>();
@@ -37,9 +42,14 @@ public class PlayerController : Singleton<PlayerController>
         input.OnSkillUseEvent += Cast;
         input.OnDragonStateEvent += ChangeState;
         character.OnDiedEvent += Die;
+        input.OnPauseEvent += OpenSkillTree;
         character.OnDiedEvent += FindObjectOfType<DeathScreenBehaviour>().OnPlayerDeath;
 
         atakaState.AttackEndAction = AttackEnd;
+    }
+    void Start()
+    {
+        spText.text="Skillpoints "+skillpoints;
     }
 
     //chamado quando o animator sai do state de ataque para destravar movimento (provavelmente devia ser mudado para |quando entra em idle|)
@@ -113,6 +123,21 @@ public class PlayerController : Singleton<PlayerController>
             stateIMG.sprite = state.stateIMG;
 
         }
+    }
+    private void OpenSkillTree()
+    {
+        if(skilltree.activeSelf)
+        {
+            skilltree.SetActive(false);
+        }
+        else
+        {
+            skilltree.SetActive(true);
+        }
+    }
+    public void UPDATESKILLS()
+    {
+        spText.text="Skillpoints "+skillpoints;
     }
 
 

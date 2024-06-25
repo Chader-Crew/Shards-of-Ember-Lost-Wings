@@ -134,10 +134,10 @@ public class InputReader : ScriptableObject, PlayerInput.IPlayerActions, PlayerI
 
     public void OnPause(UnityEngine.InputSystem.InputAction.CallbackContext context)
     {
-        throw new System.NotImplementedException();
-        /*if(context.performed){
+        
+        if(context.performed){
             OnPauseEvent();
-        }*/
+        }
     }
 
     #endregion

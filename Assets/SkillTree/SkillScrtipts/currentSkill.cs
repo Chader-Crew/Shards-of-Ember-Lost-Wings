@@ -7,18 +7,31 @@ public class currentSkill : MonoBehaviour
 {
     [SerializeField]private SkillBase skill;
     [SerializeField]private Button prev;
-    [SerializeField]private Image thisSkill;
 
     [SerializeField]private  CharStats player;
+    [SerializeField]PlayerController pc;
 
     public void BuySkill()
     {
-        if(prev==null||prev.IsActive()==false)
+        if(pc.skillpoints>0)
         {
-            skill.canCast=true;
-            skill.Comprado(player);
-            this.gameObject.GetComponent<Image>().enabled=false;
-            this.gameObject.GetComponent<Button>().enabled=false;
+            if(prev==null||prev.IsActive()==false)
+            {
+                skill.canCast=true;
+                skill.Comprado(player);
+                this.gameObject.GetComponent<Image>().enabled=false;
+                this.gameObject.GetComponent<Button>().enabled=false;
+            }
+            else
+            {
+                return;
+            }
+            pc.skillpoints--;
+            pc.UPDATESKILLS();
+        }
+        else
+        {
+            return;
         }
     }
 }
