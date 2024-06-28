@@ -22,6 +22,7 @@ public class RootColliderConfig : MonoBehaviour
         if(item){
             currentItem = item;
             item.buttonCanva.SetActive(true);
+            //item.animator.SetTrigger("open");
             item.chestAudio.Play();
         }
     }
@@ -30,6 +31,7 @@ public class RootColliderConfig : MonoBehaviour
         var item = other.GetComponent<GroundItem>();
         if(item && item == currentItem){
             item.buttonCanva.SetActive(false);
+            //item.animator.SetTrigger("close");
             currentItem = null;
         }
     }
