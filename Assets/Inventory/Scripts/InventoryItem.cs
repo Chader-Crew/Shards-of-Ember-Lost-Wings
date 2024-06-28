@@ -53,8 +53,13 @@ public class InventoryItem : MonoBehaviour, IBeginDragHandler, IDragHandler, IEn
         Debug.Log("Count: " + count);
 
         if (item is UsableItem usableItem){
+            if (item.itemAudio != null){
+                AudioSource.PlayClipAtPoint(item.itemAudio, Camera.main.transform.position);
+            }
+
             usableItem.Use();
             count--;
+
             if (count <= 0){
                 Destroy(gameObject);
             }

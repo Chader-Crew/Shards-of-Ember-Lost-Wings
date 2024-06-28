@@ -10,14 +10,13 @@ public class Item : ScriptableObject
     public string itemName;
     [TextArea(10,10)]
     public string description;
-    public ItemType type;
-
+    //public ItemType type;
     public Sprite image;
-
+    public AudioClip itemAudio;
 }
 
-public enum ItemType{
+/*public enum ItemType{
     Bomb,
     Potion,
     EnemyDrop
-}
+}*/
