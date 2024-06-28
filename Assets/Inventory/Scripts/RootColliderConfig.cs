@@ -22,6 +22,7 @@ public class RootColliderConfig : MonoBehaviour
         if(item){
             currentItem = item;
             item.buttonCanva.SetActive(true);
+            item.chestAudio.Play();
         }
     }
 
