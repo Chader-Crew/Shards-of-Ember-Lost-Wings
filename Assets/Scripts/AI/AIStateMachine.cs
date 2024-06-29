@@ -56,7 +56,7 @@ public class AIStateMachine : MonoBehaviour
             EnterState(startingState);
         }
 
-        if(waypoints.Length == 0)
+        if(waypoints.Length == 0 || waypoints == null)
         {
             waypoints = new Transform[]{ Instantiate(new GameObject(), transform.position, Quaternion.identity).transform };
         }
