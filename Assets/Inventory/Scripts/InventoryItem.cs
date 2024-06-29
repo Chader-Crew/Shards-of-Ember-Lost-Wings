@@ -57,6 +57,12 @@ public class InventoryItem : MonoBehaviour, IBeginDragHandler, IDragHandler, IEn
                 AudioSource.PlayClipAtPoint(item.itemAudio, Camera.main.transform.position);
             }
 
+            if (item.itemVFX != null){
+                GameObject vfxInstance = Instantiate(item.itemVFX, PlayerController.Instance.transform.position, Quaternion.identity);
+                vfxInstance.transform.SetParent(PlayerController.Instance.transform);
+                Destroy(vfxInstance, 3f);
+            }
+
             usableItem.Use();
             count--;
 
