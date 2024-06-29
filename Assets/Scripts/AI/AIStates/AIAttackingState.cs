@@ -41,5 +41,7 @@ public class AIAttackingState : AIStateBase
             adjustRotTimer -= Time.deltaTime;
         }
 
+        //deus me livra desse bug por favor eu não aguento mais toma esse spaghetti e me deixa em paz
+        if(!stateMachine.controller.animator.GetCurrentAnimatorStateInfo(0).IsName(animationStateName)){ stateMachine.EnterStateType(AIStateType.CHASING); }
     }
 }
