@@ -5,9 +5,10 @@ using UnityEngine;
 public class EnemySpawner : MonoBehaviour
 {
     public static EnemySpawner instance;
-
     public GameObject enemyType1;
     public GameObject enemyType2;
+    public GameObject spawnEffectPrefab;
+    public float particleEffectDuration = 1f;
     public GameObject arenaExit;
     public float spawnInterval = 5f;
     public int maxEnemies = 10;
@@ -19,6 +20,7 @@ public class EnemySpawner : MonoBehaviour
 
     void Start()
     {
+        instance = this;
         spawnArea = GetComponent<BoxCollider>();       
     }
 
@@ -30,10 +32,11 @@ public class EnemySpawner : MonoBehaviour
             {
                 for (int i = 0; i <5; i++)
                 {
-                    float x = Random.Range(114, 142);
-                    float z = Random.Range(130, 147);
+                    Vector3 spawnPosition = GetRandomPositionInArea();
                     GameObject enemyPrefab = Random.value > 0.5f ? enemyType1 : enemyType2;
-                    Instantiate(enemyPrefab, new Vector3 (x, 5.172f, z), Quaternion.identity);
+                    Instantiate(enemyPrefab, spawnPosition, Quaternion.identity);
+                    GameObject particleEffect = Instantiate(spawnEffectPrefab, spawnPosition, Quaternion.identity);
+                    Destroy(particleEffect, particleEffectDuration);
                     currentEnemyCount++;
                 }
                 StartCoroutine(SpawnEnemies());
@@ -44,20 +47,36 @@ public class EnemySpawner : MonoBehaviour
         }
     }
 
-    IEnumerator SpawnEnemies()
+   public IEnumerator SpawnEnemies()
     {
         while (true)
         {
+            yield return new WaitForSeconds(spawnInterval);
             if (currentEnemyCount < maxEnemies)
             {
-                float x = Random.Range(114, 142);
-                float z = Random.Range(130, 147);
+                Vector3 spawnPosition = GetRandomPositionInArea();
                 GameObject enemyPrefab = Random.value > 0.5f ? enemyType1 : enemyType2;
-                Instantiate(enemyPrefab, new Vector3 (x, 5.172f, z), Quaternion.identity);
+                Instantiate(enemyPrefab, spawnPosition, Quaternion.identity);
+                GameObject particleEffect = Instantiate(spawnEffectPrefab, spawnPosition, Quaternion.identity);
+                Destroy(particleEffect, particleEffectDuration);
                 currentEnemyCount++;
             }
-            yield return new WaitForSeconds(spawnInterval);
         }
+    }
+
+    Vector3 GetRandomPositionInArea()
+    {
+        Bounds bounds = spawnArea.bounds;
+        float x = Random.Range(bounds.min.x, bounds.max.x);
+        float y = bounds.min.y;
+        float z = Random.Range(bounds.min.z, bounds.max.z);
+        return new Vector3(x, y, z);
+    }
+
+    public void StopSpawning()
+    {
+        Debug.Log("parou");
+        StopAllCoroutines();
     }
 }
 
