@@ -20,11 +20,11 @@ public class PlayerController : Singleton<PlayerController>
     [SerializeField] TMP_Text spText;
     private AtakaStateBehaviour atakaState;
     private SkillBase selectedSkill;
-    public int skillpoints;
-
+    public int skillShards;
+    public int statShards;
+    
     private void Awake() 
     {
-        skillpoints=5;
         stateIMG.sprite = state.stateIMG;
         //get components
         mov = GetComponent<PlayerMovement>();
@@ -42,14 +42,14 @@ public class PlayerController : Singleton<PlayerController>
         input.OnSkillUseEvent += Cast;
         input.OnDragonStateEvent += ChangeState;
         character.OnDiedEvent += Die;
-        input.OnPauseEvent += OpenSkillTree;
+        //input.OnPauseEvent += OpenSkillTree;
         character.OnDiedEvent += FindObjectOfType<DeathScreenBehaviour>().OnPlayerDeath;
 
         atakaState.AttackEndAction = AttackEnd;
     }
     void Start()
     {
-        spText.text="Skillpoints "+skillpoints;
+        //spText.text="Skillpoints "+skillShards;
     }
 
     //chamado quando o animator sai do state de ataque para destravar movimento (provavelmente devia ser mudado para |quando entra em idle|)
@@ -76,7 +76,6 @@ public class PlayerController : Singleton<PlayerController>
         animator.SetBool("ataka", true);
         mov.LockMovement(true);
     }
-
 
     private void SkillHit(SkillData skill, float damage)
     {
@@ -124,7 +123,8 @@ public class PlayerController : Singleton<PlayerController>
 
         }
     }
-    private void OpenSkillTree()
+
+    /* private void OpenSkillTree()
     {
         if(skilltree.activeSelf)
         {
@@ -137,8 +137,8 @@ public class PlayerController : Singleton<PlayerController>
     }
     public void UPDATESKILLS()
     {
-        spText.text="Skillpoints "+skillpoints;
-    }
+        spText.text="Skillpoints "+skillShards;
+    } */
 
 
 }

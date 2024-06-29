@@ -25,7 +25,7 @@ public class Singleton<T> : MonoBehaviour where T: Singleton<T>
         {
             if(instance != null) { return instance; }
 
-            List<T> loadedObjs = FindObjectsByType<T>(FindObjectsSortMode.InstanceID).ToList();
+            List<T> loadedObjs = FindObjectsByType<T>(FindObjectsInactive.Include, FindObjectsSortMode.InstanceID).ToList();
             if(loadedObjs == null) { loadedObjs[0] = new GameObject(typeof(T).Name, typeof(T)).GetComponent<T>(); }
             while(loadedObjs.Count > 1)
             {

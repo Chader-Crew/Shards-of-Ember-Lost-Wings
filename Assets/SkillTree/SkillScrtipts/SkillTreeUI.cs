@@ -1,18 +1,16 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 
-public class SkillTreeUI : MonoBehaviour
+public class SkillTreeUI : Singleton<SkillTreeUI>
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    [SerializeField] private TMP_Text smallShardText;
+    [SerializeField] private TMP_Text bigShardText;
 
-    // Update is called once per frame
-    void Update()
+    private void OnEnable() 
     {
-        
+        smallShardText.text = PlayerController.Instance.statShards.ToString();
+        bigShardText.text = PlayerController.Instance.skillShards.ToString();
     }
 }

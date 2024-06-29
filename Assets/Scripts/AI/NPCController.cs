@@ -14,6 +14,9 @@ public class NPCController : MonoBehaviour
     [SerializeField] public Animator animator;
     [SerializeField] private Character character;
     [SerializeField] private AIStateMachine stateMachine;
+    [SerializeField] private int minDropShards;
+    [SerializeField] private int maxDropShards;
+
 
     //deteccao de personagem pra aggro
     [Space(15)]
@@ -37,6 +40,7 @@ public class NPCController : MonoBehaviour
         character.enabled = false;
         navAgent.enabled = false;
         stateMachine.enabled = false;
+        PlayerController.Instance.statShards += UnityEngine.Random.Range(minDropShards,maxDropShards);
     }
 
     private void RemoveBody()

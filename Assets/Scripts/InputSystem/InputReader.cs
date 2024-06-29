@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 //Classe "parser" das informacoes do input system. Tem eventos customizados que apenas passam as partes importantes do contexto.
@@ -134,8 +135,9 @@ public class InputReader : ScriptableObject, PlayerInput.IPlayerActions, PlayerI
 
     public void OnPause(UnityEngine.InputSystem.InputAction.CallbackContext context)
     {
-        
+
         if(context.performed){
+            SkillTreeUI.Instance.gameObject.SetActive(!SkillTreeUI.Instance.gameObject.activeSelf); //a gente precisa de um gerente de UI lmao
             OnPauseEvent();
         }
     }
