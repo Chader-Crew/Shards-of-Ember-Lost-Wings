@@ -6,7 +6,7 @@ using UnityEngine.EventSystems;
 using TMPro;
 using System;
 
-public class InventoryItem : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHandler
+public class InventoryItem : MonoBehaviour
 {
     [Header("UI")]
     public Image image;
@@ -28,8 +28,12 @@ public class InventoryItem : MonoBehaviour, IBeginDragHandler, IDragHandler, IEn
         bool textActive = count > 1;
         countText.gameObject.SetActive(textActive);
     }
+
+    //drag and drop dropado pq nao teremos mais inventario principal
+    //apenas comentado pq podemos ter mais pra frente
+    //, IBeginDragHandler, IDragHandler, IEndDragHandler
     
-    //Drag and drop
+    /*//Drag and drop
     public void OnBeginDrag(PointerEventData eventData){
         parentAfterDrag = transform.parent;
         transform.SetParent(transform.root);
@@ -46,7 +50,7 @@ public class InventoryItem : MonoBehaviour, IBeginDragHandler, IDragHandler, IEn
         transform.SetParent(parentAfterDrag);
         image.raycastTarget = true;
         countText.raycastTarget = true;
-    }
+    }*/
 
     public void UseItem()
     {
