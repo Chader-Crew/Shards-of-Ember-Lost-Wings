@@ -40,7 +40,7 @@ public class NPCController : MonoBehaviour
         character.enabled = false;
         navAgent.enabled = false;
         stateMachine.enabled = false;
-        PlayerController.Instance.statShards += UnityEngine.Random.Range(minDropShards,maxDropShards);
+        PlayerController.Instance.GainShards(UnityEngine.Random.Range(minDropShards,maxDropShards));
     }
 
     private void RemoveBody()

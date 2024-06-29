@@ -243,12 +243,13 @@ MonoBehaviour:
   animator: {fileID: 0}
   character: {fileID: 0}
   stateMachine: {fileID: 0}
-  timeBetweenAttacks: 0
-  projectile: {fileID: 0}
-  sightRange: 0
-  attackRange: 0
-  playerInSightRange: 0
-  playerInAttackRange: 0
+  minDropShards: 40
+  maxDropShards: 60
+  aggroTarget: {fileID: 0}
+  _doCharDetection: 0
+  charDetectedState: {fileID: 0}
+  charDetectionRadius: 0
+  aggroTargetTag: 
 --- !u!114 &4936442783279653155
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -264,8 +265,9 @@ MonoBehaviour:
   owner: {fileID: 4532138567757995341}
   tags:
   - Player
+  pivotArray: []
   pivot: {fileID: 2386289167039054573}
-  offset: {x: 0, y: 0, z: 0}
+  offsets: {x: 0, y: 0, z: 0}
   dimensions: {x: 0.4, y: 0.6, z: 0.4}
 --- !u!114 &4532138567757995341
 MonoBehaviour:
@@ -294,9 +296,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 04750555ff2348747846cf298aa532a7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hp: 15
+  hp: 25
   atk: 1
-  def: 1
+  def: 3
   spd: 1
   maxHp: 15
 --- !u!54 &8158389758618172765
@@ -338,18 +340,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 980666d8cf8a2d94da5c45f5d02bb7e2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  acceleration: 0.3
-  maxSpeed: 4
-  model: {fileID: 4549437088221584078}
-  moveRotationSpeed: 5
-  inAirTimer: 0
-  leapingVelocity: 0
-  fallingSpeed: 0
-  groundLayer:
-    serializedVersion: 2
-    m_Bits: 0
-  rayCastHeightOffSet: 0.5
-  isGrounded: 0
+  speed: 7
+  currentVelocity: 0
+  smoothTime: 0.05
+  gravity: -9.81
+  gravityMutiplier: 3
+  movement: {x: 0, y: 0, z: 0}
+  velocity: 0
+  _canMov: 0
 --- !u!114 &2464221749690624492
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -380,7 +378,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   controller: {fileID: 0}
+  startingState: {fileID: 0}
+  validStates: []
+  cycleAttackTimer: 0
+  timeInState: 0
   waypoints: []
+  waypointIndex: 0
 --- !u!1001 &4082620337572953381
 PrefabInstance:
   m_ObjectHideFlags: 0

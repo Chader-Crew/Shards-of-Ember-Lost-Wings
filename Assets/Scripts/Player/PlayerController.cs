@@ -20,8 +20,19 @@ public class PlayerController : Singleton<PlayerController>
     [SerializeField] TMP_Text spText;
     private AtakaStateBehaviour atakaState;
     private SkillBase selectedSkill;
-    public int skillShards;
-    public int statShards;
+    private int _skillShards;
+    public int SkillShards
+    {
+        get => _skillShards;
+        private set => _skillShards = value;
+    }
+    private int _statShards;
+    public int StatShards
+    {
+        get => _statShards;
+        private set => _statShards = value;
+    }
+    [SerializeField] ShardsGotPopup shardPopupText;
     
     private void Awake() 
     {
@@ -31,6 +42,7 @@ public class PlayerController : Singleton<PlayerController>
         character = GetComponent<Character>();
         animator = GetComponent<Animator>();
         atakaState = animator.GetBehaviour<AtakaStateBehaviour>();
+        shardPopupText = FindObjectOfType<ShardsGotPopup>(true);
 
         //restart da input
         input.Initialize();
@@ -43,7 +55,7 @@ public class PlayerController : Singleton<PlayerController>
         input.OnDragonStateEvent += ChangeState;
         character.OnDiedEvent += Die;
         //input.OnPauseEvent += OpenSkillTree;
-        character.OnDiedEvent += FindObjectOfType<DeathScreenBehaviour>().OnPlayerDeath;
+        character.OnDiedEvent += FindObjectOfType<DeathScreenBehaviour>(true).OnPlayerDeath;
 
         atakaState.AttackEndAction = AttackEnd;
     }
@@ -122,6 +134,16 @@ public class PlayerController : Singleton<PlayerController>
             stateIMG.sprite = state.stateIMG;
 
         }
+    }
+
+    public void GainShards(int ammount)
+    {
+        StatShards += ammount;
+        shardPopupText.Popup(ammount);
+    }
+    public void SpendShards(int ammount)
+    {
+        StatShards -= ammount;
     }
 
     /* private void OpenSkillTree()

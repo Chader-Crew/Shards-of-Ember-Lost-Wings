@@ -13,7 +13,7 @@ public class currentSkill : MonoBehaviour
 
     public void BuySkill()
     {
-        if(PlayerController.Instance.skillShards >= bigCost && PlayerController.Instance.statShards >= smallCost)
+        if(PlayerController.Instance.SkillShards >= bigCost && PlayerController.Instance.StatShards >= smallCost)
         {
             if(prev==null||prev.IsActive()==false)
             {
@@ -21,8 +21,8 @@ public class currentSkill : MonoBehaviour
                 skill.Comprado(PlayerController.Instance.character.Stats);
                 this.gameObject.GetComponent<Image>().enabled=false;
                 this.gameObject.GetComponent<Button>().enabled=false;
-                PlayerController.Instance.skillShards -= bigCost;
-                PlayerController.Instance.statShards -= smallCost;
+                //PlayerController.Instance.SkillShards -= bigCost;
+                PlayerController.Instance.SpendShards(smallCost);
             }
             else
             {

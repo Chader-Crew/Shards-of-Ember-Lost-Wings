@@ -89,7 +89,8 @@ public class InventoryManager : MonoBehaviour
         }
     }*/
 
-    public void ShowCollected(Item item){
+    public void ShowCollected(Item item)
+    {
         itemCollected.SetActive(true);
         itemTextObj.text = item.itemName + " coletado";
         imageObj.sprite = item.image;

@@ -10,7 +10,7 @@ public class SkillTreeUI : Singleton<SkillTreeUI>
 
     private void OnEnable() 
     {
-        smallShardText.text = PlayerController.Instance.statShards.ToString();
-        bigShardText.text = PlayerController.Instance.skillShards.ToString();
+        smallShardText.text = PlayerController.Instance.StatShards.ToString();
+        bigShardText.text = PlayerController.Instance.SkillShards.ToString();
     }
 }
