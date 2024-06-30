@@ -38,11 +38,25 @@ public class AudioManager : MonoBehaviour
 
     public void SetMusicVolume(float volume)
     {
-        audioMixer.SetFloat("MusicVolume", Mathf.Log10(volume) * 20); // Usar dB
+        if (volume <= 0.0001f)
+        {
+            audioMixer.SetFloat("MusicVolume", -80f); // Volume muito baixo para representar mute
+        }
+        else
+        {
+            audioMixer.SetFloat("MusicVolume", Mathf.Log10(volume) * 20); // Usar dB
+        }
     }
 
     public void SetSFXVolume(float volume)
     {
-        audioMixer.SetFloat("SFXVolume", Mathf.Log10(volume) * 20); // Usar dB
+        if (volume <= 0.0001f)
+        {
+            audioMixer.SetFloat("SFXVolume", -80f); // Volume muito baixo para representar mute
+        }
+        else
+        {
+            audioMixer.SetFloat("SFXVolume", Mathf.Log10(volume) * 20); // Usar dB
+        }
     }
 }

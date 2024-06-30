@@ -58,7 +58,7 @@ public class InventoryItem : MonoBehaviour
 
         if (item is UsableItem usableItem){
             if (item.itemAudio != null){
-                AudioSource.PlayClipAtPoint(item.itemAudio, Camera.main.transform.position);
+                AudioManager.instance.PlaySFX(item.itemAudio);
             }
 
             if (item.itemVFX != null){

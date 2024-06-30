@@ -5,28 +5,33 @@ using UnityEngine;
 
 public class SliderController : MonoBehaviour
 {
-   AudioSource audioSource;
-   public GameObject audioManager;
-   public Slider volumeSlider;
+    public Slider musicVolumeSlider;
+    public Slider sfxVolumeSlider;
 
-   void Awake()
-   {
-        if (audioManager != null)
-        {
-            audioSource = audioManager.GetComponent<AudioSource>();
-        }
+    private void Start()
+    {
+        // Inicializar sliders com os valores atuais do volume
+        musicVolumeSlider.value = PlayerPrefs.GetFloat("MusicVolume", 0.5f);
+        sfxVolumeSlider.value = PlayerPrefs.GetFloat("SFXVolume", 0.5f);
 
-        if (volumeSlider != null)
-        {
-            volumeSlider.onValueChanged.AddListener(MenuVolume); 
-        }
-   }
+        // Adicionar listeners aos sliders
+        musicVolumeSlider.onValueChanged.AddListener(SetMusicVolume);
+        sfxVolumeSlider.onValueChanged.AddListener(SetSFXVolume);
 
-   public void MenuVolume(float value)
-   {
-         if (audioSource != null)
-        {
-            audioSource.volume = value;
-        }
-   }
+        // Atualizar o volume inicial
+        SetMusicVolume(musicVolumeSlider.value);
+        SetSFXVolume(sfxVolumeSlider.value);
+    }
+
+    public void SetMusicVolume(float volume)
+    {
+        AudioManager.instance.SetMusicVolume(volume);
+        PlayerPrefs.SetFloat("MusicVolume", volume);
+    }
+
+    public void SetSFXVolume(float volume)
+    {
+        AudioManager.instance.SetSFXVolume(volume);
+        PlayerPrefs.SetFloat("SFXVolume", volume);
+    }
 }

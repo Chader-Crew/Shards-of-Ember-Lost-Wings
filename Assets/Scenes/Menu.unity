@@ -133,7 +133,6 @@ GameObject:
   m_Component:
   - component: {fileID: 10569979}
   - component: {fileID: 10569980}
-  - component: {fileID: 10569981}
   m_Layer: 5
   m_Name: SliderEffects
   m_TagString: Untagged
@@ -208,38 +207,12 @@ MonoBehaviour:
   m_HandleRect: {fileID: 1508649196}
   m_Direction: 0
   m_MinValue: 0
-  m_MaxValue: 1
+  m_MaxValue: 5
   m_WholeNumbers: 0
-  m_Value: 0.5
+  m_Value: 0
   m_OnValueChanged:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 467423380}
-        m_TargetAssemblyTypeName: AudioManager, Assembly-CSharp
-        m_MethodName: SetSFXVolume
-        m_Mode: 0
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
---- !u!114 &10569981
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 10569978}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6420e3d55157f1241b237b7bbe667452, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  audioManager: {fileID: 1164168397}
-  volumeSlider: {fileID: 10569980}
+      m_Calls: []
 --- !u!1 &23044713
 GameObject:
   m_ObjectHideFlags: 0
@@ -541,6 +514,7 @@ GameObject:
   m_Component:
   - component: {fileID: 467423381}
   - component: {fileID: 467423380}
+  - component: {fileID: 467423382}
   m_Layer: 0
   m_Name: AudioManager
   m_TagString: Untagged
@@ -578,6 +552,20 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &467423382
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 467423379}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6420e3d55157f1241b237b7bbe667452, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  musicVolumeSlider: {fileID: 1759448410}
+  sfxVolumeSlider: {fileID: 10569980}
 --- !u!1 &497393807
 GameObject:
   m_ObjectHideFlags: 0
@@ -6709,7 +6697,7 @@ AudioSource:
     type: 2}
   m_audioClip: {fileID: 8300000, guid: b1c539d377533954083f12f799825e53, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 0.2
+  m_Volume: 0.3
   m_Pitch: 1
   Loop: 1
   Mute: 0
@@ -8420,7 +8408,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1759448408}
   - component: {fileID: 1759448410}
-  - component: {fileID: 1759448409}
   m_Layer: 5
   m_Name: SliderMusic
   m_TagString: Untagged
@@ -8450,20 +8437,6 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 111}
   m_SizeDelta: {x: 160, y: 20}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &1759448409
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1759448407}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6420e3d55157f1241b237b7bbe667452, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  audioManager: {fileID: 2109623300}
-  volumeSlider: {fileID: 1759448410}
 --- !u!114 &1759448410
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8509,24 +8482,12 @@ MonoBehaviour:
   m_HandleRect: {fileID: 534449171}
   m_Direction: 0
   m_MinValue: 0
-  m_MaxValue: 1
+  m_MaxValue: 5
   m_WholeNumbers: 0
-  m_Value: 0.5
+  m_Value: 0
   m_OnValueChanged:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 467423380}
-        m_TargetAssemblyTypeName: AudioManager, Assembly-CSharp
-        m_MethodName: SetMusicVolume
-        m_Mode: 0
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
 --- !u!1 &1818700732
 GameObject:
   m_ObjectHideFlags: 0
