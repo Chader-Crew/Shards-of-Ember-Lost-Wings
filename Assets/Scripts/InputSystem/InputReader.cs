@@ -33,7 +33,8 @@ public class InputReader : ScriptableObject, PlayerInput.IPlayerActions, PlayerI
             playerInput.Player.SetCallbacks(this);
             playerInput.UI.SetCallbacks(this);
         }
-
+        Cursor.lockState = CursorLockMode.Locked;
+        Cursor.visible = false; 
         SetGameplay();
     }
 
@@ -135,9 +136,11 @@ public class InputReader : ScriptableObject, PlayerInput.IPlayerActions, PlayerI
 
     public void OnPause(UnityEngine.InputSystem.InputAction.CallbackContext context)
     {
-
-        if(context.performed){
+        if(context.performed)
+        {
             SkillTreeUI.Instance.gameObject.SetActive(!SkillTreeUI.Instance.gameObject.activeSelf); //a gente precisa de um gerente de UI lmao
+            Cursor.lockState = (Cursor.lockState == CursorLockMode.Locked)? CursorLockMode.None : CursorLockMode.Locked;
+            Cursor.visible = !Cursor.visible;
             OnPauseEvent();
         }
     }
