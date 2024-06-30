@@ -17,12 +17,11 @@ public class AudioManager : MonoBehaviour
         if (instance == null)
         {
             instance = this;
-            DontDestroyOnLoad(gameObject);
         }
-        else
-        {
-            Destroy(gameObject);
-        }
+    }
+
+    public void Start(){
+        sfxSource = GameObject.Find("Main Camera").GetComponent<AudioSource>();
     }
 
     public void PlayMusic(AudioClip clip)

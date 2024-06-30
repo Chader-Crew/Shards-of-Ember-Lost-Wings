@@ -8,8 +8,9 @@ public class RootColliderConfig : MonoBehaviour
     [SerializeField] private InputReader input;
     public GroundItem currentItem;
     private ItemFeedback itemFeedback;
-    private bool _solas = false;
+    private bool _solas = false, _nyxtra = false;
     public SimpleTutorial simpleTutorial;
+    public ItemTutorial itemTutorial;
 
     private void Awake(){
         input.OnItemInteractEvent += HandleItemInteract;
@@ -22,6 +23,7 @@ public class RootColliderConfig : MonoBehaviour
     void OnTriggerEnter(Collider other){
         var item = other.GetComponent<GroundItem>();
         var solas = other.GetComponent<SimpleTutorial>();
+        var nyxtra = other.GetComponent<ItemTutorial>();
 
         if(item){
             currentItem = item;
@@ -34,11 +36,18 @@ public class RootColliderConfig : MonoBehaviour
             simpleTutorial = solas;
             solas.fzim.SetActive(true);
         }
+        if(nyxtra){
+            _nyxtra = true;
+            itemTutorial = nyxtra;
+            nyxtra.canvasF.SetActive(true);
+        }
     }
 
     void OnTriggerExit(Collider other){
         var item = other.GetComponent<GroundItem>();
         var solas = other.GetComponent<SimpleTutorial>();
+        var nyxtra = other.GetComponent<ItemTutorial>();
+
         if(item && item == currentItem){
             item.buttonCanva.SetActive(false);
             //item.animator.SetTrigger("close");
@@ -48,6 +57,11 @@ public class RootColliderConfig : MonoBehaviour
             _solas = false;
             simpleTutorial = null;
             solas.fzim.SetActive(false);
+        }
+        if(nyxtra){
+            _nyxtra = false;
+            itemTutorial = null;
+            nyxtra.canvasF.SetActive(false);
         }
     }
 
@@ -63,6 +77,9 @@ public class RootColliderConfig : MonoBehaviour
         }
         if(_solas){
             simpleTutorial.OpenTutorial();
+        }
+        if(_nyxtra){
+            itemTutorial.OpenItemTutorial();
         }
     }
 }
