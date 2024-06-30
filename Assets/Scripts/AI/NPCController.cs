@@ -16,6 +16,7 @@ public class NPCController : MonoBehaviour
     [SerializeField] private AIStateMachine stateMachine;
     [SerializeField] private int minDropShards;
     [SerializeField] private int maxDropShards;
+    [SerializeField] private Item itemToDrop;
 
 
     //deteccao de personagem pra aggro
@@ -60,6 +61,13 @@ public class NPCController : MonoBehaviour
         navAgent.enabled = false;
         stateMachine.enabled = false;
         PlayerController.Instance.GainShards(UnityEngine.Random.Range(minDropShards,maxDropShards));
+        if(itemToDrop != null)
+        {
+            if(UnityEngine.Random.Range(0,2) != 0)
+            {
+                InventoryManager.instance.AddItem(itemToDrop);
+            }
+        }
     }
 
     private void RemoveBody()

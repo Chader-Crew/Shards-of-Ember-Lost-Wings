@@ -29,7 +29,7 @@ public class RootColliderConfig : MonoBehaviour
             currentItem = item;
             item.buttonCanva.SetActive(true);
             //item.animator.SetTrigger("open");
-            item.chestAudio.Play();
+            
         }
         if(solas){
             _solas = true;
@@ -73,6 +73,7 @@ public class RootColliderConfig : MonoBehaviour
                 //itemFeedback.DisplayItem(currentItem.item);
                 Destroy(currentItem.gameObject);
                 currentItem.buttonCanva.SetActive(false);
+                currentItem.chestAudio.Play();
             }
         }
         if(_solas){

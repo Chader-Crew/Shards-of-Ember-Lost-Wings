@@ -203,11 +203,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 04750555ff2348747846cf298aa532a7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hp: 20
+  hp: 1
   atk: 3
   def: 0
   spd: 1
-  maxHp: 20
+  maxHp: 1
 --- !u!114 &8335379430622440880
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -266,6 +266,7 @@ MonoBehaviour:
   stateMachine: {fileID: 927883762648492821}
   minDropShards: 50
   maxDropShards: 76
+  itemToDrop: {fileID: 11400000, guid: 91132a52d129d4141ae6a07c6e6e901e, type: 2}
   aggroTarget: {fileID: 0}
   _doCharDetection: 1
   charDetectedState: {fileID: 0}

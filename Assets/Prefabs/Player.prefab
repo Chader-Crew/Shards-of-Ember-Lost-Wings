@@ -1112,6 +1112,7 @@ Transform:
   - {fileID: 7734825314033960775}
   - {fileID: 3062218863520207799}
   - {fileID: 7103628970813031025}
+  - {fileID: 8405477880963603764}
   m_Father: {fileID: 4485043409896424950}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!95 &4810017838146282524
@@ -1492,7 +1493,6 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 8405477880963603764}
   - {fileID: 1450354147688562278}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 45, z: 0}
@@ -2712,11 +2712,11 @@ Transform:
   m_GameObject: {fileID: 6625181408386316080}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: -0.79299927, z: 0.5399976}
+  m_LocalPosition: {x: 0, y: 0.20700073, z: 0.5399976}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 4485043409896424950}
+  m_Father: {fileID: 1450354147688562278}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!65 &8063228765251332076
 BoxCollider:
@@ -2733,7 +2733,7 @@ BoxCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3

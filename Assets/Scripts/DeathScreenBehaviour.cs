@@ -16,7 +16,7 @@ public class DeathScreenBehaviour : MonoBehaviour
     }
 
     IEnumerator timeZero(){
-        yield return new WaitForSeconds(3);
+        yield return new WaitForSeconds(3.5f);
         Time.timeScale = 0;
     }
 }
