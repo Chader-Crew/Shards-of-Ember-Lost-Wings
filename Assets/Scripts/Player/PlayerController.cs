@@ -12,7 +12,7 @@ public class PlayerController : Singleton<PlayerController>
 {
     private PlayerMovement mov;
     public Character character;
-    [SerializeField]private SkillTreeHolder state;
+    [SerializeField]public SkillTreeHolder state;
     [SerializeField] private InputReader input;
     private Animator animator;
     [SerializeField] Image stateIMG;
