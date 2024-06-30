@@ -231,7 +231,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3d21d855868208744bec7b6dce876a35, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  item: {fileID: 11400000, guid: 9e88c6f874be9604b880055219ebd936, type: 2}
+  item: {fileID: 11400000, guid: 2d33e54ea3f0bbd4baff0202c0db3fd3, type: 2}
   buttonCanva: {fileID: 5859878883932541591}
   chestAudio: {fileID: 8370549976014076260}
 --- !u!82 &8370549976014076260
@@ -243,7 +243,8 @@ AudioSource:
   m_GameObject: {fileID: 3858342638654157221}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
+  OutputAudioMixerGroup: {fileID: 1375678736906144938, guid: aa0a31608dc49c948a3cf1dd31adb721,
+    type: 2}
   m_audioClip: {fileID: 8300000, guid: fed22de788c492d45ac1ba5ba8c0fe30, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 1
