@@ -1291,8 +1291,11 @@ MonoBehaviour:
   owner: {fileID: 5510674912999221541}
   tags:
   - Player
-  pivotArray: []
-  pivot: {fileID: 1826071304835692029}
+  pivotArray:
+  - {fileID: 4255130068789044488}
+  - {fileID: 1826071304835692029}
+  - {fileID: 1560253875432252941}
+  pivot: {fileID: 1560253875432252941}
   offsets: {x: 0, y: 0, z: 0}
   dimensions: {x: 0.4, y: 0.6, z: 0.4}
 --- !u!114 &5510674912999221541
