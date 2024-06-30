@@ -23,7 +23,7 @@ public class AIAttackingState : AIStateBase
         stateMachine.controller.animator.Play(animationStateName);
         adjustRotTimer = adjustRotDuration;
 
-        if(_stopMoving){ stateMachine.controller.SetDestination(stateMachine.transform.position); }
+        if(_stopMoving){ stateMachine.controller.UnSetDestination(); }
     }
 
     public override void StateUpdate(AIStateMachine stateMachine)

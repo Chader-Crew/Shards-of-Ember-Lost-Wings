@@ -26,11 +26,30 @@ public class NPCController : MonoBehaviour
     [SerializeField] private float charDetectionRadius;
     [SerializeField] private string aggroTargetTag;
 
+    private float originalSpeed;
+    private Vector3 extraMovement; //vetor LOCALIZADO. entao vector3.forward sempre move em transform.forward  
+
     private void Awake()
     {
         navAgent = GetComponent<NavMeshAgent>();
 
         character.OnDiedEvent += Die;
+        originalSpeed = navAgent.speed;
+        extraMovement = Vector3.zero;
+    }
+    private void Update()
+    {
+
+    }
+
+    private void FixedUpdate()
+    {
+        if(aggroTarget == null)
+        {
+            DetectCharacters();
+        }
+
+        navAgent.Move(transform.TransformDirection(extraMovement) * Time.fixedDeltaTime * navAgent.speed);
     }
 
     private void Die()
@@ -48,18 +67,6 @@ public class NPCController : MonoBehaviour
         Destroy(gameObject);
     }
 
-    private void Update()
-    {
-
-    }
-
-    private void FixedUpdate()
-    {
-        if(aggroTarget == null)
-        {
-            DetectCharacters();
-        }
-    }
 
     private void DetectCharacters()
     {
@@ -81,11 +88,12 @@ public class NPCController : MonoBehaviour
             }
         }
     }
-
-    public void SetDestination(Vector3 targetPos)
+    private void OnDrawGizmosSelected()
     {
-        navAgent.SetDestination(targetPos);
+        Gizmos.color = Color.yellow;
+        Gizmos.DrawWireSphere(transform.position, charDetectionRadius);
     }
+
 
     private void ResetAttack()
     {
@@ -108,14 +116,44 @@ public class NPCController : MonoBehaviour
     {
         return Vector3.Distance(transform.position, aggroTarget.transform.position);
     }
-    private void OnDrawGizmosSelected()
-    {
-        Gizmos.color = Color.yellow;
-        Gizmos.DrawWireSphere(transform.position, charDetectionRadius);
-    }
 
-    internal void FleeFrom(Vector3 targetPos)
+    //metodos de movimentacao
+    public void SetDestination(Vector3 targetPos)
+    {
+        navAgent.SetDestination(targetPos);
+    }
+    public void UnSetDestination()
+    {
+        navAgent.ResetPath();
+    }
+    public void FleeFrom(Vector3 targetPos)
     {
         navAgent.SetDestination(transform.position + (transform.position - targetPos));
+    }
+    
+    public void ChangeSpeed(float modifier)
+    {
+        navAgent.speed = navAgent.speed * modifier;
+    }
+    public void ResetSpeed()
+    {
+        navAgent.speed = originalSpeed;
+    }
+
+    public void MoveForwardForSeconds(float seconds)
+    {
+        extraMovement = Vector3.forward;
+        Invoke("StopExtraMovement", seconds);
+    }
+
+    public void MoveBackwardForSeconds(float seconds)
+    {
+        extraMovement = Vector3.back;
+        Invoke("StopExtraMovement", seconds);
+    }
+
+    public void StopExtraMovement()
+    {
+        extraMovement = Vector3.zero;
     }
 }
