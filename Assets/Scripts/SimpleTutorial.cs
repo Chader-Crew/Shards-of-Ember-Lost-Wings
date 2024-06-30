@@ -5,17 +5,18 @@ using UnityEngine;
 public class SimpleTutorial : MonoBehaviour
 {
     public GameObject panelTutorial;
+    public GameObject fzim;
 
     void Awake()
     {
         panelTutorial.SetActive(false);
+        fzim.SetActive(false);
     }
-    void OnTriggerEnter(Collider other)
-    {
-       if (other.CompareTag("Player"))
-        {
-            Debug.Log("Colidiu");
-            panelTutorial.SetActive(true);
-        }
+    public void OpenTutorial()
+    {      
+        panelTutorial.SetActive(true);
     }
+
+    
+    
 }

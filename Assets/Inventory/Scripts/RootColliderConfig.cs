@@ -8,6 +8,8 @@ public class RootColliderConfig : MonoBehaviour
     [SerializeField] private InputReader input;
     public GroundItem currentItem;
     private ItemFeedback itemFeedback;
+    private bool _solas = false;
+    public SimpleTutorial simpleTutorial;
 
     private void Awake(){
         input.OnItemInteractEvent += HandleItemInteract;
@@ -19,20 +21,33 @@ public class RootColliderConfig : MonoBehaviour
 
     void OnTriggerEnter(Collider other){
         var item = other.GetComponent<GroundItem>();
+        var solas = other.GetComponent<SimpleTutorial>();
+
         if(item){
             currentItem = item;
             item.buttonCanva.SetActive(true);
             //item.animator.SetTrigger("open");
             item.chestAudio.Play();
         }
+        if(solas){
+            _solas = true;
+            simpleTutorial = solas;
+            solas.fzim.SetActive(true);
+        }
     }
 
     void OnTriggerExit(Collider other){
         var item = other.GetComponent<GroundItem>();
+        var solas = other.GetComponent<SimpleTutorial>();
         if(item && item == currentItem){
             item.buttonCanva.SetActive(false);
             //item.animator.SetTrigger("close");
             currentItem = null;
+        }
+        if(solas){
+            _solas = false;
+            simpleTutorial = null;
+            solas.fzim.SetActive(false);
         }
     }
 
@@ -45,6 +60,9 @@ public class RootColliderConfig : MonoBehaviour
                 Destroy(currentItem.gameObject);
                 currentItem.buttonCanva.SetActive(false);
             }
+        }
+        if(_solas){
+            simpleTutorial.OpenTutorial();
         }
     }
 }
