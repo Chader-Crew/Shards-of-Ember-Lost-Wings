@@ -29,6 +29,6 @@ public class ProjectileSpwaner : SkillBase
 
     public override void Comprado(CharStats player)
     {
-        
+        canCast = true;
     }
 }

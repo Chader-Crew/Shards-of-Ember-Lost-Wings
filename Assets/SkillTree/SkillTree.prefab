@@ -525,6 +525,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 581009648580456634}
+        m_TargetAssemblyTypeName: SkillTreeUI, Assembly-CSharp
+        m_MethodName: AttUI
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &5366511346310543096
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1206,6 +1218,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 581009648580456634}
+        m_TargetAssemblyTypeName: SkillTreeUI, Assembly-CSharp
+        m_MethodName: AttUI
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &2993270309939592680
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1517,7 +1541,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &787016054342349700
 RectTransform:
   m_ObjectHideFlags: 0
@@ -5699,6 +5723,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 581009648580456634}
+        m_TargetAssemblyTypeName: SkillTreeUI, Assembly-CSharp
+        m_MethodName: AttUI
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &94028066165996030
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5711,7 +5747,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 07d119d8c72c0914f805e5e799a2b79e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  skill: {fileID: 11400000, guid: f4191664f0fcc2e47ac3b393e1dc3579, type: 2}
+  skill: {fileID: 11400000, guid: ada9fbae51d92b04ca527a6a8284092c, type: 2}
   prev: {fileID: 1643672430139973848}
   bigCost: 1
   smallCost: 200
@@ -6427,6 +6463,18 @@ MonoBehaviour:
       - m_Target: {fileID: 5306258319492031414}
         m_TargetAssemblyTypeName: currentSkill, Assembly-CSharp
         m_MethodName: BuySkill
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 581009648580456634}
+        m_TargetAssemblyTypeName: SkillTreeUI, Assembly-CSharp
+        m_MethodName: AttUI
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

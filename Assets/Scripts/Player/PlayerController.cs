@@ -33,7 +33,8 @@ public class PlayerController : Singleton<PlayerController>
         private set => _statShards = value;
     }
     [SerializeField] ShardsGotPopup shardPopupText;
-    
+    private bool _skillCooldown;
+
     private void Awake() 
     {
         stateIMG.sprite = state.stateIMG;
@@ -63,6 +64,7 @@ public class PlayerController : Singleton<PlayerController>
     {
         //spText.text="Skillpoints "+skillShards;
         SkillShards = 1;
+        _skillCooldown = false;
     }
 
     //chamado quando o animator sai do state de ataque para destravar movimento (provavelmente devia ser mudado para |quando entra em idle|)
@@ -114,11 +116,22 @@ public class PlayerController : Singleton<PlayerController>
     }
     private void Cast()
     {
-        selectedSkill= this.gameObject.GetComponent<SelectedSkill>().skill;
-        SkillData data = new SkillData();
-        data.owner = character;
-        selectedSkill=state.activeSkill;
-        selectedSkill.Activate(data);
+        if(!_skillCooldown)
+        {
+            selectedSkill= this.gameObject.GetComponent<SelectedSkill>().skill;
+            SkillData data = new SkillData();
+            data.owner = character;
+            selectedSkill=state.activeSkill;
+            selectedSkill.Activate(data);
+            _skillCooldown = true;
+            Invoke("ResetCooldown", 1.5f);
+        }
+
+    }
+
+    private void ResetCooldown()
+    {
+        _skillCooldown = false;
     }
     private void ChangeState(int i)
     {

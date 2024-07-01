@@ -10,6 +10,11 @@ public class SkillTreeUI : Singleton<SkillTreeUI>
 
     private void OnEnable() 
     {
+        AttUI();
+    }
+
+    public void AttUI()
+    {
         smallShardText.text = PlayerController.Instance.StatShards.ToString();
         bigShardText.text = PlayerController.Instance.SkillShards.ToString();
     }
