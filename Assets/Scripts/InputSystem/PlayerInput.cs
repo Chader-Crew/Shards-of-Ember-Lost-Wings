@@ -107,6 +107,15 @@ public partial class @PlayerInput: IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Cheat"",
+                    ""type"": ""Button"",
+                    ""id"": ""e3b72aed-9742-423f-ab5d-10b498709488"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
@@ -461,6 +470,17 @@ public partial class @PlayerInput: IInputActionCollection2, IDisposable
                     ""action"": ""ItemInteract"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""4a178e75-785c-4f6a-bd63-e62fbd657d10"",
+                    ""path"": ""<Keyboard>/f1"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Cheat"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         },
@@ -603,6 +623,7 @@ public partial class @PlayerInput: IInputActionCollection2, IDisposable
         m_Player_SkillChange = m_Player.FindAction("SkillChange", throwIfNotFound: true);
         m_Player_UseSkill = m_Player.FindAction("UseSkill", throwIfNotFound: true);
         m_Player_ItemInteract = m_Player.FindAction("ItemInteract", throwIfNotFound: true);
+        m_Player_Cheat = m_Player.FindAction("Cheat", throwIfNotFound: true);
         // UI
         m_UI = asset.FindActionMap("UI", throwIfNotFound: true);
         m_UI_Menu = m_UI.FindAction("Menu", throwIfNotFound: true);
@@ -677,6 +698,7 @@ public partial class @PlayerInput: IInputActionCollection2, IDisposable
     private readonly InputAction m_Player_SkillChange;
     private readonly InputAction m_Player_UseSkill;
     private readonly InputAction m_Player_ItemInteract;
+    private readonly InputAction m_Player_Cheat;
     public struct PlayerActions
     {
         private @PlayerInput m_Wrapper;
@@ -690,6 +712,7 @@ public partial class @PlayerInput: IInputActionCollection2, IDisposable
         public InputAction @SkillChange => m_Wrapper.m_Player_SkillChange;
         public InputAction @UseSkill => m_Wrapper.m_Player_UseSkill;
         public InputAction @ItemInteract => m_Wrapper.m_Player_ItemInteract;
+        public InputAction @Cheat => m_Wrapper.m_Player_Cheat;
         public InputActionMap Get() { return m_Wrapper.m_Player; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -726,6 +749,9 @@ public partial class @PlayerInput: IInputActionCollection2, IDisposable
             @ItemInteract.started += instance.OnItemInteract;
             @ItemInteract.performed += instance.OnItemInteract;
             @ItemInteract.canceled += instance.OnItemInteract;
+            @Cheat.started += instance.OnCheat;
+            @Cheat.performed += instance.OnCheat;
+            @Cheat.canceled += instance.OnCheat;
         }
 
         private void UnregisterCallbacks(IPlayerActions instance)
@@ -757,6 +783,9 @@ public partial class @PlayerInput: IInputActionCollection2, IDisposable
             @ItemInteract.started -= instance.OnItemInteract;
             @ItemInteract.performed -= instance.OnItemInteract;
             @ItemInteract.canceled -= instance.OnItemInteract;
+            @Cheat.started -= instance.OnCheat;
+            @Cheat.performed -= instance.OnCheat;
+            @Cheat.canceled -= instance.OnCheat;
         }
 
         public void RemoveCallbacks(IPlayerActions instance)
@@ -839,6 +868,7 @@ public partial class @PlayerInput: IInputActionCollection2, IDisposable
         void OnSkillChange(InputAction.CallbackContext context);
         void OnUseSkill(InputAction.CallbackContext context);
         void OnItemInteract(InputAction.CallbackContext context);
+        void OnCheat(InputAction.CallbackContext context);
     }
     public interface IUIActions
     {

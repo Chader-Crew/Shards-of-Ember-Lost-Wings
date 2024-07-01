@@ -18,6 +18,7 @@ public class InputReader : ScriptableObject, PlayerInput.IPlayerActions, PlayerI
     public event Action<Vector2> OnSkillChangeEvent;
     public event Action OnSkillUseEvent;
     public event Action OnPauseEvent;
+    public event Action OnCheatEvent;
     public event Action OnItemInteractEvent;
     public event Action<int> OnInventoryInteractEvent;
 
@@ -155,6 +156,12 @@ public class InputReader : ScriptableObject, PlayerInput.IPlayerActions, PlayerI
     public void OnMenu(UnityEngine.InputSystem.InputAction.CallbackContext context)
     {
         throw new System.NotImplementedException();
+    }
+    public void OnCheat(UnityEngine.InputSystem.InputAction.CallbackContext context)
+    {
+        if(context.performed){
+            PlayerController.Instance.GainShards(100);
+        }
     }
     #endregion
 }

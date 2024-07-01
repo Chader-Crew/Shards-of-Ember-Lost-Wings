@@ -7,7 +7,7 @@ public class BombItem : MonoBehaviour
     public float explosionDelay = 3f; // Tempo até a bomba explodir
     public float explosionRadius = 5f; // Raio da explosão
     public float explosionForce = 700f; // Força da explosão
-    public int damage = 2; // Dano da explosão
+    public int damage = 10; // Dano da explosão
     public ParticleSystem explosionVFX;
 
     private void Start(){

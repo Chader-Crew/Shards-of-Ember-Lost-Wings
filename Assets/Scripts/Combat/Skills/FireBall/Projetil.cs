@@ -23,7 +23,7 @@ public class Projetil : MonoBehaviour
         {
             skillDT.Target(other.gameObject.GetComponent<Character>());
             skill.Activate(skillDT);
+            Destroy(gameObject);
         }
-        Destroy(gameObject);
     }
 }
