@@ -19,10 +19,10 @@ public class InventoryManager : MonoBehaviour
     public GameObject itemCollected;
 
 
-    private void Awake(){
+    private void Start(){
+        instance = this;
         input.OnInventoryInteractEvent += UseItemFromSlot;
         //input.OnPauseEvent += OpenInventory;
-        instance = this;
     }
 
     public bool AddItem(Item item){
@@ -58,7 +58,7 @@ public class InventoryManager : MonoBehaviour
         inventoryItem.InitializeItem(item);
 
         // Ajusta a rotação dependendo do slot
-        AdjustItemRotation(inventoryItem, slot);
+        //AdjustItemRotation(inventoryItem, slot);
     }
 
     public void UseItemFromSlot(int slotIndex){

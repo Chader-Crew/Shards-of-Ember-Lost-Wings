@@ -57,6 +57,9 @@ public class InventoryItem : MonoBehaviour
         Debug.Log("Count: " + count);
 
         if (item is UsableItem usableItem){
+            
+            usableItem.Use();
+
             if (item.itemAudio != null){
                 AudioManager.instance.PlaySFX(item.itemAudio);
             }
@@ -67,7 +70,6 @@ public class InventoryItem : MonoBehaviour
                 Destroy(vfxInstance, 3f);
             }
 
-            usableItem.Use();
             count--;
 
             if (count <= 0){
