@@ -13,5 +13,7 @@ public class ItemTutorial : MonoBehaviour
 
     public void OpenItemTutorial(){
         canvasTutorial.SetActive(true);
+        Cursor.lockState = CursorLockMode.None;
+        Cursor.visible = true;
     }
 }
