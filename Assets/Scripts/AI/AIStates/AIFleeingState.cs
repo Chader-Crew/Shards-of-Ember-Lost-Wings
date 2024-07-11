@@ -15,7 +15,7 @@ public class AIFleeingState : AIStateBase
     {
         base.OnStateEnter(stateMachine);
 
-        stateMachine.controller.animator.Play(StateType.ToString());
+        stateMachine.controller.PlayAnimation(StateType.ToString());
     }
 
     public override void StateUpdate(AIStateMachine stateMachine)

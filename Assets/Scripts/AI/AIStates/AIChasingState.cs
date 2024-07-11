@@ -13,7 +13,7 @@ public class AIChasingState : AIStateBase
 
         stateMachine.ChooseAttack();
 
-        stateMachine.controller.animator.Play(StateType.ToString());
+        stateMachine.controller.PlayAnimation(StateType.ToString());
     }
 
     public override void StateUpdate(AIStateMachine stateMachine)

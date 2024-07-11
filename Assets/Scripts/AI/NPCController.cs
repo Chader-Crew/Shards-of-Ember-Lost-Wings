@@ -164,4 +164,22 @@ public class NPCController : MonoBehaviour
     {
         extraMovement = Vector3.zero;
     }
+
+    //coisas de animacao
+    public void PlayAnimation(string animationStateName)
+    {
+       // Debug.Log("Trying to start animation "+ animationStateName);
+        StopCoroutine("PlayAnimWaitForTransition");
+        StartCoroutine("PlayAnimWaitForTransition", animationStateName);
+    }
+    private IEnumerator PlayAnimWaitForTransition(string animationStateName)
+    {
+        while(animator.IsInTransition(0))
+        {
+            //Debug.Log("Waiting for transition");
+            //Debug.Log("Current state is: " + stateMachine.CurrentState);
+            yield return new WaitForEndOfFrame();
+        }
+        animator.CrossFadeInFixedTime(animationStateName, 0.3f);
+    }
 }

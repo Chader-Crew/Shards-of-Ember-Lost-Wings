@@ -17,7 +17,7 @@ public class AIPatrolState : AIStateBase
         base.OnStateEnter(stateMachine);
         walkPointSet = false;
         
-        stateMachine.controller.animator.Play(StateType.ToString());
+        stateMachine.controller.PlayAnimation(StateType.ToString());
 
         stateMachine.controller.navAgent.speed = stateMachine.controller.navAgent.speed * speedMod;
     }

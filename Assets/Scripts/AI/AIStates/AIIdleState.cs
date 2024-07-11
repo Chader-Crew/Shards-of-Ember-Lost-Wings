@@ -14,7 +14,7 @@ public class AIIdleState : AIStateBase
     {
         base.OnStateEnter(stateMachine);
         
-        stateMachine.controller.animator.Play(StateType.ToString());
+        stateMachine.controller.PlayAnimation(StateType.ToString());
         stateMachine.controller.SetDestination(stateMachine.transform.position);
     }
     public override void StateUpdate(AIStateMachine stateMachine)
