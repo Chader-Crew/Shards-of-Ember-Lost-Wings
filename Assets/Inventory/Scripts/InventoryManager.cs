@@ -65,7 +65,6 @@ public class InventoryManager : MonoBehaviour
         if (slotIndex >= 0 && slotIndex < inventorySlots.Length){
             InventorySlot slot = inventorySlots[slotIndex];
             InventoryItem itemInSlot = slot.GetComponentInChildren<InventoryItem>();
-            Debug.Log("Usou item " + slotIndex);
             if (itemInSlot != null){
                 // Chama o método de uso do item
                 itemInSlot.UseItem();

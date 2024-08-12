@@ -25,8 +25,8 @@ public class InventoryItem : MonoBehaviour
 
     public void UpdateCount(){
         countText.text = count.ToString();
-        bool textActive = count > 1;
-        countText.gameObject.SetActive(textActive);
+        //bool textActive = count > 1;
+        countText.gameObject.SetActive(true);
     }
 
     //drag and drop dropado pq nao teremos mais inventario principal
@@ -54,31 +54,31 @@ public class InventoryItem : MonoBehaviour
 
     public void UseItem()
     {
-        Debug.Log("Count: " + count);
+        if(count > 0){
+            if (item is UsableItem usableItem){
+                
+                usableItem.Use();
 
-        if (item is UsableItem usableItem){
-            
-            usableItem.Use();
+                if (item.itemAudio != null){
+                    AudioManager.instance.PlaySFX(item.itemAudio);
+                }
 
-            if (item.itemAudio != null){
-                AudioManager.instance.PlaySFX(item.itemAudio);
+                if (item.itemVFX != null){
+                    GameObject vfxInstance = Instantiate(item.itemVFX, PlayerController.Instance.transform.position, Quaternion.identity);
+                    vfxInstance.transform.SetParent(PlayerController.Instance.transform);
+                    Destroy(vfxInstance, 3f);
+                }
+
+                count--;
+
+                /*if (count <= 0){
+                    Destroy(gameObject);
+                }*/
+
+                UpdateCount();
+            }else{
+                Debug.Log("Este item não pode ser usado.");
             }
-
-            if (item.itemVFX != null){
-                GameObject vfxInstance = Instantiate(item.itemVFX, PlayerController.Instance.transform.position, Quaternion.identity);
-                vfxInstance.transform.SetParent(PlayerController.Instance.transform);
-                Destroy(vfxInstance, 3f);
-            }
-
-            count--;
-
-            if (count <= 0){
-                Destroy(gameObject);
-            }
-
-            UpdateCount();
-        }else{
-            Debug.Log("Este item não pode ser usado.");
         }
     }
 }
