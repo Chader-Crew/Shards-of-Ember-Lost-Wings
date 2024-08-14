@@ -13,6 +13,8 @@ public class Character : MonoBehaviour, IDamageable
     [SerializeField] protected CharStats stats;   //Stat sheet
     [SerializeField] public CharStats Stats { get { return stats;} }    //Propriedade publica readonly
     [SerializeField] protected Collider col;      //Colisao de combate (hurtbox)
+    [SerializeField] private Renderer renderer; //Renderer pra troca de materiais
+    [SerializeField] protected Material damageFlashingMaterial;     //Material que faz piscar vermelho quando leva dano
 
     public bool _invul;
     private bool isPoisonBuffActive;
@@ -69,8 +71,9 @@ public class Character : MonoBehaviour, IDamageable
             this.gameObject.GetComponent<canBurn>().Burn(dur);
         }*/
         stats.hp -= totalDamage;
-        Debug.Log($"levou {totalDamage} de dano");
+        //Debug.Log($"levou {totalDamage} de dano");
         OnGotHitEvent(data, totalDamage);
+        StartCoroutine(DamageFlashing());
 
         if(stats.hp <= 0) 
         { 
@@ -81,6 +84,28 @@ public class Character : MonoBehaviour, IDamageable
         
     }
     #endregion
+
+    //corotina para trocar os materiais pro feedback de dano e trocar de volta
+    public IEnumerator DamageFlashing()
+    {
+        List<Material> previousMats = new List<Material>();
+        renderer.GetMaterials(previousMats);
+
+        //checagem para evitar duas corotinas rodarem e bugar
+        if(previousMats[0] != damageFlashingMaterial)
+        {
+            //fazendo lista com so o material do flash pra substituir todos os materiais
+            List<Material> nextMats = new List<Material>();
+            for(int i = 0; i < renderer.materials.Length; i++)
+            {
+                nextMats.Add(damageFlashingMaterial);
+            }
+            //substitui todos os materiais e volta eles depois de um tempo
+            renderer.SetMaterials(nextMats);
+            yield return new WaitForSeconds(0.1f);
+            renderer.SetMaterials(previousMats);
+        }
+    }
 
     public void restoreLife(float value){
         float healVal = Mathf.Clamp(value, 0, stats.maxHp - stats.hp);

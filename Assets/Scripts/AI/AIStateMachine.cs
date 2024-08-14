@@ -73,7 +73,7 @@ public class AIStateMachine : MonoBehaviour
 
     public void EnterState(AIStateBase state)
     {
-        Debug.Log("Trying to enter state: " + state);
+        //Debug.Log("Trying to enter state: " + state);
         if(currentState != null) 
         {
             currentState.OnStateExit(this); 

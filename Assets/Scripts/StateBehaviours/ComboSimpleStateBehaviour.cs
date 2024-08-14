@@ -12,7 +12,7 @@ public class ComboSimpleStateBehaviour : StateMachineBehaviour
     override public void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
         normalizedBuffer = 1- bufferTime / stateInfo.length;
-        Debug.Log($"Normalized animation buffer for {animator.name}: {normalizedBuffer}");
+        //Debug.Log($"Normalized animation buffer for {animator.name}: {normalizedBuffer}");
     }
 
     // OnStateUpdate is called on each Update frame between OnStateEnter and OnStateExit callbacks
