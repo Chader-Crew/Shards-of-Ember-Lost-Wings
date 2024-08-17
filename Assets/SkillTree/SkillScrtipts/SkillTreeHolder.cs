@@ -16,9 +16,12 @@ public class SkillTreeHolder: ScriptableObject
 
     public string nameState;
 
+    public Mesh ArmorMesh;
+    public Mesh BodyMesh;
+
     public void Enter()
     {
         Debug.Log(nameState);
     }
-
+    
 }

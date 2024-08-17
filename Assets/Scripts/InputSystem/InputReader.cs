@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 //Classe "parser" das informacoes do input system. Tem eventos customizados que apenas passam as partes importantes do contexto.
 [CreateAssetMenu(menuName = "ScriptableObjects/inputReader")]
@@ -119,7 +120,13 @@ public class InputReader : ScriptableObject, PlayerInput.IPlayerActions, PlayerI
 
     public void OnDragonStateKeyboard(UnityEngine.InputSystem.InputAction.CallbackContext context)
     {
-        throw new System.NotImplementedException();
+        if(context.performed)
+        {
+            OnDragonStateEvent(1);
+        }else if(context.canceled)
+        {
+            OnDragonStateEvent(-1);
+        }
     }
 
     public void OnSkillChange(UnityEngine.InputSystem.InputAction.CallbackContext context)

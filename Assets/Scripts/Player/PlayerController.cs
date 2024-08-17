@@ -34,6 +34,9 @@ public class PlayerController : Singleton<PlayerController>
     }
     [SerializeField] ShardsGotPopup shardPopupText;
     private bool _skillCooldown;
+    [SerializeField] private SkinnedMeshRenderer armorMesh;
+    [SerializeField] private SkinnedMeshRenderer bodyMesh;
+    [SerializeField] private GameObject swapVFXObject;
 
     private void Awake() 
     {
@@ -133,21 +136,26 @@ public class PlayerController : Singleton<PlayerController>
     {
         _skillCooldown = false;
     }
+
+    //troca de modo elemental
     private void ChangeState(int i)
     {
         if(i==(-1))
         {
             state=state.prev;
-            state.Enter();
-            stateIMG.sprite = state.stateIMG;
         }
         else if(i==(1))
         {
             state=state.next;
-            state.Enter();
-            stateIMG.sprite = state.stateIMG;
-
+        }else{
+            return;
         }
+        
+        state.Enter();
+        stateIMG.sprite = state.stateIMG;       //troca de interface, mesh e trigger de vfx
+        bodyMesh.sharedMesh = state.BodyMesh;
+        armorMesh.sharedMesh = state.ArmorMesh;
+        swapVFXObject.SetActive(true);
     }
 
     public void GainShards(int ammount)
