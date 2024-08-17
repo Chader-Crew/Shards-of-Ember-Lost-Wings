@@ -10,7 +10,7 @@ using UnityEngine.UI;
 [RequireComponent(typeof(Animator))]
 public class PlayerController : Singleton<PlayerController>
 {
-    private PlayerMovement mov;
+    public PlayerMovement mov;
     public Character character;
     [SerializeField]public SkillTreeHolder state;
     [SerializeField] private InputReader input;
@@ -19,6 +19,10 @@ public class PlayerController : Singleton<PlayerController>
     [SerializeField] GameObject skilltree;
     [SerializeField] TMP_Text spText;
     private AtakaStateBehaviour atakaState;
+    public float dashSpeed;
+    public float dashTime;
+    public float dashCoolDown;
+    public bool canDash = true;
     private SkillBase selectedSkill;
     private int _skillShards;
     public int SkillShards
@@ -59,6 +63,7 @@ public class PlayerController : Singleton<PlayerController>
         character.OnDiedEvent += FindObjectOfType<DeathScreenBehaviour>(true).OnPlayerDeath;
 
         atakaState.AttackEndAction = AttackEnd;
+        input.OnDashEvent += DashAction;
     }
     void Start()
     {
@@ -160,21 +165,26 @@ public class PlayerController : Singleton<PlayerController>
         StatShards -= ammount;
     }
 
-    /* private void OpenSkillTree()
-    {
-        if(skilltree.activeSelf)
+    private void DashAction()
+    {   
+        if(canDash)
         {
-            skilltree.SetActive(false);
-        }
-        else
-        {
-            skilltree.SetActive(true);
+            StartCoroutine(DashSkill());
         }
     }
-    public void UPDATESKILLS()
-    {
-        spText.text="Skillpoints "+skillShards;
-    } */
 
+    IEnumerator DashSkill()
+    {   
+        canDash = false;
+        float startTime = Time.time;
 
+        while(Time.time < startTime + dashTime)
+        {
+            mov.characterController.Move(mov.movement * dashSpeed * Time.deltaTime);
+            yield return null;
+        }
+
+        yield return new WaitForSeconds(dashCoolDown);        
+        canDash = true;
+    }
 }

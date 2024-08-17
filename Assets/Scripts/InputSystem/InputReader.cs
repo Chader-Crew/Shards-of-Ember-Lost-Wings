@@ -73,7 +73,10 @@ public class InputReader : ScriptableObject, PlayerInput.IPlayerActions, PlayerI
 
     public void OnDash(UnityEngine.InputSystem.InputAction.CallbackContext context)
     {
-        throw new System.NotImplementedException();
+         if(context.started)
+        {
+            OnDashEvent();
+        }
     }
 
     public void OnAttack(UnityEngine.InputSystem.InputAction.CallbackContext context)

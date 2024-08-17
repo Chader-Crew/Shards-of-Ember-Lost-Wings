@@ -32127,9 +32127,24 @@ PrefabInstance:
       objectReference: {fileID: 1587572901}
     - target: {fileID: 7860060996853458313, guid: f020d8f38d821274f9011d9ee6cee02a,
         type: 3}
+      propertyPath: dashTime
+      value: 0.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7860060996853458313, guid: f020d8f38d821274f9011d9ee6cee02a,
+        type: 3}
       propertyPath: stateIMG
       value: 
       objectReference: {fileID: 1356185666}
+    - target: {fileID: 7860060996853458313, guid: f020d8f38d821274f9011d9ee6cee02a,
+        type: 3}
+      propertyPath: dashSpeed
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 7860060996853458313, guid: f020d8f38d821274f9011d9ee6cee02a,
+        type: 3}
+      propertyPath: dashCoolDown
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 7860060996853458313, guid: f020d8f38d821274f9011d9ee6cee02a,
         type: 3}
       propertyPath: shardPopupText

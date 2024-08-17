@@ -15,7 +15,7 @@ public class PlayerMovement : MonoBehaviour
     public Vector3 movement;
     public float velocity;
     public bool _canMov;
-    CharacterController characterController;
+    public CharacterController characterController;
 
     void Awake()
     {
