@@ -173,6 +173,7 @@ public class PlayerController : Singleton<PlayerController>
         StatShards -= ammount;
     }
 
+    //coolDown, limita o tempo de uso do Dash
     private void DashAction()
     {   
         if(canDash)
@@ -181,6 +182,7 @@ public class PlayerController : Singleton<PlayerController>
         }
     }
 
+    //Tempo de coolDown, velocidade do Dash e tempo de duração
     IEnumerator DashSkill()
     {   
         canDash = false;
