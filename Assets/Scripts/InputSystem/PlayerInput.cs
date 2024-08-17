@@ -116,6 +116,15 @@ public partial class @PlayerInput: IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""DragonStateKeyboard"",
+                    ""type"": ""Button"",
+                    ""id"": ""f787addb-c1aa-429e-b22c-f5faabb71278"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
@@ -277,39 +286,6 @@ public partial class @PlayerInput: IInputActionCollection2, IDisposable
                     ""name"": ""positive"",
                     ""id"": ""a38f86fa-0dfb-4297-8b08-59142553b1df"",
                     ""path"": ""<Gamepad>/rightShoulder"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""DragonStateGamepad"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": true
-                },
-                {
-                    ""name"": ""Keyboard"",
-                    ""id"": ""1c8ae3ec-cb83-42f4-bf7d-2703004f89aa"",
-                    ""path"": ""1DAxis"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""DragonStateGamepad"",
-                    ""isComposite"": true,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": ""negative"",
-                    ""id"": ""d819b67b-a3d3-4c51-8ea2-326dce1e1b41"",
-                    ""path"": ""<Keyboard>/q"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""DragonStateGamepad"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": true
-                },
-                {
-                    ""name"": ""positive"",
-                    ""id"": ""4451144b-5231-4c14-bb99-d63428d274e8"",
-                    ""path"": ""<Keyboard>/e"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
@@ -481,6 +457,17 @@ public partial class @PlayerInput: IInputActionCollection2, IDisposable
                     ""action"": ""Cheat"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""8040f43b-9e74-4140-a157-502cc7df2fe7"",
+                    ""path"": ""<Keyboard>/q"",
+                    ""interactions"": ""Tap"",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""DragonStateKeyboard"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         },
@@ -624,6 +611,7 @@ public partial class @PlayerInput: IInputActionCollection2, IDisposable
         m_Player_UseSkill = m_Player.FindAction("UseSkill", throwIfNotFound: true);
         m_Player_ItemInteract = m_Player.FindAction("ItemInteract", throwIfNotFound: true);
         m_Player_Cheat = m_Player.FindAction("Cheat", throwIfNotFound: true);
+        m_Player_DragonStateKeyboard = m_Player.FindAction("DragonStateKeyboard", throwIfNotFound: true);
         // UI
         m_UI = asset.FindActionMap("UI", throwIfNotFound: true);
         m_UI_Menu = m_UI.FindAction("Menu", throwIfNotFound: true);
@@ -699,6 +687,7 @@ public partial class @PlayerInput: IInputActionCollection2, IDisposable
     private readonly InputAction m_Player_UseSkill;
     private readonly InputAction m_Player_ItemInteract;
     private readonly InputAction m_Player_Cheat;
+    private readonly InputAction m_Player_DragonStateKeyboard;
     public struct PlayerActions
     {
         private @PlayerInput m_Wrapper;
@@ -713,6 +702,7 @@ public partial class @PlayerInput: IInputActionCollection2, IDisposable
         public InputAction @UseSkill => m_Wrapper.m_Player_UseSkill;
         public InputAction @ItemInteract => m_Wrapper.m_Player_ItemInteract;
         public InputAction @Cheat => m_Wrapper.m_Player_Cheat;
+        public InputAction @DragonStateKeyboard => m_Wrapper.m_Player_DragonStateKeyboard;
         public InputActionMap Get() { return m_Wrapper.m_Player; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -752,6 +742,9 @@ public partial class @PlayerInput: IInputActionCollection2, IDisposable
             @Cheat.started += instance.OnCheat;
             @Cheat.performed += instance.OnCheat;
             @Cheat.canceled += instance.OnCheat;
+            @DragonStateKeyboard.started += instance.OnDragonStateKeyboard;
+            @DragonStateKeyboard.performed += instance.OnDragonStateKeyboard;
+            @DragonStateKeyboard.canceled += instance.OnDragonStateKeyboard;
         }
 
         private void UnregisterCallbacks(IPlayerActions instance)
@@ -786,6 +779,9 @@ public partial class @PlayerInput: IInputActionCollection2, IDisposable
             @Cheat.started -= instance.OnCheat;
             @Cheat.performed -= instance.OnCheat;
             @Cheat.canceled -= instance.OnCheat;
+            @DragonStateKeyboard.started -= instance.OnDragonStateKeyboard;
+            @DragonStateKeyboard.performed -= instance.OnDragonStateKeyboard;
+            @DragonStateKeyboard.canceled -= instance.OnDragonStateKeyboard;
         }
 
         public void RemoveCallbacks(IPlayerActions instance)
@@ -869,6 +865,7 @@ public partial class @PlayerInput: IInputActionCollection2, IDisposable
         void OnUseSkill(InputAction.CallbackContext context);
         void OnItemInteract(InputAction.CallbackContext context);
         void OnCheat(InputAction.CallbackContext context);
+        void OnDragonStateKeyboard(InputAction.CallbackContext context);
     }
     public interface IUIActions
     {

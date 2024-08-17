@@ -94,6 +94,15 @@
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": false
+                },
+                {
+                    "name": "DragonStateKeyboard",
+                    "type": "Button",
+                    "id": "f787addb-c1aa-429e-b22c-f5faabb71278",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
                 }
             ],
             "bindings": [
@@ -263,39 +272,6 @@
                     "isPartOfComposite": true
                 },
                 {
-                    "name": "Keyboard",
-                    "id": "1c8ae3ec-cb83-42f4-bf7d-2703004f89aa",
-                    "path": "1DAxis",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "DragonStateGamepad",
-                    "isComposite": true,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "negative",
-                    "id": "d819b67b-a3d3-4c51-8ea2-326dce1e1b41",
-                    "path": "<Keyboard>/q",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "DragonStateGamepad",
-                    "isComposite": false,
-                    "isPartOfComposite": true
-                },
-                {
-                    "name": "positive",
-                    "id": "4451144b-5231-4c14-bb99-d63428d274e8",
-                    "path": "<Keyboard>/e",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "DragonStateGamepad",
-                    "isComposite": false,
-                    "isPartOfComposite": true
-                },
-                {
                     "name": "",
                     "id": "d38a179c-b437-451f-b69a-942db77129c4",
                     "path": "<Gamepad>/rightStick",
@@ -457,6 +433,17 @@
                     "processors": "",
                     "groups": "",
                     "action": "Cheat",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "8040f43b-9e74-4140-a157-502cc7df2fe7",
+                    "path": "<Keyboard>/q",
+                    "interactions": "Tap",
+                    "processors": "",
+                    "groups": "",
+                    "action": "DragonStateKeyboard",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }
