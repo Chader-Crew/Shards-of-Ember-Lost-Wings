@@ -12,7 +12,7 @@ public class InventoryItem : MonoBehaviour
     public Image image;
     public TMP_Text countText;
 
-    [HideInInspector] public Transform parentAfterDrag;
+    //[HideInInspector] public Transform parentAfterDrag;
     [HideInInspector] public Item item;
     [HideInInspector] public int count = 1;
 
@@ -71,9 +71,9 @@ public class InventoryItem : MonoBehaviour
 
                 count--;
 
-                /*if (count <= 0){
+                if (count <= 0 && item.id != 0){ //id 0 é a health potion
                     Destroy(gameObject);
-                }*/
+                }
 
                 UpdateCount();
             }else{

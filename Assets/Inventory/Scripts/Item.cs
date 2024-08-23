@@ -14,6 +14,7 @@ public class Item : ScriptableObject
     public Sprite image;
     public AudioClip itemAudio;
     public GameObject itemVFX;
+    public int id;
 }
 
 /*public enum ItemType{
