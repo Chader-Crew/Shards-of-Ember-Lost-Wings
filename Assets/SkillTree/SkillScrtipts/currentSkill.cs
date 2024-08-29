@@ -10,6 +10,7 @@ public class currentSkill : MonoBehaviour
 
     [SerializeField]private int bigCost;
     [SerializeField]private int smallCost;
+    [SerializeField]private bool IsSkill;
 
     public void BuySkill()
     {
@@ -23,6 +24,7 @@ public class currentSkill : MonoBehaviour
                 this.gameObject.GetComponent<Button>().enabled=false;
                 //PlayerController.Instance.SkillShards -= bigCost;
                 PlayerController.Instance.SpendShards(smallCost);
+                
             }
             else
             {

@@ -130,9 +130,13 @@ public class PlayerController : Singleton<PlayerController>
             SkillData data = new SkillData();
             data.owner = character;
             selectedSkill=state.activeSkill;
-            selectedSkill.Activate(data);
-            _skillCooldown = true;
-            Invoke("ResetCooldown", 1.5f);
+            if(selectedSkill!=null)
+            {
+                selectedSkill.Activate(data);
+                _skillCooldown = true;
+                Invoke("ResetCooldown", 1.5f);
+
+            }
         }
 
     }

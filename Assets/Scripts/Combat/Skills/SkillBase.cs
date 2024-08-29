@@ -11,4 +11,6 @@ public abstract class SkillBase : ScriptableObject
     public abstract void Activate(SkillData context);
     #endregion
     public abstract void Comprado(CharStats player);
+
+
 }
