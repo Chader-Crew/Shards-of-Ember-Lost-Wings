@@ -85,7 +85,7 @@ public class PlayerController : Singleton<PlayerController>
 
     private void MoveInput(Vector2 vector2)
     {
-        if(vector2.magnitude >= 0.1f)
+        if(vector2.magnitude > 0.1f)
         {
             animator.SetBool("isRunning", true);
             audioSource.enabled = true;
