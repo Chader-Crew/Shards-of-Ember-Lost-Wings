@@ -15,6 +15,7 @@ public class PlayerController : Singleton<PlayerController>
     [SerializeField]public SkillTreeHolder state;
     [SerializeField] private InputReader input;
     private Animator animator;
+    private AudioSource audioSource;
     [SerializeField] Image stateIMG;
     [SerializeField] GameObject skilltree;
     [SerializeField] TMP_Text spText;
@@ -49,6 +50,7 @@ public class PlayerController : Singleton<PlayerController>
         mov = GetComponent<PlayerMovement>();
         character = GetComponent<Character>();
         animator = GetComponent<Animator>();
+        audioSource = GetComponent<AudioSource>();
         atakaState = animator.GetBehaviour<AtakaStateBehaviour>();
         shardPopupText = FindObjectOfType<ShardsGotPopup>(true);
 
