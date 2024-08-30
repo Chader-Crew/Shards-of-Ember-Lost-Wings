@@ -15,7 +15,7 @@ public class PlayerController : Singleton<PlayerController>
     [SerializeField]public SkillTreeHolder state;
     [SerializeField] private InputReader input;
     private Animator animator;
-    private AudioSource audioSource;
+    public AudioSource audioSource;
     [SerializeField] Image stateIMG;
     [SerializeField] GameObject skilltree;
     [SerializeField] TMP_Text spText;
@@ -85,12 +85,14 @@ public class PlayerController : Singleton<PlayerController>
 
     private void MoveInput(Vector2 vector2)
     {
-        if(vector2.magnitude == 0)
-        {
-            animator.SetBool("isRunning", false);
-        }else
+        if(vector2.magnitude >= 0.1f)
         {
             animator.SetBool("isRunning", true);
+            audioSource.enabled = true;
+        }else
+        {
+            animator.SetBool("isRunning", false);
+            audioSource.enabled = false;
         }
         mov.movement = new Vector3(vector2.x, 0, vector2.y);
     }
