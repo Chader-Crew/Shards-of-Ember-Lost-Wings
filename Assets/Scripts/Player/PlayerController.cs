@@ -10,6 +10,7 @@ using UnityEngine.UI;
 [RequireComponent(typeof(Animator))]
 public class PlayerController : Singleton<PlayerController>
 {
+    #region Declarations
     public PlayerMovement mov;
     public Character character;
     [SerializeField]public SkillTreeHolder state;
@@ -38,11 +39,12 @@ public class PlayerController : Singleton<PlayerController>
         private set => _statShards = value;
     }
     [SerializeField] ShardsGotPopup shardPopupText;
-    private bool _skillCooldown;
+    public Action<SkillBase> OnCastEvent;   
     [SerializeField] private SkinnedMeshRenderer armorMesh;
     [SerializeField] private SkinnedMeshRenderer bodyMesh;
     [SerializeField] private GameObject swapVFXObject;
-
+    
+    #endregion
     private void Awake() 
     {
         stateIMG.sprite = state.stateIMG;
@@ -67,6 +69,9 @@ public class PlayerController : Singleton<PlayerController>
         //input.OnPauseEvent += OpenSkillTree;
         character.OnDiedEvent += FindObjectOfType<DeathScreenBehaviour>(true).OnPlayerDeath;
 
+        //reinicializacao de eventos
+        OnCastEvent = (SkillBase s)=>{};
+
         atakaState.AttackEndAction = AttackEnd;
         input.OnDashEvent += DashAction;
     }
@@ -74,7 +79,6 @@ public class PlayerController : Singleton<PlayerController>
     {
         //spText.text="Skillpoints "+skillShards;
         SkillShards = 1;
-        _skillCooldown = false;
     }
 
     //chamado quando o animator sai do state de ataque para destravar movimento (provavelmente devia ser mudado para |quando entra em idle|)
@@ -128,23 +132,21 @@ public class PlayerController : Singleton<PlayerController>
     }
     private void Cast()
     {
-        if(!_skillCooldown)
+        if(state.activeSkill!=null && !state.activeSkill._onCooldown)
         {
+            //criacao de SkillData
             SkillData data = new SkillData();
             data.owner = character;
-            if(state.activeSkill!=null)
-            {
-                state.activeSkill.Activate(data);
-                _skillCooldown = true;
-                Invoke("ResetCooldown", 1.5f);
+
+            //ativa a skill
+            state.activeSkill.Activate(data);
+            OnCastEvent(state.activeSkill);
+
+            //se tem cooldown poe em cooldown
+            if(state.activeSkill.cooldown >0){
+                state.activeSkill._onCooldown = true;
             }
         }
-
-    }
-
-    private void ResetCooldown()
-    {
-        _skillCooldown = false;
     }
 
     //troca de modo elemental

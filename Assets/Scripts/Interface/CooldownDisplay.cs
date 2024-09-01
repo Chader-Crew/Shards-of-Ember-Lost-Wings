@@ -11,10 +11,11 @@ public class CooldownDisplay : MonoBehaviour
     //tempo que falta e tempo total do cooldown
     private float remainingTime, totalTime;
     //action que e chamada quando o tempo acaba
-    private Action CallBack;
+    public Action CallBack;
 
     private void Awake() 
     {
+        image = GetComponent<Image>();
         image.type = Image.Type.Filled; //tem que ser esse image type pra mostrar o fill
         image.fillAmount = 0;
         CallBack = ()=>{};

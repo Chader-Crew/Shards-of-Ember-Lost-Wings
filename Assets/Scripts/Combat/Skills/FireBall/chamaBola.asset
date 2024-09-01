@@ -13,6 +13,8 @@ MonoBehaviour:
   m_Name: chamaBola
   m_EditorClassIdentifier: 
   canCast: 1
+  cooldown: 3
+  _onCooldown: 0
   offset: {x: 0, y: 0, z: 0}
   projectile: {fileID: 2812856055069624381, guid: ca3472f562882b44d8d52c370a0653b6,
     type: 3}
