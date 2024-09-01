@@ -7,6 +7,7 @@ using UnityEngine;
 public abstract class SkillBase : ScriptableObject
 {
     public bool canCast;
+    public float cooldown;
     #region Activation Methods
     public abstract void Activate(SkillData context);
     #endregion

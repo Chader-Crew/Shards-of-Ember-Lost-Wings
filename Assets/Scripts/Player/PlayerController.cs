@@ -130,16 +130,13 @@ public class PlayerController : Singleton<PlayerController>
     {
         if(!_skillCooldown)
         {
-            selectedSkill= this.gameObject.GetComponent<SelectedSkill>().skill;
             SkillData data = new SkillData();
             data.owner = character;
-            selectedSkill=state.activeSkill;
-            if(selectedSkill!=null)
+            if(state.activeSkill!=null)
             {
-                selectedSkill.Activate(data);
+                state.activeSkill.Activate(data);
                 _skillCooldown = true;
                 Invoke("ResetCooldown", 1.5f);
-
             }
         }
 
