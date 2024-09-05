@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -21,8 +22,14 @@ public class SkillHUD : MonoBehaviour
             cdDisplayDictionary.Add(skillTree.skills[i], cdDisplays[i]);
         }
 
-        //inscreve no OnCast do player TODO: inscrever e desinscrever com a mudança de modo
+        //inscricao de eventos: player OnCast e input OnDragonState
         PlayerController.Instance.OnCastEvent += StartSkillCooldown;
+        InputReader.OnDragonStateEvent += PlayerStateUpdate;
+    }
+
+    private void PlayerStateUpdate(int stateIndex)
+    { 
+        gameObject.SetActive(PlayerController.Instance.state == skillTree);
     }
 
     //acha um display com a skill tentando ser castada e liga ele

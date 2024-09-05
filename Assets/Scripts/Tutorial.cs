@@ -13,11 +13,10 @@ public class Tutorial : MonoBehaviour
     public TMP_Text tutorialText;
     //public GameObject enemyPrefab; no tutorial oficial spawnar inimigo
 
-    [SerializeField] private InputReader inputReader;
     [SerializeField] private Animator tutorialAnim;
 
     void Start(){
-        inputReader.OnMoveEvent += HandleMove;
+        InputReader.OnMoveEvent += HandleMove;
         tutorialPanel.SetActive(true);
         UpdateTutorial("Use WASD ou Analógico Esquerdo para mover");
     }
@@ -31,20 +30,20 @@ public class Tutorial : MonoBehaviour
         if(vector2.magnitude != 0){
             UpdateTutorial("Pressione Espaço ou B na manete para o dash");
         }
-        inputReader.OnMoveEvent -= HandleMove;
-        inputReader.OnDashEvent += HandleDash;
+        InputReader.OnMoveEvent -= HandleMove;
+        InputReader.OnDashEvent += HandleDash;
     }
 
     private void HandleDash(){
         UpdateTutorial("Pressione F ou A na manete para interagir");
-        inputReader.OnDashEvent -= HandleDash;
-        inputReader.OnItemInteractEvent += HandleInteract;
+        InputReader.OnDashEvent -= HandleDash;
+        InputReader.OnItemInteractEvent += HandleInteract;
     }
 
     private void HandleInteract(){
         UpdateTutorial("Esquerdo do mouse ou X na manete: Ataque simples");
-        inputReader.OnItemInteractEvent -= HandleInteract;
-        inputReader.OnAttackEvent += HandleAttack;
+        InputReader.OnItemInteractEvent -= HandleInteract;
+        InputReader.OnAttackEvent += HandleAttack;
     }
 
     private void HandleAttack(){
@@ -54,7 +53,7 @@ public class Tutorial : MonoBehaviour
 
     IEnumerator CleanTutorial(){
         yield return new WaitForSeconds(5f);
-        inputReader.OnAttackEvent -= HandleAttack;
+        InputReader.OnAttackEvent -= HandleAttack;
         tutorialAnim.Play("TutorialPopOut");
         Destroy(this, 2f); //por enqunato apagar o codigo funciona
     }

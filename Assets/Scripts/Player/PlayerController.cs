@@ -60,11 +60,11 @@ public class PlayerController : Singleton<PlayerController>
         input.Initialize();
 
         //inscricao em eventos e atribuicao de actions
-        input.OnMoveEvent += MoveInput;
-        input.OnAttackEvent += AttackInput;
+        InputReader.OnMoveEvent += MoveInput;
+        InputReader.OnAttackEvent += AttackInput;
         character.OnGotHitEvent += SkillHit;
-        input.OnSkillUseEvent += Cast;
-        input.OnDragonStateEvent += ChangeState;
+        InputReader.OnSkillUseEvent += Cast;
+        InputReader.OnDragonStateEvent += ChangeState;
         character.OnDiedEvent += Die;
         //input.OnPauseEvent += OpenSkillTree;
         character.OnDiedEvent += FindObjectOfType<DeathScreenBehaviour>(true).OnPlayerDeath;
@@ -73,7 +73,7 @@ public class PlayerController : Singleton<PlayerController>
         OnCastEvent = (SkillBase s)=>{};
 
         atakaState.AttackEndAction = AttackEnd;
-        input.OnDashEvent += DashAction;
+        InputReader.OnDashEvent += DashAction;
     }
     void Start()
     {

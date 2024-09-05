@@ -5,7 +5,6 @@ using UnityEngine;
 public class RootColliderConfig : MonoBehaviour
 {
     public InventoryManager inventoryManager;
-    [SerializeField] private InputReader input;
     public GroundItem currentItem;
     private ItemFeedback itemFeedback;
     private bool _solas = false, _nyxtra = false;
@@ -13,11 +12,11 @@ public class RootColliderConfig : MonoBehaviour
     public ItemTutorial itemTutorial;
 
     private void Awake(){
-        input.OnItemInteractEvent += HandleItemInteract;
+        InputReader.OnItemInteractEvent += HandleItemInteract;
     }
 
     private void OnDestroy(){
-        input.OnItemInteractEvent -= HandleItemInteract;
+        InputReader.OnItemInteractEvent -= HandleItemInteract;
     }
 
     void OnTriggerEnter(Collider other){

@@ -12,16 +12,16 @@ public class InputReader : ScriptableObject, PlayerInput.IPlayerActions, PlayerI
     private PlayerInput playerInput;
 
     //eventos
-    public event Action<Vector2> OnMoveEvent;
-    public event Action OnDashEvent;
-    public event Action OnAttackEvent;
-    public event Action<int> OnDragonStateEvent;    //0,1,2 sao cada um dos estados
-    public event Action<Vector2> OnSkillChangeEvent;
-    public event Action OnSkillUseEvent;
-    public event Action OnPauseEvent;
-    public event Action OnCheatEvent;
-    public event Action OnItemInteractEvent;
-    public event Action<int> OnInventoryInteractEvent;
+    public static event Action<Vector2> OnMoveEvent;
+    public static event Action OnDashEvent;
+    public static event Action OnAttackEvent;
+    public static event Action<int> OnDragonStateEvent;    //0,1,2 sao cada um dos estados
+    public static event Action<Vector2> OnSkillChangeEvent;
+    public static event Action OnSkillUseEvent;
+    public static event Action OnPauseEvent;
+    public static event Action OnCheatEvent;
+    public static event Action OnItemInteractEvent;
+    public static event Action<int> OnInventoryInteractEvent;
 
 
     //inicializacao

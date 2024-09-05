@@ -11,7 +11,6 @@ public class InventoryManager : MonoBehaviour
     public InventorySlot[] inventorySlots;
     public GameObject inventoryItemPrefab;
     public GameObject mainInventoryPanel;
-    [SerializeField] private InputReader input;
     
     [Header("Panel de item coletado")]
     public TMP_Text itemTextObj;
@@ -21,8 +20,8 @@ public class InventoryManager : MonoBehaviour
 
     private void Start(){
         instance = this;
-        input.OnInventoryInteractEvent += UseItemFromSlot;
-        //input.OnPauseEvent += OpenInventory;
+        InputReader.OnInventoryInteractEvent += UseItemFromSlot;
+        //InputReader.OnPauseEvent += OpenInventory;
     }
 
     public bool AddItem(Item item){
