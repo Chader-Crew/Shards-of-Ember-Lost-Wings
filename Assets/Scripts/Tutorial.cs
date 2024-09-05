@@ -18,7 +18,7 @@ public class Tutorial : MonoBehaviour
     void Start(){
         InputReader.OnMoveEvent += HandleMove;
         tutorialPanel.SetActive(true);
-        UpdateTutorial("Use WASD ou Analógico Esquerdo para mover");
+        UpdateTutorial("Use WASD para mover");
     }
 
     public void UpdateTutorial(string newText){
@@ -28,26 +28,26 @@ public class Tutorial : MonoBehaviour
     private void HandleMove(Vector2 vector2){
 
         if(vector2.magnitude != 0){
-            UpdateTutorial("Pressione Espaço ou B na manete para o dash");
+            UpdateTutorial("Pressione Espaço para o dash");
         }
         InputReader.OnMoveEvent -= HandleMove;
         InputReader.OnDashEvent += HandleDash;
     }
 
     private void HandleDash(){
-        UpdateTutorial("Pressione F ou A na manete para interagir");
+        UpdateTutorial("Pressione F para interagir");
         InputReader.OnDashEvent -= HandleDash;
         InputReader.OnItemInteractEvent += HandleInteract;
     }
 
     private void HandleInteract(){
-        UpdateTutorial("Esquerdo do mouse ou X na manete: Ataque simples");
+        UpdateTutorial("Esquerdo do mouse: Ataque simples");
         InputReader.OnItemInteractEvent -= HandleInteract;
         InputReader.OnAttackEvent += HandleAttack;
     }
 
     private void HandleAttack(){
-        UpdateTutorial("Esc ou Start para abrir a Skill Tree");
+        UpdateTutorial("Esc para abrir a Skill Tree");
         StartCoroutine("CleanTutorial");
     }
 
