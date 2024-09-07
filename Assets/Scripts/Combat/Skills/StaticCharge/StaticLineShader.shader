@@ -60,7 +60,7 @@ Shader "Custom/StaticLineShader"
                 offset.y -= (abs(frac((b - a + _Time.w*2) / (a * 2.0)) * a * 2.0 - a));
                 offset = abs(offset);
                 offset *= 3;
-                offset = 1-offset; 
+                offset = saturate(1-offset); 
 
 
                 fixed4 col = _Color;

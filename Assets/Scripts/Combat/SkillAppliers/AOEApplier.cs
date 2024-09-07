@@ -29,8 +29,9 @@ public class AOEApplier : MonoBehaviour
     }
 
     private IEnumerator ExplodeAfterDelay(){
-        yield return new WaitForSeconds(explosionDelay);
+        yield return new WaitForSeconds(explosionDelay/2);
         explosionVFX.SetActive(true);
+        yield return new WaitForSeconds(explosionDelay/2);
         Explode();
     }
 
@@ -39,6 +40,7 @@ public class AOEApplier : MonoBehaviour
         Collider[] colliders = Physics.OverlapSphere(transform.position, explosionRadius);
 
         foreach (Collider nearbyObject in colliders){
+            Debug.Log(nearbyObject.gameObject);
             if(nearbyObject.tag != tagFilter) { continue; } //pula se nao for da tag
 
             Character character = nearbyObject.GetComponent<Character>();

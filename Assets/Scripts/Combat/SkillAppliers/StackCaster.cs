@@ -59,7 +59,7 @@ public class StackCaster : MonoBehaviour
 
     private void TriggerSkill()
     {
-        skill.Activate(context);
+        skill.Activate(new SkillData().Target(target));
         Destroy(gameObject);
     }
 }

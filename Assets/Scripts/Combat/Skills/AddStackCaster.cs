@@ -9,6 +9,7 @@ public class AddStackCaster : SkillBase
     [SerializeField] private float duration;
     public override void Activate(SkillData context)
     {
+        if(!canCast) { return; }
         if(context.targets.Count <=0 ) { return; }
 
         context.duration = duration;
