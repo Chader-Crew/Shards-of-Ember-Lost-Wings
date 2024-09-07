@@ -153,7 +153,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   skill: {fileID: 11400000, guid: 27d396a84b99b9746befabc7509de6f7, type: 2}
   rb: {fileID: -5503940605621799309}
-  vel: 3
+  vel: {x: 0, y: 0, z: 1}
   targetTag: Player
 --- !u!54 &-5503940605621799309
 Rigidbody:

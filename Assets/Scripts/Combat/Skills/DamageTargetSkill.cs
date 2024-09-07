@@ -24,8 +24,8 @@ public class DamageTargetSkill : SkillBase
     {
         //calculo de dano
         context.damage = 
-                damage +
-                context.owner.Stats.atk * perAtkDamage +
+                damage + 
+                context.owner.Stats.atk * perAtkDamage + 
                 context.owner.Stats.def * perDefDamage
                 ;
         

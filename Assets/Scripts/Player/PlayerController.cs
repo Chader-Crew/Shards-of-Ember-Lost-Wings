@@ -47,14 +47,14 @@ public class PlayerController : Singleton<PlayerController>
     #endregion
     private void Awake() 
     {
-        stateIMG.sprite = state.stateIMG;
+        //stateIMG.sprite = state.stateIMG;
         //get components
         mov = GetComponent<PlayerMovement>();
         character = GetComponent<Character>();
         animator = GetComponent<Animator>();
         audioSource = GetComponent<AudioSource>();
         atakaState = animator.GetBehaviour<AtakaStateBehaviour>();
-        shardPopupText = FindObjectOfType<ShardsGotPopup>(true);
+        //shardPopupText = FindObjectOfType<ShardsGotPopup>(true);
 
         //restart da input
         input.Initialize();
@@ -67,7 +67,7 @@ public class PlayerController : Singleton<PlayerController>
         InputReader.OnDragonStateEvent += ChangeState;
         character.OnDiedEvent += Die;
         //input.OnPauseEvent += OpenSkillTree;
-        character.OnDiedEvent += FindObjectOfType<DeathScreenBehaviour>(true).OnPlayerDeath;
+        //character.OnDiedEvent += FindObjectOfType<DeathScreenBehaviour>(true).OnPlayerDeath;
 
         //reinicializacao de eventos
         OnCastEvent = (SkillBase s)=>{};

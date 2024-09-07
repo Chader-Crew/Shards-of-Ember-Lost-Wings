@@ -7,6 +7,7 @@ public class SkillData
 {
     public Character owner;     //personagem que iniciou ou criou a skill
     public float damage;        //dano a ser dado em alvos
+    public float duration;      //quantidade de tempo para coisas com duracao
     public float stagger;
     public List<Character> targets;     //lista de alvos
 

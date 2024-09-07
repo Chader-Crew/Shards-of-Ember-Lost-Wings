@@ -7,7 +7,7 @@ public class Projetil : MonoBehaviour
     public SkillBase skill;
     public SkillData skillDT;
     [SerializeField] private Rigidbody rb;
-    [SerializeField] float vel;
+    [SerializeField] Vector3 vel;
     [SerializeField] string targetTag;
     void Start()
     {
@@ -15,7 +15,7 @@ public class Projetil : MonoBehaviour
     }
     void FixedUpdate()
     {
-        rb.velocity =transform.forward*vel;
+        rb.velocity = transform.right * vel.x + transform.up * vel.y + transform.forward * vel.z;
     }
     void OnCollisionEnter(Collision other)
     {

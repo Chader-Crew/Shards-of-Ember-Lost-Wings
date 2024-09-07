@@ -9,12 +9,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1b1417dc0d89c34489218dee268cf635, type: 3}
-  m_Name: BasicAttackStart
+  m_Script: {fileID: 11500000, guid: de8ed3a69b9b3b444b5d0618ab3545bd, type: 3}
+  m_Name: AddStaticStack
   m_EditorClassIdentifier: 
   canCast: 0
   cooldown: 0
   _onCooldown: 0
-  nextSkills:
-  - {fileID: 11400000, guid: 58f18ef9930a8a54ebeba8d742908251, type: 2}
-  - {fileID: 11400000, guid: 4deccfbd804908945a3ae09b8e2034f7, type: 2}
+  prefab: {fileID: 8543504850623283198, guid: 09cd34c0739bfa9418805bbfeefa8656, type: 3}
+  duration: 10
