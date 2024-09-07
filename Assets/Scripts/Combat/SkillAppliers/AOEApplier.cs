@@ -19,6 +19,9 @@ public class AOEApplier : MonoBehaviour
     [SerializeField]
     private string tagFilter;
 
+    [SerializeField]
+    private bool _playerOwned;
+
     private void Start()
     {
         StartCoroutine(ExplodeAfterDelay());
@@ -42,6 +45,7 @@ public class AOEApplier : MonoBehaviour
             
             if (character != null){
                 SkillData data = new SkillData().Target(character);
+                if(_playerOwned) { data.Owner(PlayerController.Instance.character); }
                 skill.Activate(data);
             }
         }

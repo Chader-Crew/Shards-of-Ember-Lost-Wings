@@ -9,13 +9,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9e37a1a00174e184bb1d5e6a0906974b, type: 3}
-  m_Name: StaticChargeDamage
+  m_Script: {fileID: 11500000, guid: 276a5aeae2c7b79469f8d8246973418c, type: 3}
+  m_Name: SpawnLightning
   m_EditorClassIdentifier: 
   canCast: 0
   cooldown: 0
   _onCooldown: 0
-  damage: 5
-  perAtkDamage: 1
-  perDefDamage: 0
-  stagger: 0
+  prefab: {fileID: 9132479637937913918, guid: f3e9f359f18b6f54ba1597ce5413a8ec, type: 3}
+  _onTarget: 0
+  offset: {x: 0, y: 0, z: 0}
