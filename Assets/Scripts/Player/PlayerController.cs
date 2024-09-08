@@ -130,6 +130,8 @@ public class PlayerController : Singleton<PlayerController>
         mov.LockMovement(false);
         animator.SetBool("isStaggered", false);
     }
+
+    //cast da skill equipada em state.activeSkill
     private void Cast()
     {
         if(state.activeSkill!=null && !state.activeSkill._onCooldown)
@@ -194,6 +196,8 @@ public class PlayerController : Singleton<PlayerController>
     {   
         canDash = false;
         float startTime = Time.time;
+
+        animator.CrossFadeInFixedTime("ShoveDash", 0.1f);
 
         while(Time.time < startTime + dashTime)
         {

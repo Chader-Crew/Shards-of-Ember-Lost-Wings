@@ -28,7 +28,8 @@ public class NPCController : MonoBehaviour
     [SerializeField] private string aggroTargetTag;
 
     private float originalSpeed;
-    private Vector3 extraMovement; //vetor LOCALIZADO. entao vector3.forward sempre move em transform.forward  
+    private Vector3 extraMovement; //vetor LOCALIZADO. entao vector3.forward sempre move em transform.forward 
+    private Vector3 forcedMovement; //vetor GLOBAL 
 
     private void Awake()
     {
@@ -51,6 +52,7 @@ public class NPCController : MonoBehaviour
         }
 
         navAgent.Move(transform.TransformDirection(extraMovement) * Time.fixedDeltaTime * navAgent.speed);
+        navAgent.Move(forcedMovement * Time.fixedDeltaTime);
     }
 
     private void Die()
@@ -150,19 +152,25 @@ public class NPCController : MonoBehaviour
 
     public void MoveForwardForSeconds(float seconds)
     {
-        extraMovement = Vector3.forward;
+        extraMovement += Vector3.forward;
         Invoke("StopExtraMovement", seconds);
     }
 
     public void MoveBackwardForSeconds(float seconds)
     {
-        extraMovement = Vector3.back;
+        extraMovement += Vector3.back;
         Invoke("StopExtraMovement", seconds);
     }
-
+    
+    public void MoveInDirectionForSeconds(Vector3 direction, float seconds)
+    {
+        forcedMovement += direction;
+        Invoke("StopExtraMovement", seconds);
+    }
     public void StopExtraMovement()
     {
         extraMovement = Vector3.zero;
+        forcedMovement = Vector3.zero;
     }
 
     //coisas de animacao
