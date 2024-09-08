@@ -7,12 +7,7 @@ public class CreateThorns : MonoBehaviour
     [SerializeField] private CooldownDisplay cooldownDisplay;
     [SerializeField] private SkillBase skill;
     [SerializeField] private SkillData skillData;
-
-    private void Thorns()
-    {
-
-    }
-
+    
     private void OnTriggerEnter(Collider other)
     {
         if(other.gameObject.CompareTag("Enemy"))
