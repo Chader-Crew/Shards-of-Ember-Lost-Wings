@@ -13,9 +13,9 @@ MonoBehaviour:
   m_Name: ThornesDamage
   m_EditorClassIdentifier: 
   canCast: 0
-  cooldown: 0
+  cooldown: 5
   _onCooldown: 0
-  damage: 0
-  perAtkDamage: 0
-  perDefDamage: 0
-  stagger: 0
+  damage: 2
+  perAtkDamage: 2
+  perDefDamage: 1
+  stagger: 2
