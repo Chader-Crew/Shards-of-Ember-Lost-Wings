@@ -12,7 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 328c9742bdaba4b4fa2bcf41c2e83530, type: 3}
   m_Name: DashPushCharacter
   m_EditorClassIdentifier: 
-  canCast: 0
+  canCast: 1
   cooldown: 0
   _onCooldown: 0
   _targetPlayer: 0
+  pushDuration: 0.5
+  pushStrength: 10
