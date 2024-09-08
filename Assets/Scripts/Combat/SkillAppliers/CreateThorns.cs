@@ -17,4 +17,9 @@ public class CreateThorns : MonoBehaviour
         }
         Destroy(gameObject);
     }
+
+    private void OnTriggerExit(Collider other)
+    {
+        
+    }
 }
