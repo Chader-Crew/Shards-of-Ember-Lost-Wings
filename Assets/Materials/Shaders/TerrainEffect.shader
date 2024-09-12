@@ -56,7 +56,7 @@ Shader "Custom/TerrainEffect"
             Tags { "LightMode" = "UniversalForward" }
             HLSLPROGRAM
             float _PlayerHeight;
-            float _Intensity;
+            float4 _FogColor;
 
             #pragma target 3.0
 
@@ -462,9 +462,10 @@ Shader "Custom/TerrainEffect"
                 // Alu: nao preciso saber que diabos as outras linhas fazem ta escrito aqui no splatmap fragment que ta fazendo um mix e setando um albedo. 
                 //      esse albedo e meu agora.
                 half3 albedo = mixedDiffuse.rgb;
-                //albedo = 1;
-                albedo *= saturate(1-log10(abs(IN.positionWS.y - _PlayerHeight+0.5)*1)-0.5);
-                //albedo += 0.05 * mixedDiffuse.rgb;
+                half3 fog = 1;
+                fog = saturate(1-log10(abs(IN.positionWS.y - _PlayerHeight+0.5)*1)-0.5);
+                albedo *=fog;
+                albedo += _FogColor * (1-fog) * 0.1;
                 
                 half4 defaultMetallic = half4(_Metallic0, _Metallic1, _Metallic2, _Metallic3);
                 half4 defaultOcclusion = half4(_MaskMapRemapScale0.g, _MaskMapRemapScale1.g, _MaskMapRemapScale2.g, _MaskMapRemapScale3.g) +
