@@ -174,20 +174,35 @@ public class NPCController : MonoBehaviour
     }
 
     //coisas de animacao
+
+
+    //metodo publico para tocar uma animacao assim que possivel (nao interrompendo transicoes)
     public void PlayAnimation(string animationStateName)
     {
        // Debug.Log("Trying to start animation "+ animationStateName);
         StopCoroutine("PlayAnimWaitForTransition");
         StartCoroutine("PlayAnimWaitForTransition", animationStateName);
     }
+
+    //corotina que espera qualquer transicao em progresso acabar antes de ativar a animacao com transicao.
+    //necessario por que CrossFadeInFixedTime nao faz o fade corretamente se o animator ja estiver atualmente transicionando outras animacoes.
     private IEnumerator PlayAnimWaitForTransition(string animationStateName)
     {
+        //checa se o animator tem um estado com o tal nome pra nao dar warning
+        if(!animator.HasState(0, Animator.StringToHash(animationStateName)))
+        {
+            yield break;
+        }
+
+        //espera a transicao terminar antes de mandar o animator transicionar
         while(animator.IsInTransition(0))
         {
             //Debug.Log("Waiting for transition");
             //Debug.Log("Current state is: " + stateMachine.CurrentState);
             yield return new WaitForEndOfFrame();
         }
+
+        //toca a animacao com transicao de tanto segundos
         animator.CrossFadeInFixedTime(animationStateName, 0.3f);
     }
 }
