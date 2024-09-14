@@ -28,9 +28,9 @@ public class ApplyTemporaryStats : SkillBase
         foreach(Character target in context.targets)
         {
             if (atk!=0) target.TemporaryAtk(atk, context.duration);
-            if (def!=0) target.TemporaryAtk(def, context.duration);
-            if (spd!=0) target.TemporaryAtk(spd, context.duration);
-            if (maxHp!=0) target.TemporaryAtk(maxHp, context.duration);
+            if (def!=0) target.TemporaryDef(def, context.duration);
+            if (spd!=0) target.TemporarySpd(spd, context.duration);
+            if (maxHp!=0) target.TemporaryMaxHp(maxHp, context.duration);
 
             if (hp !=0)
             { 

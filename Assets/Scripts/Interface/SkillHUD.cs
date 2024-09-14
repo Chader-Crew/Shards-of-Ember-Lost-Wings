@@ -35,14 +35,7 @@ public class SkillHUD : MonoBehaviour
     //acha um display com a skill tentando ser castada e liga ele
     private void StartSkillCooldown(SkillBase skill)
     {
-        try{
-            cdDisplayDictionary[skill].StartTimer(skill.cooldown);
-            cdDisplayDictionary[skill].CallBack += ()=>{ skill._onCooldown = false; };  //manda o display tirar onCooldown quando acabar
-
-        }
-        catch{
-            Debug.LogWarning("Player cast a skill with non-0 cooldown that has no corresponding CooldownDisplay.");
-
-        }
+        cdDisplayDictionary[skill].StartTimer(skill.cooldown);
+        cdDisplayDictionary[skill].CallBack += ()=>{ skill._onCooldown = false; };  //manda o display tirar onCooldown quando acabar
     }
 }

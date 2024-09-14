@@ -25,7 +25,6 @@ public class PlayerController : Singleton<PlayerController>
     public float dashTime;
     public float dashCoolDown;
     public bool canDash = true;
-    private SkillBase selectedSkill;
     private int _skillShards;
     public int SkillShards
     {
@@ -145,7 +144,8 @@ public class PlayerController : Singleton<PlayerController>
             OnCastEvent(state.activeSkill);
 
             //se tem cooldown poe em cooldown
-            if(state.activeSkill.cooldown >0){
+            if(state.activeSkill.cooldown >0)
+            {
                 state.activeSkill._onCooldown = true;
             }
         }

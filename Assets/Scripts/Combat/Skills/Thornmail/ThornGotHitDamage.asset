@@ -9,16 +9,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1d88f668fdf3d044cac429590cf0be29, type: 3}
-  m_Name: BarkStatsBuff
+  m_Script: {fileID: 11500000, guid: 9e37a1a00174e184bb1d5e6a0906974b, type: 3}
+  m_Name: ThornGotHitDamage
   m_EditorClassIdentifier: 
   canCast: 0
   cooldown: 0
   _onCooldown: 0
-  duration: 10
-  atk: 0
-  def: 8
-  spd: 0
-  maxHp: 0
-  hp: 0
-  nextSkill: {fileID: 11400000, guid: f9eb1a39d183bdd49a3b35057d12a9d5, type: 2}
+  damage: 5
+  perAtkDamage: 0
+  perDefDamage: 0.5
+  stagger: 0

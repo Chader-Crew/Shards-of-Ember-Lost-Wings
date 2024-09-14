@@ -13,6 +13,10 @@ public class grimorioUpdater : MonoBehaviour
 
     void Start()
     {
+        //reinicia o cooldown das skills (pq o awake do scriptable object nao acontece quando da play, so quando loada)
+        foreach(SkillBase skill in fireTree.skills){ skill._onCooldown = false; }
+        foreach(SkillBase skill in thunderTree.skills){ skill._onCooldown = false; }
+        foreach(SkillBase skill in greenTree.skills){ skill._onCooldown = false; }
     }
     public void AttGrimorio()
     {   if(fireTree!=null)
