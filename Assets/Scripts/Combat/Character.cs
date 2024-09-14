@@ -48,16 +48,16 @@ public class Character : MonoBehaviour, IDamageable
         Debug.Log("Personagem morreu");
     }
 
+    /*
+    calculo padrao de dano.
+    funcao linear de dano que eu peguei na wiki de risk of rain 2 jogo bom (nao consegui achar funcao barata que faz com a proporcao certinha)
+    cada ponto de defesa adicional diminui o ataque recebido em uma proporcao similar a anterior.
+    com uma proporcao de 0.05 cada ponto de dano reduz o dano em cerca de 5%, e essa proporcao reduz quanto mais def.
+
+    DanoFinal = dano/(proporcao * defesa + 1)
+    */
     public virtual void GetHit(SkillData data)
     {
-        /*
-        calculo padrao de dano.
-        funcao linear de dano otimizada pq risk of rain 2 jogo bom (nao consegui achar funcao barata que faz com a proporcao certinha)
-        cada ponto de defesa adicional diminui o ataque recebido em uma proporcao similar a anterior.
-        com uma proporcao de 0.05 cada ponto de dano reduz o dano em cerca de 5%, e essa proporcao reduz quanto mais def.
-
-        DanoFinal = dano/(proporcao * defesa + 1)
-        */
 
         if(_invul){
             return;

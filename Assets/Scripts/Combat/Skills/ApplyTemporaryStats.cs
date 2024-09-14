@@ -2,11 +2,15 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-//Adiciona stats temporários com duracao tal. O stat de "hp" causa cura e dano.
+//Adiciona stats temporários com duracao tal. 
+//O stat de "hp" causa cura e, no final da duracao, dano.
 
+
+[CreateAssetMenu(menuName = "ScriptableObjects/Skills/Temporary Stats")]
 public class ApplyTemporaryStats : SkillBase
 {
     [SerializeField] private float duration;
+
     [SerializeField] private int atk;
     [SerializeField] private int def;
     [SerializeField] private int spd;
@@ -18,6 +22,7 @@ public class ApplyTemporaryStats : SkillBase
 
     public override void Activate(SkillData context)
     {
+        //guarda a duracao por motivos de VFX (e qualquer outro efeito subsequente que precise sincronizar com o termino do buff.)
         context.duration = duration;
 
         foreach(Character target in context.targets)
