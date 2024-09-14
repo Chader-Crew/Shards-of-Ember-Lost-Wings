@@ -10,16 +10,13 @@ public class Character : MonoBehaviour, IDamageable
 {
     #region Declarations
     //vars
-    [SerializeField] public CharStats stats;   //Stat sheet
+    [SerializeField] private CharStats stats;   //Stat sheet
     [SerializeField] public CharStats Stats { get { return stats;} }    //Propriedade publica readonly
     [SerializeField] protected Collider col;      //Colisao de combate (hurtbox)
     [SerializeField] private Renderer renderer; //Renderer pra troca de materiais
     [SerializeField] protected Material damageFlashingMaterial;     //Material que faz piscar vermelho quando leva dano
 
     public bool _invul;
-    private bool isPoisonBuffActive;
-    private float poisonDuration = 2f; // Duração do efeito de veneno em segundos
-    private float poisonDamagePerSecond = 0.5f; // Dano do veneno por segundo
     
 
     //events
@@ -113,36 +110,31 @@ public class Character : MonoBehaviour, IDamageable
         OnHealEvent(healVal);
     }
 
-    public void activeBuff(int amount){
-        StartCoroutine(buffPotion(amount));
+     //metodos de alteracao temporaria de stats (para alteracoes de stats com duracao fixa)
+    #region Temporary Stats Methods
+    public void TemporaryAtk(int variation, float time)
+    {
+        stats.atk += variation;
+        this.CallWithDelay(() => stats.atk -= variation, time);
     }
 
-    IEnumerator buffPotion(int _amount){
-        stats.atk += _amount;
-        yield return new WaitForSeconds(6);
-        stats.atk -= _amount;
+    public void TemporaryDef(int variation, float time)
+    {
+        stats.def += variation;
+        this.CallWithDelay(() => stats.def -= variation, time);
     }
 
-    public void ActivatePoisonBuff(float duration){
-        StartCoroutine(PoisonBuffCoroutine(duration));
+    public void TemporarySpd(int variation, float time)
+    {
+        stats.spd += variation;
+        this.CallWithDelay(() => stats.spd -= variation, time);
     }
 
-    private IEnumerator PoisonBuffCoroutine(float duration){
-        isPoisonBuffActive = true;
-        yield return new WaitForSeconds(duration);
-        isPoisonBuffActive = false;
+    public void TemporaryMaxHp(int variation, float time)
+    {
+        stats.maxHp += variation;
+        this.CallWithDelay(() => stats.maxHp -= variation, time);
     }
-
-    public bool IsPoisonBuffActive(){
-        return isPoisonBuffActive;
-    }
-
-    public float GetPoisonDamagePerSecond(){
-        return poisonDamagePerSecond;
-    }
-
-    public float GetPoisonDuration(){
-        return poisonDuration;
-    }
+    #endregion
 
 }

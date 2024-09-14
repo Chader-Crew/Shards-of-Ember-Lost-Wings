@@ -8,32 +8,4 @@ public class CharStats : MonoBehaviour
 {
     public float hp;
     public int atk, def, spd, maxHp;
-
-    //metodos de alteracao temporaria de stats (para alteracoes de stats com duracao fixa)
-    #region Temporary Stats Methods
-    public void TemporaryAtk(int variation, float time)
-    {
-        atk += variation;
-        this.CallWithDelay(() => atk -= variation, time);
-    }
-
-    public void TemporaryDef(int variation, float time)
-    {
-        def += variation;
-        this.CallWithDelay(() => def -= variation, time);
-    }
-
-    public void TemporarySpd(int variation, float time)
-    {
-        spd += variation;
-        this.CallWithDelay(() => spd -= variation, time);
-    }
-
-    public void TemporaryMaxHp(int variation, float time)
-    {
-        maxHp += variation;
-        this.CallWithDelay(() => maxHp -= variation, time);
-    }
-    #endregion
-
 }
