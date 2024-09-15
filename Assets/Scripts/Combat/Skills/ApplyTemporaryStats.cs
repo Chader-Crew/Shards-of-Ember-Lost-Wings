@@ -39,7 +39,7 @@ public class ApplyTemporaryStats : SkillBase
             }
         }
 
-        nextSkill.Activate(context);
+        nextSkill?.Activate(context);
     }
 
     public override void Comprado(CharStats player)

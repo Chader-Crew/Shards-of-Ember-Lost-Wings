@@ -9,13 +9,15 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 328c9742bdaba4b4fa2bcf41c2e83530, type: 3}
-  m_Name: DashPushCharacter
+  m_Script: {fileID: 11500000, guid: 276a5aeae2c7b79469f8d8246973418c, type: 3}
+  m_Name: DashPushVFX
   m_EditorClassIdentifier: 
-  canCast: 1
+  canCast: 0
   cooldown: 0
   _onCooldown: 0
-  _targetPlayer: 0
-  duration: 0.5
-  pushStrength: 10
-  nextSkill: {fileID: 11400000, guid: 105747ed4feb80c4282238e2aa19b8e5, type: 2}
+  prefab: {fileID: 5680914621186812341, guid: cae6379d328ed6d4fbdc796e3e8a8d3a, type: 3}
+  _onTarget: 0
+  _localSpace: 1
+  offset: {x: 0, y: 0, z: 0}
+  _destroyAfterDuration: 1
+  durationOverwrite: 0

@@ -40,7 +40,7 @@ public class OnGetHitSkill : SkillBase
             };
         }
 
-        nextSkill.Activate(context);
+        nextSkill?.Activate(context);
     }
 
     public override void Comprado(CharStats player)

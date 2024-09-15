@@ -41,6 +41,7 @@ public class SpawnPrefab : SkillBase
         if(_localSpace)
         {
             instance.transform.SetParent(origin);
+            instance.transform.localRotation = Quaternion.identity;
         }
 
         //prepara a destruicao se necessario

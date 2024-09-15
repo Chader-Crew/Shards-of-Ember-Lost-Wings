@@ -17,10 +17,14 @@ public class PushCharSkill : SkillBase
     private bool _targetPlayer;
 
     [SerializeField]
-    private float pushDuration;
+    private float duration;
 
     [SerializeField]
     private float pushStrength;
+
+    //ativa essa skill depois de aplicar o efeito onhit para motivos de VFX (e outras coisas vai saber)
+    [SerializeField]
+    private SkillBase nextSkill;
 
     public override void Activate(SkillData context)
     {
@@ -29,15 +33,18 @@ public class PushCharSkill : SkillBase
             throw new NotImplementedException();
         }
         else{
+            context.duration = duration;
             foreach(Character character in context.targets)
             {
                 //direcao do player ao alvo, com magnitude pushStrength
                 Vector3 vector = (character.transform.position - PlayerController.Instance.transform.position).normalized;
                 vector *= pushStrength;
 
-                character.GetComponent<NPCController>().MoveInDirectionForSeconds(vector, pushDuration);
+                character.GetComponent<NPCController>().MoveInDirectionForSeconds(vector, context.duration);
             }
         }
+
+        nextSkill?.Activate(context);
     }
 
     public override void Comprado(CharStats player)
