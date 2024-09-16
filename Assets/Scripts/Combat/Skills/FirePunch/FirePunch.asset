@@ -9,12 +9,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ff03aae9e2f992b40ae99237434dd1ea, type: 3}
-  m_Name: chamaBola
+  m_Script: {fileID: 11500000, guid: 1b1417dc0d89c34489218dee268cf635, type: 3}
+  m_Name: FirePunch
   m_EditorClassIdentifier: 
-  canCast: 1
-  cooldown: 3
+  canCast: 0
+  cooldown: 0
   _onCooldown: 0
-  offset: {x: 0, y: 0, z: 0}
-  projectile: {fileID: 2812856055069624381, guid: ca3472f562882b44d8d52c370a0653b6,
-    type: 3}
+  nextSkills:
+  - {fileID: 11400000, guid: c21b0b9fa0f2fec4bb52336eb7c70978, type: 2}
+  - {fileID: 11400000, guid: 675666b422423204196b3be94d8bacfc, type: 2}
