@@ -1554,7 +1554,6 @@ GameObject:
   - component: {fileID: 335508968489987520}
   - component: {fileID: 478047664254817321}
   - component: {fileID: 5091327978499221569}
-  - component: {fileID: 1664372014321676039}
   - component: {fileID: 4149456191767523437}
   m_Layer: 0
   m_Name: Player
@@ -1865,19 +1864,6 @@ MonoBehaviour:
   TargetPositionOffset: {x: 0, y: 1, z: 0}
   FadeSpeed: 0.5
   ObjectsBlockingView: []
---- !u!114 &1664372014321676039
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3244464699610620306}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d28ae418b17c4b345a518376550bff22, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  player: {fileID: 0}
 --- !u!82 &4149456191767523437
 AudioSource:
   m_ObjectHideFlags: 0

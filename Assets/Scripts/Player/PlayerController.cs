@@ -63,6 +63,7 @@ public class PlayerController : Singleton<PlayerController>
         InputReader.OnAttackEvent += AttackInput;
         character.OnGotHitEvent += SkillHit;
         InputReader.OnSkillUseEvent += Cast;
+        InputReader.OnSkillChangeEvent += ChangeSkill;
         InputReader.OnDragonStateEvent += ChangeState;
         character.OnDiedEvent += Die;
         //input.OnPauseEvent += OpenSkillTree;
@@ -74,6 +75,7 @@ public class PlayerController : Singleton<PlayerController>
         atakaState.AttackEndAction = AttackEnd;
         InputReader.OnDashEvent += DashAction;
     }
+
     void Start()
     {
         //spText.text="Skillpoints "+skillShards;
@@ -133,22 +135,22 @@ public class PlayerController : Singleton<PlayerController>
     //cast da skill equipada em state.activeSkill
     private void Cast()
     {
-        if(state.activeSkill!=null && !state.activeSkill._onCooldown)
+        if(state._CanCastSkill)
         {
             //criacao de SkillData
             SkillData data = new SkillData();
             data.owner = character;
 
             //ativa a skill
-            state.activeSkill.Activate(data);
-            OnCastEvent(state.activeSkill);
-
-            //se tem cooldown poe em cooldown
-            if(state.activeSkill.cooldown >0)
-            {
-                state.activeSkill._onCooldown = true;
-            }
+            state.ActiveSkill.Activate(data);
+            OnCastEvent(state.ActiveSkill);
         }
+    }
+    
+    //troca de skill do modo atual
+    private void ChangeSkill(int i)
+    {
+        state.SetActiveSkill(i);
     }
 
     //troca de modo elemental

@@ -12,7 +12,24 @@ public class SkillTreeHolder: ScriptableObject
     public SkillTreeHolder prev;
     public SkillTreeHolder next;
 
-    public SkillBase activeSkill;
+    [SerializeField]
+    private SkillBase _activeSkill; //variavel interna
+    public SkillBase ActiveSkill    //encapsulei a activeSkill pra poder controlar a troca internamente
+    {
+        get => _activeSkill;
+    }   
+
+    public bool _CanCastSkill
+    {
+        get 
+        {
+            if(ActiveSkill == null) return false;
+            else
+            if(ActiveSkill._onCooldown) return false;
+
+            return true;
+        }
+    }
 
     public string nameState;
 
@@ -23,5 +40,14 @@ public class SkillTreeHolder: ScriptableObject
     {
         Debug.Log(nameState);
     }
-    
+
+    public void SetActiveSkill(int i)
+    {
+        _activeSkill = skills[i];
+    }
+
+    public void UnSetSkill()
+    {
+        _activeSkill = null;
+    }
 }

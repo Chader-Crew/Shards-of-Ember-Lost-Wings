@@ -36,13 +36,13 @@ public class grimorioUpdater : MonoBehaviour
     {
         if(image.activeSelf==true)
         {
-            fireTree.activeSkill=null;
+            fireTree.UnSetSkill();
             image.SetActive(false);
         }
         else
         {
             image.SetActive(true);
-            fireTree.activeSkill=fireTree.skills[0];
+            fireTree.SetActiveSkill(0);
         }
     }
 }
