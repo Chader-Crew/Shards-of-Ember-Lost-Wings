@@ -630,7 +630,6 @@ MonoBehaviour:
   prev: {fileID: 1643672430139973848}
   bigCost: 0
   smallCost: 250
-  grimas: {fileID: 0}
   IsSkill: 0
 --- !u!1 &1386437003339983610
 GameObject:
@@ -643,14 +642,13 @@ GameObject:
   - component: {fileID: 8584008201310695421}
   - component: {fileID: 6594232091692045334}
   - component: {fileID: 4374480956871414060}
-  - component: {fileID: 1662543701248591328}
   m_Layer: 5
   m_Name: "grim\xF3rio"
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &8584008201310695421
 RectTransform:
   m_ObjectHideFlags: 0
@@ -710,23 +708,6 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
---- !u!114 &1662543701248591328
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1386437003339983610}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 184882e70777e3f48a1215a4c0f3d681, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  g1: {fileID: 11400000, guid: b512a2f57f08e51489bff60d678adb0d, type: 2}
-  I1: {fileID: 8721892740337401485}
-  SkillSlots:
-  - {fileID: 2874730049798819052}
-  selected: {fileID: 0}
 --- !u!1 &1656021497482657245
 GameObject:
   m_ObjectHideFlags: 0
@@ -1421,7 +1402,6 @@ MonoBehaviour:
   prev: {fileID: 0}
   bigCost: 0
   smallCost: 200
-  grimas: {fileID: 0}
   IsSkill: 0
 --- !u!1 &2159231849882989347
 GameObject:
@@ -1718,7 +1698,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &787016054342349700
 RectTransform:
   m_ObjectHideFlags: 0
@@ -2198,7 +2178,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1662543701248591328}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: GrimorioHolder, Assembly-CSharp
         m_MethodName: CAllAssingSkill
         m_Mode: 2
@@ -4859,7 +4839,6 @@ MonoBehaviour:
   prev: {fileID: 4283778880616641144}
   bigCost: 0
   smallCost: 200
-  grimas: {fileID: 0}
   IsSkill: 0
 --- !u!1 &6000365567802190717
 GameObject:
@@ -6578,7 +6557,6 @@ MonoBehaviour:
   prev: {fileID: 1643672430139973848}
   bigCost: 1
   smallCost: 200
-  grimas: {fileID: 1662543701248591328}
   IsSkill: 1
 --- !u!1 &7777082193116072137
 GameObject:
@@ -7463,7 +7441,6 @@ MonoBehaviour:
   prev: {fileID: 4283778880616641144}
   bigCost: 0
   smallCost: 200
-  grimas: {fileID: 0}
   IsSkill: 0
 --- !u!1 &8434335505261821997
 GameObject:

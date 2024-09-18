@@ -63,7 +63,6 @@ public class PlayerController : Singleton<PlayerController>
         InputReader.OnAttackEvent += AttackInput;
         character.OnGotHitEvent += SkillHit;
         InputReader.OnSkillUseEvent += Cast;
-        InputReader.OnSkillChangeEvent += ChangeSkill;
         InputReader.OnDragonStateEvent += ChangeState;
         character.OnDiedEvent += Die;
         //input.OnPauseEvent += OpenSkillTree;
@@ -145,12 +144,6 @@ public class PlayerController : Singleton<PlayerController>
             state.ActiveSkill.Activate(data);
             OnCastEvent(state.ActiveSkill);
         }
-    }
-    
-    //troca de skill do modo atual
-    private void ChangeSkill(int i)
-    {
-        state.SetActiveSkill(i);
     }
 
     //troca de modo elemental

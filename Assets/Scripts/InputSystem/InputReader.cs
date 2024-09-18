@@ -11,12 +11,14 @@ public class InputReader : ScriptableObject, PlayerInput.IPlayerActions, PlayerI
 {
     private PlayerInput playerInput;
 
+
     //eventos
     public static event Action<Vector2> OnMoveEvent;
     public static event Action OnDashEvent;
     public static event Action OnAttackEvent;
     public static event Action<int> OnDragonStateEvent;    //0,1,2 sao cada um dos estados
-    public static event Action<int> OnSkillChangeEvent;
+    public static event Action<int> OnSkillSelectEvent;
+    public static event Action OnConfirmSkillEvent;
     public static event Action OnSkillUseEvent;
     public static event Action OnPauseEvent;
     public static event Action OnCheatEvent;
@@ -46,7 +48,8 @@ public class InputReader : ScriptableObject, PlayerInput.IPlayerActions, PlayerI
         OnDashEvent = ()=>{};
         OnAttackEvent = ()=>{};
         OnDragonStateEvent = (x)=>{};
-        OnSkillChangeEvent = (v)=>{};
+        OnSkillSelectEvent = (v)=>{};
+        OnConfirmSkillEvent = ()=>{};
         OnSkillUseEvent = ()=>{};
         OnPauseEvent = ()=>{};
         //OnItemInteractEvent = ()=>{};
@@ -133,29 +136,26 @@ public class InputReader : ScriptableObject, PlayerInput.IPlayerActions, PlayerI
     }
     public void OnSkillChange(UnityEngine.InputSystem.InputAction.CallbackContext context)
     {
-
-        //Isso aqui esta funcionando especificamente PARA TECLADO. Depois tem que trocar a selecao pro context.canceled e
-        //fazer o visual de selecao para o SkillHUD.
         if(context.performed)
         {        
             switch(MathF.Ceiling((Vector2.SignedAngle(Vector2.up, context.ReadValue<Vector2>())+ 180)/90 +.5f))
             {
                 case 1:
                 case 5:
-                    OnSkillChangeEvent(0);
-                    Debug.Log("Skill Change Call (1)");
+                    OnSkillSelectEvent(3);
+                    Debug.Log("Skill Change Call (4)");
                     break;
                 case 2:
-                    OnSkillChangeEvent(1);
-                    Debug.Log("Skill Change Call (2)");
-                    break;
-                case 3:
-                    OnSkillChangeEvent(2);
+                    OnSkillSelectEvent(2);
                     Debug.Log("Skill Change Call (3)");
                     break;
+                case 3:
+                    OnSkillSelectEvent(0);
+                    Debug.Log("Skill Change Call (1)");
+                    break;
                 case 4:
-                    OnSkillChangeEvent(3);
-                    Debug.Log("Skill Change Call (4)");
+                    OnSkillSelectEvent(1);
+                    Debug.Log("Skill Change Call (2)");
                     break;
 
                 default:
@@ -164,6 +164,7 @@ public class InputReader : ScriptableObject, PlayerInput.IPlayerActions, PlayerI
         }
         if(context.canceled)
         {
+            OnConfirmSkillEvent();
         }
     }
 

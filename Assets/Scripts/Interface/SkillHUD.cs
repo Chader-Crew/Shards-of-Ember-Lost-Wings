@@ -2,13 +2,15 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class SkillHUD : MonoBehaviour
 {
-    [SerializeField]
-    private SkillTreeHolder skillTree;
+    [SerializeField] private SkillTreeHolder skillTree;
     private Dictionary<SkillBase,CooldownDisplay> cdDisplayDictionary;
 
+    [SerializeField] private GameObject selectArrow;        //seta indicando a skill que sera selecionada
+    private int selectBuffer;   //ultima direcao de input do eixo, selecionara essa skill ao soltar o stick
 
     private void Start() 
     {
@@ -25,6 +27,8 @@ public class SkillHUD : MonoBehaviour
         //inscricao de evento no OnDragonState pra saber quando ligar e desligar
         //precisa acontecer DEPOIS da inscricao do player.
         InputReader.OnDragonStateEvent += PlayerStateUpdate;
+        InputReader.OnSkillSelectEvent += SkillSelectPreview;
+        InputReader.OnConfirmSkillEvent += ChangeSkillSelection;
         PlayerStateUpdate(0);
     }
 
@@ -53,5 +57,31 @@ public class SkillHUD : MonoBehaviour
         skill._onCooldown = true;
         cdDisplayDictionary[skill].StartTimer(skill.cooldown);
         cdDisplayDictionary[skill].CallBack += ()=>{ skill._onCooldown = false; };  //manda o display tirar onCooldown quando acabar
+    }
+
+    //ativa e atualiza o indicador de seleção de skill
+    private void SkillSelectPreview(int i)
+    {
+        selectArrow.SetActive(true);
+
+        //rotaciona a seta de acordo com a direcao
+        switch(i){
+        case 0: selectArrow.transform.rotation = Quaternion.Euler(0,0,180); break;
+        case 1: selectArrow.transform.rotation = Quaternion.Euler(0,0,-90); break;
+        case 2: selectArrow.transform.rotation = Quaternion.Euler(0,0,90); break;
+        case 3: selectArrow.transform.rotation = Quaternion.Euler(0,0,0); break;
+        }
+        selectBuffer = i;
+    }
+
+    //efetua a troca da skill selecionada e desabilita o preview
+    private void ChangeSkillSelection()
+    {
+        selectArrow.SetActive(false);
+
+        //bem gambiarrado mas isso vai pegar uma imagem no pai do cooldownDisplay e trocar a ativacao da que estava selecionado para a nova selecao.
+        cdDisplayDictionary[skillTree.ActiveSkill].transform.parent.GetComponent<Image>().enabled = false;
+        skillTree.SetActiveSkill(selectBuffer);
+        cdDisplayDictionary[skillTree.ActiveSkill].transform.parent.GetComponent<Image>().enabled = true;
     }
 }
