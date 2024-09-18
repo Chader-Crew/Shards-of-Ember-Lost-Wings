@@ -36,6 +36,13 @@ public class FadeObjectBlockingObject : MonoBehaviour
     {
         while (true)
         {
+            Vector3 rayDirection = (Target.transform.position + TargetPositionOffset - Camera.transform.position).normalized;
+            float rayDistance = Vector3.Distance(Camera.transform.position, Target.transform.position + TargetPositionOffset);
+
+            // Desenhar a linha do raycast no editor
+             Debug.DrawRay(Camera.transform.position, rayDirection * rayDistance, Color.red);
+
+
             int hits = Physics.RaycastNonAlloc(
                 Camera.transform.position,
                 (Target.transform.position + TargetPositionOffset - Camera.transform.position).normalized,
