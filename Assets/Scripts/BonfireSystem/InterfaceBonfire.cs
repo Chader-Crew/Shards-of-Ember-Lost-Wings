@@ -13,12 +13,18 @@ public class InterfaceBonfire : MonoBehaviour
     public void OpenBonfireMenu()
     {
         bonfireMenu.SetActive(true);
+        
         foreach (Bonfire bonfire in bonfireRegister.bonfireActive)
         {
             Button button = Instantiate(bonfirePrefab, bonfireMenu.transform);
             button.GetComponentInChildren<Text>().text = bonfire.bonfireName;
             button.onClick.AddListener(() => Teleport(bonfire.bonfireLocation));
         }
+    }
+
+    public void CloseBonfireMenu()
+    {
+        bonfireMenu.SetActive(false);
     }
 
     public void Teleport(Transform localTP)

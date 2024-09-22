@@ -7,8 +7,17 @@ public class Bonfire : MonoBehaviour
    public string bonfireName;
    public Transform bonfireLocation;
 
-   private void Interact()
+//    private void OnCollisionEnter(Collider other)
+//    {
+//         if(other.CompareTag("Player"))
+//         {
+
+//         }
+//    }
+
+   private void BonfireActive()
    {
-        //Lógica do teleporte aqui ao interagir
+        BonfireRegister bonfireRegister = FindObjectOfType<BonfireRegister>();
+        bonfireRegister.BonfireOn(this); 
    }
 }

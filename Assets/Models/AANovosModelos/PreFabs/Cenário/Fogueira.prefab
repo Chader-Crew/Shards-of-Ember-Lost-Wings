@@ -14534,6 +14534,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3136565689468430886}
   - component: {fileID: 1570113486640514281}
+  - component: {fileID: 2883732924873347018}
   m_Layer: 0
   m_Name: Fogueira
   m_TagString: Untagged
@@ -14573,6 +14574,20 @@ MonoBehaviour:
   bonfireRegister: {fileID: 0}
   bonfireMenu: {fileID: 0}
   bonfirePrefab: {fileID: 0}
+--- !u!114 &2883732924873347018
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9005183757878471015}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ca0e13fd214a5d14d902245b119b59df, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bonfireName: FundoDoAbismo
+  bonfireLocation: {fileID: 3136565689468430886}
 --- !u!1001 &763796524084501362
 PrefabInstance:
   m_ObjectHideFlags: 0

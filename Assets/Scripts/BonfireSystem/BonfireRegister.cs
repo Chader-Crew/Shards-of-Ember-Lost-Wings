@@ -5,9 +5,8 @@ using UnityEngine;
 public class BonfireRegister : MonoBehaviour
 {
     public List<Bonfire> bonfireActive = new List<Bonfire>();
-    public Bonfire bonfire;
 
-    public void BonfireOn()
+    public void BonfireOn(Bonfire bonfire)
     {
         if(bonfire != null)
         {
