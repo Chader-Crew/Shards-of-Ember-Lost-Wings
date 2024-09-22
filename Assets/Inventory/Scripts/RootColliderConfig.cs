@@ -7,9 +7,10 @@ public class RootColliderConfig : MonoBehaviour
     public InventoryManager inventoryManager;
     public GroundItem currentItem;
     private ItemFeedback itemFeedback;
-    private bool _solas = false, _nyxtra = false;
+    private bool _solas = false, _nyxtra = false, _bonfire = false;
     public SimpleTutorial simpleTutorial;
     public ItemTutorial itemTutorial;
+    public Bonfire bonfire;
 
     private void Awake(){
         InputReader.OnItemInteractEvent += HandleItemInteract;
@@ -23,6 +24,8 @@ public class RootColliderConfig : MonoBehaviour
         var item = other.GetComponent<GroundItem>();
         var solas = other.GetComponent<SimpleTutorial>();
         var nyxtra = other.GetComponent<ItemTutorial>();
+        var bonfire_obj = other.GetComponent<Bonfire>();
+
 
         if(item){
             currentItem = item;
@@ -40,12 +43,18 @@ public class RootColliderConfig : MonoBehaviour
             itemTutorial = nyxtra;
             nyxtra.canvasF.SetActive(true);
         }
+        if(bonfire_obj){
+            _bonfire = true;
+            bonfire = bonfire_obj;
+            bonfire_obj.interact.SetActive(true);
+        }
     }
 
     void OnTriggerExit(Collider other){
         var item = other.GetComponent<GroundItem>();
         var solas = other.GetComponent<SimpleTutorial>();
         var nyxtra = other.GetComponent<ItemTutorial>();
+        var bonfire_obj = other.GetComponent<Bonfire>();
 
         if(item && item == currentItem){
             item.buttonCanva.SetActive(false);
@@ -61,6 +70,10 @@ public class RootColliderConfig : MonoBehaviour
             _nyxtra = false;
             itemTutorial = null;
             nyxtra.canvasF.SetActive(false);
+        }
+         if(bonfire_obj){
+            _bonfire = false;
+            bonfire_obj.interact.SetActive(false);
         }
     }
 
@@ -80,6 +93,9 @@ public class RootColliderConfig : MonoBehaviour
         }
         if(_nyxtra){
             itemTutorial.OpenItemTutorial();
+        }
+        if(_bonfire){
+            bonfire.BonfireActive();
         }
     }
 }

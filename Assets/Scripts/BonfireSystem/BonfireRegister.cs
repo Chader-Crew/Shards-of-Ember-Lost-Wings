@@ -8,7 +8,7 @@ public class BonfireRegister : MonoBehaviour
 
     public void BonfireOn(Bonfire bonfire)
     {
-        if(bonfire != null)
+        if(!bonfireActive.Contains(bonfire))
         {
             bonfireActive.Add(bonfire);
         }

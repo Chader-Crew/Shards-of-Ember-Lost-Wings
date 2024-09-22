@@ -10,10 +10,15 @@ public class InterfaceBonfire : MonoBehaviour
     public GameObject bonfireMenu;
     public Button bonfirePrefab;
 
+    /*void Start(){
+        bonfireMenu = GameObject.Find("/Canvas/BonfireMenu");
+        bonfireMenu.SetActive(false);
+    }*/
+
     public void OpenBonfireMenu()
     {
         bonfireMenu.SetActive(true);
-        
+
         foreach (Bonfire bonfire in bonfireRegister.bonfireActive)
         {
             Button button = Instantiate(bonfirePrefab, bonfireMenu.transform);

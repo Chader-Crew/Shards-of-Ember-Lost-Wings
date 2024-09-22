@@ -6,18 +6,13 @@ public class Bonfire : MonoBehaviour
 {
    public string bonfireName;
    public Transform bonfireLocation;
+   public GameObject interact;
+   public BonfireRegister bonfireRegister;
+   public InterfaceBonfire interfaceBonfire;
 
-//    private void OnCollisionEnter(Collider other)
-//    {
-//         if(other.CompareTag("Player"))
-//         {
-
-//         }
-//    }
-
-   private void BonfireActive()
+   public void BonfireActive()
    {
-        BonfireRegister bonfireRegister = FindObjectOfType<BonfireRegister>();
         bonfireRegister.BonfireOn(this); 
+        interfaceBonfire.OpenBonfireMenu();
    }
 }
