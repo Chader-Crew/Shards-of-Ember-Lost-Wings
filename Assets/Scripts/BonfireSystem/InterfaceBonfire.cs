@@ -8,12 +8,8 @@ public class InterfaceBonfire : MonoBehaviour
 {
     public BonfireRegister bonfireRegister; 
     public GameObject bonfireMenu;
+    public GameObject grid;
     public Button bonfirePrefab;
-
-    /*void Start(){
-        bonfireMenu = GameObject.Find("/Canvas/BonfireMenu");
-        bonfireMenu.SetActive(false);
-    }*/
 
     public void OpenBonfireMenu()
     {
@@ -21,7 +17,7 @@ public class InterfaceBonfire : MonoBehaviour
 
         foreach (Bonfire bonfire in bonfireRegister.bonfireActive)
         {
-            Button button = Instantiate(bonfirePrefab, bonfireMenu.transform);
+            Button button = Instantiate(bonfirePrefab, grid.transform);
             button.GetComponentInChildren<Text>().text = bonfire.bonfireName;
             button.onClick.AddListener(() => Teleport(bonfire.bonfireLocation));
         }
