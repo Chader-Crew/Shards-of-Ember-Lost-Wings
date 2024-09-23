@@ -6582,14 +6582,11 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "CHANGE LOG\n\nTutorial: antes era s\xF3 uma foto com os comandos (a foto
-    continua pela exig\xEAncia de uma tela de comandos no jogo), agora existe um
-    prot\xF3tipo com comandos na tela esperando sua pr\xF3xima a\xE7\xE3o.\r\n\r\nInvent\xE1rio:
-    agora o invent\xE1rio cont\xE9m um item fixo (po\xE7\xE3o de vida), os outros
-    3 slots ficar\xE3o para explora\xE7\xE3o de mapa.\r\n\r\nMovimenta\xE7\xE3o:
-    o jogador agora possui um dash para desviar de inimigos\r\n\nModelos: anima\xE7\xF5es
-    para inimigo macaco e troca de cor quando ocorre o dano em combate\n\nCen\xE1rio:
-    novo terreno e novos modelos para o level\n"
+  m_text: "CHANGE LOG\n\nTela de menu alterada para artes de nossa autoria\r\n\r\nAdi\xE7\xE3o
+    do castelo (novo level)\r\n\r\nNovas skills\r\n\r\nSkill Lock\r\n\r\nShader para
+    sensa\xE7\xE3o de profundidade pelo mapa\r\n\r\nColisores de limite pelo mapa\r\n\r\n\xC1udios
+    de UI e passos do personagem\r\n\r\nTutorial de volta pra apenas teclado\r\n\r\nUso
+    do invent\xE1rio agora em: ZXCV\r\n\r\nSistema de bonfire inicializado\n"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -7269,9 +7266,9 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
+  - {fileID: 947871973}
   - {fileID: 165421510}
   - {fileID: 1429340869}
-  - {fileID: 947871973}
   m_Father: {fileID: 1479286422}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
@@ -7374,7 +7371,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Build v.1.0
+  m_text: Build v.1.1
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 4d1d723dc8866214d9ec208db7491a32, type: 2}
   m_sharedMaterial: {fileID: 8649374122901085012, guid: 4d1d723dc8866214d9ec208db7491a32,
@@ -7402,7 +7399,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 36.25
+  m_fontSize: 36.2
   m_fontSizeBase: 36
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -7916,7 +7913,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 59}
+  m_AnchoredPosition: {x: 0, y: 93.999985}
   m_SizeDelta: {x: 272, y: 125.125}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1409059976
@@ -8993,7 +8990,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 147}
+  m_AnchoredPosition: {x: 0, y: 182}
   m_SizeDelta: {x: 230.25, y: 50.375}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1746164031
@@ -9228,12 +9225,16 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "CR\xC9DITOS ATUAIS\n\nAna: Prot\xF3tipo do tutorial, Refatora\xE7\xE3o
-    do invent\xE1rio\r\n\nArthur: Anima\xE7\xF5es do macaco e feedback visual do
-    combate\n\nEstev\xE3o: Novo level design com os novos assets do grupo\n\nHenrique:
-    Skill lock e Grim\xF3rio\n\nLapras: Assets de cen\xE1rio, texturiza\xE7\xE3o,
-    shape keys para anima\xE7\xE3o das \xE1rvores\r\nTiago: Dash, organiza\xE7\xE3o
-    de UI e HUD\r\n\n"
+  m_text: "CR\xC9DITOS ATUAIS\n\nAna: Sprites de skills, Implementa\xE7\xE3o de \xE1udios
+    na UI, VFX de Fire Breath e Fire Punch\r\n\r\nArthur: Shader de profundidade,
+    Skill passiva verde, Static Charge, Bark Armor e ThornMail, menu de configura\xE7\xF5es
+    e Sistema de sele\xE7\xE3o de skill\r\n\r\nEstev\xE3o: Design do castelo, design
+    de mapa, design das mec\xE2nicas de explora\xE7\xE3o\r\n\r\nHenrique: Skills
+    ChainLightning, Decoy, Call Lightning, Lightning Strikes\r\n\r\nLapras: Itens
+    da UI do menu, Modelos procedurais para constru\xE7\xE3o do castelo, texturiza\xE7\xE3o
+    de assets, modelos gerais\r\n\r\nTiago: Passos do personagem, Organiza\xE7\xE3o
+    de UI, colisores de limite no mapa e nos assets, Sistema da bonfire, Skill Create
+    Thorns e Create Blockade"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
