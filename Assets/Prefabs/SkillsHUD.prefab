@@ -140,7 +140,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   skillTree: {fileID: 0}
   selectArrow: {fileID: 6600588998694376808}
-  selectedHighlight: {fileID: 0}
 --- !u!1 &1900132281488129931
 GameObject:
   m_ObjectHideFlags: 0
@@ -332,11 +331,11 @@ RectTransform:
   - {fileID: 313358226883668391}
   m_Father: {fileID: 1520411225013091714}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 45}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 105, y: 105}
-  m_Pivot: {x: 0, y: 0}
+  m_SizeDelta: {x: 100, y: 100}
+  m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &1438892715295336727
 CanvasRenderer:
   m_ObjectHideFlags: 0
