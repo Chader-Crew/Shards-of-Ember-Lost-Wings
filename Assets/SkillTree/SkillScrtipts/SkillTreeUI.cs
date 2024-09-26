@@ -7,6 +7,7 @@ public class SkillTreeUI : Singleton<SkillTreeUI>
 {
     [SerializeField] private TMP_Text smallShardText;
     [SerializeField] private TMP_Text bigShardText;
+    [SerializeField] private GameObject skillTreePanel;
 
     private void OnEnable() 
     {
@@ -17,5 +18,15 @@ public class SkillTreeUI : Singleton<SkillTreeUI>
     {
         smallShardText.text = PlayerController.Instance.StatShards.ToString();
         bigShardText.text = PlayerController.Instance.SkillShards.ToString();
+    }
+
+    public void ShowUI(bool value)
+    {
+        skillTreePanel.SetActive(value);
+    }
+
+    public void ToggleUI()
+    {
+        ShowUI(!skillTreePanel.activeSelf);
     }
 }

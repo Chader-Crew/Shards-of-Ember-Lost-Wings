@@ -180,9 +180,7 @@ public class InputReader : ScriptableObject, PlayerInput.IPlayerActions, PlayerI
     {
         if(context.performed)
         {
-            SkillTreeUI.Instance.gameObject.SetActive(!SkillTreeUI.Instance.gameObject.activeSelf); //a gente precisa de um gerente de UI lmao
-            Cursor.lockState = (Cursor.lockState == CursorLockMode.Locked)? CursorLockMode.None : CursorLockMode.Locked;
-            Cursor.visible = !Cursor.visible;
+            SkillTreeUI.Instance.ToggleUI(); //a gente precisa de um gerente de UI lmao
             OnPauseEvent();
         }
     }
