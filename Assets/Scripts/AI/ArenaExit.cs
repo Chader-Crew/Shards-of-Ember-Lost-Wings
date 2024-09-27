@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class ArenaExit : MonoBehaviour
 {
+    public GameObject exits;
    void OnTriggerEnter(Collider other) 
    {
     if(other.CompareTag("Player"))
@@ -12,7 +13,8 @@ public class ArenaExit : MonoBehaviour
         EnemySpawner.instance.StopSpawning();
         EnemySpawner.instance.canSpawn = true;
         EnemySpawner.instance.currentEnemyCount = 0;
-        gameObject.SetActive(false);
+        EnemySpawner.instance.spawnArea.SetActive(false);
+        exits.SetActive(false);
     }
    }
 }

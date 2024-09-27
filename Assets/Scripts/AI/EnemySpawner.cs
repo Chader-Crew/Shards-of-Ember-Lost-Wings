@@ -13,15 +13,14 @@ public class EnemySpawner : MonoBehaviour
     public float spawnInterval = 5f;
     public int maxEnemies = 10;
 
-    private BoxCollider spawnArea;
+    public GameObject spawnArea;
     public int currentEnemyCount = 0;
 
     public bool canSpawn = true;
 
     void Start()
     {
-        instance = this;
-        spawnArea = GetComponent<BoxCollider>();       
+        instance = this;     
     }
 
     void OnTriggerEnter(Collider other)
@@ -30,8 +29,9 @@ public class EnemySpawner : MonoBehaviour
         {    
             if(canSpawn)
             {
-                for (int i = 0; i <5; i++)
+                for (int i = 0; i <3; i++)
                 {
+                    spawnArea.SetActive(true);
                     Vector3 spawnPosition = GetRandomPositionInArea();
                     GameObject enemyPrefab = Random.value > 0.5f ? enemyType1 : enemyType2;
                     Instantiate(enemyPrefab, spawnPosition, Quaternion.identity);
@@ -66,7 +66,7 @@ public class EnemySpawner : MonoBehaviour
 
     Vector3 GetRandomPositionInArea()
     {
-        Bounds bounds = spawnArea.bounds;
+        Bounds bounds = spawnArea.GetComponent<BoxCollider>().bounds;
         float x = Random.Range(bounds.min.x, bounds.max.x);
         float y = bounds.min.y;
         float z = Random.Range(bounds.min.z, bounds.max.z);
