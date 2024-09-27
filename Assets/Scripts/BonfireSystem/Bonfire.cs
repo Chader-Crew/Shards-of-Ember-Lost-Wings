@@ -7,12 +7,12 @@ public class Bonfire : MonoBehaviour
    public string bonfireName;
    public Transform bonfireLocation;
    public GameObject interact;
-   public BonfireRegister bonfireRegister;
    public InterfaceBonfire interfaceBonfire;
 
    public void BonfireActive()
    {
-        bonfireRegister.BonfireOn(this); 
+        BonfireRegister.BonfireOn(this); 
+        SaveGame.Save();
         interfaceBonfire.OpenBonfireMenu();
    }
 }

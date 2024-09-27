@@ -6,7 +6,6 @@ using UnityEngine.UI;
 
 public class InterfaceBonfire : MonoBehaviour
 {
-    public BonfireRegister bonfireRegister; 
     public GameObject bonfireMenu;
     public GameObject grid;
     public Button bonfirePrefab;
@@ -15,7 +14,7 @@ public class InterfaceBonfire : MonoBehaviour
     {
         bonfireMenu.SetActive(true);
 
-        foreach (Bonfire bonfire in bonfireRegister.bonfireActive)
+        foreach (Bonfire bonfire in BonfireRegister.bonfireActive)
         {
             Button button = Instantiate(bonfirePrefab, grid.transform);
             button.GetComponentInChildren<Text>().text = bonfire.bonfireName;

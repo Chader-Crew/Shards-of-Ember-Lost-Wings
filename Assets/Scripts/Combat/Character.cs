@@ -10,7 +10,7 @@ public class Character : MonoBehaviour, IDamageable
 {
     #region Declarations
     //vars
-    [SerializeField] public CharStats stats;   //Stat sheet
+    [SerializeField] private CharStats stats;   //Stat sheet
     [SerializeField] public CharStats Stats { get { return stats;} }    //Propriedade publica readonly
     [SerializeField] protected Collider col;      //Colisao de combate (hurtbox)
     [SerializeField] private Renderer renderer; //Renderer pra troca de materiais

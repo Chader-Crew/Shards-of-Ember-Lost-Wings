@@ -15,10 +15,10 @@ public class CreateThorns : MonoBehaviour
         {
             Character enemy = other.gameObject.GetComponent<Character>();
             skillData.Target(enemy);
-            enemy.stats.hp -= damagePerSecond; 
+            enemy.GetHit(new SkillData().Damage(damagePerSecond).Owner(PlayerController.Instance.character));   // substituido a atribuicao de hp por dano pelo metodo do character -Alu
             skill.Activate(skillData);
         }
-        Destroy(gameObject);
+        //Destroy(gameObject);  // movida a responsabilidade de destruir ele depois de x tempo pra skill de SpawnPrefab (funciona considerando que o tempo que dura sempre e o mesmo) -Alu
     }
 
     private void OnTriggerStay(Collider other)
@@ -26,7 +26,7 @@ public class CreateThorns : MonoBehaviour
         if (other.gameObject.CompareTag("Enemy"))
         {
             Character enemy = other.gameObject.GetComponent<Character>();
-            enemy.stats.hp -= damagePerSecond * Time.deltaTime; 
+            //enemy.stats.hp -= damagePerSecond * Time.deltaTime;               // Dps nao devia rodar todo frame por que conflita com o nosso feedback de dano e nao fica boa leitura -Alu
         }
     }
     
