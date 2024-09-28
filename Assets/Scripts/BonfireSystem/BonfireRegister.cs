@@ -15,7 +15,6 @@ public class BonfireRegister : MonoBehaviour
             bonfireDictionary.Add(bonfire.bonfireName, bonfire);
         }
     }
-
     public static void BonfireOn(Bonfire bonfire)
     {
         if(!bonfireActive.Contains(bonfire))
