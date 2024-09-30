@@ -12,8 +12,8 @@ public class DeathScreenBehaviour : MonoBehaviour
     public void OnPlayerDeath()
     {
         screen.SetActive(true);
-        Cursor.lockState = CursorLockMode.None;
-        Cursor.visible = true;
+        //Cursor.lockState = CursorLockMode.None;
+        //Cursor.visible = true;
         StartCoroutine("timeZero");
     }
 

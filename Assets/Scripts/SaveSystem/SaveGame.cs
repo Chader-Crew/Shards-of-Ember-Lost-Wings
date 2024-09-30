@@ -2,6 +2,7 @@ using System.IO;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public static class SaveGame
 {
@@ -25,11 +26,18 @@ public static class SaveGame
 
         //escreve o arquivo em JSON
         string jsonString = JsonUtility.ToJson(playerData);
+        Directory.CreateDirectory(Application.dataPath + "/Save");
         File.WriteAllText(Application.dataPath + "/Save/saveFile.json", jsonString);
     }
 
-    public static void Load()
+    public static void Load(Scene scene, LoadSceneMode mode)
     {
+        if(scene.name != "Game")
+        {
+            Debug.LogError("TENTOU LOADAR UMA CENA QUE NAO E A GAME");
+            return;
+        }
+
         //carrega o arquivo para o struct
         string jsonString = File.ReadAllText(Application.dataPath + "/Save/saveFile.json");
         PlayerData loadedData = JsonUtility.FromJson<PlayerData>(jsonString);
@@ -41,11 +49,16 @@ public static class SaveGame
         PlayerController.Instance.character.Stats.maxHp = loadedData.maxHp;
         PlayerController.Instance.character.Stats.hp = loadedData.maxHp;
 
+        //teleporta o player pro lugar certo
+        PlayerController.Instance.transform.position = loadedData.spawnPosition;
+
         //atribui a lista de bonfires desbloqueadas
         BonfireRegister.bonfireActive.Clear();
         foreach (string bonfireName in loadedData.unlockedBonfires)
         {
             BonfireRegister.bonfireActive.Add(BonfireRegister.bonfireDictionary[bonfireName]);
         }
+
+        SceneManager.sceneLoaded -= Load;
     }
 }

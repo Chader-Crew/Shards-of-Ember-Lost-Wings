@@ -9,12 +9,7 @@ public class InterfaceBonfire : MonoBehaviour
     public GameObject bonfireMenu;
     public GameObject grid;
     public Button bonfirePrefab;
-    public PlayerMovement playerRef;
 
-    void Awake()
-    {
-        playerRef = GetComponent<PlayerMovement>();
-    }
     public void OpenBonfireMenu()
     {
         bonfireMenu.SetActive(true);
@@ -34,9 +29,8 @@ public class InterfaceBonfire : MonoBehaviour
 
     public void Teleport(Transform localTP)
     {
-        GameObject player = GameObject.FindWithTag("Player");
-        player.transform.position = localTP.position;
-        playerRef.characterController.enabled = false;
+        PlayerController.Instance.transform.position = localTP.position;
+        PlayerController.Instance.playerMovement.characterController.enabled = false;
         bonfireMenu.SetActive(false);
     }
 }

@@ -15,7 +15,7 @@ public class SimpleTutorial : MonoBehaviour
     public void OpenTutorial()
     {      
         panelTutorial.SetActive(true);
-        Cursor.lockState = CursorLockMode.None;
-        Cursor.visible = true;
+        //Cursor.lockState = CursorLockMode.None;
+        //Cursor.visible = true;
     }
 }

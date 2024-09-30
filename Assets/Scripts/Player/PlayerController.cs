@@ -11,7 +11,7 @@ using UnityEngine.UI;
 public class PlayerController : Singleton<PlayerController>
 {
     #region Declarations
-    public PlayerMovement mov;
+    public PlayerMovement playerMovement;
     public Character character;
     [SerializeField]public SkillTreeHolder state;
     [SerializeField] private InputReader input;
@@ -48,7 +48,7 @@ public class PlayerController : Singleton<PlayerController>
     {
         //stateIMG.sprite = state.stateIMG;
         //get components
-        mov = GetComponent<PlayerMovement>();
+        playerMovement = GetComponent<PlayerMovement>();
         character = GetComponent<Character>();
         animator = GetComponent<Animator>();
         audioSource = GetComponent<AudioSource>();
@@ -84,7 +84,7 @@ public class PlayerController : Singleton<PlayerController>
     //chamado quando o animator sai do state de ataque para destravar movimento (provavelmente devia ser mudado para |quando entra em idle|)
     private void AttackEnd()
     {
-        mov.LockMovement(false);
+        playerMovement.LockMovement(false);
     }
 
     private void MoveInput(Vector2 vector2)
@@ -98,14 +98,14 @@ public class PlayerController : Singleton<PlayerController>
             animator.SetBool("isRunning", false);
             audioSource.enabled = false;
         }
-        mov.movement = new Vector3(vector2.x, 0, vector2.y);
+        playerMovement.movement = new Vector3(vector2.x, 0, vector2.y);
     }
 
     //ativa o ataque no animator e trava o movimento
     private void AttackInput()
     {
         animator.SetBool("ataka", true);
-        mov.LockMovement(true);
+        playerMovement.LockMovement(true);
     }
 
     private void SkillHit(SkillData skill, float damage)
@@ -123,11 +123,11 @@ public class PlayerController : Singleton<PlayerController>
     //ativa stagger e trava o movimento, depois de x segundos desabilita.
     IEnumerator Stagger(float seconds)
     {
-        mov.LockMovement(true);
+        playerMovement.LockMovement(true);
         animator.SetBool("isStaggered", true);
         yield return new WaitForSeconds(seconds);
         
-        mov.LockMovement(false);
+        playerMovement.LockMovement(false);
         animator.SetBool("isStaggered", false);
     }
 
@@ -196,7 +196,7 @@ public class PlayerController : Singleton<PlayerController>
 
         while(Time.time < startTime + dashTime)
         {
-            mov.characterController.Move(mov.movement * dashSpeed * Time.deltaTime);
+            playerMovement.characterController.Move(playerMovement.movement * dashSpeed * Time.deltaTime);
             yield return null;
         }
 

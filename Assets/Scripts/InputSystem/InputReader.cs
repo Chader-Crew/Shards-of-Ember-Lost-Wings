@@ -37,8 +37,8 @@ public class InputReader : ScriptableObject, PlayerInput.IPlayerActions, PlayerI
             playerInput.Player.SetCallbacks(this);
             playerInput.UI.SetCallbacks(this);
         }
-        Cursor.lockState = CursorLockMode.Locked;
-        Cursor.visible = false; 
+        //Cursor.lockState = CursorLockMode.Locked;
+        //Cursor.visible = false; 
         SetGameplay();
     }
 
