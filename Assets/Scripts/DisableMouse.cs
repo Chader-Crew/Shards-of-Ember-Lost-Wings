@@ -6,7 +6,7 @@ public class DisableMouse : MonoBehaviour
 {
     public void Disable()
     {
-        Cursor.lockState = CursorLockMode.Locked;
-        Cursor.visible = false;
+        //Cursor.lockState = CursorLockMode.Locked;
+        //Cursor.visible = false;
     }
 }
