@@ -19,7 +19,7 @@ public class AIIdleState : AIStateBase
     }
     public override void StateUpdate(AIStateMachine stateMachine)
     {
-        base.OnStateEnter(stateMachine);
+        base.StateUpdate(stateMachine);
 
         if(stateMachine.timeInState >= idleDuration)
         {

@@ -7,6 +7,9 @@ public class AIChasingState : AIStateBase
 {
     public override AIStateType StateType => AIStateType.CHASING;
 
+    [SerializeField] private float exitChaseRange;
+    [SerializeField] private AIStateType stateToTransition;
+
     public override void OnStateEnter(AIStateMachine stateMachine)
     {
         base.OnStateEnter(stateMachine);
@@ -22,6 +25,12 @@ public class AIChasingState : AIStateBase
 
         if(stateMachine.cycleAttackTimer <= 0)
         {
+            if(stateMachine.controller.DistanceToTarget() > exitChaseRange)
+            {
+                stateMachine.controller.aggroTarget = null;
+                stateMachine.EnterStateType(stateToTransition);
+                return;
+            }
             stateMachine.ChooseAttack();
         }
 

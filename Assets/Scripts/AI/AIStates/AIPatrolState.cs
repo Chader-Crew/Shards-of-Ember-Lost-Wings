@@ -8,23 +8,21 @@ public class AIPatrolState : AIStateBase
 {
     public override AIStateType StateType => AIStateType.PATROL;
     private bool walkPointSet;
-    public bool _transitionsBetweenWaypoints;
     [SerializeField] private AIStateType stateToTransition;
-    [SerializeField] private float speedMod = 1;
 
     public override void OnStateEnter(AIStateMachine stateMachine)
     {
         base.OnStateEnter(stateMachine);
         walkPointSet = false;
         
-        stateMachine.controller.PlayAnimation(StateType.ToString());
+        if(stateMachine.waypoints.Length <=1) { stateToTransition = AIStateType.IDLE; }
 
-        stateMachine.controller.navAgent.speed = stateMachine.controller.navAgent.speed * speedMod;
+        stateMachine.controller.PlayAnimation(StateType.ToString());
     }
 
     public override void StateUpdate(AIStateMachine stateMachine)
     {
-        base.OnStateEnter(stateMachine);
+        base.StateUpdate(stateMachine);
         if (!walkPointSet) NextWalkPoint();
 
         Vector3 distanceToWalkPoint = stateMachine.transform.position - stateMachine.waypoints[stateMachine.waypointIndex].position;
@@ -49,7 +47,5 @@ public class AIPatrolState : AIStateBase
         base.OnStateExit(stateMachine);
 
         stateMachine.controller.SetDestination(stateMachine.transform.position);
-
-        stateMachine.controller.navAgent.speed = stateMachine.controller.navAgent.speed * (1/speedMod);
     }
 }

@@ -77,9 +77,12 @@ public class NPCController : MonoBehaviour
         Destroy(gameObject);
     }
 
-
+    //aggro
     private void DetectCharacters()
     {
+        //cancela se nao e pra detectar
+        if(!_doCharDetection) return;
+
         Collider[] colliders = Physics.OverlapSphere(transform.position, charDetectionRadius);
         foreach(Collider collider in colliders)
         {
