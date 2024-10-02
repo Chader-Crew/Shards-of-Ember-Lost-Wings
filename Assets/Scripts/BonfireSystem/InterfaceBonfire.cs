@@ -14,6 +14,11 @@ public class InterfaceBonfire : MonoBehaviour
     {
         bonfireMenu.SetActive(true);
 
+        foreach (Transform child in grid.transform)
+        {
+            Destroy(child.gameObject);
+        }
+
         foreach (Bonfire bonfire in BonfireRegister.bonfireActive)
         {
             Button button = Instantiate(bonfirePrefab, grid.transform);
