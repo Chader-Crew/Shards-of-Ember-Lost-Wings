@@ -99,8 +99,3 @@ public class RootColliderConfig : MonoBehaviour
         }
     }
 }
-
-
-//animação bau abrindo
-//ativa mensagem de item coletado
-//destroy bau
