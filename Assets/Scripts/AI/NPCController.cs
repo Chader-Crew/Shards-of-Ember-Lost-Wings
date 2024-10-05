@@ -28,8 +28,10 @@ public class NPCController : MonoBehaviour
     [SerializeField] private string aggroTargetTag;
 
     private float originalSpeed;
-    private Vector3 extraMovement; //vetor LOCALIZADO. entao vector3.forward sempre move em transform.forward 
+    private Vector3 extraMovement;  //vetor LOCALIZADO. entao vector3.forward sempre move em transform.forward 
     private Vector3 forcedMovement; //vetor GLOBAL 
+
+    public Vector3 wanderSmooth;   //vetor para implementação de algoritmos de vagueio
 
     private void Awake()
     {
@@ -144,6 +146,12 @@ public class NPCController : MonoBehaviour
         navAgent.SetDestination(transform.position + (transform.position - targetPos));
     }
     
+    //move o destino da navmesh de acordo com um wandering suave
+    public void NudgeDestination(float variance)
+    {
+        wanderSmooth = Quaternion.Euler(0, UnityEngine.Random.Range(-variance, variance), 0) * wanderSmooth.normalized;
+        navAgent.destination +=  wanderSmooth * navAgent.speed/20;
+    }
     public void ChangeSpeed(float modifier)
     {
         navAgent.speed = navAgent.speed * modifier;

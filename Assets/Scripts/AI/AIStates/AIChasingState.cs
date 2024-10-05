@@ -7,8 +7,11 @@ public class AIChasingState : AIStateBase
 {
     public override AIStateType StateType => AIStateType.CHASING;
 
-    [SerializeField] private float exitChaseRange;
-    [SerializeField] private AIStateType stateToTransition;
+    [SerializeField] private float exitChaseRange;          // Range de desistência da perseguicao
+    [SerializeField] private AIStateType stateToTransition; // Estado para transicionar quando o alvo sai da range
+    [SerializeField] private float minimumTimeInState;      // Tempo minimo no estado antes de iniciar um ataque
+    [SerializeField] private float wanderDegrees;           // Fator de variância em graus quanto ao wander enquanto dentro da range do ataque,
+                                                            // antes de completar o tempo minimo do estado.
 
     public override void OnStateEnter(AIStateMachine stateMachine)
     {
@@ -17,6 +20,9 @@ public class AIChasingState : AIStateBase
         stateMachine.ChooseAttack();
 
         stateMachine.controller.PlayAnimation(StateType.ToString());
+
+        //reseta a direcao de "vaguear" para ser em direcao ao alvo.
+        stateMachine.controller.wanderSmooth = stateMachine.controller.aggroTarget.transform.position - stateMachine.transform.position;
     }
 
     public override void StateUpdate(AIStateMachine stateMachine)
@@ -46,6 +52,14 @@ public class AIChasingState : AIStateBase
             return;
         }
 
-        stateMachine.EnterState(stateMachine.NextAttack);
+        // Se a distancia esta correta mas ainda nao deu o tempo minimo, fica mexendo aleatoriamente no destino para o bixo nao ficar parado.
+        if(stateMachine.timeInState < minimumTimeInState)
+        {   
+            stateMachine.controller.NudgeDestination(wanderDegrees);
+
+        }else
+        {
+            stateMachine.EnterState(stateMachine.NextAttack);
+        }
     }
 }

@@ -12,3 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9c6d2b057215b574ab6f76d1e5d76f17, type: 3}
   m_Name: ZombieChase
   m_EditorClassIdentifier: 
+  speedMod: 1
+  exitChaseRange: 0
+  stateToTransition: 0
+  minimumTimeInState: 1
+  wanderDegrees: 0
