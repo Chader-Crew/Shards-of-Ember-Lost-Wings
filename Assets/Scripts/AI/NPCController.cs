@@ -31,7 +31,7 @@ public class NPCController : MonoBehaviour
     private Vector3 extraMovement;  //vetor LOCALIZADO. entao vector3.forward sempre move em transform.forward 
     private Vector3 forcedMovement; //vetor GLOBAL 
 
-    public Vector3 wanderSmooth;   //vetor para implementação de algoritmos de vagueio
+    [HideInInspector] public Vector3 wanderSmooth;   //vetor para implementação de algoritmos de vagueio
 
     private void Awake()
     {

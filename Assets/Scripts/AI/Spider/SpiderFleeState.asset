@@ -1,0 +1,20 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1b4e64c92c78362438aacfb887338d30, type: 3}
+  m_Name: SpiderFleeState
+  m_EditorClassIdentifier: 
+  speedMod: 5
+  fleeTime: 10
+  fleeDistance: 15
+  stateToTransition: {fileID: 11400000, guid: c378e976384af44429df447832559872, type: 2}
+  ignoredState: {fileID: 11400000, guid: d069b8d8e4736034988ff7ef6a156d41, type: 2}
+  angleTreshold: 0.5

@@ -36,4 +36,11 @@ public class AIFleeingState : AIStateBase
 
         stateMachine.controller.FleeFrom(stateMachine.controller.aggroTarget.transform.position);
     }
+
+    public override void OnStateExit(AIStateMachine stateMachine)
+    {
+        base.OnStateExit(stateMachine);
+
+        stateMachine.controller.aggroTarget = null;
+    }
 }

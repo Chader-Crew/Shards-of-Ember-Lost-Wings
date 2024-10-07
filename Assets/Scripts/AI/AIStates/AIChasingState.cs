@@ -7,10 +7,10 @@ public class AIChasingState : AIStateBase
 {
     public override AIStateType StateType => AIStateType.CHASING;
 
-    [SerializeField] private float exitChaseRange;          // Range de desistência da perseguicao
-    [SerializeField] private AIStateType stateToTransition; // Estado para transicionar quando o alvo sai da range
-    [SerializeField] private float minimumTimeInState;      // Tempo minimo no estado antes de iniciar um ataque
-    [SerializeField] private float wanderDegrees;           // Fator de variância em graus quanto ao wander enquanto dentro da range do ataque,
+    [SerializeField] protected float exitChaseRange;          // Range de desistência da perseguicao
+    [SerializeField] protected AIStateType stateToTransition; // Estado para transicionar quando o alvo sai da range
+    [SerializeField] protected float minimumTimeInState;      // Tempo minimo no estado antes de iniciar um ataque
+    [SerializeField] protected float wanderDegrees;           // Fator de variância em graus quanto ao wander enquanto dentro da range do ataque,
                                                             // antes de completar o tempo minimo do estado.
 
     public override void OnStateEnter(AIStateMachine stateMachine)
