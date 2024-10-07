@@ -14,7 +14,7 @@ public class InterfaceBonfire : MonoBehaviour
     {
         bonfireMenu.SetActive(true);
 
-        foreach (Transform child in grid.transform)
+        foreach (Transform child in grid.transform) //funciona e por enquanto vai ficar assim 
         {
             Destroy(child.gameObject);
         }
