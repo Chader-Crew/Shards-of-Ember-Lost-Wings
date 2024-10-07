@@ -7,9 +7,7 @@ public class DialogueManager : MonoBehaviour
 {
     public Text nameText;
     public Text dialogueText;
-
-    public Animator animator;
-
+    public Animator animator; //para implementar uma animacao para a caixa de dialogo depois
     public Queue<string> sentences;
     public Dialogue _dialogue;
 
@@ -26,15 +24,13 @@ public class DialogueManager : MonoBehaviour
         }
     }
 
+    //Dependendo pode ter que usar um sentences.Clear(), mas por enquanto funciona
     public void StartDialogue()
     {
 
         animator.SetBool("IsOpen", true);
 
         nameText.text = _dialogue.name;
-
-        //sentences.Clear();
-
 
         DisplayNextSentence();
     }
