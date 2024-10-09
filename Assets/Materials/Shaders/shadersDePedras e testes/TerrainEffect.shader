@@ -2,6 +2,7 @@ Shader "Custom/TerrainEffect"
 {
     Properties
     {
+        _FogDistance ("Fog Distance", Float) = 1
         [HideInInspector] [ToggleUI] _EnableHeightBlend("EnableHeightBlend", Float) = 0.0
         _HeightTransition("Height Transition", Range(0, 1.0)) = 0.0
         // Layer count is passed down to guide height-blend enable/disable, due
@@ -57,6 +58,7 @@ Shader "Custom/TerrainEffect"
             HLSLPROGRAM
             float _PlayerHeight;
             float4 _FogColor;
+            float _FogDistance;
 
             #pragma target 3.0
 
@@ -463,7 +465,7 @@ Shader "Custom/TerrainEffect"
                 //      esse albedo e meu agora.
                 half3 albedo = mixedDiffuse.rgb;
                 half3 fog = 1;
-                fog = saturate(1-log10(abs(IN.positionWS.y - _PlayerHeight+0.5)*1)-0.5);
+                fog = saturate(1-log10(abs(IN.positionWS.y - _PlayerHeight+0.5)*_FogDistance)-0.5);
                 albedo *=fog;
                 albedo += _FogColor * (1-fog) * 0.1;
                 
