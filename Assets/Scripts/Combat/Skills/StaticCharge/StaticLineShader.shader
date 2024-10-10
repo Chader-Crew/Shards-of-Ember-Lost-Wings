@@ -12,6 +12,7 @@ Shader "Custom/StaticLineShader"
 	    LOD 100
 
         ZWrite Off
+        Cull OFF
 	    Blend SrcAlpha OneMinusSrcAlpha 
 
         Pass
