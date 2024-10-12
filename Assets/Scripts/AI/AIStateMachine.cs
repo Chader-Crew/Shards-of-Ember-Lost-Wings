@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.AI;
+using UnityEngine.Serialization;
 
 public class AIStateMachine : MonoBehaviour
 {
@@ -16,8 +17,12 @@ public class AIStateMachine : MonoBehaviour
     public AIStateBase CurrentState { get => currentState; }
 
     //estados que esse agente vai usar
-    [SerializeField] List<AIStateBase> validStates;
-    private List<AIAttackingState> attackStates;
+    [SerializeField] private List<AIStateBase> validStates;
+    //estados de ataque para serem escolhidos aleatoriamente durante chase
+    private List<AIAttackingState> attackStates;    
+    //estados de ataque que sao validos mas nao sao escolhidos aleatoriamente
+    [SerializeField] private List<AIAttackingState> protectedAttackStates;   
+    
     private AIAttackingState nextAttack;
     public AIAttackingState NextAttack { get => nextAttack; }
     [HideInInspector] public float cycleAttackTimer;
@@ -39,15 +44,42 @@ public class AIStateMachine : MonoBehaviour
         attackStates = new List<AIAttackingState>();
 
         stateDictionary = new Dictionary<AIStateBase.AIStateType, AIStateBase>();
-        foreach(AIStateBase state in validStates)
+        foreach (AIStateBase state in validStates)
         {
-            if(state is AIAttackingState)
+            //adiciona o estado na lista de estados para escolher ataque
+            if (state is AIAttackingState attackingState)
             {
-                attackStates.Add(state as AIAttackingState);
-            }else{
+                
+                //checagem se ha estado no animator com o nome correto para o ataque (so acontece no editor)
+#if UNITY_EDITOR
+                    if (controller.animator.HasState(0, Animator.StringToHash(attackingState.animationStateName)))
+                    {
+#endif
+                        
+                    attackStates.Add(attackingState);
+                    
+#if UNITY_EDITOR                
+                    }else
+                    {
+                        Debug.LogError($"|Entidade IA {gameObject} nao contem animacao adequada para {attackingState}|");
+                    }   
+#endif
+            }
+            else    //se nao for um ataque, adiciona no dicionario com tipo-chave
+            {
                 stateDictionary.Add(state.StateType, state);
             }
         }
+        //checagem se o animator tem a animacao correta para os ataques que nao sao aleatorios (so acontece no editor)
+#if UNITY_EDITOR
+        foreach (AIAttackingState state in protectedAttackStates)
+        {
+            if (!controller.animator.HasState(0, Animator.StringToHash(state.animationStateName)))
+            {
+                Debug.LogError($"|Entidade IA {gameObject} nao contem animacao adequada para {state}|");
+            }
+        }
+#endif
     }
 
     private void Start() 
@@ -74,7 +106,7 @@ public class AIStateMachine : MonoBehaviour
     public void EnterState(AIStateBase state)
     {
         //Debug.Log("Trying to enter state: " + state);
-        if(currentState != null) 
+        if(currentState) 
         {
             currentState.OnStateExit(this); 
         }
@@ -93,27 +125,27 @@ public class AIStateMachine : MonoBehaviour
 
     public void ChooseAttack()
     {
-        if (controller.aggroTarget != null) {
-            List<AIAttackingState> inRangeAttacks = new List<AIAttackingState>();
+        if (!controller.aggroTarget) return;
+        
+        List<AIAttackingState> inRangeAttacks = new List<AIAttackingState>();
 
-            float targetDistance = controller.DistanceToTarget();
+        float targetDistance = controller.DistanceToTarget();
 
-            foreach(AIAttackingState attack in attackStates)
+        foreach(AIAttackingState attack in attackStates)
+        {
+            if(targetDistance < attack.attackRange && targetDistance > attack.avoidRange)
             {
-                if(targetDistance < attack.attackRange && targetDistance > attack.avoidRange)
-                {
-                    inRangeAttacks.Add(attack);
-                }
+                inRangeAttacks.Add(attack);
             }
+        }
 
-            if(inRangeAttacks.Count > 0)
-            {
-                nextAttack = inRangeAttacks[UnityEngine.Random.Range(0, inRangeAttacks.Count)];
-            }
-            else
-            {
-                nextAttack = attackStates[UnityEngine.Random.Range(0, attackStates.Count)];
-            }
+        if(inRangeAttacks.Count > 0)
+        {
+            nextAttack = inRangeAttacks[UnityEngine.Random.Range(0, inRangeAttacks.Count)];
+        }
+        else
+        {
+            nextAttack = attackStates[UnityEngine.Random.Range(0, attackStates.Count)];
         }
     }
 }

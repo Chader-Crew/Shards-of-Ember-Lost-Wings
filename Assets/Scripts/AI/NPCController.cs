@@ -59,7 +59,7 @@ public class NPCController : MonoBehaviour
 
     private void Die()
     {
-        animator.Play("Die");
+        animator.Play("DIE");
         this.enabled = false;
         character.enabled = false;
         navAgent.enabled = false;
@@ -93,7 +93,7 @@ public class NPCController : MonoBehaviour
                 Character otherChar = collider.GetComponent<Character>();
                 aggroTarget = otherChar;
 
-                if(charDetectedState != null)
+                if(charDetectedState)
                 {
                     stateMachine.EnterState(charDetectedState);
                 }else{
@@ -110,15 +110,15 @@ public class NPCController : MonoBehaviour
     }
 
 
-    private void ResetAttack()
+    public void ResetAttack()
     {
-        if(aggroTarget != null)
+        if(aggroTarget)
         {
-            if(charDetectedState != null)
+            if(charDetectedState)
             {
-                    stateMachine.EnterState(charDetectedState);
-                }else{
-                    stateMachine.EnterStateType(AIStateBase.AIStateType.CHASING);
+                stateMachine.EnterState(charDetectedState);
+            }else{
+                stateMachine.EnterStateType(AIStateBase.AIStateType.CHASING);
             }
         }else{
             stateMachine.EnterStateType(AIStateBase.AIStateType.IDLE);

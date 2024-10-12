@@ -16,6 +16,7 @@ public abstract class AIStateBase : ScriptableObject
         ATTACKING,
         STAGGERED,
         FLEEING,
+        TRANSITION,
     }
     public abstract AIStateType StateType{get;}
     public virtual void OnStateEnter(AIStateMachine stateMachine)

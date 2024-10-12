@@ -14,7 +14,7 @@ public class AIAttackingState : AIStateBase
     public float adjustRotDuration;
     private float adjustRotTimer;
     
-    public bool _stopMoving;
+    public bool _stopMoving = true;
 
     public override void OnStateEnter(AIStateMachine stateMachine)
     {
@@ -49,5 +49,12 @@ public class AIAttackingState : AIStateBase
         { 
             stateMachine.EnterStateType(AIStateType.CHASING); 
         }
+    }
+
+    public override void OnStateExit(AIStateMachine stateMachine)
+    {
+        base.OnStateExit(stateMachine);
+
+        stateMachine.controller.ResetAttack();
     }
 }
