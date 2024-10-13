@@ -116,7 +116,7 @@ public class PlayerController : Singleton<PlayerController>
     private void Die(){
         animator.SetTrigger("Die");
         character.enabled = false;
-        character._invul = true;
+        character.SetInvul(1);
         input.SetUI();
     }
 

@@ -16,7 +16,7 @@ public class Character : MonoBehaviour, IDamageable
     [SerializeField] private Renderer renderer; //Renderer pra troca de materiais
     [SerializeField] protected Material damageFlashingMaterial;     //Material que faz piscar vermelho quando leva dano
 
-    public bool _invul;
+    private bool _invul;
     private bool isPoisonBuffActive;
     private float poisonDuration = 2f; // Duração do efeito de veneno em segundos
     private float poisonDamagePerSecond = 0.5f; // Dano do veneno por segundo
@@ -111,6 +111,11 @@ public class Character : MonoBehaviour, IDamageable
         float healVal = Mathf.Clamp(value, 0, stats.maxHp - stats.hp);
         stats.hp += healVal;
         OnHealEvent(healVal);
+    }
+
+    public void SetInvul(int zeroOne)
+    {
+        _invul = zeroOne != 0;
     }
 
     public void activeBuff(int amount)

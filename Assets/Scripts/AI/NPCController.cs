@@ -21,7 +21,7 @@ public class NPCController : MonoBehaviour
 
     //deteccao de personagem pra aggro
     [Space(15)]
-    [HideInInspector] public Character aggroTarget;
+    public Character aggroTarget;
     [SerializeField] public bool _doCharDetection;
     [SerializeField] private AIStateBase charDetectedState;
     [SerializeField] private float charDetectionRadius;
@@ -114,7 +114,7 @@ public class NPCController : MonoBehaviour
     {
         if(aggroTarget)
         {
-            if(charDetectedState)
+            stateMachine.EnterStateType(AIStateBase.AIStateType.CHASING);
             {
                 stateMachine.EnterState(charDetectedState);
             }else{
@@ -152,7 +152,7 @@ public class NPCController : MonoBehaviour
         wanderSmooth = Quaternion.Euler(0, UnityEngine.Random.Range(-variance, variance), 0) * wanderSmooth.normalized;
         navAgent.destination +=  wanderSmooth * navAgent.speed/20;
     }
-    public void ChangeSpeed(float modifier)
+
     {
         navAgent.speed = navAgent.speed * modifier;
     }

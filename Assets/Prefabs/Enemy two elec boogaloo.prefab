@@ -1254,6 +1254,7 @@ MonoBehaviour:
   charDetectedState: {fileID: 11400000, guid: 89761b62944c223429934601dca073f8, type: 2}
   charDetectionRadius: 8
   aggroTargetTag: Player
+  wanderSmooth: {x: 0, y: 0, z: 0}
 --- !u!114 &2551282358385066452
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2074,8 +2075,8 @@ SkinnedMeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: -9134265094312954877, guid: dff0418d1087d9e45856e0c5c3995c41, type: 3}
-  - {fileID: -1648576049308844548, guid: dff0418d1087d9e45856e0c5c3995c41, type: 3}
+  - {fileID: 2100000, guid: 9f1c9d349b7fce3479207d5eba593c37, type: 2}
+  - {fileID: 2100000, guid: aede69f10e8809b41b924e7a0fa69e66, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
