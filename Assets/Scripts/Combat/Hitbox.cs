@@ -78,15 +78,17 @@ public class Hitbox : MonoBehaviour
         SkillData context = new SkillData();
         context.owner = owner;
         StartCoroutine(ActiveCollision(skill, context));
-
+        #if UNITY_EDITOR
         gizmoColor = Color.red;     //para debug
+        #endif
     }
 
     public void Deactivate()
     {
         StopAllCoroutines();
-
+        #if UNITY_EDITOR
         gizmoColor = Color.yellow;  //para debug
+        #endif
     }
 
     //checa acerto em cada frame de física por um tempo designado. Coloca os Characters acertados na lista targets da SkillData.

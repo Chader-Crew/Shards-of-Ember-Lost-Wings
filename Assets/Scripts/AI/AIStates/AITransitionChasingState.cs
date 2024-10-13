@@ -3,33 +3,33 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Serialization;
 
+[CreateAssetMenu(menuName ="ScriptableObjects/AIStates/TransitionChase")]
 public class AITransitionChasingState : AIChasingState
 {
-	//animacao de loop que rota ate acontecer o ataque
+	//animacao de loop que roda ate acontecer o ataque
 	[SerializeField] private string transitionAnimationStateName;
-	[SerializeField] private float transitionDelay;
 	
+	
+	//estado de ataque seguinte, sempre sera o proximo estado
 	[SerializeField] private AIAttackingState exclusiveAttackingState;
 
 	public override AIStateType StateType => AIStateType.TRANSITION;
-
+	
 	public override void OnStateEnter(AIStateMachine stateMachine)
 	{
 		base.OnStateEnter(stateMachine);
-		
-		//chama a animacao que loopa depois de um tempo
-		stateMachine.CallWithDelay(() => 
-				stateMachine.controller.PlayAnimation(transitionAnimationStateName),
-				transitionDelay);
+
+		stateMachine.controller.PlayAnimation(transitionAnimationStateName);
 	}
 
+	// E uma versao modificada do update do AIChasingState
 	public override void StateUpdate(AIStateMachine stateMachine)
 	{
 		base.StateUpdate(stateMachine);
 		if(stateMachine.controller.DistanceToTarget() > exitChaseRange)
 		{
 			stateMachine.controller.aggroTarget = null;
-			stateMachine.EnterStateType(stateToTransition);
+			stateMachine.EnterState(exclusiveAttackingState);
 			return;
 		}
 

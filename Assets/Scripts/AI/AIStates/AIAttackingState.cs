@@ -55,6 +55,6 @@ public class AIAttackingState : AIStateBase
     {
         base.OnStateExit(stateMachine);
 
-        stateMachine.controller.ResetAttack();
+        //stateMachine.controller.ResetAttack();
     }
 }
