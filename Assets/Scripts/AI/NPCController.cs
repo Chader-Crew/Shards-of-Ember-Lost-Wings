@@ -153,9 +153,6 @@ public class NPCController : MonoBehaviour
         navAgent.destination +=  wanderSmooth * navAgent.speed/20;
     }
 
-    {
-        navAgent.speed = navAgent.speed * modifier;
-    }
     public void ResetSpeed()
     {
         navAgent.speed = originalSpeed;
