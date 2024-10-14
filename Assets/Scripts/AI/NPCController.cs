@@ -115,11 +115,6 @@ public class NPCController : MonoBehaviour
         if(aggroTarget)
         {
             stateMachine.EnterStateType(AIStateBase.AIStateType.CHASING);
-            {
-                stateMachine.EnterState(charDetectedState);
-            }else{
-                stateMachine.EnterStateType(AIStateBase.AIStateType.CHASING);
-            }
         }else{
             stateMachine.EnterStateType(AIStateBase.AIStateType.IDLE);
         }
