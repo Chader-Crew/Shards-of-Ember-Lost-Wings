@@ -118,6 +118,14 @@ public class Character : MonoBehaviour, IDamageable
         _invul = zeroOne != 0;
     }
 
+    public void CastSkill(SkillBase skill)
+    {
+        SkillData data = new SkillData();
+        data.Owner(this);
+        
+        skill.Activate(data);
+    }
+    
     public void activeBuff(int amount)
     {
         TemporaryAtk(amount, 6);
