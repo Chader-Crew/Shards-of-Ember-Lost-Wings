@@ -6,10 +6,9 @@ public class RootColliderConfig : MonoBehaviour
 {
     public InventoryManager inventoryManager;
     public GroundItem currentItem;
+    public NPCInteract currentNPC;
     private ItemFeedback itemFeedback;
-    private bool _solas = false, _nyxtra = false, _bonfire = false;
-    public SimpleTutorial simpleTutorial;
-    public ItemTutorial itemTutorial;
+    private bool _bonfire = false;
     public Bonfire bonfire;
 
     private void Awake(){
@@ -22,8 +21,7 @@ public class RootColliderConfig : MonoBehaviour
 
     void OnTriggerEnter(Collider other){
         var item = other.GetComponent<GroundItem>();
-        var solas = other.GetComponent<SimpleTutorial>();
-        var nyxtra = other.GetComponent<ItemTutorial>();
+        var npcItem = other.GetComponent<NPCInteract>();
         var bonfire_obj = other.GetComponent<Bonfire>();
 
 
@@ -33,15 +31,9 @@ public class RootColliderConfig : MonoBehaviour
             //item.animator.SetTrigger("open");
             
         }
-        if(solas){
-            _solas = true;
-            simpleTutorial = solas;
-            solas.fzim.SetActive(true);
-        }
-        if(nyxtra){
-            _nyxtra = true;
-            itemTutorial = nyxtra;
-            nyxtra.canvasF.SetActive(true);
+        if(npcItem){
+            currentNPC = npcItem;
+            npcItem.buttonCanva.SetActive(true);
         }
         if(bonfire_obj){
             _bonfire = true;
@@ -52,8 +44,7 @@ public class RootColliderConfig : MonoBehaviour
 
     void OnTriggerExit(Collider other){
         var item = other.GetComponent<GroundItem>();
-        var solas = other.GetComponent<SimpleTutorial>();
-        var nyxtra = other.GetComponent<ItemTutorial>();
+        var npcItem = other.GetComponent<NPCInteract>();
         var bonfire_obj = other.GetComponent<Bonfire>();
 
         if(item && item == currentItem){
@@ -61,17 +52,12 @@ public class RootColliderConfig : MonoBehaviour
             //item.animator.SetTrigger("close");
             currentItem = null;
         }
-        if(solas){
-            _solas = false;
-            simpleTutorial = null;
-            solas.fzim.SetActive(false);
+        if(npcItem){
+            npcItem.buttonCanva.SetActive(false);
+            //item.animator.SetTrigger("close");
+            currentNPC = null;
         }
-        if(nyxtra){
-            _nyxtra = false;
-            itemTutorial = null;
-            nyxtra.canvasF.SetActive(false);
-        }
-         if(bonfire_obj){
+        if(bonfire_obj){
             _bonfire = false;
             bonfire_obj.interact.SetActive(false);
         }
@@ -88,11 +74,8 @@ public class RootColliderConfig : MonoBehaviour
                 currentItem.chestAudio.Play();
             }
         }
-        if(_solas){
-            simpleTutorial.OpenTutorial();
-        }
-        if(_nyxtra){
-            itemTutorial.OpenItemTutorial();
+        if(currentNPC != null){
+            Debug.Log("talk");
         }
         if(_bonfire){
             bonfire.BonfireActive();
