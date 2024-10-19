@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-
 public class InterfaceBonfire : MonoBehaviour
 {
     public GameObject bonfireMenu;
@@ -14,7 +13,7 @@ public class InterfaceBonfire : MonoBehaviour
     {
         bonfireMenu.SetActive(true);
 
-        foreach (Transform child in grid.transform) //funciona e por enquanto vai ficar assim 
+        foreach (Transform child in grid.transform)
         {
             Destroy(child.gameObject);
         }
@@ -23,8 +22,14 @@ public class InterfaceBonfire : MonoBehaviour
         {
             Button button = Instantiate(bonfirePrefab, grid.transform);
             button.GetComponentInChildren<Text>().text = bonfire.bonfireName;
-            button.onClick.AddListener(() => Teleport(bonfire.bonfireLocation));
+
+            button.onClick.AddListener(() => TPcheck(bonfire));
         }
+    }
+
+    public void TPcheck(Bonfire bonfire)
+    {
+        Teleport(bonfire.bonfirePosition);
     }
 
     public void CloseBonfireMenu()
@@ -32,11 +37,12 @@ public class InterfaceBonfire : MonoBehaviour
         bonfireMenu.SetActive(false);
     }
 
-    public void Teleport(Transform localTP)
+    public void Teleport(Vector3 position)
     {
-        PlayerController.Instance.transform.position = localTP.position;
         PlayerController.Instance.playerMovement.characterController.enabled = false;
+        PlayerController.Instance.transform.position = new Vector3(position.x, position.y + 1, position.z);
+        PlayerController.Instance.playerMovement.characterController.enabled = true;
+
         bonfireMenu.SetActive(false);
     }
 }
-
