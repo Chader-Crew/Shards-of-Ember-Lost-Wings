@@ -8,6 +8,7 @@ public class DialogueManager : MonoBehaviour
 {
     public TMP_Text nameText;
     public TMP_Text dialogueText;
+    public GameObject dialoguePanel;
     //public Animator animator; //para implementar uma animacao para a caixa de dialogo depois
     public Queue<string> sentences;
     public Dialogue _dialogue;
@@ -30,7 +31,7 @@ public class DialogueManager : MonoBehaviour
     {
 
         //animator.SetBool("IsOpen", true);
-
+        dialoguePanel.SetActive(true);
         nameText.text = _dialogue.name;
 
         DisplayNextSentence();
@@ -60,6 +61,7 @@ public class DialogueManager : MonoBehaviour
     }
     public void EndDialogue(){
         Debug.Log("Fim do diálogo");
+        dialoguePanel.SetActive(false);
         //animator.SetBool("IsOpen", false);
         FillSentences();
     }
