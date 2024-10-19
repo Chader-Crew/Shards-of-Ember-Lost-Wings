@@ -7,6 +7,7 @@ public class NPCInteract : MonoBehaviour
     public NPCItem npcItem;
     public GameObject buttonCanva;
     public AudioSource chestAudio;
+    public DialogueManager dialogueManager;
 
     public void Initialize(NPCItem npcItem){
         this.npcItem = npcItem;

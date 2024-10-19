@@ -1,13 +1,14 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 using UnityEngine.UI;
 
 public class DialogueManager : MonoBehaviour
 {
-    public Text nameText;
-    public Text dialogueText;
-    public Animator animator; //para implementar uma animacao para a caixa de dialogo depois
+    public TMP_Text nameText;
+    public TMP_Text dialogueText;
+    //public Animator animator; //para implementar uma animacao para a caixa de dialogo depois
     public Queue<string> sentences;
     public Dialogue _dialogue;
 
@@ -28,7 +29,7 @@ public class DialogueManager : MonoBehaviour
     public void StartDialogue()
     {
 
-        animator.SetBool("IsOpen", true);
+        //animator.SetBool("IsOpen", true);
 
         nameText.text = _dialogue.name;
 
@@ -59,7 +60,7 @@ public class DialogueManager : MonoBehaviour
     }
     public void EndDialogue(){
         Debug.Log("Fim do diálogo");
-        animator.SetBool("IsOpen", false);
+        //animator.SetBool("IsOpen", false);
         FillSentences();
     }
 }

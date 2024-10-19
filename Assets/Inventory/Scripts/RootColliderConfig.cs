@@ -76,6 +76,9 @@ public class RootColliderConfig : MonoBehaviour
         }
         if(currentNPC != null){
             Debug.Log("talk");
+            currentNPC.dialogueManager.StartDialogue();
+            //ativa painel de dialogo
+            //starta o dialogo
         }
         if(_bonfire){
             bonfire.BonfireActive();
