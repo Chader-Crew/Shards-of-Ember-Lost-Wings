@@ -18,23 +18,27 @@ public class SkillTreeHolder: ScriptableObject
     {
         get => _activeSkill;
     }   
-
-    public bool _CanCastSkill
-    {
-        get 
-        {
-            if(ActiveSkill == null) return false;
-            else
-            if(ActiveSkill._onCooldown) return false;
-
-            return true;
-        }
-    }
-
+    
     public string nameState;
 
     public Mesh ArmorMesh;
     public Mesh BodyMesh;
+    
+    public bool _CanCastSkill
+    {
+        get
+        {
+            if (!ActiveSkill.canCast) return false;
+            else
+            if(ActiveSkill._onCooldown) return false;
+            else
+            if(ActiveSkill == null) return false;
+            
+            
+            return true;
+        }
+    }
+
 
     public void Enter()
     {

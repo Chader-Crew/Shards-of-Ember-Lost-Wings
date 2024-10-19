@@ -41,7 +41,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: -0.000030517578}
+  m_AnchoredPosition: {x: 0, y: -0.000061035156}
   m_SizeDelta: {x: 0, y: 0.000061035}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &434529507147354828
@@ -178,10 +178,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   skill: {fileID: 11400000, guid: 9a43f76aa38babc40a110526a983bf67, type: 2}
-  prev: {fileID: 8780225559438450727}
+  prev: {fileID: 1300360745546350528}
   bigCost: 1
   smallCost: 100
   IsSkill: 1
+  image: {fileID: 0}
+  button: {fileID: 0}
+  nexts: []
 --- !u!1 &460932763763306361
 GameObject:
   m_ObjectHideFlags: 0
@@ -218,7 +221,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -0.4879, y: -39.3042}
+  m_AnchoredPosition: {x: -0.48791504, y: -39.3042}
   m_SizeDelta: {x: -12.9758, y: -107.1327}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &5379265235861654449
@@ -397,6 +400,9 @@ MonoBehaviour:
   bigCost: 1
   smallCost: 0
   IsSkill: 1
+  image: {fileID: 0}
+  button: {fileID: 0}
+  nexts: []
 --- !u!1 &677975857999623093
 GameObject:
   m_ObjectHideFlags: 0
@@ -531,10 +537,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   skill: {fileID: 11400000, guid: 4f878a66c98581d41a2fec79039c905c, type: 2}
-  prev: {fileID: 9111962375934828537}
+  prev: {fileID: 6760241716175877433}
   bigCost: 1
   smallCost: 100
   IsSkill: 1
+  image: {fileID: 0}
+  button: {fileID: 0}
+  nexts: []
 --- !u!1 &809353247551833617
 GameObject:
   m_ObjectHideFlags: 0
@@ -669,10 +678,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   skill: {fileID: 11400000, guid: 2982f8f6971f3fb43bb8dcfe7fc008cd, type: 2}
-  prev: {fileID: 3518903785821302451}
+  prev: {fileID: 7202120291320648406}
   bigCost: 1
   smallCost: 100
   IsSkill: 1
+  image: {fileID: 0}
+  button: {fileID: 0}
+  nexts: []
 --- !u!1 &1386437003339983610
 GameObject:
   m_ObjectHideFlags: 0
@@ -884,10 +896,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   skill: {fileID: 11400000, guid: 50c4765f1c347d74597fc1f04192491b, type: 2}
-  prev: {fileID: 4828834554603360170}
+  prev: {fileID: 7573957096663381948}
   bigCost: 0
   smallCost: 200
   IsSkill: 0
+  image: {fileID: 0}
+  button: {fileID: 0}
+  nexts: []
 --- !u!1 &1771719085748101830
 GameObject:
   m_ObjectHideFlags: 0
@@ -1005,7 +1020,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: -0.000030517578}
+  m_AnchoredPosition: {x: 0, y: -0.000061035156}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &2103377631951719651
@@ -1142,10 +1157,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   skill: {fileID: 11400000, guid: 6a4f6214f2ec5bc4ea0e5e9bae85068e, type: 2}
-  prev: {fileID: 7755976182697488612}
+  prev: {fileID: 1139291987656608374}
   bigCost: 0
   smallCost: 200
   IsSkill: 0
+  image: {fileID: 0}
+  button: {fileID: 0}
+  nexts: []
 --- !u!1 &2412452675581437086
 GameObject:
   m_ObjectHideFlags: 0
@@ -1230,10 +1248,10 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 5111790364934569612}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0.5}
-  m_AnchorMax: {x: 0, y: 0.5}
-  m_AnchoredPosition: {x: 99.5, y: 0}
-  m_SizeDelta: {x: 201, y: 50}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 99.5, y: 1.5}
+  m_SizeDelta: {x: 201, y: -13}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &6940515152795420332
 CanvasRenderer:
@@ -1368,9 +1386,9 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 709572769118046510}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.60490316, y: 0.15576197}
-  m_AnchorMax: {x: 0.6351299, y: 0.20214677}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchorMin: {x: 0.607713, y: 0.15825942}
+  m_AnchorMax: {x: 0.6332435, y: 0.2021678}
+  m_AnchoredPosition: {x: -1.5, y: 2.1999512}
   m_SizeDelta: {x: 0, y: 0.0000076293945}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &972688880263170646
@@ -1468,10 +1486,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   skill: {fileID: 11400000, guid: 6a4f6214f2ec5bc4ea0e5e9bae85068e, type: 2}
-  prev: {fileID: 1220718746921631130}
+  prev: {fileID: 8166007446490582861}
   bigCost: 0
   smallCost: 200
   IsSkill: 0
+  image: {fileID: 0}
+  button: {fileID: 0}
+  nexts: []
 --- !u!1 &2634399093049318858
 GameObject:
   m_ObjectHideFlags: 0
@@ -1625,7 +1646,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0.78730255}
   m_AnchorMax: {x: 0.17253458, y: 1}
-  m_AnchoredPosition: {x: 1.5, y: -3.0999985}
+  m_AnchoredPosition: {x: 1.4996338, y: -3.1000366}
   m_SizeDelta: {x: -9, y: -10}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &3088751081077688869
@@ -1869,10 +1890,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   skill: {fileID: 11400000, guid: f4191664f0fcc2e47ac3b393e1dc3579, type: 2}
-  prev: {fileID: 2790031844071563680}
+  prev: {fileID: 318614021678017804}
   bigCost: 0
   smallCost: 200
   IsSkill: 0
+  image: {fileID: 0}
+  button: {fileID: 0}
+  nexts: []
 --- !u!1 &3041007728281955782
 GameObject:
   m_ObjectHideFlags: 0
@@ -2275,10 +2299,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   skill: {fileID: 11400000, guid: 5b4c9368265997b42ac44cb99ee4b809, type: 2}
-  prev: {fileID: 5750095423367101231}
+  prev: {fileID: 3718310246121715307}
   bigCost: 1
   smallCost: 100
   IsSkill: 1
+  image: {fileID: 0}
+  button: {fileID: 0}
+  nexts: []
 --- !u!1 &3669027860846033727
 GameObject:
   m_ObjectHideFlags: 0
@@ -2413,10 +2440,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   skill: {fileID: 11400000, guid: a74a1975dfc60254f93a73ff806ed9ce, type: 2}
-  prev: {fileID: 7915914341047876471}
+  prev: {fileID: 1215593805352958839}
   bigCost: 1
   smallCost: 100
   IsSkill: 1
+  image: {fileID: 0}
+  button: {fileID: 0}
+  nexts: []
 --- !u!1 &4387545055870228685
 GameObject:
   m_ObjectHideFlags: 0
@@ -2551,10 +2581,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   skill: {fileID: 11400000, guid: f4191664f0fcc2e47ac3b393e1dc3579, type: 2}
-  prev: {fileID: 7961693675215824625}
+  prev: {fileID: 2644738491034324855}
   bigCost: 0
   smallCost: 200
   IsSkill: 0
+  image: {fileID: 0}
+  button: {fileID: 0}
+  nexts: []
 --- !u!1 &4465651199612724888
 GameObject:
   m_ObjectHideFlags: 0
@@ -2689,10 +2722,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   skill: {fileID: 11400000, guid: f351e687ecfce9e46972dad7e16c5a2f, type: 2}
-  prev: {fileID: 5813092206432244900}
+  prev: {fileID: 5856309597432684733}
   bigCost: 1
   smallCost: 100
   IsSkill: 1
+  image: {fileID: 0}
+  button: {fileID: 0}
+  nexts: []
 --- !u!1 &4544993170965922580
 GameObject:
   m_ObjectHideFlags: 0
@@ -2723,7 +2759,6 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 8965571645102976794}
-  - {fileID: 2069239018085753866}
   - {fileID: 2327014757378846413}
   - {fileID: 5111790364934569612}
   - {fileID: 6470014317512990278}
@@ -2997,10 +3032,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   skill: {fileID: 11400000, guid: 6a4f6214f2ec5bc4ea0e5e9bae85068e, type: 2}
-  prev: {fileID: 7755976182697488612}
+  prev: {fileID: 1139291987656608374}
   bigCost: 0
   smallCost: 200
   IsSkill: 0
+  image: {fileID: 0}
+  button: {fileID: 0}
+  nexts: []
 --- !u!1 &5182000467008396151
 GameObject:
   m_ObjectHideFlags: 0
@@ -3036,7 +3074,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5712002, y: 0}
   m_AnchorMax: {x: 0.83582735, y: 0.81189084}
-  m_AnchoredPosition: {x: -0.0001373291, y: 16.3}
+  m_AnchoredPosition: {x: -0.00012207031, y: 16.299988}
   m_SizeDelta: {x: 0.00018310547, y: -32.6}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &6716627854109791104
@@ -3111,12 +3149,13 @@ RectTransform:
   - {fileID: 709572769118046510}
   - {fileID: 8981376148828169511}
   - {fileID: 1696247261452429255}
+  - {fileID: 2069239018085753866}
   m_Father: {fileID: 744313835381319885}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0.5, y: 0}
+  m_SizeDelta: {x: 1, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &8858019764523546937
 CanvasRenderer:
@@ -3162,7 +3201,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.3007038, y: 0.61760294}
   m_AnchorMax: {x: 0.32790715, y: 0.66450965}
-  m_AnchoredPosition: {x: -0.000030517578, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &1363496417761483679
@@ -3260,10 +3299,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   skill: {fileID: 11400000, guid: f4191664f0fcc2e47ac3b393e1dc3579, type: 2}
-  prev: {fileID: 7961693675215824625}
+  prev: {fileID: 2644738491034324855}
   bigCost: 0
   smallCost: 200
   IsSkill: 0
+  image: {fileID: 0}
+  button: {fileID: 0}
+  nexts: []
 --- !u!1 &5484385261372706853
 GameObject:
   m_ObjectHideFlags: 0
@@ -3398,10 +3440,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   skill: {fileID: 11400000, guid: 50c4765f1c347d74597fc1f04192491b, type: 2}
-  prev: {fileID: 4828834554603360170}
+  prev: {fileID: 7573957096663381948}
   bigCost: 0
   smallCost: 200
   IsSkill: 0
+  image: {fileID: 0}
+  button: {fileID: 0}
+  nexts: []
 --- !u!1 &5587780092684974849
 GameObject:
   m_ObjectHideFlags: 0
@@ -3436,7 +3481,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0.0001296997, y: 51.98151}
+  m_AnchoredPosition: {x: 0.00012207031, y: 51.981506}
   m_SizeDelta: {x: -0.00015259, y: -43.994}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &6213479116946582307
@@ -3670,10 +3715,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   skill: {fileID: 11400000, guid: d248bc99b80e2d84c915827578f271c1, type: 2}
-  prev: {fileID: 2719771943395044817}
+  prev: {fileID: 6002937792061412533}
   bigCost: 1
   smallCost: 100
   IsSkill: 1
+  image: {fileID: 0}
+  button: {fileID: 0}
+  nexts: []
 --- !u!1 &5774071171718770792
 GameObject:
   m_ObjectHideFlags: 0
@@ -3808,10 +3856,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   skill: {fileID: 11400000, guid: 3c728fe4657b69c4e8544c6aa5c22aee, type: 2}
-  prev: {fileID: 89508999457792862}
+  prev: {fileID: 987433677233514415}
   bigCost: 1
   smallCost: 100
   IsSkill: 1
+  image: {fileID: 0}
+  button: {fileID: 0}
+  nexts: []
 --- !u!1 &6008020544176681614
 GameObject:
   m_ObjectHideFlags: 0
@@ -3946,10 +3997,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   skill: {fileID: 11400000, guid: 8e66da8611050354882b8715c8cae692, type: 2}
-  prev: {fileID: 4095194945310680062}
+  prev: {fileID: 7421329780299895803}
   bigCost: 1
   smallCost: 100
   IsSkill: 1
+  image: {fileID: 0}
+  button: {fileID: 0}
+  nexts: []
 --- !u!1 &6036580332820100667
 GameObject:
   m_ObjectHideFlags: 0
@@ -3986,7 +4040,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.66005874, y: 0.30734774}
   m_AnchorMax: {x: 0.6851522, y: 0.35127193}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchoredPosition: {x: -186, y: -137.9}
   m_SizeDelta: {x: 0, y: 0.0000076293945}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &515951597660225998
@@ -4084,10 +4138,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   skill: {fileID: 11400000, guid: 871858a8cab49534ab42b2dd9e052788, type: 2}
-  prev: {fileID: 8000466710598373702}
+  prev: {fileID: 3311464861819259586}
   bigCost: 0
   smallCost: 200
   IsSkill: 0
+  image: {fileID: 0}
+  button: {fileID: 0}
+  nexts: []
 --- !u!1 &6195776858294470940
 GameObject:
   m_ObjectHideFlags: 0
@@ -4222,10 +4279,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   skill: {fileID: 11400000, guid: 50c4765f1c347d74597fc1f04192491b, type: 2}
-  prev: {fileID: 2790031844071563680}
+  prev: {fileID: 318614021678017804}
   bigCost: 0
   smallCost: 200
   IsSkill: 0
+  image: {fileID: 0}
+  button: {fileID: 0}
+  nexts: []
 --- !u!1 &6309246032372351506
 GameObject:
   m_ObjectHideFlags: 0
@@ -4285,7 +4345,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_RaycastTarget: 1
+  m_RaycastTarget: 0
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
@@ -4337,7 +4397,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.51426244, y: 0.10896929}
   m_AnchorMax: {x: 0.54066175, y: 0.15342054}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 186.7, y: 137.5}
   m_SizeDelta: {x: -0.000015258789, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &3738863078760733292
@@ -4435,10 +4495,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   skill: {fileID: 11400000, guid: 6a4f6214f2ec5bc4ea0e5e9bae85068e, type: 2}
-  prev: {fileID: 8743258286271435067}
+  prev: {fileID: 1033629859150632469}
   bigCost: 0
   smallCost: 200
   IsSkill: 0
+  image: {fileID: 0}
+  button: {fileID: 0}
+  nexts: []
 --- !u!1 &6465934176984675498
 GameObject:
   m_ObjectHideFlags: 0
@@ -4471,10 +4534,10 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 6470014317512990278}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0.5}
-  m_AnchorMax: {x: 0, y: 0.5}
-  m_AnchoredPosition: {x: 99.5, y: 0}
-  m_SizeDelta: {x: 201, y: 50}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 102.5, y: -3.0000153}
+  m_SizeDelta: {x: 207, y: -20}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &3816185714169593184
 CanvasRenderer:
@@ -4616,7 +4679,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -0.000015258789, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
 --- !u!1 &6667699272448154040
@@ -4653,10 +4716,10 @@ RectTransform:
   - {fileID: 6192412756691823109}
   m_Father: {fileID: 744313835381319885}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 1, y: 0.74245477}
+  m_AnchorMin: {x: 1, y: 0.81394887}
   m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 145, y: 0}
+  m_SizeDelta: {x: 200, y: 0}
   m_Pivot: {x: 0, y: 1}
 --- !u!222 &8921250458850806302
 CanvasRenderer:
@@ -4834,6 +4897,9 @@ MonoBehaviour:
   bigCost: 1
   smallCost: 0
   IsSkill: 1
+  image: {fileID: 0}
+  button: {fileID: 0}
+  nexts: []
 --- !u!1 &7785257296996279754
 GameObject:
   m_ObjectHideFlags: 0
@@ -4968,10 +5034,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   skill: {fileID: 11400000, guid: 871858a8cab49534ab42b2dd9e052788, type: 2}
-  prev: {fileID: 8743258286271435067}
+  prev: {fileID: 1033629859150632469}
   bigCost: 0
   smallCost: 200
   IsSkill: 0
+  image: {fileID: 0}
+  button: {fileID: 0}
+  nexts: []
 --- !u!1 &7872608823934311834
 GameObject:
   m_ObjectHideFlags: 0
@@ -5156,10 +5225,10 @@ RectTransform:
   - {fileID: 3477020492185588185}
   m_Father: {fileID: 744313835381319885}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 1, y: 0.5}
-  m_AnchorMax: {x: 1, y: 0.74245477}
+  m_AnchorMin: {x: 1, y: 0.6036819}
+  m_AnchorMax: {x: 1, y: 0.81394887}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 145, y: 0.7}
+  m_SizeDelta: {x: 200, y: 0.7}
   m_Pivot: {x: 0, y: 1}
 --- !u!222 &5269489403541232470
 CanvasRenderer:
@@ -5333,10 +5402,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   skill: {fileID: 11400000, guid: 3c728fe4657b69c4e8544c6aa5c22aee, type: 2}
-  prev: {fileID: 5911653715898438678}
+  prev: {fileID: 1251013957336851360}
   bigCost: 1
   smallCost: 100
   IsSkill: 1
+  image: {fileID: 0}
+  button: {fileID: 0}
+  nexts: []
 --- !u!1 &8413363485789693542
 GameObject:
   m_ObjectHideFlags: 0
@@ -5362,17 +5434,17 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8413363485789693542}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 744313835381319885}
+  m_Father: {fileID: 8965571645102976794}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_AnchoredPosition: {x: -0.5, y: 0}
+  m_SizeDelta: {x: -1, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &1326760171823928037
 CanvasRenderer:
@@ -5396,7 +5468,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_RaycastTarget: 1
+  m_RaycastTarget: 0
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
@@ -5550,6 +5622,9 @@ MonoBehaviour:
   bigCost: 1
   smallCost: 0
   IsSkill: 1
+  image: {fileID: 0}
+  button: {fileID: 0}
+  nexts: []
 --- !u!1 &8675866141012843203
 GameObject:
   m_ObjectHideFlags: 0
@@ -5684,10 +5759,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   skill: {fileID: 11400000, guid: ea769cf845752fd4f8d19b429d071eea, type: 2}
-  prev: {fileID: 4384730360367996702}
+  prev: {fileID: 4241713041989058031}
   bigCost: 1
   smallCost: 100
   IsSkill: 1
+  image: {fileID: 0}
+  button: {fileID: 0}
+  nexts: []
 --- !u!1 &8721892740337401485
 GameObject:
   m_ObjectHideFlags: 0
@@ -5722,7 +5800,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5803306, y: 0.2848928}
   m_AnchorMax: {x: 0.82448184, y: 0.7805475}
-  m_AnchoredPosition: {x: 0, y: -0.0000076293945}
+  m_AnchoredPosition: {x: 0, y: -0.000030517578}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &2572163394827649047
@@ -5897,7 +5975,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   skill: {fileID: 11400000, guid: bd8ee57d80239d844aa0e6c79154c5bf, type: 2}
-  prev: {fileID: 3475516606041699845}
+  prev: {fileID: 1195656116089405918}
   bigCost: 1
   smallCost: 100
   IsSkill: 1
+  image: {fileID: 0}
+  button: {fileID: 0}
+  nexts: []

@@ -79,6 +79,7 @@ public class PlayerController : Singleton<PlayerController>
     {
         //spText.text="Skillpoints "+skillShards;
         SkillShards = 1;
+        ChangeState(1);
     }
 
     //chamado quando o animator sai do state de ataque para destravar movimento (provavelmente devia ser mudado para |quando entra em idle|)

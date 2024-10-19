@@ -22,7 +22,7 @@ public class MenuController : MonoBehaviour
 
     public void OpenCredits()
     {
-          if(panelCredits.activeSelf)
+        if(panelCredits.activeSelf)
         {
             panelCredits.SetActive(false);
         }
