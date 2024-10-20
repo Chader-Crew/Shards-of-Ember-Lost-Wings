@@ -26,8 +26,4 @@ public class AddStackCaster : SkillBase
         }
     }
 
-    public override void Comprado(CharStats player)
-    {
-        throw new System.NotImplementedException();
-    }
 }

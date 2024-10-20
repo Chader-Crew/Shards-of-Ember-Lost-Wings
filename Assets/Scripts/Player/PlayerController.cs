@@ -25,13 +25,13 @@ public class PlayerController : Singleton<PlayerController>
     public float dashTime;
     public float dashCoolDown;
     public bool canDash = true;
-    private int _skillShards;
+    [SerializeField] private int _skillShards;
     public int SkillShards
     {
         get => _skillShards;
         private set => _skillShards = value;
     }
-    private int _statShards;
+    [SerializeField] private int _statShards;
     public int StatShards
     {
         get => _statShards;

@@ -39,6 +39,14 @@ public class SkillTreeHolder: ScriptableObject
         }
     }
 
+    public void ResetSkills()
+    {
+        foreach (SkillBase skill in skills)
+        {
+            skill.canCast = false;
+        }
+    }
+
 
     public void Enter()
     {

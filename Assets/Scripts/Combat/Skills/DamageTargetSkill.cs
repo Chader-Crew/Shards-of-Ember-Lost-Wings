@@ -41,8 +41,4 @@ public class DamageTargetSkill : SkillBase
         }
     }
 
-    public override void Comprado(CharStats player)
-    {
-        
-    }
 }

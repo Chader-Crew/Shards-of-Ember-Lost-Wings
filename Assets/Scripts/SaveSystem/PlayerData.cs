@@ -10,4 +10,8 @@ public struct PlayerData
     public Vector3 spawnPosition;
     public int atk, def, spd, maxHp;
     public string[] unlockedBonfires;
+    public int activeTree;
+    public int[] unlockedSkillsAct;
+    public int[] unlockedSkillsNext;
+    public int[] unlockedSkillsPrev;
 }

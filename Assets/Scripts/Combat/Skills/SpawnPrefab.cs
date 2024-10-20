@@ -52,9 +52,4 @@ public class SpawnPrefab : SkillBase
             Destroy(instance, context.duration);
         }
     }
-
-    public override void Comprado(CharStats player)
-    {
-        throw new System.NotImplementedException();
-    }
 }

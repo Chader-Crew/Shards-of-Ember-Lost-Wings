@@ -12,7 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ff03aae9e2f992b40ae99237434dd1ea, type: 3}
   m_Name: MonkeyPoisonStart
   m_EditorClassIdentifier: 
-  canCast: 1
+  canCast: 0
+  cooldown: 0
+  _onCooldown: 0
   offset: {x: 0, y: 1, z: 1.5}
   projectile: {fileID: 7692905926553671710, guid: f39baca221a7d7f4bbb04d4e1d6aed8c,
     type: 3}

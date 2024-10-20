@@ -30,7 +30,7 @@ public class currentSkill : MonoBehaviour
         prev?.nexts.Add(this);
         if (!prev)
         {
-            this.CallWithDelay(UpdateStatus,0.01f);
+            this.CallWithDelay(UpdateStatus,0.1f);
         }
     }
 
@@ -66,7 +66,8 @@ public class currentSkill : MonoBehaviour
         {
             if(prev==null||prev.button.IsActive()==false)
             {
-                skill.canCast=true;
+                
+                skill.canCast = true;
                 skill.Comprado(PlayerController.Instance.character.Stats);
                 image.enabled=false;
                 button.enabled=false;
@@ -74,10 +75,6 @@ public class currentSkill : MonoBehaviour
                 PlayerController.Instance.SpendShards(smallCost);
                 
                 UpdateStatus();
-                foreach (currentSkill next in nexts)
-                {
-                    next.UpdateStatus();
-                }
             }
             else
             {

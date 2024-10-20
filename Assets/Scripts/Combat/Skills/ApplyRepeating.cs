@@ -15,8 +15,4 @@ public class ApplyRepeating : SkillBase
         skillRepeater.Initialize(nextSkill, context, applyCount, applyInterval);
     }
 
-    public override void Comprado(CharStats player)
-    {
-        throw new System.NotImplementedException();
-    }
 }

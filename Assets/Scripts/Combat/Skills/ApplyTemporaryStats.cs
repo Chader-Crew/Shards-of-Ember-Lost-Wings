@@ -42,8 +42,4 @@ public class ApplyTemporaryStats : SkillBase
         nextSkill?.Activate(context);
     }
 
-    public override void Comprado(CharStats player)
-    {
-        throw new System.NotImplementedException();
-    }
 }

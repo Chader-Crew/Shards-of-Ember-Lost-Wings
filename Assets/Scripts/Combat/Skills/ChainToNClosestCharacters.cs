@@ -80,8 +80,4 @@ public class ChainToNClosestCharacters : SkillBase
         }
     }
 
-    public override void Comprado(CharStats player)
-    {
-        
-    }
 }

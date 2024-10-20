@@ -11,8 +11,4 @@ public class DebugSkill : SkillBase
         Debug.Log(debugMessage);
     }
 
-    public override void Comprado(CharStats player)
-    {
-        throw new System.NotImplementedException();
-    }
 }
