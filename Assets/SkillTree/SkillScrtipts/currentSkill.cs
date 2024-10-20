@@ -7,6 +7,7 @@ using UnityEngine.UI;
 public class currentSkill : MonoBehaviour
 {
     [SerializeField]private SkillBase skill;
+    public SkillBase Skill => skill;
     [SerializeField]private currentSkill prev;
     
     [SerializeField]private int bigCost;

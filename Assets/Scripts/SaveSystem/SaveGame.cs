@@ -1,6 +1,7 @@
 using System.IO;
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -9,21 +10,35 @@ public static class SaveGame
     public static void Save()
     {
         PlayerData playerData = new PlayerData();   //inicializa o struct
+        
+        
+        //atribui o estado elemental atual
+        playerData.activeTree = PlayerController.Instance.state.nameState;
 
-        //atribui os stats do player (TODO: substituir isso por um registro de desbloqueios de nodos das skillTrees, quando estiverem implementados)
-        playerData.atk = PlayerController.Instance.character.Stats.atk;
-        playerData.def = PlayerController.Instance.character.Stats.def;
-        playerData.spd = PlayerController.Instance.character.Stats.spd;
-        playerData.maxHp = PlayerController.Instance.character.Stats.maxHp;
+        
+        //atribui as listas de skills desbloqueadas
+        //lista temporaria dos botoes da skilltree pra achar todas as skills
+        List<currentSkill> tempList = new List<currentSkill>();
+        tempList = GameObject.FindObjectsByType<currentSkill>(FindObjectsInactive.Include, FindObjectsSortMode.None).ToList();
+        //Sort por nome para a indexação ser sempre igual
+        tempList.Sort((s1, s2) => s1.gameObject.name.CompareTo(s2.gameObject.name));    //eu escrevi que nao ia usar linq ali embaixo mas
+                                                                                                                    //to eu aqui usando. -Alu
+        List<int> skillIndexes = new List<int>();
+        foreach (var skillButton in tempList.Where(s => !s.Skill.canCast))
+        {
+            skillIndexes.Add(tempList.IndexOf(skillButton));
+        }
+        playerData.unlockedSkills = skillIndexes.ToArray();
 
         //atribui a lista de bonfires desbloqueadas
         playerData.unlockedBonfires = new string[BonfireRegister.bonfireDictionary.Keys.Count];
         BonfireRegister.bonfireDictionary.Keys.CopyTo(playerData.unlockedBonfires, 0);  // copia as keys como string pro array, tem que ou ser assim ou usar linq
                                                                                         // eu não vou usar linq pq ele me traiu -Alu
         
-        //atribui o spawnpoint  (TODO: substituir isso pela posicao da ultima bonfire interagida quando for implementado)
+        //atribui o spawnpoint  (TODO: substituir isso pela posicao da ultima bonfire interagida)
         playerData.spawnPosition = PlayerController.Instance.transform.position;
 
+        
         //escreve o arquivo em JSON
         string jsonString = JsonUtility.ToJson(playerData);
         Directory.CreateDirectory(Application.dataPath + "/Save");
@@ -42,12 +57,26 @@ public static class SaveGame
         string jsonString = File.ReadAllText(Application.dataPath + "/Save/saveFile.json");
         PlayerData loadedData = JsonUtility.FromJson<PlayerData>(jsonString);
 
-        //atribui os stats do player
-        PlayerController.Instance.character.Stats.atk = loadedData.atk;
-        PlayerController.Instance.character.Stats.def = loadedData.def;
-        PlayerController.Instance.character.Stats.spd = loadedData.spd;
-        PlayerController.Instance.character.Stats.maxHp = loadedData.maxHp;
-        PlayerController.Instance.character.Stats.hp = loadedData.maxHp;
+        //load do estado elemental
+        //muda de estado pra frente e para quando acha o certo
+        for (int i = 0; i < 3; i++)
+        {
+            if (loadedData.activeTree == PlayerController.Instance.state.nameState){ break; }
+            
+            PlayerController.Instance.ChangeState(1);
+        }
+        
+        //load das compras de skill
+        //lista temporaria dos botoes da skilltree pra achar todas as skills
+        List<currentSkill> tempList = new List<currentSkill>();
+        tempList = GameObject.FindObjectsByType<currentSkill>(FindObjectsInactive.Include, FindObjectsSortMode.None).ToList();
+        //Sort por nome para a indexação ser sempre igual
+        tempList.Sort((s1, s2) => s1.gameObject.name.CompareTo(s2.gameObject.name));
+
+        foreach (currentSkill skillButton in tempList.Where(s => loadedData.unlockedSkills.Contains(tempList.IndexOf(s))))  //cruzes -Alu
+        {
+            skillButton.BuySkill();
+        }
 
         //teleporta o player pro lugar certo
         PlayerController.Instance.transform.position = loadedData.spawnPosition;

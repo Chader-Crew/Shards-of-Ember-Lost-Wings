@@ -148,7 +148,7 @@ public class PlayerController : Singleton<PlayerController>
     }
 
     //troca de modo elemental
-    private void ChangeState(int i)
+    public void ChangeState(int i)
     {
         if(i==(-1))
         {

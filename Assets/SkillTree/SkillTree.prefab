@@ -58,7 +58,7 @@ GameObject:
   - component: {fileID: 6479704846781666371}
   - component: {fileID: 3476489564136071716}
   m_Layer: 5
-  m_Name: Button (3)
+  m_Name: DashFire
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -276,7 +276,7 @@ GameObject:
   - component: {fileID: 5813092206432244900}
   - component: {fileID: 5856309597432684733}
   m_Layer: 5
-  m_Name: Button
+  m_Name: DashShove
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -417,7 +417,7 @@ GameObject:
   - component: {fileID: 2790031844071563680}
   - component: {fileID: 318614021678017804}
   m_Layer: 5
-  m_Name: Button (1)
+  m_Name: The heck is this one
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -536,7 +536,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 07d119d8c72c0914f805e5e799a2b79e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  skill: {fileID: 11400000, guid: 4f878a66c98581d41a2fec79039c905c, type: 2}
+  skill: {fileID: 11400000, guid: 5b4c9368265997b42ac44cb99ee4b809, type: 2}
   prev: {fileID: 6760241716175877433}
   bigCost: 1
   smallCost: 100
@@ -558,7 +558,7 @@ GameObject:
   - component: {fileID: 2696668161521687672}
   - component: {fileID: 7778388895249803049}
   m_Layer: 5
-  m_Name: Button (4)
+  m_Name: Decoy
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -776,7 +776,7 @@ GameObject:
   - component: {fileID: 3518903785821302451}
   - component: {fileID: 1195656116089405918}
   m_Layer: 5
-  m_Name: Button (7)
+  m_Name: LightStats (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1037,7 +1037,7 @@ GameObject:
   - component: {fileID: 7915914341047876471}
   - component: {fileID: 4241713041989058031}
   m_Layer: 5
-  m_Name: Button (6)
+  m_Name: FireStats (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1366,7 +1366,7 @@ GameObject:
   - component: {fileID: 5911653715898438678}
   - component: {fileID: 1251013957336851360}
   m_Layer: 5
-  m_Name: Button (6)
+  m_Name: TreeStats (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1586,9 +1586,9 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 1
         m_CallState: 2
-      - m_Target: {fileID: 581009648580456634}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-        m_MethodName: ToggleUI
+        m_MethodName: SetActive
         m_Mode: 6
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1596,7 +1596,7 @@ MonoBehaviour:
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
-          m_BoolArgument: 0
+          m_BoolArgument: 1
         m_CallState: 2
       - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: UnityEngine.AudioSource, UnityEngine
@@ -1770,7 +1770,7 @@ GameObject:
   - component: {fileID: 5750095423367101231}
   - component: {fileID: 7102680371723300556}
   m_Layer: 5
-  m_Name: Button (6)
+  m_Name: LightStats (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2179,7 +2179,7 @@ GameObject:
   - component: {fileID: 4828834554603360170}
   - component: {fileID: 7573957096663381948}
   m_Layer: 5
-  m_Name: Button (2)
+  m_Name: CallLightning
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2320,7 +2320,7 @@ GameObject:
   - component: {fileID: 7961693675215824625}
   - component: {fileID: 1139291987656608374}
   m_Layer: 5
-  m_Name: Button (2)
+  m_Name: FireCone
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2461,7 +2461,7 @@ GameObject:
   - component: {fileID: 4384730360367996702}
   - component: {fileID: 1215593805352958839}
   m_Layer: 5
-  m_Name: Button (7)
+  m_Name: FireStats (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2602,7 +2602,7 @@ GameObject:
   - component: {fileID: 8000466710598373702}
   - component: {fileID: 3311464861819259586}
   m_Layer: 5
-  m_Name: Button (1)
+  m_Name: BarkArmor
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2745,7 +2745,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &744313835381319885
 RectTransform:
   m_ObjectHideFlags: 0
@@ -2912,7 +2912,7 @@ GameObject:
   - component: {fileID: 5154734826198730855}
   - component: {fileID: 1300360745546350528}
   m_Layer: 5
-  m_Name: Button (5)
+  m_Name: FireStats (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3179,7 +3179,7 @@ GameObject:
   - component: {fileID: 8780225559438450727}
   - component: {fileID: 8128164395323916266}
   m_Layer: 5
-  m_Name: Button (8)
+  m_Name: FireStats
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3320,7 +3320,7 @@ GameObject:
   - component: {fileID: 3475516606041699845}
   - component: {fileID: 7202120291320648406}
   m_Layer: 5
-  m_Name: Button (8)
+  m_Name: LightStats (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3595,7 +3595,7 @@ GameObject:
   - component: {fileID: 7755976182697488612}
   - component: {fileID: 2644738491034324855}
   m_Layer: 5
-  m_Name: Button (1)
+  m_Name: FirePunch
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3736,7 +3736,7 @@ GameObject:
   - component: {fileID: 2192695119676971960}
   - component: {fileID: 3557461892738121279}
   m_Layer: 5
-  m_Name: Button (4)
+  m_Name: ThornPit
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3877,7 +3877,7 @@ GameObject:
   - component: {fileID: 1220718746921631130}
   - component: {fileID: 8166007446490582861}
   m_Layer: 5
-  m_Name: Button (2)
+  m_Name: ThornMail
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4018,7 +4018,7 @@ GameObject:
   - component: {fileID: 4095194945310680062}
   - component: {fileID: 7421329780299895803}
   m_Layer: 5
-  m_Name: Button (7)
+  m_Name: TreeStats
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4038,10 +4038,10 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 709572769118046510}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.66005874, y: 0.30734774}
-  m_AnchorMax: {x: 0.6851522, y: 0.35127193}
-  m_AnchoredPosition: {x: -186, y: -137.9}
-  m_SizeDelta: {x: 0, y: 0.0000076293945}
+  m_AnchorMin: {x: 0.51426244, y: 0.10896929}
+  m_AnchorMax: {x: 0.539929, y: 0.15342054}
+  m_AnchoredPosition: {x: 0, y: 0.10003662}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &515951597660225998
 CanvasRenderer:
@@ -4159,7 +4159,7 @@ GameObject:
   - component: {fileID: 1999154967797255683}
   - component: {fileID: 3718310246121715307}
   m_Layer: 5
-  m_Name: Button (5)
+  m_Name: LightStats
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4375,7 +4375,7 @@ GameObject:
   - component: {fileID: 1120215534754889136}
   - component: {fileID: 3375795027548786266}
   m_Layer: 5
-  m_Name: Button (8)
+  m_Name: TreeStats (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4773,7 +4773,7 @@ GameObject:
   - component: {fileID: 9111962375934828537}
   - component: {fileID: 6760241716175877433}
   m_Layer: 5
-  m_Name: Button
+  m_Name: StaticCharge
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4892,7 +4892,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 07d119d8c72c0914f805e5e799a2b79e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  skill: {fileID: 11400000, guid: 4f878a66c98581d41a2fec79039c905c, type: 2}
+  skill: {fileID: 11400000, guid: 4deccfbd804908945a3ae09b8e2034f7, type: 2}
   prev: {fileID: 0}
   bigCost: 1
   smallCost: 0
@@ -4914,7 +4914,7 @@ GameObject:
   - component: {fileID: 89508999457792862}
   - component: {fileID: 987433677233514415}
   m_Layer: 5
-  m_Name: Button (5)
+  m_Name: TreeStats (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5282,7 +5282,7 @@ GameObject:
   - component: {fileID: 8743258286271435067}
   - component: {fileID: 1033629859150632469}
   m_Layer: 5
-  m_Name: Button (3)
+  m_Name: ThornWall
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5498,7 +5498,7 @@ GameObject:
   - component: {fileID: 2719771943395044817}
   - component: {fileID: 6002937792061412533}
   m_Layer: 5
-  m_Name: Button
+  m_Name: Burn
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5639,7 +5639,7 @@ GameObject:
   - component: {fileID: 4504130282214564220}
   - component: {fileID: 521419687552218707}
   m_Layer: 5
-  m_Name: Button (4)
+  m_Name: Claws
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5855,7 +5855,7 @@ GameObject:
   - component: {fileID: 1082554822019589513}
   - component: {fileID: 7880057174931372318}
   m_Layer: 5
-  m_Name: Button (3)
+  m_Name: StaticCharge
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

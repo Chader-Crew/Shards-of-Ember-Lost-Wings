@@ -1711,7 +1711,7 @@ CharacterController:
   m_Height: 2
   m_Radius: 0.5
   m_SlopeLimit: 45
-  m_StepOffset: 0.1
+  m_StepOffset: 0.15
   m_SkinWidth: 0.08
   m_MinMoveDistance: 0.001
   m_Center: {x: 0, y: 0, z: 0}
@@ -1739,6 +1739,8 @@ MonoBehaviour:
   dashTime: 0.2
   dashCoolDown: 5
   canDash: 1
+  _skillShards: 0
+  _statShards: 0
   shardPopupText: {fileID: 0}
   armorMesh: {fileID: 6673837763696304428}
   bodyMesh: {fileID: 363585920608634079}
@@ -1819,7 +1821,6 @@ MonoBehaviour:
   renderer: {fileID: 363585920608634079}
   damageFlashingMaterial: {fileID: 2100000, guid: ab149d302b16e084293137ac4440abd3,
     type: 2}
-  _invul: 0
 --- !u!114 &478047664254817321
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7842,8 +7843,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   inventoryManager: {fileID: 0}
   currentItem: {fileID: 0}
-  simpleTutorial: {fileID: 0}
-  itemTutorial: {fileID: 0}
+  currentNPC: {fileID: 0}
   bonfire: {fileID: 0}
 --- !u!1 &6692902668634564322
 GameObject:
