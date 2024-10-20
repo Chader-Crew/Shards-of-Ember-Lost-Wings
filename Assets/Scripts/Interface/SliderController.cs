@@ -37,7 +37,7 @@ public class SliderController : MonoBehaviour
         graphicsQualityDropdown.RefreshShownValue();
         resolutionDropdown.value = PlayerPrefs.GetInt("ScreenResolution", 4);
         resolutionDropdown.RefreshShownValue();
-        fullScreenToggle.isOn = PlayerPrefs.GetInt("Fullscreen",0) == 1? true:false;
+        fullScreenToggle.isOn = PlayerPrefs.GetInt("Fullscreen",0) == 1;
 
 
         // Adicionar listeners aos sliders
@@ -52,7 +52,7 @@ public class SliderController : MonoBehaviour
         SetSFXVolume(sfxVolumeSlider.value);
         SetGraphicsQuality(graphicsQualityDropdown.value);
         SetResolution(resolutionDropdown.value);
-        SetFullScreen(fullScreenToggle);
+        SetFullScreen(fullScreenToggle.isOn);
     }
 
 

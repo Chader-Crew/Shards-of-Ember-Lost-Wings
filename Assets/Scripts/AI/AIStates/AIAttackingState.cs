@@ -50,11 +50,4 @@ public class AIAttackingState : AIStateBase
             stateMachine.EnterStateType(AIStateType.CHASING); 
         }
     }
-
-    public override void OnStateExit(AIStateMachine stateMachine)
-    {
-        base.OnStateExit(stateMachine);
-
-        //stateMachine.controller.ResetAttack();
-    }
 }

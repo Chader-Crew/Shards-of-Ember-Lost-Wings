@@ -21,7 +21,7 @@ public class AIIdleState : AIStateBase
     {
         base.StateUpdate(stateMachine);
 
-        if(stateMachine.timeInState >= idleDuration)
+        if(idleDuration>0 && stateMachine.timeInState >= idleDuration)
         {
             stateMachine.EnterStateType(stateToTransition);
         }

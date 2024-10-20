@@ -14,9 +14,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speedMod: 1
   animationStateName: Armature_Subir
-  attackRange: 0
-  avoidRange: 0
-  cycleTimer: 0
+  attackRange: 10
+  avoidRange: 1.5
+  cycleTimer: 5
   adjustRotSpeed: 0
   adjustRotDuration: 0
-  _stopMoving: 1
+  _stopMoving: 0

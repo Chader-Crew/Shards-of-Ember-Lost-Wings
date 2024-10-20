@@ -25,7 +25,6 @@ public class AITransitionChasingState : AIChasingState
 	// E uma versao modificada do update do AIChasingState
 	public override void StateUpdate(AIStateMachine stateMachine)
 	{
-		base.StateUpdate(stateMachine);
 		if(stateMachine.controller.DistanceToTarget() > exitChaseRange)
 		{
 			stateMachine.controller.aggroTarget = null;
