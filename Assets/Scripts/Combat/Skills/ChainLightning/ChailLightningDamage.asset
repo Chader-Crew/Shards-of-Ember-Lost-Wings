@@ -12,6 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9e37a1a00174e184bb1d5e6a0906974b, type: 3}
   m_Name: ChailLightningDamage
   m_EditorClassIdentifier: 
+  canCast: 0
+  cooldown: 0
+  _onCooldown: 0
   damage: 1
   perAtkDamage: 0
   perDefDamage: 0

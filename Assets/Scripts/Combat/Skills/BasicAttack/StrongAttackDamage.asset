@@ -13,6 +13,8 @@ MonoBehaviour:
   m_Name: StrongAttackDamage
   m_EditorClassIdentifier: 
   canCast: 0
+  cooldown: 0
+  _onCooldown: 0
   damage: 7
   perAtkDamage: 4
   perDefDamage: 0

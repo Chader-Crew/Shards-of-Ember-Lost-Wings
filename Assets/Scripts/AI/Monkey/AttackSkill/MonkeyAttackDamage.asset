@@ -13,6 +13,8 @@ MonoBehaviour:
   m_Name: MonkeyAttackDamage
   m_EditorClassIdentifier: 
   canCast: 0
+  cooldown: 0
+  _onCooldown: 0
   damage: 3
   perAtkDamage: 0
   perDefDamage: 0

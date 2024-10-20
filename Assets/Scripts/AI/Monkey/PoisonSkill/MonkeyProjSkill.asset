@@ -13,6 +13,8 @@ MonoBehaviour:
   m_Name: MonkeyProjSkill
   m_EditorClassIdentifier: 
   canCast: 0
+  cooldown: 0
+  _onCooldown: 0
   nextSkills:
   - {fileID: 11400000, guid: d2b70afa857ed5b4a8ed54e0fdda7f01, type: 2}
   - {fileID: 11400000, guid: 31d6af66bc152264493eb14ddf82347c, type: 2}
