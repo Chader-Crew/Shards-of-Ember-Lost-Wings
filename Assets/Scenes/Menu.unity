@@ -6422,11 +6422,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "CHANGE LOG\n\nTela de menu alterada para artes de nossa autoria\r\n\r\nAdi\xE7\xE3o
-    do castelo (novo level)\r\n\r\nNovas skills\r\n\r\nSkill Lock\r\n\r\nShader para
-    sensa\xE7\xE3o de profundidade pelo mapa\r\n\r\nColisores de limite pelo mapa\r\n\r\n\xC1udios
-    de UI e passos do personagem\r\n\r\nTutorial de volta pra apenas teclado\r\n\r\nUso
-    do invent\xE1rio agora em: ZXCV\r\n\r\nSistema de bonfire inicializado\n"
+  m_text: "CHANGE LOG\n\nBonfire com teleporte\r\n\nInimigos com IA\r\n\nNovos itens
+    de cen\xE1rio\r\n\nPainel de Skill Tree no jogo\r\n\nUIs de HUD e telas\n\nDi\xE1logo\r"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -6914,7 +6911,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Build v.1.1
+  m_text: Build v.1.2
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 4d1d723dc8866214d9ec208db7491a32, type: 2}
   m_sharedMaterial: {fileID: 8649374122901085012, guid: 4d1d723dc8866214d9ec208db7491a32,
@@ -6942,7 +6939,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 42.15
+  m_fontSize: 28.3
   m_fontSizeBase: 36
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -8327,16 +8324,14 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "CR\xC9DITOS ATUAIS\n\nAna: Sprites de skills, Implementa\xE7\xE3o de \xE1udios
-    na UI, VFX de Fire Breath e Fire Punch\r\n\r\nArthur: Shader de profundidade,
-    Skill passiva verde, Static Charge, Bark Armor e ThornMail, menu de configura\xE7\xF5es
-    e Sistema de sele\xE7\xE3o de skill\r\n\r\nEstev\xE3o: Design do castelo, design
-    de mapa, design das mec\xE2nicas de explora\xE7\xE3o\r\n\r\nHenrique: Skills
-    ChainLightning, Decoy, Call Lightning, Lightning Strikes\r\n\r\nLapras: Itens
-    da UI do menu, Modelos procedurais para constru\xE7\xE3o do castelo, texturiza\xE7\xE3o
-    de assets, modelos gerais\r\n\r\nTiago: Passos do personagem, Organiza\xE7\xE3o
-    de UI, colisores de limite no mapa e nos assets, Sistema da bonfire, Skill Create
-    Thorns e Create Blockade"
+  m_text: "CR\xC9DITOS ATUAIS\n\nAna: Intera\xE7\xE3o para o di\xE1logo com NPC,
+    VFX de fire skill, design de cartas\r\n\r\nArthur: Menu de configura\xE7\xF5es,
+    Save das informa\xE7\xF5es do player, Implementa\xE7\xE3o de anima\xE7\xE3o e
+    IA de inimigos, shader de profundidade do cen\xE1rio\r\n\r\nEstev\xE3o: Mec\xE2nicas
+    nos castelo, detalhamento de cen\xE1rio, design de quests\r\n\r\nHenrique: Modelagem
+    da ca\xE7adora\r\n\r\nLapras: Assets para complementa\xE7\xE3o de cen\xE1rio,
+    Telas de derrota, menu, elementos de UI\r\n\r\nTiago: Di\xE1logo, Corre\xE7\xF5es
+    finais da bonfire, teleporte entre bonfires, design de quests\r\n"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -8621,7 +8616,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -7.603882, y: 3.258789}
+  m_AnchoredPosition: {x: -7.604004, y: 3.258789}
   m_SizeDelta: {x: 93.404, y: 84.714}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1937356860
@@ -19445,7 +19440,7 @@ PrefabInstance:
     - target: {fileID: 455320512915752253, guid: 8f5797f3e4fef144aa27568b465e9110,
         type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 406.28574
+      value: 406.28577
       objectReference: {fileID: 0}
     - target: {fileID: 455320512915752253, guid: 8f5797f3e4fef144aa27568b465e9110,
         type: 3}
@@ -19465,7 +19460,7 @@ PrefabInstance:
     - target: {fileID: 1579053778737493991, guid: 8f5797f3e4fef144aa27568b465e9110,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -13.596741
+      value: -13.596802
       objectReference: {fileID: 0}
     - target: {fileID: 2547206045948911361, guid: 8f5797f3e4fef144aa27568b465e9110,
         type: 3}
@@ -19515,7 +19510,7 @@ PrefabInstance:
     - target: {fileID: 5030549126375510660, guid: 8f5797f3e4fef144aa27568b465e9110,
         type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 406.28574
+      value: 406.28577
       objectReference: {fileID: 0}
     - target: {fileID: 5030549126375510660, guid: 8f5797f3e4fef144aa27568b465e9110,
         type: 3}
@@ -19537,6 +19532,11 @@ PrefabInstance:
       propertyPath: m_AnchorMin.x
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 5653946290398088754, guid: 8f5797f3e4fef144aa27568b465e9110,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -5.000979
+      objectReference: {fileID: 0}
     - target: {fileID: 5720236115865924451, guid: 8f5797f3e4fef144aa27568b465e9110,
         type: 3}
       propertyPath: m_IsActive
@@ -19545,7 +19545,7 @@ PrefabInstance:
     - target: {fileID: 6234471935962569759, guid: 8f5797f3e4fef144aa27568b465e9110,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -7.500168
+      value: -7.500183
       objectReference: {fileID: 0}
     - target: {fileID: 6245084473438464585, guid: 8f5797f3e4fef144aa27568b465e9110,
         type: 3}
