@@ -49,7 +49,7 @@ public static class SaveGame
     {
         if(scene.name != "Game")
         {
-            Debug.LogError("TENTOU LOADAR UMA CENA QUE NAO E A GAME");
+            Debug.LogError("TENTOU LOADAR EM UMA CENA QUE NAO E A GAME");
             return;
         }
 
@@ -75,7 +75,8 @@ public static class SaveGame
 
         foreach (currentSkill skillButton in tempList.Where(s => loadedData.unlockedSkills.Contains(tempList.IndexOf(s))))  //cruzes -Alu
         {
-            skillButton.BuySkill();
+            //Debug.Log(skillButton.gameObject.name);
+            skillButton.LoadSkill();
         }
 
         //teleporta o player pro lugar certo

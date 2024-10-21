@@ -88,4 +88,14 @@ public class currentSkill : MonoBehaviour
             return;
         }
     }
+
+
+    public void LoadSkill()
+    {
+        skill.canCast = true;
+        skill.Comprado(PlayerController.Instance.character.Stats);
+        image.enabled = false;
+        button.enabled = false;
+        UpdateStatus();
+    }
 }
