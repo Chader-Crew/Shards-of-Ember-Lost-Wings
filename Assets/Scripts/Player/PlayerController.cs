@@ -24,14 +24,14 @@ public class PlayerController : Singleton<PlayerController>
     public float dashSpeed;
     public float dashTime;
     public float dashCoolDown;
-    public bool canDash = true;
-    [SerializeField] private int _skillShards;
+    public bool canDash = true; 
+    private int _skillShards;
     public int SkillShards
     {
         get => _skillShards;
         private set => _skillShards = value;
     }
-    [SerializeField] private int _statShards;
+    private int _statShards;
     public int StatShards
     {
         get => _statShards;
@@ -78,7 +78,8 @@ public class PlayerController : Singleton<PlayerController>
     void Start()
     {
         //spText.text="Skillpoints "+skillShards;
-        SkillShards = 1;
+        SkillShards = 4;
+        GainShards(1000);
         ChangeState(1);
     }
 

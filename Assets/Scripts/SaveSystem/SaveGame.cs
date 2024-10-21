@@ -24,7 +24,7 @@ public static class SaveGame
         tempList.Sort((s1, s2) => s1.gameObject.name.CompareTo(s2.gameObject.name));    //eu escrevi que nao ia usar linq ali embaixo mas
                                                                                                                     //to eu aqui usando. -Alu
         List<int> skillIndexes = new List<int>();
-        foreach (var skillButton in tempList.Where(s => !s.Skill.canCast))
+        foreach (currentSkill skillButton in tempList.Where(s => s.Skill.canCast))
         {
             skillIndexes.Add(tempList.IndexOf(skillButton));
         }
