@@ -13,16 +13,34 @@ public class currentSkill : MonoBehaviour
     [SerializeField]private int bigCost;
     [SerializeField]private int smallCost;
     [SerializeField]private bool IsSkill;
-
-    public Image image;
-    public Button button;
+    private Image _imgProp;
+    public Image ImgProp 
+    {
+        get 
+        {
+            if (!_imgProp) 
+            {
+                _imgProp = GetComponent<Image>();
+            }
+            return _imgProp;
+        }
+    }
+    private Button _btnProp;
+    public Button BtnProp 
+    {
+        get {
+            if (!_btnProp)
+            {
+                _btnProp = GetComponent<Button>();
+            }
+            return _btnProp;
+        }
+    }
     public List<currentSkill> nexts;
     
     private void Awake()
     {
-        image = GetComponent<Image>();
-        button = GetComponent<Button>();
-        button.onClick.AddListener(BuySkill);
+        BtnProp.onClick.AddListener(BuySkill);
         nexts = new List<currentSkill>();
     }
 
@@ -39,20 +57,20 @@ public class currentSkill : MonoBehaviour
     {
         if(skill.canCast == true)
         {
-           image.enabled=false;
-           button.enabled=false;
+           ImgProp.enabled=false;
+           BtnProp.enabled=false;
         }
-        else if (prev == null || !prev.image.enabled)
+        else if (prev == null || !prev.ImgProp.enabled)
         {
-            image.enabled = true;
-            image.color = Color.white;
-            button.enabled = true;
+            ImgProp.enabled = true;
+            ImgProp.color = Color.white;
+            BtnProp.enabled = true;
         }
         else
         {
-            image.enabled = true;
-            image.color = Color.gray;
-            button.enabled=false;
+            ImgProp.enabled = true;
+            ImgProp.color = Color.gray;
+            BtnProp.enabled=false;
         }
 
         foreach (currentSkill next in nexts)
@@ -65,13 +83,13 @@ public class currentSkill : MonoBehaviour
     {
         if(PlayerController.Instance.SkillShards >= bigCost && PlayerController.Instance.StatShards >= smallCost)
         {
-            if(prev==null||prev.button.IsActive()==false)
+            if(prev==null||prev.BtnProp.IsActive()==false)
             {
                 
                 skill.canCast = true;
                 skill.Comprado(PlayerController.Instance.character.Stats);
-                image.enabled=false;
-                button.enabled=false;
+                ImgProp.enabled=false;
+                BtnProp.enabled=false;
                 //PlayerController.Instance.SkillShards -= bigCost;
                 PlayerController.Instance.SpendShards(smallCost);
                 
@@ -94,8 +112,8 @@ public class currentSkill : MonoBehaviour
     {
         skill.canCast = true;
         skill.Comprado(PlayerController.Instance.character.Stats);
-        image.enabled = false;
-        button.enabled = false;
+        ImgProp.enabled = false;
+        BtnProp.enabled = false;
         UpdateStatus();
     }
 }
