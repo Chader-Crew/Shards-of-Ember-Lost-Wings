@@ -70,6 +70,7 @@ public class FadeObjectBlockingObject : MonoBehaviour
                         }
 
                         RunningCoroutines.Add(fadingObject, StartCoroutine(FadeObjectOut(fadingObject)));
+                        fadingObject.GetComponent<OcclusionPortal>().open = true;
                         ObjectsBlockingView.Add(fadingObject);
                     }
                 }
@@ -174,7 +175,7 @@ public class FadeObjectBlockingObject : MonoBehaviour
     {
         float time = 0;
 
-        while (FadingObject.Materials[0].color.a < FadingObject.InitialAlpha)
+        while (FadingObject.Materials[0].color.a < FadingObject.InitialAlpha-0.01f)
         {
             foreach (Material material in FadingObject.Materials)
             {
@@ -193,6 +194,8 @@ public class FadeObjectBlockingObject : MonoBehaviour
             yield return null;
         }
 
+        FadingObject.GetComponent<OcclusionPortal>().open = false;
+        
         foreach (Material material in FadingObject.Materials)
         {
             material.SetInt("_SrcBlend", (int)UnityEngine.Rendering.BlendMode.One);
@@ -210,7 +213,6 @@ public class FadeObjectBlockingObject : MonoBehaviour
             material.DisableKeyword("_SURFACE_TYPE_TRANSPARENT");
             material.DisableKeyword("_ALPHAPREMULTIPLY_ON");
         }
-
         if (RunningCoroutines.ContainsKey(FadingObject))
         {
             StopCoroutine(RunningCoroutines[FadingObject]);

@@ -9,6 +9,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 617197260570592019}
+  - component: {fileID: 8249223290502326245}
+  - component: {fileID: 3280234422688332442}
+  - component: {fileID: 2963291676200871376}
   m_Layer: 7
   m_Name: Pilar
   m_TagString: Untagged
@@ -32,6 +35,53 @@ Transform:
   - {fileID: 8439908346631498048}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &8249223290502326245
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3715726656029684592}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: af957319b4d1c434cb72d3416c4682a7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Renderers: []
+  Position: {x: 0, y: 0, z: 0}
+  Materials: []
+  InitialAlpha: 0
+--- !u!41 &3280234422688332442
+OcclusionPortal:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3715726656029684592}
+  m_Open: 1
+  m_Center: {x: 0, y: 4.757774, z: 0}
+  m_Size: {x: 1.947573, y: 10.515548, z: 1.992135}
+--- !u!65 &2963291676200871376
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3715726656029684592}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 9.052305, y: 3.2078876, z: 9.073257}
+  m_Center: {x: 0, y: 8.466989, z: 0}
 --- !u!1 &4921900006324068592
 GameObject:
   m_ObjectHideFlags: 0
@@ -43,7 +93,6 @@ GameObject:
   - component: {fileID: 8439908346631498048}
   - component: {fileID: 965589228008927477}
   - component: {fileID: 514591403324314282}
-  - component: {fileID: 5332160536420910828}
   - component: {fileID: 5084697088184245078}
   m_Layer: 7
   m_Name: Pilar
@@ -117,22 +166,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!114 &5332160536420910828
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4921900006324068592}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: af957319b4d1c434cb72d3416c4682a7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Renderers: []
-  Position: {x: 0, y: 0, z: 0}
-  Materials: []
-  InitialAlpha: 0
 --- !u!64 &5084697088184245078
 MeshCollider:
   m_ObjectHideFlags: 0
