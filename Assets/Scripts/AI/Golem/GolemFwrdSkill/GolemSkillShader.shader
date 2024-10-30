@@ -3,13 +3,16 @@ Shader "Unlit/GolemSkillShader"
     Properties
     {
         _MainTex ("Texture", 2D) = "white" {}
-        _Slider ("Distance Slider", Range(0,1)) = 0
-        _Size ("Size", Float) = 1
+        _MainColor ("Color", Color) = (1,1,1,1)
+        _Slider ("Distance Slider", Range(0,2)) = 0
+        _BorderSize("BorderSize", Float) = 1
+        _TexSize ("Texture Size", Float) = 1
     }
     SubShader
     {
         Tags { "RenderQueue"="Transparent" "RenderType"="Transparent" }
-
+        Blend SrcAlpha OneMinusSrcAlpha
+        
         Pass
         {
             CGPROGRAM
@@ -33,8 +36,10 @@ Shader "Unlit/GolemSkillShader"
 
             sampler2D _MainTex;
             float4 _MainTex_ST;
-            float _Slider;
-            float _Size;
+            fixed _Slider;
+            fixed _TexSize;
+            float4 _MainColor;
+            fixed _BorderSize;
 
             v2f vert (appdata v)
             {
@@ -47,9 +52,21 @@ Shader "Unlit/GolemSkillShader"
 
             fixed4 frag (v2f i) : SV_Target
             {
-                fixed4 col = tex2D(_MainTex, i.position.xz * _Size);
+                //world xz texture
+                fixed4 col = tex2D(_MainTex, i.position.xz * _TexSize);
 
+                //wave using slider for animation
+                fixed wave = frac(i.uv.y - saturate(_Slider)) - saturate(i.uv.y*(1-_Slider));
+                //slider 1-2 values for fading out
+                wave -= saturate(_Slider-1);
+                //im to bad at math to not saturate this
+                wave = saturate(wave);
 
+                //wave that crack
+                col *= wave;
+                //vwoosh that crack (god damn it these negative values)
+                col += saturate(_MainColor * (wave * _BorderSize - _BorderSize+1));
+                
 
                 return col;
             }
