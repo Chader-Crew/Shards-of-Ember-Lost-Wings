@@ -39,7 +39,7 @@ public class Hitbox : MonoBehaviour
         //Shape cases
         switch (shape)
         {
-            case Shape.SPHERE:  //OverlapSphere
+            case Shape.SPHERE:
                 Vector3 spherePosition = pivot.position + pivot.forward * offsets.z + pivot.right * offsets.x + pivot.up * offsets.y;
                 spherePosition = pivot.InverseTransformPoint(spherePosition); //nao entendi direito o pq mas essa rotacao faz ter que tirar o inverso da posicao local
 
@@ -50,7 +50,7 @@ public class Hitbox : MonoBehaviour
                 Gizmos.matrix = prevMatrix;                     //restaura a rotacao
                 break;
                 
-            case Shape.BOX: //OverlapBox
+            case Shape.BOX:
                 //posicao
                 Vector3 boxPosition = pivot.position + pivot.forward * offsets.z + pivot.right * offsets.x + pivot.up * offsets.y;
                 boxPosition = pivot.InverseTransformPoint(boxPosition); //nao entendi direito o pq mas essa rotacao faz ter que tirar o inverso da posicao local
@@ -62,43 +62,6 @@ public class Hitbox : MonoBehaviour
                 break;
         }
 
-        #endif
-    }
-
-    private void OnDidApplyAnimationProperties()
-    {
-        //gizmos
-        #if UNITY_EDITOR
-        if (Application.isPlaying) return;  //cancela se tiver no modo play (dá ruim tentar colocar gizmo sem estar rodando OnDrawGizmos)
-        
-        Gizmos.color = gizmoColor;
-        Matrix4x4 prevMatrix;
-        
-        //Shape cases
-        switch (shape)
-        {
-            case Shape.SPHERE:  //OverlapSphere
-                Vector3 spherePosition = pivot.position + pivot.forward * offsets.z + pivot.right * offsets.x + pivot.up * offsets.y;
-                spherePosition = pivot.InverseTransformPoint(spherePosition); //nao entendi direito o pq mas essa rotacao faz ter que tirar o inverso da posicao local
-
-                prevMatrix = Gizmos.matrix;                     //cache da rotacao pra n dar ruim
-                Gizmos.matrix = pivot.localToWorldMatrix;               //rotacao do gizmo
-                Gizmos.DrawWireSphere(spherePosition, dimensions.x);   //draw
-                Gizmos.matrix = prevMatrix;                     //restaura a rotacao
-                break;
-                
-            case Shape.BOX: //OverlapBox
-                //posicao
-                Vector3 boxPosition = pivot.position + pivot.forward * offsets.z + pivot.right * offsets.x + pivot.up * offsets.y;
-                boxPosition = pivot.InverseTransformPoint(boxPosition); //nao entendi direito o pq mas essa rotacao faz ter que tirar o inverso da posicao local
-
-                prevMatrix = Gizmos.matrix;                     //cache da rotacao pra n dar ruim
-                Gizmos.matrix = pivot.localToWorldMatrix;               //rotacao do gizmo
-                Gizmos.DrawWireCube(boxPosition, dimensions); //draw
-                Gizmos.matrix = prevMatrix;                     //restaura a rotacao
-                break;
-        }
-                                   
         #endif
     }
 
