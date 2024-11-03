@@ -58,7 +58,7 @@ public class Character : MonoBehaviour, IDamageable
     */
     public virtual void GetHit(SkillData data)
     {
-
+        Debug.Log("cade o dano");
         if(_invul){
             return;
         }
@@ -86,7 +86,7 @@ public class Character : MonoBehaviour, IDamageable
     #endregion
 
     //corotina para trocar os materiais pro feedback de dano e trocar de volta
-    public IEnumerator DamageFlashing()
+    private IEnumerator DamageFlashing()
     {
         List<Material> previousMats = new List<Material>();
         renderer.GetMaterials(previousMats);

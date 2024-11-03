@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Serialization;
 
 
 //estado criado para a aranha com comportamento de "weeping angel" (nesse caso ela foge quando voce ta olhando)
@@ -8,7 +9,7 @@ using UnityEngine;
 public class LookingFleeState : AIFleeingState
 {
     [SerializeField] private AIStateBase ignoredState;
-    [SerializeField] private float angleTreshold;
+    [SerializeField] private float angleThreshold;
 
     public override void OnStateEnter(AIStateMachine stateMachine)
     {
@@ -23,7 +24,7 @@ public class LookingFleeState : AIFleeingState
         //dot product da direcao que o player ta olhando com a direcao que o player ta do inimigo
         //pra saber se o player esta virado para o inimigo
         Vector3 targetToAI = stateMachine.transform.position - stateMachine.controller.aggroTarget.transform.position;
-        if(Vector3.Dot(targetToAI.normalized, PlayerController.Instance.transform.forward.normalized) < angleTreshold)
+        if(Vector3.Dot(targetToAI.normalized, PlayerController.Instance.transform.forward.normalized) < angleThreshold)
         {
             stateMachine.EnterState(ignoredState);
             return;
@@ -38,7 +39,6 @@ public class LookingFleeState : AIFleeingState
     public override void OnStateExit(AIStateMachine stateMachine)
     {
         //ajusta a rotacao de volta pra nao dar snap estranho
-        Debug.Log(stateMachine.controller.aggroTarget);
         Vector3 playerToAI = stateMachine.transform.position - stateMachine.controller.aggroTarget.transform.position;
         stateMachine.transform.rotation = Quaternion.LookRotation(-playerToAI, Vector3.up);
         

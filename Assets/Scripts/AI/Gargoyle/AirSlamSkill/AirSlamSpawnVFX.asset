@@ -10,14 +10,14 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 276a5aeae2c7b79469f8d8246973418c, type: 3}
-  m_Name: SlamSpawnFX
+  m_Name: AirSlamSpawnVFX
   m_EditorClassIdentifier: 
   canCast: 0
   cooldown: 0
   _onCooldown: 0
-  prefab: {fileID: 6136192154405043378, guid: f13a883199ae85e419b8b4011ee1e73f, type: 3}
+  prefab: {fileID: 6136192154405043378, guid: 85afd9a20d67473498180114b5e3a81f, type: 3}
   _onTarget: 0
   _localSpace: 1
-  offset: {x: 0, y: 0, z: 2}
+  offset: {x: 0, y: 0, z: 0}
   _destroyAfterDuration: 1
-  durationOverwrite: 0.4
+  durationOverwrite: 0.28

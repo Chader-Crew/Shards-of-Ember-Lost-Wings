@@ -9,15 +9,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 276a5aeae2c7b79469f8d8246973418c, type: 3}
-  m_Name: SlamSpawnFX
+  m_Script: {fileID: 11500000, guid: 9e37a1a00174e184bb1d5e6a0906974b, type: 3}
+  m_Name: AirSlamDamage
   m_EditorClassIdentifier: 
   canCast: 0
   cooldown: 0
   _onCooldown: 0
-  prefab: {fileID: 6136192154405043378, guid: f13a883199ae85e419b8b4011ee1e73f, type: 3}
-  _onTarget: 0
-  _localSpace: 1
-  offset: {x: 0, y: 0, z: 2}
-  _destroyAfterDuration: 1
-  durationOverwrite: 0.4
+  damage: 5
+  perAtkDamage: 0
+  perDefDamage: 0
+  stagger: 0

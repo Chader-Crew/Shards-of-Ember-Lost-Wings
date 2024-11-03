@@ -1739,8 +1739,6 @@ MonoBehaviour:
   dashTime: 0.2
   dashCoolDown: 5
   canDash: 1
-  _skillShards: 0
-  _statShards: 0
   shardPopupText: {fileID: 0}
   armorMesh: {fileID: 6673837763696304428}
   bodyMesh: {fileID: 363585920608634079}
@@ -1833,6 +1831,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 19305ea86cd009e4d94ef55649c7c3cb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  shape: 0
   owner: {fileID: 335508968489987520}
   tags:
   - Enemy
@@ -1840,9 +1839,9 @@ MonoBehaviour:
   - {fileID: 1450354147688562278}
   - {fileID: 5140274543404548611}
   - {fileID: 3640933143337951234}
-  pivot: {fileID: 5140274543404548611}
   offsets: {x: 0, y: 0.3, z: 0}
   dimensions: {x: 0.3, y: 0.8, z: 0.3}
+  pivot: {fileID: 5140274543404548611}
 --- !u!114 &5091327978499221569
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7756,8 +7755,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8405477880963603764}
-  - component: {fileID: 8063228765251332076}
   - component: {fileID: 1290367107894752696}
+  - component: {fileID: 3771038160320465345}
   - component: {fileID: 9014085558669815485}
   m_Layer: 0
   m_Name: InterectableCollider
@@ -7781,27 +7780,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1450354147688562278}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!65 &8063228765251332076
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6625181408386316080}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 1
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 0.5, y: 0.5, z: 0.5}
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!54 &1290367107894752696
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -7827,8 +7805,29 @@ Rigidbody:
   m_UseGravity: 0
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 94
+  m_Constraints: 126
   m_CollisionDetection: 0
+--- !u!135 &3771038160320465345
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6625181408386316080}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Radius: 0.4
+  m_Center: {x: -0.1, y: 0, z: -0.1}
 --- !u!114 &9014085558669815485
 MonoBehaviour:
   m_ObjectHideFlags: 0
