@@ -24,7 +24,7 @@ public class InventoryItem : MonoBehaviour
     }
 
     public void UpdateCount(){
-        countText.text = count.ToString();
+        countText.text = "x"+ count.ToString();
         //bool textActive = count > 1;
         countText.gameObject.SetActive(true);
     }

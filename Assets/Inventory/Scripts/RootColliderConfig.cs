@@ -7,8 +7,9 @@ public class RootColliderConfig : MonoBehaviour
     public InventoryManager inventoryManager;
     public GroundItem currentItem;
     public NPCInteract currentNPC;
+    public RespecOpen respecItem;
     private ItemFeedback itemFeedback;
-    private bool _bonfire = false;
+    private bool _bonfire = false, _respec = false;
     public Bonfire bonfire;
 
     private void Awake(){
@@ -23,6 +24,7 @@ public class RootColliderConfig : MonoBehaviour
         var item = other.GetComponent<GroundItem>();
         var npcItem = other.GetComponent<NPCInteract>();
         var bonfire_obj = other.GetComponent<Bonfire>();
+        var respec = other.GetComponent<RespecOpen>();
 
 
         if(item){
@@ -40,12 +42,18 @@ public class RootColliderConfig : MonoBehaviour
             bonfire = bonfire_obj;
             bonfire_obj.interact.SetActive(true);
         }
+        if(respec){
+            _respec = true;
+            respecItem = respec;
+            respec.interactButton.SetActive(true);
+        }
     }
 
     void OnTriggerExit(Collider other){
         var item = other.GetComponent<GroundItem>();
         var npcItem = other.GetComponent<NPCInteract>();
         var bonfire_obj = other.GetComponent<Bonfire>();
+        var respec = other.GetComponent<RespecOpen>();
 
         if(item && item == currentItem){
             item.buttonCanva.SetActive(false);
@@ -60,6 +68,11 @@ public class RootColliderConfig : MonoBehaviour
         if(bonfire_obj){
             _bonfire = false;
             bonfire_obj.interact.SetActive(false);
+        }
+        if(respec){
+            respec.ToggleSkillTree(false);
+            _respec = false;
+            respec.interactButton.SetActive(false);
         }
     }
 
@@ -81,6 +94,9 @@ public class RootColliderConfig : MonoBehaviour
         }
         if(_bonfire){
             bonfire.BonfireActive();
+        }
+        if(_respec){
+            respecItem.ToggleSkillTree(true);
         }
     }
 }
