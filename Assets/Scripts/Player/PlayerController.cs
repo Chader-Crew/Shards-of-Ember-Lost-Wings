@@ -41,7 +41,7 @@ public class PlayerController : Singleton<PlayerController>
     public Action<SkillBase> OnCastEvent;   
     [SerializeField] private SkinnedMeshRenderer armorMesh;
     [SerializeField] private SkinnedMeshRenderer bodyMesh;
-    [SerializeField] private GameObject swapVFXObject;
+    [SerializeField] public ParticleSystem swapVFXParticles;
     
     #endregion
     private void Awake() 
@@ -166,7 +166,11 @@ public class PlayerController : Singleton<PlayerController>
         stateIMG.sprite = state.stateIMG;       //troca de interface, mesh e trigger de vfx
         bodyMesh.sharedMesh = state.BodyMesh;
         armorMesh.sharedMesh = state.ArmorMesh;
-        swapVFXObject.SetActive(true);
+
+        ParticleSystem.MainModule module = swapVFXParticles.main;
+        module.startColor = state.particleColor;
+        
+        swapVFXParticles.Play();
     }
 
     public void GainShards(int ammount)
