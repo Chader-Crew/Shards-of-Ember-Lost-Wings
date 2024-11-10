@@ -1,6 +1,8 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -24,6 +26,7 @@ public class SkillHUD : MonoBehaviour
             cdDisplayDictionary.Add(skillTree.skills[i], cdDisplays[i]);
         }
 
+        skillTree.SetActiveSkill(0);
         //inscricao de evento no OnDragonState pra saber quando ligar e desligar
         //precisa acontecer DEPOIS da inscricao do player.
         InputReader.OnDragonStateEvent += PlayerStateUpdate;
@@ -39,6 +42,7 @@ public class SkillHUD : MonoBehaviour
         //  checa se o state do player e a skillTree dessa interface.
         //  funciona por que a inscricao do player acontece no AWAKE, e a inscricao do SkillHud acontece no START,
         //  por isso o player, que se inscreveu primeiro, sempre muda de modo antes dessa checagem acontecer.
+        Debug.Log("SHUD Player Update");
         if(PlayerController.Instance.state == skillTree)
         {
             //atribui o evento de cast e habilita os graficos
@@ -78,7 +82,7 @@ public class SkillHUD : MonoBehaviour
     private void ChangeSkillSelection()
     {
         selectArrow.SetActive(false);
-
+        
         //bem gambiarrado mas isso vai pegar uma imagem no pai do cooldownDisplay e trocar a ativacao da que estava selecionado para a nova selecao.
         cdDisplayDictionary[skillTree.ActiveSkill].transform.parent.GetComponent<Image>().enabled = false;
         skillTree.SetActiveSkill(selectBuffer);
