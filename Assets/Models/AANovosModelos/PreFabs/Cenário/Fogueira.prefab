@@ -59,7 +59,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.4433962, g: 0.4433962, b: 0.4433962, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -14738,7 +14738,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 3}
+  m_AnchoredPosition: {x: 0, y: 3.68}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!223 &2252697029892619499
@@ -14899,8 +14899,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bdc9f49b337a3c240b209a5924e47cd1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bonfireRegister: {fileID: 0}
   bonfireMenu: {fileID: 0}
+  grid: {fileID: 0}
   bonfirePrefab: {fileID: 3499855721836628865, guid: 4b6d5301ab10fa54cbecba834cf3bea9,
     type: 3}
 --- !u!114 &2883732924873347018
@@ -14916,9 +14916,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bonfireName: FundoDoAbismo
-  bonfireLocation: {fileID: 3136565689468430886}
+  bonfirePosition: {x: 0, y: 0, z: 0}
   interact: {fileID: 7826357838993524205}
-  bonfireRegister: {fileID: 0}
   interfaceBonfire: {fileID: 1570113486640514281}
 --- !u!135 &43319610669412638
 SphereCollider:
