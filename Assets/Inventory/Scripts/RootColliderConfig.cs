@@ -8,8 +8,10 @@ public class RootColliderConfig : MonoBehaviour
     public GroundItem currentItem;
     public NPCInteract currentNPC;
     public RespecOpen respecItem;
+    public LetterPage letterItem;
     private ItemFeedback itemFeedback;
     private bool _bonfire = false, _respec = false;
+    private bool _letter = false;
     public Bonfire bonfire;
 
     private void Awake(){
@@ -20,11 +22,15 @@ public class RootColliderConfig : MonoBehaviour
         InputReader.OnItemInteractEvent -= HandleItemInteract;
     }
 
-    void OnTriggerEnter(Collider other){
+    void OnTriggerEnter(Collider other){ //tem formas tao melhores e menos pesadas de fazer essas interações, mas eu nao to mais a fim #cansei
+                                        // por exemplo criar uma classe para de um tipo de interagivel e dentro dela definir qual é a interação
+                                        // de cada item. quem sabe um dia.
+                                        // - Ana
         var item = other.GetComponent<GroundItem>();
         var npcItem = other.GetComponent<NPCInteract>();
         var bonfire_obj = other.GetComponent<Bonfire>();
         var respec = other.GetComponent<RespecOpen>();
+        var letter = other.GetComponent<LetterPage>(); 
 
 
         if(item){
@@ -47,13 +53,19 @@ public class RootColliderConfig : MonoBehaviour
             respecItem = respec;
             respec.interactButton.SetActive(true);
         }
+        if(letter){
+            _letter = true;
+            letterItem = letter;
+            letter.interactButton.SetActive(true);
+        }
     }
 
-    void OnTriggerExit(Collider other){
+    void OnTriggerExit(Collider other){ 
         var item = other.GetComponent<GroundItem>();
         var npcItem = other.GetComponent<NPCInteract>();
         var bonfire_obj = other.GetComponent<Bonfire>();
         var respec = other.GetComponent<RespecOpen>();
+        var letter = other.GetComponent<LetterPage>(); 
 
         if(item && item == currentItem){
             item.buttonCanva.SetActive(false);
@@ -73,6 +85,10 @@ public class RootColliderConfig : MonoBehaviour
             respec.ToggleSkillTree(false);
             _respec = false;
             respec.interactButton.SetActive(false);
+        }
+        if(letter){
+            _letter = false;
+            letter.interactButton.SetActive(false);
         }
     }
 
@@ -97,6 +113,9 @@ public class RootColliderConfig : MonoBehaviour
         }
         if(_respec){
             respecItem.ToggleSkillTree(true);
+        }
+        if(_letter){
+            letterItem.ToggleLetterPage(true);
         }
     }
 }

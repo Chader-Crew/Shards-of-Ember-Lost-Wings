@@ -8,4 +8,10 @@ public class LetterPage : MonoBehaviour
 {
     public TMP_Text displayText;
     public string letterText;
+    public GameObject interactButton, letterImage;
+
+    public void ToggleLetterPage(bool val){
+        letterImage.SetActive(val);
+        displayText.text = letterText;
+    }
 }
