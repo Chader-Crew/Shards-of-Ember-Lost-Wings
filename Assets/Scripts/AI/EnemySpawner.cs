@@ -5,18 +5,18 @@ using UnityEngine;
 public class EnemySpawner : MonoBehaviour
 {
     public static EnemySpawner instance;
-    public GameObject enemyType1;
-    public GameObject enemyType2;
+    public GameObject[] enemies;
     public GameObject spawnEffectPrefab;
     public float particleEffectDuration = 1f;
     public GameObject arenaExit;
     public float spawnInterval = 5f;
     public int maxEnemies = 10;
-
     public GameObject spawnArea;
     public int currentEnemyCount = 0;
-
     public bool canSpawn = true;
+    public int killCount = 0;
+    public GameObject fire;
+    public GameObject fireWall;
 
     void Start()
     {
@@ -29,16 +29,17 @@ public class EnemySpawner : MonoBehaviour
         {    
             if(canSpawn)
             {
-                for (int i = 0; i <3; i++)
-                {
-                    spawnArea.SetActive(true);
-                    Vector3 spawnPosition = GetRandomPositionInArea();
-                    GameObject enemyPrefab = Random.value > 0.5f ? enemyType1 : enemyType2;
-                    Instantiate(enemyPrefab, spawnPosition, Quaternion.identity);
-                    GameObject particleEffect = Instantiate(spawnEffectPrefab, spawnPosition, Quaternion.identity);
-                    Destroy(particleEffect, particleEffectDuration);
-                    currentEnemyCount++;
-                }
+                killCount = 0;
+                spawnArea.SetActive(true);
+                    for (int i = 0; i <3; i++)
+                    {
+                        Vector3 spawnPosition = GetRandomPositionInArea();
+                        GameObject enemyPrefab = enemies[Random.Range(0, enemies.Length)];
+                        Instantiate(enemyPrefab, spawnPosition, Quaternion.identity);           
+                        GameObject particleEffect = Instantiate(spawnEffectPrefab, spawnPosition, Quaternion.identity);
+                        Destroy(particleEffect, particleEffectDuration);
+                        currentEnemyCount++;
+                    }
                 StartCoroutine(SpawnEnemies());
                 canSpawn = false;
             }
@@ -47,22 +48,26 @@ public class EnemySpawner : MonoBehaviour
         }
     }
 
-   public IEnumerator SpawnEnemies()
+  public IEnumerator SpawnEnemies()
+{
+    while (true)
     {
-        while (true)
+        yield return new WaitForSeconds(spawnInterval);
+        if (currentEnemyCount < maxEnemies)
         {
-            yield return new WaitForSeconds(spawnInterval);
-            if (currentEnemyCount < maxEnemies)
-            {
-                Vector3 spawnPosition = GetRandomPositionInArea();
-                GameObject enemyPrefab = Random.value > 0.5f ? enemyType1 : enemyType2;
-                Instantiate(enemyPrefab, spawnPosition, Quaternion.identity);
-                GameObject particleEffect = Instantiate(spawnEffectPrefab, spawnPosition, Quaternion.identity);
-                Destroy(particleEffect, particleEffectDuration);
-                currentEnemyCount++;
-            }
+            Vector3 spawnPosition = GetRandomPositionInArea();
+
+            GameObject enemyPrefab = enemies[Random.Range(0, enemies.Length)];
+
+            Instantiate(enemyPrefab, spawnPosition, Quaternion.identity);
+            
+            GameObject particleEffect = Instantiate(spawnEffectPrefab, spawnPosition, Quaternion.identity);
+            Destroy(particleEffect, particleEffectDuration);
+            
+            currentEnemyCount++;
         }
     }
+}
 
     Vector3 GetRandomPositionInArea()
     {
@@ -77,6 +82,16 @@ public class EnemySpawner : MonoBehaviour
     {
         Debug.Log("parou");
         StopAllCoroutines();
+    }
+
+    public void AddKillCount()
+    {
+        killCount++;
+        if(killCount >= 5){
+            StopSpawning();
+            Destroy(fire);
+            Destroy(fireWall);
+        }
     }
 }
 
