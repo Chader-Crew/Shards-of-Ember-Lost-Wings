@@ -219,13 +219,15 @@ public class PlayerController : Singleton<PlayerController>
 
         animator.CrossFadeInFixedTime("ShoveDash", 0.1f);
 
+        
+        playerMovement.LockMovement(true);
         while(Time.time < startTime + dashTime)
         {
-            playerMovement.characterController.Move(playerMovement.movement * dashSpeed * Time.deltaTime);
+            playerMovement.characterController.Move(transform.forward * dashSpeed * Time.deltaTime);
             yield return null;
         }
-
-        yield return new WaitForSeconds(dashCoolDown);        
+        AttackEnd();
+        yield return new WaitForSeconds(dashCoolDown);
         canDash = true;
     }
 }

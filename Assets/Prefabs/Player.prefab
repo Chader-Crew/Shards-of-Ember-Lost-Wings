@@ -1653,8 +1653,8 @@ MonoBehaviour:
   stateIMG: {fileID: 0}
   skilltree: {fileID: 0}
   spText: {fileID: 0}
-  dashSpeed: 7
-  dashTime: 0.2
+  dashSpeed: 15
+  dashTime: 0.3
   dashCoolDown: 5
   canDash: 1
   player: {fileID: 4485043409896424950}
@@ -1681,7 +1681,7 @@ MonoBehaviour:
   gravityMutiplier: 0.03
   movement: {x: 0, y: 0, z: 0}
   velocity: 0
-  _canMov: 0
+  _cantMov: 0
   characterController: {fileID: 0}
 --- !u!95 &5215567830883903975
 Animator:
