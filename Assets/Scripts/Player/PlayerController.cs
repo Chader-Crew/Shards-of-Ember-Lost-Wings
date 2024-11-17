@@ -15,7 +15,7 @@ public class PlayerController : Singleton<PlayerController>
     public Character character;
     [SerializeField]public SkillTreeHolder state;
     [SerializeField] private InputReader input;
-    private Animator animator;
+    public Animator animator;
     public AudioSource audioSource;
     [SerializeField] Image stateIMG;
     [SerializeField] GameObject skilltree;
