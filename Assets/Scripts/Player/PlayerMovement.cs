@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.Serialization;
 
 //aplicacao de movimento no rigidbody do player.
 [RequireComponent(typeof(Rigidbody))]
@@ -14,8 +15,11 @@ public class PlayerMovement : MonoBehaviour
     public float gravityMutiplier = 3.0f;
     public Vector3 movement;
     public float velocity;
-    public bool _canMov;
+    public bool _cantMov;
     public CharacterController characterController;
+    
+    private Ray ray;
+    private Plane raycastPlane; 
 
     void Awake()
     {
@@ -31,12 +35,32 @@ public class PlayerMovement : MonoBehaviour
 
     private void Movement()
     {
-        if(_canMov){return;}
+        if(_cantMov){return;}
         characterController.Move(movement * speed * Time.deltaTime);
     }
     private void Rotation()
     {
+        if (_cantMov)
+        {
+            ray = Camera.main.ScreenPointToRay(Input
+                .mousePosition); // Lança um ray da posição do mouse pra pegar o ponto de clique
+            
+            raycastPlane = new Plane(Vector3.up, transform.position);   //struct de plano na altura do player
+            float rayDist;
+            if (raycastPlane.Raycast(ray, out rayDist))
+            {
+                Vector3 targetDirection = ray.GetPoint(rayDist) - transform.position;
+                targetDirection.y = 0;
+
+                transform.rotation =
+                    Quaternion.LookRotation(targetDirection); // Rotaciona o player na direção do ponto clicado
+            }
+
+            return;
+        }
+        
         if(movement.magnitude == 0) return;
+
         var targetAngle = Mathf.Atan2(movement.x, movement.z) * Mathf.Rad2Deg;
         var angle = Mathf.SmoothDampAngle(transform.eulerAngles.y, targetAngle, ref currentVelocity, smoothTime);
         transform.rotation = Quaternion.Euler(0.0f, angle, 0.0f);
@@ -59,6 +83,6 @@ public class PlayerMovement : MonoBehaviour
 
     public void LockMovement(bool _lockMov)
     {
-        _canMov = _lockMov;
+        _cantMov = _lockMov;
     }
 }
