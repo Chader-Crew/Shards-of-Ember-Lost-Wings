@@ -25,6 +25,9 @@ public class PlayerController : Singleton<PlayerController>
     public float dashTime;
     public float dashCoolDown;
     public bool canDash = true; 
+    public Ray ray;
+    public RaycastHit hit; 
+    public Transform player;
     private int _skillShards;
     public int SkillShards
     {
@@ -81,6 +84,24 @@ public class PlayerController : Singleton<PlayerController>
         SkillShards = 4;
         GainShards(1000);
         ChangeState(1);
+    }
+
+    void Update()
+    {
+        if (Input.GetMouseButtonDown(0)) 
+        {
+            ray = Camera.main.ScreenPointToRay(Input.mousePosition); // Lança um ray da posição do mouse pra pegar o ponto de clique
+
+             if (Physics.Raycast(ray, out hit))
+             {
+                Vector3 targetDirection = hit.point - player.position;
+                targetDirection.y = 0; 
+
+                player.rotation = Quaternion.LookRotation(targetDirection); // Rotaciona o player na direção do ponto clicado
+
+                AttackInput();
+             }
+        }
     }
 
     //chamado quando o animator sai do state de ataque para destravar movimento (provavelmente devia ser mudado para |quando entra em idle|)
