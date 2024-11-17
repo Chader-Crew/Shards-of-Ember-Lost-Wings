@@ -9,6 +9,7 @@ public class currentSkill : MonoBehaviour
     [SerializeField]private SkillBase skill;
     public SkillBase Skill => skill;
     [SerializeField]private currentSkill prev;
+    public GameObject blockIMG;
     
     [SerializeField]private int bigCost;
     [SerializeField]private int smallCost;
@@ -92,6 +93,8 @@ public class currentSkill : MonoBehaviour
                 BtnProp.enabled=false;
                 //PlayerController.Instance.SkillShards -= bigCost;
                 PlayerController.Instance.SpendShards(smallCost);
+                blockIMG.SetActive(false);
+
                 
                 UpdateStatus();
             }
