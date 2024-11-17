@@ -58,7 +58,7 @@ public class Character : MonoBehaviour, IDamageable
     */
     public virtual void GetHit(SkillData data)
     {
-        Debug.Log("cade o dano");
+        //Debug.Log("cade o dano"); comentei pois tava me irritando - ana
         if(_invul){
             return;
         }

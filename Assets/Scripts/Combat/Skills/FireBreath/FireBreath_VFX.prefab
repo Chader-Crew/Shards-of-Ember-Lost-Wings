@@ -4900,4 +4900,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e39150f782777bc4aa0f9231b94b9446, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  nextSkill: {fileID: 11400000, guid: 655a222461348664f842cb44c96a25f1, type: 2}
+  damageDelay: 1
+  damage: 3
+  lastDamage: 0
+  skill: {fileID: 0}
