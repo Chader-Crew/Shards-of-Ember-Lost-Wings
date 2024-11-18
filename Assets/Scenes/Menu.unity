@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.18028378, g: 0.22571412, b: 0.30692285, a: 1}
+  m_IndirectSpecularColor: {r: 0.18028334, g: 0.2257134, b: 0.30692226, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -6422,8 +6422,12 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "CHANGE LOG\n\nBonfire com teleporte\r\n\nInimigos com IA\r\n\nNovos itens
-    de cen\xE1rio\r\n\nPainel de Skill Tree no jogo\r\n\nUIs de HUD e telas\n\nDi\xE1logo\r"
+  m_text: "CHANGE LOG\n\nVFX de mudar de estado\r\nS\xF3 mostrar a vida da g\xE1rgula
+    quando ela levantar\r\nSkill - Fire Breath \r\nSkill - Fire Punch\r\nSkill -
+    Lightning Strikes\r\nBate na dire\xE7\xE3o que clica no mouse\r\nMouse mais vis\xEDvel\r\nSkills
+    que n\xE3o funcionam cinza (HUD de game)\r\nLetras que interagem na tela\r\nBarrinha
+    de vida sempre em overlay de tudo\r\nMec\xE2nicas de explora\xE7\xE3o\r\nColliders
+    de combate e intera\xE7\xE3o maiores\r\nAnima\xE7\xF5es e IA de inimigos\r\n"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -6886,10 +6890,10 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 1479286422}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 1, y: 0.06}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_AnchorMin: {x: 1, y: 0}
+  m_AnchorMax: {x: 1, y: 0}
+  m_AnchoredPosition: {x: -1603, y: 34}
+  m_SizeDelta: {x: 230.14795, y: 65}
   m_Pivot: {x: 1, y: 0}
 --- !u!114 &1323496507
 MonoBehaviour:
@@ -6911,7 +6915,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Build v.1.2
+  m_text: Build v.1.3.0
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 4d1d723dc8866214d9ec208db7491a32, type: 2}
   m_sharedMaterial: {fileID: 8649374122901085012, guid: 4d1d723dc8866214d9ec208db7491a32,
@@ -6939,7 +6943,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 28.3
+  m_fontSize: 36.4
   m_fontSizeBase: 36
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -8324,14 +8328,22 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "CR\xC9DITOS ATUAIS\n\nAna: Intera\xE7\xE3o para o di\xE1logo com NPC,
-    VFX de fire skill, design de cartas\r\n\r\nArthur: Menu de configura\xE7\xF5es,
-    Save das informa\xE7\xF5es do player, Implementa\xE7\xE3o de anima\xE7\xE3o e
-    IA de inimigos, shader de profundidade do cen\xE1rio\r\n\r\nEstev\xE3o: Mec\xE2nicas
-    nos castelo, detalhamento de cen\xE1rio, design de quests\r\n\r\nHenrique: Modelagem
-    da ca\xE7adora\r\n\r\nLapras: Assets para complementa\xE7\xE3o de cen\xE1rio,
-    Telas de derrota, menu, elementos de UI\r\n\r\nTiago: Di\xE1logo, Corre\xE7\xF5es
-    finais da bonfire, teleporte entre bonfires, design de quests\r\n"
+  m_text: "CR\xC9DITOS\n\nAna: Prot\xF3tipo de respec, organiza\xE7\xE3o e ancoragem
+    de UI, implementa\xE7\xE3o das cartas (intera\xE7\xE3o, leitura e fechar), Skills
+    Fire Breath e Fire Punch, muitas coisas pequenas de bug fix, Anima\xE7\xF5es
+    que ser\xE3o utilizadas no jogo, otimiza\xE7\xE3o de c\xF3digos de intera\xE7\xE3o.\r\n\r\nArthur:
+    Feedback de VFXs ao trocar de estado, VFXs dos ataque dos inimigos, Scripting
+    da boss fight, Save game dos inimigos, IAs de novos inimigos. Shader para overlay
+    da barra de vida dos inimigos, Dash e Ataque do player n\xE3o bloqueiam um ao
+    outro. Bug fix.\r\n\r\nEstev\xE3o: Detalhamento de cen\xE1rio, Mec\xE2nicas de
+    mapa, Distribui\xE7\xE3o de inimigos pelo cen\xE1rio.\r\n\r\nHenrique: Pre\xE7os
+    na UI da skill tree, uso apenas de small shards para o jogo, indica\xE7\xE3o
+    de skill n\xE3o comprada.\r\n\r\nLapras: Texturiza\xE7\xE3o de personagens (todos
+    que estavam ruins), rig dos personagens (todos que estavam ruins), anima\xE7\xE3o
+    dos personagens (todos).\r\n\r\nTiago: Otimiza\xE7\xE3o de cen\xE1rio (itens
+    est\xE1ticos), Player bater na dire\xE7\xE3o que o mouse clica, distribui\xE7\xE3o,
+    ordem e nomes das bonfires pelo mapa, Polimento de mec\xE2nicas do mapa, Ancoragem
+    de elementos da UI.\r\n"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -8358,8 +8370,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 36
-  m_fontSizeBase: 36
+  m_fontSize: 31.34
+  m_fontSizeBase: 31.34
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -8446,7 +8458,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 2.1, y: -283.4}
+  m_AnchoredPosition: {x: 2.1, y: -381}
   m_SizeDelta: {x: 180.87, y: 90.829}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1878582387
@@ -19535,7 +19547,7 @@ PrefabInstance:
     - target: {fileID: 5653946290398088754, guid: 8f5797f3e4fef144aa27568b465e9110,
         type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: -5.000979
+      value: -5.0009785
       objectReference: {fileID: 0}
     - target: {fileID: 5720236115865924451, guid: 8f5797f3e4fef144aa27568b465e9110,
         type: 3}
