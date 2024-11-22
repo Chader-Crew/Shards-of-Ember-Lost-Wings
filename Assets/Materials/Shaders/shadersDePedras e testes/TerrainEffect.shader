@@ -3,7 +3,8 @@ Shader "Custom/TerrainEffect"
     Properties
     {
         _FogDistance ("Fog Distance", Float) = 1
-        [HideInInspector] [ToggleUI] _EnableHeightBlend("EnableHeightBlend", Float) = 0.0
+        [ToggleUI] _EnableHeightFog("EnableHeightFog", Float) = 0.0
+        [HideInInspector][ToggleUI] _EnableHeightBlend("EnableHeightBlend", Float) = 0.0
         _HeightTransition("Height Transition", Range(0, 1.0)) = 0.0
         // Layer count is passed down to guide height-blend enable/disable, due
         // to the fact that heigh-based blend will be broken with multipass.
@@ -56,9 +57,11 @@ Shader "Custom/TerrainEffect"
             Name "ForwardLit"
             Tags { "LightMode" = "UniversalForward" }
             HLSLPROGRAM
+            //Alu- declaracoes
             float _PlayerHeight;
             float4 _FogColor;
             float _FogDistance;
+            #include "Assets/Materials/Shaders/Includes.cginc"
 
             #pragma target 3.0
 
@@ -464,10 +467,11 @@ Shader "Custom/TerrainEffect"
                 // Alu: nao preciso saber que diabos as outras linhas fazem ta escrito aqui no splatmap fragment que ta fazendo um mix e setando um albedo. 
                 //      esse albedo e meu agora.
                 half3 albedo = mixedDiffuse.rgb;
-                //half3 fog = saturate(1-log10(abs(IN.positionWS.y - _PlayerHeight+0.5)*_FogDistance)-0.5);
-                //albedo *=fog;
-                //albedo += _FogColor * (1-fog) * 0.1;
-                
+                if(ENABLE_HEIGHT_FOG != 0){
+                    half3 fog = saturate(1-log10(abs(IN.positionWS.y - _PlayerHeight+0.5)*_FogDistance)-0.5);
+                    albedo *=fog;
+                    albedo += _FogColor * (1-fog) * 0.1;
+                }
                 half4 defaultMetallic = half4(_Metallic0, _Metallic1, _Metallic2, _Metallic3);
                 half4 defaultOcclusion = half4(_MaskMapRemapScale0.g, _MaskMapRemapScale1.g, _MaskMapRemapScale2.g, _MaskMapRemapScale3.g) +
                                         half4(_MaskMapRemapOffset0.g, _MaskMapRemapOffset1.g, _MaskMapRemapOffset2.g, _MaskMapRemapOffset3.g);
@@ -806,7 +810,7 @@ Shader "Custom/TerrainEffect"
     Dependency "BaseMapShader" = "Hidden/Universal Render Pipeline/Terrain/Lit (Base Pass)"
     Dependency "BaseMapGenShader" = "Hidden/Universal Render Pipeline/Terrain/Lit (Basemap Gen)"
 
-    CustomEditor "UnityEditor.Rendering.Universal.TerrainLitShaderGUI"
+    //CustomEditor "UnityEditor.Rendering.Universal.TerrainLitShaderGUI"
 
     Fallback "Hidden/Universal Render Pipeline/FallbackError"
 }

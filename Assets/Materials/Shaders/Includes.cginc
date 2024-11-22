@@ -1,0 +1,1 @@
+#define ENABLE_HEIGHT_FOG 0

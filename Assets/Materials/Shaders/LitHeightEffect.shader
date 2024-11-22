@@ -7,8 +7,11 @@ Shader "Custom/LitHeightEffect"
 
         [MainTexture] _BaseMap("Albedo", 2D) = "white" {}
         [MainColor] _BaseColor("Color", Color) = (1,1,1,1)
+        
+        //Alu- props
         _FogColor("Fog Color", Color) = (0,0,0,1)
         _FogDistance("Fog Distance", Float) = 1
+        
 
         _Cutoff("Alpha Cutoff", Range(0.0, 1.0)) = 0.5
 
@@ -186,9 +189,13 @@ Shader "Custom/LitHeightEffect"
             #define REQUIRES_WORLD_SPACE_TANGENT_INTERPOLATOR
             #endif
 
+            //Alu- declaracoes
+            
             float4 _FogColor;
             float _FogDistance;
             float _PlayerHeight;
+            #include "Assets/Materials/Shaders/Includes.cginc"
+            
             // keep this file in sync with LitGBufferPass.hlsl
 
             struct Attributes
@@ -410,10 +417,12 @@ Shader "Custom/LitHeightEffect"
                 color.a = OutputAlpha(color.a, IsSurfaceTypeTransparent(_Surface));
 
                 //Alu- comentario pra eu dar find mais facil nisso
-                //half3 fog = saturate(1-log10(abs(input.positionWS.y - _PlayerHeight+0.5)*_FogDistance)-0.5);
-                //color.rgb *=fog;
-                //color.rgb += _FogColor * (1-fog) * 0.1;
-
+                if(ENABLE_HEIGHT_FOG != 0){
+                    half3 fog = saturate(1-log10(abs(input.positionWS.y - _PlayerHeight+0.5)*_FogDistance)-0.5);
+                    color.rgb *=fog;
+                    color.rgb += _FogColor * (1-fog) * 0.1;
+                }
+                
                 outColor = color;
             
             #ifdef _WRITE_RENDERING_LAYERS
