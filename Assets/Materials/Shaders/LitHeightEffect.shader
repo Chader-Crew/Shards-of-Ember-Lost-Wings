@@ -409,9 +409,10 @@ Shader "Custom/LitHeightEffect"
                 color.rgb = MixFog(color.rgb, inputData.fogCoord);
                 color.a = OutputAlpha(color.a, IsSurfaceTypeTransparent(_Surface));
 
-                half3 fog = saturate(1-log10(abs(input.positionWS.y - _PlayerHeight+0.5)*_FogDistance)-0.5);
-                color.rgb *=fog;
-                color.rgb += _FogColor * (1-fog) * 0.1;
+                //Alu- comentario pra eu dar find mais facil nisso
+                //half3 fog = saturate(1-log10(abs(input.positionWS.y - _PlayerHeight+0.5)*_FogDistance)-0.5);
+                //color.rgb *=fog;
+                //color.rgb += _FogColor * (1-fog) * 0.1;
 
                 outColor = color;
             

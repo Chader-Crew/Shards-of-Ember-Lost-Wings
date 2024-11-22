@@ -464,9 +464,9 @@ Shader "Custom/TerrainEffect"
                 // Alu: nao preciso saber que diabos as outras linhas fazem ta escrito aqui no splatmap fragment que ta fazendo um mix e setando um albedo. 
                 //      esse albedo e meu agora.
                 half3 albedo = mixedDiffuse.rgb;
-                half3 fog = saturate(1-log10(abs(IN.positionWS.y - _PlayerHeight+0.5)*_FogDistance)-0.5);
-                albedo *=fog;
-                albedo += _FogColor * (1-fog) * 0.1;
+                //half3 fog = saturate(1-log10(abs(IN.positionWS.y - _PlayerHeight+0.5)*_FogDistance)-0.5);
+                //albedo *=fog;
+                //albedo += _FogColor * (1-fog) * 0.1;
                 
                 half4 defaultMetallic = half4(_Metallic0, _Metallic1, _Metallic2, _Metallic3);
                 half4 defaultOcclusion = half4(_MaskMapRemapScale0.g, _MaskMapRemapScale1.g, _MaskMapRemapScale2.g, _MaskMapRemapScale3.g) +
