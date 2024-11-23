@@ -22,7 +22,7 @@ public class QuestManager : MonoBehaviour
     {
         foreach (var quest in activeQuests)
         {
-            Debug.Log("Quest ativa: " + quest.QuestName + " - " + quest.Description);
+            Debug.Log("Quest ativa: " + quest.QuestName + " - " + quest.Description); 
         }
     }
 }
