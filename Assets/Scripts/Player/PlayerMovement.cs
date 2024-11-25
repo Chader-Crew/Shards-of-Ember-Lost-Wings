@@ -16,6 +16,7 @@ public class PlayerMovement : MonoBehaviour
     public Vector3 movement;
     public float velocity;
     public bool _cantMov;
+    public bool _dashing;
     public CharacterController characterController;
     
     private Ray ray;
@@ -38,6 +39,18 @@ public class PlayerMovement : MonoBehaviour
         if(_cantMov){return;}
         characterController.Move(movement * speed * Time.deltaTime);
     }
+
+    public void Dash(float speed, float time)
+    {
+        _dashing = true;
+        movement *= speed;
+        this.CallWithDelay(() =>
+        {
+            _dashing = false;
+            movement /= speed;
+        }, time);
+    }
+    
     private void Rotation()
     {
         if (_cantMov)
@@ -84,5 +97,11 @@ public class PlayerMovement : MonoBehaviour
     public void LockMovement(bool _lockMov)
     {
         _cantMov = _lockMov;
+    }
+
+    public void SetMovement(Vector3 direction)
+    {
+        if (_dashing) return;
+        movement = direction;
     }
 }

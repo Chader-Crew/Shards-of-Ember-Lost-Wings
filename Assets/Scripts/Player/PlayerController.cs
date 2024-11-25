@@ -119,7 +119,7 @@ public class PlayerController : Singleton<PlayerController>
             animator.SetBool("isRunning", false);
             audioSource.enabled = false;
         }
-        playerMovement.movement = new Vector3(vector2.x, 0, vector2.y);
+        playerMovement.SetMovement(new Vector3(vector2.x, 0, vector2.y));
     }
 
     //ativa o ataque no animator e trava o movimento
@@ -219,14 +219,9 @@ public class PlayerController : Singleton<PlayerController>
 
         animator.CrossFadeInFixedTime("ShoveDash", 0.1f);
 
-        
-        playerMovement.LockMovement(true);
-        while(Time.time < startTime + dashTime)
-        {
-            playerMovement.characterController.Move(transform.forward * dashSpeed * Time.deltaTime);
-            yield return null;
-        }
+        playerMovement.Dash(dashSpeed, dashTime);
         AttackEnd();
+
         yield return new WaitForSeconds(dashCoolDown);
         canDash = true;
     }
