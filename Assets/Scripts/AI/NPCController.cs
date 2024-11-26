@@ -40,6 +40,7 @@ public class NPCController : MonoBehaviour
         character.OnDiedEvent += Die;
         originalSpeed = navAgent.speed;
         extraMovement = Vector3.zero;
+        wanderSmooth = Vector3.zero;
     }
     private void Update()
     {

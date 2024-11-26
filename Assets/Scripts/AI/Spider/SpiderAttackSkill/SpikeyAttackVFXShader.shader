@@ -11,6 +11,7 @@ Shader "Custom/VFX/SpikeyAttackVFXShader"
     {
         Tags { "RenderQueue"="Transparent" "RenderType"="Transparent" }
         Blend SrcAlpha OneMinusSrcAlpha
+        ZTest Always
         LOD 100
         
         Pass
@@ -55,10 +56,10 @@ Shader "Custom/VFX/SpikeyAttackVFXShader"
                 
                 float4 col = 0;
                 col += 1-(abs(i.uv.y - _LineHeight) * _LineThickness);
-                col = saturate(col);
                 col -= 1-saturate(abs(i.uv.x-0.5)*8 - _FadeOut);
                 
                 col *= _Color;
+                col = saturate(col);
                 //col = 0; col.a = 1; col.rg = i.uv;
                 return col;
             }

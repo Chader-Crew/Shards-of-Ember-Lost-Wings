@@ -91,7 +91,11 @@ public class AIStateMachine : MonoBehaviour
 
         if(waypoints.Length == 0 || waypoints == null)
         {
-            waypoints = new Transform[]{ Instantiate(new GameObject(), transform.position, Quaternion.identity).transform };
+            Transform newObj = new GameObject().transform;
+            newObj.position = transform.position;
+            newObj.rotation = Quaternion.identity;
+            newObj.name = "AI Waypoint";
+            waypoints = new Transform[]{ newObj };
         }
     }
 

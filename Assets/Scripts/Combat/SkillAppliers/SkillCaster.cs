@@ -21,7 +21,7 @@ public class SkillCaster : MonoBehaviour
         }
     }
 
-    public void Cast()
+    public void CastSingle()
     {
         SkillData data = new SkillData();
         data.owner = character;
