@@ -14859,7 +14859,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3136565689468430886}
-  - component: {fileID: 1570113486640514281}
   - component: {fileID: 2883732924873347018}
   - component: {fileID: 43319610669412638}
   m_Layer: 0
@@ -14887,22 +14886,6 @@ Transform:
   - {fileID: 5849171606934585196}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1570113486640514281
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 9005183757878471015}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bdc9f49b337a3c240b209a5924e47cd1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  bonfireMenu: {fileID: 0}
-  grid: {fileID: 0}
-  bonfirePrefab: {fileID: 3499855721836628865, guid: 4b6d5301ab10fa54cbecba834cf3bea9,
-    type: 3}
 --- !u!114 &2883732924873347018
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -14918,7 +14901,6 @@ MonoBehaviour:
   bonfireName: FundoDoAbismo
   bonfirePosition: {x: 0, y: 0, z: 0}
   interact: {fileID: 7826357838993524205}
-  interfaceBonfire: {fileID: 1570113486640514281}
 --- !u!135 &43319610669412638
 SphereCollider:
   m_ObjectHideFlags: 0

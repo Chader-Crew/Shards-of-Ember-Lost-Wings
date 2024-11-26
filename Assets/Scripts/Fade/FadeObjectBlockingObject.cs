@@ -29,6 +29,7 @@ public class FadeObjectBlockingObject : MonoBehaviour
 
     private void OnEnable()
     {
+        Camera = Camera.main;
         StartCoroutine(CheckForObjects());
     }
 

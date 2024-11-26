@@ -7,7 +7,6 @@ public class Bonfire : MonoBehaviour
     public string bonfireName;
     public Vector3 bonfirePosition;  // Usar Vector3 pra a posição fixa
     public GameObject interact;
-    public InterfaceBonfire interfaceBonfire;
 
    private void Awake()
    {
@@ -18,7 +17,7 @@ public class Bonfire : MonoBehaviour
     {
         BonfireRegister.BonfireOn(this); 
         SaveGame.Save();
-        interfaceBonfire.OpenBonfireMenu();
+        InterfaceBonfire.Instance.OpenBonfireMenu();
     }
 }
 

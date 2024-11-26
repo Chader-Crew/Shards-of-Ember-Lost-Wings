@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class InterfaceBonfire : MonoBehaviour
+public class InterfaceBonfire : Singleton<InterfaceBonfire>
 {
     public GameObject bonfireMenu;
     public GameObject grid;

@@ -12,11 +12,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8a870cd8e0c6f934c974f0964222812a, type: 3}
   m_Name: DogBite
   m_EditorClassIdentifier: 
-  speedMod: 1
-  animationStateName: 
-  attackRange: 0
-  avoidRange: 0
+  speedMod: 1.6
+  animationStateName: Bite Attack
+  attackRange: 7
+  avoidRange: 3
   cycleTimer: 0
-  adjustRotSpeed: 0
-  adjustRotDuration: 0
-  _stopMoving: 1
+  adjustRotSpeed: 2
+  adjustRotDuration: 0.25
+  _stopMoving: 0

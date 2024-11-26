@@ -225,6 +225,7 @@ GameObject:
   - component: {fileID: 2268325898389798710}
   - component: {fileID: 7599198069135041799}
   - component: {fileID: 8837079341989900986}
+  - component: {fileID: 600679016417561180}
   m_Layer: 5
   m_Name: BonFireUI
   m_TagString: Untagged
@@ -291,6 +292,22 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!114 &600679016417561180
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4871579787394245370}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bdc9f49b337a3c240b209a5924e47cd1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bonfireMenu: {fileID: 4871579787394245370}
+  grid: {fileID: 8088954203893851951}
+  bonfirePrefab: {fileID: 8564775910394030769, guid: 00143b6f18e3f594fbf27ccf7a90f1ab,
+    type: 3}
 --- !u!1 &8088954203893851951
 GameObject:
   m_ObjectHideFlags: 0
