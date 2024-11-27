@@ -182,7 +182,7 @@ public class PlayerController : Singleton<PlayerController>
         }
         
         state.Enter();
-        stateIMG.sprite = state.stateIMG;       //troca de interface, mesh e trigger de vfx
+        //stateIMG.sprite = state.stateIMG;       //troca de interface, mesh e trigger de vfx
         bodyMesh.sharedMesh = state.BodyMesh;
         armorMesh.sharedMesh = state.ArmorMesh;
 
@@ -195,7 +195,7 @@ public class PlayerController : Singleton<PlayerController>
     public void GainShards(int ammount)
     {
         StatShards += ammount;
-        shardPopupText.Popup(ammount);
+        //shardPopupText.Popup(ammount);
     }
     public void SpendShards(int ammount)
     {
