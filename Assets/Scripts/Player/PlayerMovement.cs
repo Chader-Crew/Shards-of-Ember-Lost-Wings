@@ -20,11 +20,13 @@ public class PlayerMovement : MonoBehaviour
     public CharacterController characterController;
     
     private Ray ray;
-    private Plane raycastPlane; 
+    private Plane raycastPlane;
+    private Camera cam;
 
     void Awake()
     {
         characterController = GetComponent<CharacterController>();
+        cam = Camera.main;
     }
 
      void Update()
@@ -55,8 +57,9 @@ public class PlayerMovement : MonoBehaviour
     {
         if (_cantMov)
         {
-            ray = Camera.main.ScreenPointToRay(Input
-                .mousePosition); // Lança um ray da posição do mouse pra pegar o ponto de clique
+            float xRatio = (float)Screen.width / cam.targetTexture.width;
+
+            ray = cam.ScreenPointToRay(Input.mousePosition/xRatio);// Lança um ray da posição do mouse pra pegar o ponto de clique
             
             raycastPlane = new Plane(Vector3.up, transform.position);   //struct de plano na altura do player
             float rayDist;
