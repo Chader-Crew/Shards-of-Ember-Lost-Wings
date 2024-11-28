@@ -20,6 +20,6 @@ public class AddToCompoundSkill : SkillBase
         if (durationOverwrite != 0) context.duration = durationOverwrite;
         
         context.owner.CallWithDelay(() => compoundSkill.nextSkills.Remove(skillToAdd), context.duration);
-        nextSkill.Activate(context);
+        nextSkill?.Activate(context);
     }
 }

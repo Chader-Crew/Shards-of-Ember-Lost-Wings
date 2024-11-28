@@ -9,11 +9,15 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ff03aae9e2f992b40ae99237434dd1ea, type: 3}
-  m_Name: DragonClawsProjectile
+  m_Script: {fileID: 11500000, guid: 276a5aeae2c7b79469f8d8246973418c, type: 3}
+  m_Name: SpawnDClawActiveVFX
   m_EditorClassIdentifier: 
   canCast: 0
   cooldown: 0
   _onCooldown: 0
+  prefab: {fileID: 7692905926553671710, guid: 109d17b0431b4834e9bff5a308d352bd, type: 3}
+  _onTarget: 0
+  _localSpace: 1
   offset: {x: 0, y: 0, z: 0}
-  projectile: {fileID: 0}
+  _destroyAfterDuration: 1
+  durationOverwrite: 0

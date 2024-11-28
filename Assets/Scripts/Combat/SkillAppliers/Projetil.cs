@@ -24,6 +24,11 @@ public class Projetil : MonoBehaviour
             skillDT.Target(other.gameObject.GetComponent<Character>());
             skill.Activate(skillDT);
         }
+        DestroyThis();
+    }
+
+    public void DestroyThis()
+    {
         Destroy(gameObject);
     }
 }
