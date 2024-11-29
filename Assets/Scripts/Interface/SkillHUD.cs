@@ -42,7 +42,7 @@ public class SkillHUD : MonoBehaviour
         //  checa se o state do player e a skillTree dessa interface.
         //  funciona por que a inscricao do player acontece no AWAKE, e a inscricao do SkillHud acontece no START,
         //  por isso o player, que se inscreveu primeiro, sempre muda de modo antes dessa checagem acontecer.
-        Debug.Log("SHUD Player Update");
+        //Debug.Log("SHUD Player Update");
         if(PlayerController.Instance.state == skillTree)
         {
             //atribui o evento de cast e habilita os graficos
