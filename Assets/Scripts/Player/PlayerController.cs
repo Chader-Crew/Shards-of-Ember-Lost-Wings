@@ -40,8 +40,8 @@ public class PlayerController : Singleton<PlayerController>
     }
     [SerializeField] ShardsGotPopup shardPopupText;
     public Action<SkillBase> OnCastEvent;   
-    [SerializeField] private SkinnedMeshRenderer armorMesh;
-    [SerializeField] private SkinnedMeshRenderer bodyMesh;
+    //[SerializeField] private SkinnedMeshRenderer armorMesh;
+    //[SerializeField] private SkinnedMeshRenderer bodyMesh;
     [SerializeField] public ParticleSystem swapVFXParticles;
     
     #endregion
@@ -183,8 +183,8 @@ public class PlayerController : Singleton<PlayerController>
         
         state.Enter();
         //stateIMG.sprite = state.stateIMG;       //troca de interface, mesh e trigger de vfx
-        bodyMesh.sharedMesh = state.BodyMesh;
-        armorMesh.sharedMesh = state.ArmorMesh;
+        //bodyMesh.sharedMesh = state.BodyMesh;
+        //armorMesh.sharedMesh = state.ArmorMesh;
 
         ParticleSystem.MainModule module = swapVFXParticles.main;
         module.startColor = state.particleColor;
