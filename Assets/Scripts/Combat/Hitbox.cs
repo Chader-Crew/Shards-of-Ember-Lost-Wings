@@ -131,19 +131,19 @@ public class Hitbox : MonoBehaviour
                 
             List<Collider> colliders = new List<Collider>();
                 
+            Vector3 spherePosition = pivot.position + pivot.forward * offsets.z + pivot.right * offsets.x + pivot.up * offsets.y;
             //Shape cases
             switch (shape)
             {
                 //OverlapSphere
                 case Shape.SPHERE:  
                     colliders = Physics.OverlapSphere(
-                            pivot.position +        //posicao do pivot
-                            offsets,                    //offset
+                            spherePosition,              //posicao + pivot
                             dimensions.x/2         //raio
                             )             
                             .ToList();
                     //filtro de distancia para o raio interno
-                    colliders.RemoveAll(c => Vector3.Distance(c.transform.position, pivot.position + offsets) > dimensions.y);
+                    colliders.RemoveAll(c => Vector3.Distance(c.transform.position, pivot.position + offsets) < dimensions.y);
                     
                     break;
                 
