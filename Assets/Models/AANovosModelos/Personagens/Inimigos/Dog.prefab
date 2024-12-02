@@ -371,6 +371,7 @@ GameObject:
   - component: {fileID: 5939029535915563308}
   - component: {fileID: 8794841732061351590}
   - component: {fileID: 5678586043593400422}
+  - component: {fileID: 8197797493940721878}
   m_Layer: 0
   m_Name: Dog
   m_TagString: Enemy
@@ -567,6 +568,23 @@ MonoBehaviour:
   offsets: {x: 0, y: 0, z: 0}
   dimensions: {x: 0, y: 0, z: 0}
   pivot: {fileID: 6070167104636232559}
+--- !u!114 &8197797493940721878
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1603690898301524332}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 850d62eb64b80c44c9d6f08685526153, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  character: {fileID: 7868406444926040122}
+  damageTextPrefab: {fileID: 51086786437666801, guid: 3a775e9e188d49944824070ca807fd9a,
+    type: 3}
+  offset: {x: 0, y: 1, z: 0}
+  textDuration: 1
 --- !u!1 &1640070924571945607
 GameObject:
   m_ObjectHideFlags: 0

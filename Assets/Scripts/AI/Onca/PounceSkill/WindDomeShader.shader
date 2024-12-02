@@ -1,4 +1,4 @@
-Shader "Custom/VFX/WindDomeShader"
+Shader "Custom/WindDomeShader"
 {
     Properties
     {
