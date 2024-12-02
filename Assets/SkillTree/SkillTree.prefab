@@ -416,6 +416,7 @@ GameObject:
   - component: {fileID: 976891692389727192}
   - component: {fileID: 6479704846781666371}
   - component: {fileID: 3476489564136071716}
+  - component: {fileID: 224428171197330019}
   m_Layer: 5
   m_Name: DashFire
   m_TagString: Untagged
@@ -544,6 +545,20 @@ MonoBehaviour:
   smallCost: 200
   IsSkill: 1
   nexts: []
+--- !u!114 &224428171197330019
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 434529507147354828}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 19180b866718cd24e81888a827e7cf69, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  header: Dash Fire
+  body: "D\xE1 uma investida que deixa um rastro de fogo para traz"
 --- !u!1 &460932763763306361
 GameObject:
   m_ObjectHideFlags: 0
@@ -634,6 +649,7 @@ GameObject:
   - component: {fileID: 9221276564770236466}
   - component: {fileID: 5813092206432244900}
   - component: {fileID: 5856309597432684733}
+  - component: {fileID: 558051030590544949}
   m_Layer: 5
   m_Name: DashShove
   m_TagString: Untagged
@@ -762,6 +778,20 @@ MonoBehaviour:
   smallCost: 200
   IsSkill: 1
   nexts: []
+--- !u!114 &558051030590544949
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 571917040061003796}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 19180b866718cd24e81888a827e7cf69, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  header: Dash Shove
+  body: Quando ativo dar uma investida empurra os inimigos.
 --- !u!1 &638072483054561244
 GameObject:
   m_ObjectHideFlags: 0
@@ -850,6 +880,7 @@ GameObject:
   - component: {fileID: 1268486177896847438}
   - component: {fileID: 2790031844071563680}
   - component: {fileID: 318614021678017804}
+  - component: {fileID: 8002057430384420586}
   m_Layer: 5
   m_Name: The heck is this one
   m_TagString: Untagged
@@ -978,6 +1009,20 @@ MonoBehaviour:
   smallCost: 200
   IsSkill: 1
   nexts: []
+--- !u!114 &8002057430384420586
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 677975857999623093}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 19180b866718cd24e81888a827e7cf69, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  header: 
+  body: 
 --- !u!1 &809353247551833617
 GameObject:
   m_ObjectHideFlags: 0
@@ -991,6 +1036,7 @@ GameObject:
   - component: {fileID: 3549355698965907686}
   - component: {fileID: 2696668161521687672}
   - component: {fileID: 7778388895249803049}
+  - component: {fileID: 585896440011874063}
   m_Layer: 5
   m_Name: Decoy
   m_TagString: Untagged
@@ -1119,6 +1165,20 @@ MonoBehaviour:
   smallCost: 200
   IsSkill: 1
   nexts: []
+--- !u!114 &585896440011874063
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 809353247551833617}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 19180b866718cd24e81888a827e7cf69, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  header: Decoy
+  body: "Cria um decoy que chama a aten\xE7\xE3o dos inimgos."
 --- !u!1 &873873061475990024
 GameObject:
   m_ObjectHideFlags: 0
@@ -1818,6 +1878,7 @@ GameObject:
   - component: {fileID: 1809819624681594924}
   - component: {fileID: 3518903785821302451}
   - component: {fileID: 1195656116089405918}
+  - component: {fileID: 6870285357100905339}
   m_Layer: 5
   m_Name: LightStats (2)
   m_TagString: Untagged
@@ -1946,6 +2007,20 @@ MonoBehaviour:
   smallCost: 100
   IsSkill: 0
   nexts: []
+--- !u!114 &6870285357100905339
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1740159169699126452}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 19180b866718cd24e81888a827e7cf69, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  header: Velocidade+
+  body: Aumenta um pouco a velocidade de ataque.
 --- !u!1 &1771719085748101830
 GameObject:
   m_ObjectHideFlags: 0
@@ -2557,6 +2632,7 @@ GameObject:
   - component: {fileID: 494148283260740515}
   - component: {fileID: 7915914341047876471}
   - component: {fileID: 4241713041989058031}
+  - component: {fileID: 1631724599685147020}
   m_Layer: 5
   m_Name: FireStats (2)
   m_TagString: Untagged
@@ -2685,6 +2761,20 @@ MonoBehaviour:
   smallCost: 100
   IsSkill: 0
   nexts: []
+--- !u!114 &1631724599685147020
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2103377631951719651}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 19180b866718cd24e81888a827e7cf69, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  header: HP+
+  body: "Aumenta um pouco o HP m\xE1ximo."
 --- !u!1 &2278068074743508579
 GameObject:
   m_ObjectHideFlags: 0
@@ -2810,7 +2900,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   smallShardText: {fileID: 2124731133779825019}
-  bigShardText: {fileID: 2690044667765896386}
   skillTreePanel: {fileID: 4544993170965922580}
 --- !u!1 &2460651019077719152
 GameObject:
@@ -3095,6 +3184,7 @@ GameObject:
   - component: {fileID: 5004850179287729705}
   - component: {fileID: 5911653715898438678}
   - component: {fileID: 1251013957336851360}
+  - component: {fileID: 1358840579165617647}
   m_Layer: 5
   m_Name: TreeStats (1)
   m_TagString: Untagged
@@ -3223,6 +3313,20 @@ MonoBehaviour:
   smallCost: 100
   IsSkill: 0
   nexts: []
+--- !u!114 &1358840579165617647
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2524904151715561667}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 19180b866718cd24e81888a827e7cf69, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  header: HP+
+  body: "Aumenta um pouco o HP m\xE1ximo."
 --- !u!1 &2634399093049318858
 GameObject:
   m_ObjectHideFlags: 0
@@ -3499,6 +3603,7 @@ GameObject:
   - component: {fileID: 3375026042711584554}
   - component: {fileID: 5750095423367101231}
   - component: {fileID: 7102680371723300556}
+  - component: {fileID: 5293514934677723643}
   m_Layer: 5
   m_Name: LightStats (1)
   m_TagString: Untagged
@@ -3627,6 +3732,20 @@ MonoBehaviour:
   smallCost: 100
   IsSkill: 0
   nexts: []
+--- !u!114 &5293514934677723643
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2879594271797563315}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 19180b866718cd24e81888a827e7cf69, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  header: Dano+
+  body: Aumenta um pouco o dano.
 --- !u!1 &3009046581958187823
 GameObject:
   m_ObjectHideFlags: 0
@@ -3983,6 +4102,7 @@ GameObject:
   - component: {fileID: 6815166204718621317}
   - component: {fileID: 4828834554603360170}
   - component: {fileID: 7573957096663381948}
+  - component: {fileID: 5382547805358673520}
   m_Layer: 5
   m_Name: CallLightning
   m_TagString: Untagged
@@ -4111,6 +4231,20 @@ MonoBehaviour:
   smallCost: 200
   IsSkill: 1
   nexts: []
+--- !u!114 &5382547805358673520
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3151698094764468200}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 19180b866718cd24e81888a827e7cf69, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  header: Call Lightning
+  body: "Chama raios do c\xE9u em um inimigo pr\xF3ximo."
 --- !u!1 &3182822503146715420
 GameObject:
   m_ObjectHideFlags: 0
@@ -4601,6 +4735,7 @@ GameObject:
   - component: {fileID: 5909444705603104831}
   - component: {fileID: 7961693675215824625}
   - component: {fileID: 1139291987656608374}
+  - component: {fileID: 6981133310619699291}
   m_Layer: 5
   m_Name: FireCone
   m_TagString: Untagged
@@ -4729,6 +4864,20 @@ MonoBehaviour:
   smallCost: 200
   IsSkill: 1
   nexts: []
+--- !u!114 &6981133310619699291
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3669027860846033727}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 19180b866718cd24e81888a827e7cf69, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  header: Fire Breath
+  body: Sobra para frente um cone de fogo que danifica inimigos.
 --- !u!1 &3956688440253576879
 GameObject:
   m_ObjectHideFlags: 0
@@ -5519,6 +5668,7 @@ GameObject:
   - component: {fileID: 3867464052560398218}
   - component: {fileID: 4384730360367996702}
   - component: {fileID: 1215593805352958839}
+  - component: {fileID: 6216094408285861296}
   m_Layer: 5
   m_Name: FireStats (1)
   m_TagString: Untagged
@@ -5647,6 +5797,20 @@ MonoBehaviour:
   smallCost: 100
   IsSkill: 0
   nexts: []
+--- !u!114 &6216094408285861296
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4387545055870228685}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 19180b866718cd24e81888a827e7cf69, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  header: Dano+
+  body: Aumenta um pouco o dano.
 --- !u!1 &4465651199612724888
 GameObject:
   m_ObjectHideFlags: 0
@@ -5660,6 +5824,7 @@ GameObject:
   - component: {fileID: 8110207283359421142}
   - component: {fileID: 8000466710598373702}
   - component: {fileID: 3311464861819259586}
+  - component: {fileID: 1423497633428332445}
   m_Layer: 5
   m_Name: BarkArmor
   m_TagString: Untagged
@@ -5788,6 +5953,20 @@ MonoBehaviour:
   smallCost: 200
   IsSkill: 1
   nexts: []
+--- !u!114 &1423497633428332445
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4465651199612724888}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 19180b866718cd24e81888a827e7cf69, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  header: Bark Armor
+  body: Quandoo ativo recebe menos dano.
 --- !u!1 &4544993170965922580
 GameObject:
   m_ObjectHideFlags: 0
@@ -6253,6 +6432,7 @@ GameObject:
   - component: {fileID: 2726360089647713000}
   - component: {fileID: 6893819914608409312}
   - component: {fileID: 8732738148346345623}
+  - component: {fileID: 492630650426590593}
   m_Layer: 5
   m_Name: Button
   m_TagString: Untagged
@@ -6361,6 +6541,22 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &492630650426590593
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4906683888716481688}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 19180b866718cd24e81888a827e7cf69, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  header: Bem vindo a SkillTree!
+  body: "Aqui \xE9 onde voc\xEA vai gastar seus \"Shards\" para comprar novas habidades
+    e status para seu personagem;\nPasse o mouse por cima das skills para ver suas
+    descri\xE7\xF5es."
 --- !u!1 &4907466285350218164
 GameObject:
   m_ObjectHideFlags: 0
@@ -6374,6 +6570,7 @@ GameObject:
   - component: {fileID: 3624789454352703275}
   - component: {fileID: 5154734826198730855}
   - component: {fileID: 1300360745546350528}
+  - component: {fileID: 1760954043436748440}
   m_Layer: 5
   m_Name: FireStats (3)
   m_TagString: Untagged
@@ -6502,6 +6699,20 @@ MonoBehaviour:
   smallCost: 100
   IsSkill: 0
   nexts: []
+--- !u!114 &1760954043436748440
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4907466285350218164}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 19180b866718cd24e81888a827e7cf69, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  header: HP+
+  body: "Aumenta um pouco o HP M\xE1ximo."
 --- !u!1 &5144662688905289665
 GameObject:
   m_ObjectHideFlags: 0
@@ -6820,7 +7031,6 @@ RectTransform:
   - {fileID: 2501518950180230368}
   - {fileID: 709572769118046510}
   - {fileID: 8981376148828169511}
-  - {fileID: 1696247261452429255}
   - {fileID: 2069239018085753866}
   m_Father: {fileID: 744313835381319885}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -6850,6 +7060,7 @@ GameObject:
   - component: {fileID: 712654070965442348}
   - component: {fileID: 8780225559438450727}
   - component: {fileID: 8128164395323916266}
+  - component: {fileID: 2762809222584653462}
   m_Layer: 5
   m_Name: FireStats
   m_TagString: Untagged
@@ -6978,6 +7189,20 @@ MonoBehaviour:
   smallCost: 100
   IsSkill: 0
   nexts: []
+--- !u!114 &2762809222584653462
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5220556846687550108}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 19180b866718cd24e81888a827e7cf69, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  header: Dano+
+  body: Aumenta um pouco o dano.
 --- !u!1 &5484385261372706853
 GameObject:
   m_ObjectHideFlags: 0
@@ -6991,6 +7216,7 @@ GameObject:
   - component: {fileID: 6187644158113928499}
   - component: {fileID: 3475516606041699845}
   - component: {fileID: 7202120291320648406}
+  - component: {fileID: 4333303277857117473}
   m_Layer: 5
   m_Name: LightStats (3)
   m_TagString: Untagged
@@ -7119,6 +7345,20 @@ MonoBehaviour:
   smallCost: 100
   IsSkill: 0
   nexts: []
+--- !u!114 &4333303277857117473
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5484385261372706853}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 19180b866718cd24e81888a827e7cf69, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  header: Velocidade+
+  body: Aumenta um pouco a velocidade de ataque.
 --- !u!1 &5587780092684974849
 GameObject:
   m_ObjectHideFlags: 0
@@ -7266,6 +7506,7 @@ GameObject:
   - component: {fileID: 556353670625515087}
   - component: {fileID: 7755976182697488612}
   - component: {fileID: 2644738491034324855}
+  - component: {fileID: 4083191555517245683}
   m_Layer: 5
   m_Name: FirePunch
   m_TagString: Untagged
@@ -7394,6 +7635,20 @@ MonoBehaviour:
   smallCost: 200
   IsSkill: 1
   nexts: []
+--- !u!114 &4083191555517245683
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5616956615970679808}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 19180b866718cd24e81888a827e7cf69, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  header: Fire Punch
+  body: "Um socoo para frente que causa uma pequena exploos\xE3o de chamas"
 --- !u!1 &5720412957461150017
 GameObject:
   m_ObjectHideFlags: 0
@@ -7541,6 +7796,7 @@ GameObject:
   - component: {fileID: 6968924919445150404}
   - component: {fileID: 2192695119676971960}
   - component: {fileID: 3557461892738121279}
+  - component: {fileID: 7662468674665104120}
   m_Layer: 5
   m_Name: ThornPit
   m_TagString: Untagged
@@ -7669,6 +7925,20 @@ MonoBehaviour:
   smallCost: 200
   IsSkill: 1
   nexts: []
+--- !u!114 &7662468674665104120
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5774071171718770792}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 19180b866718cd24e81888a827e7cf69, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  header: Thorn Pit
+  body: "Cria espinhos no ch\xE3o que danificam inimgos que passarem por eles."
 --- !u!1 &5892441102219562573
 GameObject:
   m_ObjectHideFlags: 0
@@ -7803,6 +8073,7 @@ GameObject:
   - component: {fileID: 6908409471407619409}
   - component: {fileID: 1220718746921631130}
   - component: {fileID: 8166007446490582861}
+  - component: {fileID: 5229978457029276385}
   m_Layer: 5
   m_Name: ThornMail
   m_TagString: Untagged
@@ -7931,6 +8202,20 @@ MonoBehaviour:
   smallCost: 200
   IsSkill: 1
   nexts: []
+--- !u!114 &5229978457029276385
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6008020544176681614}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 19180b866718cd24e81888a827e7cf69, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  header: Thorn Mail
+  body: Quando ativo inimigos se danificam ao danificar o playe.
 --- !u!1 &6036580332820100667
 GameObject:
   m_ObjectHideFlags: 0
@@ -7944,6 +8229,7 @@ GameObject:
   - component: {fileID: 1109879414546163491}
   - component: {fileID: 4095194945310680062}
   - component: {fileID: 7421329780299895803}
+  - component: {fileID: 3025107858587338573}
   m_Layer: 5
   m_Name: TreeStats
   m_TagString: Untagged
@@ -8072,6 +8358,20 @@ MonoBehaviour:
   smallCost: 100
   IsSkill: 0
   nexts: []
+--- !u!114 &3025107858587338573
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6036580332820100667}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 19180b866718cd24e81888a827e7cf69, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  header: Def+
+  body: Aumenta um pouco a defesa.
 --- !u!1 &6121847513504708294
 GameObject:
   m_ObjectHideFlags: 0
@@ -8294,6 +8594,7 @@ GameObject:
   - component: {fileID: 1989329277861269550}
   - component: {fileID: 1999154967797255683}
   - component: {fileID: 3718310246121715307}
+  - component: {fileID: 1600165081190682976}
   m_Layer: 5
   m_Name: LightStats
   m_TagString: Untagged
@@ -8422,6 +8723,20 @@ MonoBehaviour:
   smallCost: 100
   IsSkill: 0
   nexts: []
+--- !u!114 &1600165081190682976
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6195776858294470940}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 19180b866718cd24e81888a827e7cf69, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  header: Velocidade+
+  body: Aumenta um pouco a velocidade de ataque.
 --- !u!1 &6309246032372351506
 GameObject:
   m_ObjectHideFlags: 0
@@ -8452,7 +8767,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 8965571645102976794}
+  m_Father: {fileID: 8156046677778556707}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
@@ -8585,6 +8900,7 @@ GameObject:
   - component: {fileID: 5598898294414806254}
   - component: {fileID: 1120215534754889136}
   - component: {fileID: 3375795027548786266}
+  - component: {fileID: 1788199720241500891}
   m_Layer: 5
   m_Name: TreeStats (2)
   m_TagString: Untagged
@@ -8609,7 +8925,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.51426244, y: 0.10896929}
   m_AnchorMax: {x: 0.54066175, y: 0.15342054}
-  m_AnchoredPosition: {x: 186.7, y: 137.5}
+  m_AnchoredPosition: {x: 279, y: 214}
   m_SizeDelta: {x: -0.000015258789, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &3738863078760733292
@@ -8713,6 +9029,20 @@ MonoBehaviour:
   smallCost: 100
   IsSkill: 0
   nexts: []
+--- !u!114 &1788199720241500891
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6319903145114741323}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 19180b866718cd24e81888a827e7cf69, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  header: HP+
+  body: "Aumenta um pouco o HP m\xE1ximo."
 --- !u!1 &6465934176984675498
 GameObject:
   m_ObjectHideFlags: 0
@@ -8877,6 +9207,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
+  - {fileID: 1696247261452429255}
   - {fileID: 5760326220805145379}
   - {fileID: 3887222970798445357}
   - {fileID: 2548466442080062029}
@@ -9460,6 +9791,7 @@ GameObject:
   - component: {fileID: 2892204352630910958}
   - component: {fileID: 9111962375934828537}
   - component: {fileID: 6760241716175877433}
+  - component: {fileID: 8979930431364444295}
   m_Layer: 5
   m_Name: StaticCharge
   m_TagString: Untagged
@@ -9588,6 +9920,21 @@ MonoBehaviour:
   smallCost: 200
   IsSkill: 1
   nexts: []
+--- !u!114 &8979930431364444295
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6947808771207881464}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 19180b866718cd24e81888a827e7cf69, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  header: Statick Charge
+  body: Ataques basicos adicionam uma carga que quando chega no limite de cargas
+    estouram dando dano alto ao inimigo.
 --- !u!1 &7231686373519631233
 GameObject:
   m_ObjectHideFlags: 0
@@ -10019,6 +10366,7 @@ GameObject:
   - component: {fileID: 3453206366383217098}
   - component: {fileID: 89508999457792862}
   - component: {fileID: 987433677233514415}
+  - component: {fileID: 6173005469735874213}
   m_Layer: 5
   m_Name: TreeStats (3)
   m_TagString: Untagged
@@ -10147,6 +10495,20 @@ MonoBehaviour:
   smallCost: 100
   IsSkill: 0
   nexts: []
+--- !u!114 &6173005469735874213
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7785257296996279754}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 19180b866718cd24e81888a827e7cf69, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  header: Def+
+  body: Aumenta um pouco a defesa.
 --- !u!1 &7795046564698338081
 GameObject:
   m_ObjectHideFlags: 0
@@ -10671,6 +11033,7 @@ GameObject:
   - component: {fileID: 1229956886929528972}
   - component: {fileID: 8743258286271435067}
   - component: {fileID: 1033629859150632469}
+  - component: {fileID: 7730488258668526302}
   m_Layer: 5
   m_Name: ThornWall
   m_TagString: Untagged
@@ -10799,6 +11162,20 @@ MonoBehaviour:
   smallCost: 200
   IsSkill: 1
   nexts: []
+--- !u!114 &7730488258668526302
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8194299172558662458}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 19180b866718cd24e81888a827e7cf69, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  header: Thorn Wall
+  body: Cria uma parede re raizes.
 --- !u!1 &8413363485789693542
 GameObject:
   m_ObjectHideFlags: 0
@@ -10887,6 +11264,7 @@ GameObject:
   - component: {fileID: 1068232601567798494}
   - component: {fileID: 2719771943395044817}
   - component: {fileID: 6002937792061412533}
+  - component: {fileID: 7442851327977041403}
   m_Layer: 5
   m_Name: Burn
   m_TagString: Untagged
@@ -11015,6 +11393,20 @@ MonoBehaviour:
   smallCost: 200
   IsSkill: 1
   nexts: []
+--- !u!114 &7442851327977041403
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8541887326855653332}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 19180b866718cd24e81888a827e7cf69, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  header: Teste
+  body: Burn
 --- !u!1 &8675866141012843203
 GameObject:
   m_ObjectHideFlags: 0
@@ -11028,6 +11420,7 @@ GameObject:
   - component: {fileID: 2342473995025443830}
   - component: {fileID: 4504130282214564220}
   - component: {fileID: 521419687552218707}
+  - component: {fileID: 5640503628870784204}
   m_Layer: 5
   m_Name: Claws
   m_TagString: Untagged
@@ -11156,6 +11549,20 @@ MonoBehaviour:
   smallCost: 200
   IsSkill: 1
   nexts: []
+--- !u!114 &5640503628870784204
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8675866141012843203}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 19180b866718cd24e81888a827e7cf69, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  header: Fire Claws
+  body: "Aumenta a distancia e dano dos ataques b\xE1sicos."
 --- !u!1 &8687435280320024573
 GameObject:
   m_ObjectHideFlags: 0
@@ -11603,6 +12010,7 @@ GameObject:
   - component: {fileID: 3887119843777759804}
   - component: {fileID: 1082554822019589513}
   - component: {fileID: 7880057174931372318}
+  - component: {fileID: 3431051002587455226}
   m_Layer: 5
   m_Name: StaticCharge
   m_TagString: Untagged
@@ -11731,6 +12139,21 @@ MonoBehaviour:
   smallCost: 200
   IsSkill: 1
   nexts: []
+--- !u!114 &3431051002587455226
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9187241370168240055}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 19180b866718cd24e81888a827e7cf69, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  header: Statick Charge
+  body: Ataques basicos adicionam uma carga que quando chega no limite de cargas
+    estouram dando dano alto ao inimigo.
 --- !u!1 &9221075237583600072
 GameObject:
   m_ObjectHideFlags: 0

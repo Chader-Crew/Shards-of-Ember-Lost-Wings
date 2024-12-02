@@ -4,7 +4,7 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
-[ExecuteInEditMode()]
+
 public class tooltip : MonoBehaviour
 {
     public TextMeshProUGUI headerField;

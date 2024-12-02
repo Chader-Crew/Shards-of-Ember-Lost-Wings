@@ -29,6 +29,7 @@ public class InputReader : ScriptableObject, PlayerInput.IPlayerActions, PlayerI
     //inicializacao
     public void Initialize()
     {
+        SkillTreeUI.Instance.ToggleUI();
         ClearEvents();
         if(playerInput == null)
         {
