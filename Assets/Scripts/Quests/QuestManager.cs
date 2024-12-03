@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class QuestManager : MonoBehaviour
 {
-   private List<QuestData> questList;
+   public List<QuestData> questList;
    private int currentQuestIndex = 0; // vai ser o indice da quest atual
 
    private void Start()
