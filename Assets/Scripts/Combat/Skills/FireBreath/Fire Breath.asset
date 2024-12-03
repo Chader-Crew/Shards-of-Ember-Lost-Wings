@@ -10,14 +10,14 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 276a5aeae2c7b79469f8d8246973418c, type: 3}
-  m_Name: PunchVFX
+  m_Name: Fire Breath
   m_EditorClassIdentifier: 
   canCast: 1
-  cooldown: 6
-  _onCooldown: 1
-  prefab: {fileID: 2170050189950023112, guid: 33029f830f86d8549829a8bd35193e09, type: 3}
+  cooldown: 10
+  _onCooldown: 0
+  prefab: {fileID: 2642649763374619984, guid: 7d572876af02bb74f985e2cd79264b52, type: 3}
   _onTarget: 0
   _localSpace: 0
   offset: {x: 0, y: 0, z: 0}
   _destroyAfterDuration: 1
-  durationOverwrite: 1
+  durationOverwrite: 6

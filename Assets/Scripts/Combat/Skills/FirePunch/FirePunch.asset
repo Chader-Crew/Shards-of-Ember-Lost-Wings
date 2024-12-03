@@ -9,12 +9,15 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1b1417dc0d89c34489218dee268cf635, type: 3}
+  m_Script: {fileID: 11500000, guid: 276a5aeae2c7b79469f8d8246973418c, type: 3}
   m_Name: FirePunch
   m_EditorClassIdentifier: 
   canCast: 1
-  cooldown: 0
+  cooldown: 6
   _onCooldown: 0
-  nextSkills:
-  - {fileID: 11400000, guid: c21b0b9fa0f2fec4bb52336eb7c70978, type: 2}
-  - {fileID: 11400000, guid: 675666b422423204196b3be94d8bacfc, type: 2}
+  prefab: {fileID: 2170050189950023112, guid: 33029f830f86d8549829a8bd35193e09, type: 3}
+  _onTarget: 0
+  _localSpace: 1
+  offset: {x: 0, y: 1.6, z: 1}
+  _destroyAfterDuration: 1
+  durationOverwrite: 1

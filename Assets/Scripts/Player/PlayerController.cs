@@ -156,7 +156,16 @@ public class PlayerController : Singleton<PlayerController>
     private void Cast()
     {
         if(state._CanCastSkill)
-        {
+        {   
+            //skill ativada por animacao (se ela existe)
+            if (animator.HasState(0, Animator.StringToHash(state.ActiveSkill.name)))
+            {
+                animator.CrossFadeInFixedTime(state.ActiveSkill.name, 0.1f);
+                playerMovement.LockMovement(true);
+            }
+            //skill ativada diretamentee (se nao tem animacao)
+            else
+            {
             //criacao de SkillData
             SkillData data = new SkillData();
             data.owner = character;
@@ -164,6 +173,7 @@ public class PlayerController : Singleton<PlayerController>
             //ativa a skill
             state.ActiveSkill.Activate(data);
             OnCastEvent(state.ActiveSkill);
+            }
         }
     }
 
