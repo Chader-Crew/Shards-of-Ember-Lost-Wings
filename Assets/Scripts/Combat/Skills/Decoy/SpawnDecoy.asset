@@ -12,12 +12,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 276a5aeae2c7b79469f8d8246973418c, type: 3}
   m_Name: SpawnDecoy
   m_EditorClassIdentifier: 
-  canCast: 0
-  cooldown: 0
+  canCast: 1
+  cooldown: 6
   _onCooldown: 0
-  prefab: {fileID: 0}
+  prefab: {fileID: 2374984070092924806, guid: 10009dd1f28392d40901c8bbdc2054b3, type: 3}
   _onTarget: 0
   _localSpace: 0
   offset: {x: 0, y: 0, z: 0}
-  _destroyAfterDuration: 0
-  durationOverwrite: 0
+  _destroyAfterDuration: 1
+  durationOverwrite: 7
