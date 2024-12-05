@@ -510,6 +510,12 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 4101503275775364173}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &844954082 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 9086804444008449209, guid: b9a3fb0a2168d7e46af7f50b0abd0f54,
+    type: 3}
+  m_PrefabInstance: {fileID: 1927643245386084315}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &912464297
 GameObject:
   m_ObjectHideFlags: 3
@@ -626,6 +632,50 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ac0b09e7857660247b1477e93731de29, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &932857396 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7207730725229044638, guid: b9a3fb0a2168d7e46af7f50b0abd0f54,
+    type: 3}
+  m_PrefabInstance: {fileID: 1927643245386084315}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &932857398
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 932857396}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a7a74662a26fd6c4dbcd7be670b67668, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  nameText: {fileID: 2060263199}
+  dialogueText: {fileID: 1336582488}
+  dialoguePanel: {fileID: 1248242374}
+  _dialogue:
+    name: Solas
+    sentences:
+    - Baby got DRIP
+    - DRIP
+    - Brrrraaa
+    - ASA
+--- !u!114 &932857399
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 932857396}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4ba90095e72b56a45a1bbc639d9d2ca9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  npcItem: {fileID: 11400000, guid: f9931be16bdc86543abe2a19b4a51e4a, type: 2}
+  buttonCanva: {fileID: 844954082}
+  chestAudio: {fileID: 0}
+  dialogueManager: {fileID: 932857398}
 --- !u!114 &944963557 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 5737228577469820734, guid: 16057b68cb8f9f747a05b11654470e05,
@@ -784,6 +834,24 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1248242374 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2191260697900960556, guid: 16057b68cb8f9f747a05b11654470e05,
+    type: 3}
+  m_PrefabInstance: {fileID: 4101503275775364173}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1336582488 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1582468276618454739, guid: 16057b68cb8f9f747a05b11654470e05,
+    type: 3}
+  m_PrefabInstance: {fileID: 4101503275775364173}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &1356185666 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 8671678437333460316, guid: 16057b68cb8f9f747a05b11654470e05,
@@ -2172,6 +2240,18 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &2060263199 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3340531744232424754, guid: 16057b68cb8f9f747a05b11654470e05,
+    type: 3}
+  m_PrefabInstance: {fileID: 4101503275775364173}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &2096517870 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 523717716928642418, guid: 16057b68cb8f9f747a05b11654470e05,
@@ -2309,10 +2389,19 @@ PrefabInstance:
       propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 6775312148049762122, guid: b9a3fb0a2168d7e46af7f50b0abd0f54, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 7207730725229044638, guid: b9a3fb0a2168d7e46af7f50b0abd0f54,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 932857399}
+    - targetCorrespondingSourceObject: {fileID: 7207730725229044638, guid: b9a3fb0a2168d7e46af7f50b0abd0f54,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 932857398}
   m_SourcePrefab: {fileID: 100100000, guid: b9a3fb0a2168d7e46af7f50b0abd0f54, type: 3}
 --- !u!1001 &4101503275775364173
 PrefabInstance:
@@ -2410,6 +2499,11 @@ PrefabInstance:
     - target: {fileID: 1024672657466475280, guid: 16057b68cb8f9f747a05b11654470e05,
         type: 3}
       propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1102998421462802733, guid: 16057b68cb8f9f747a05b11654470e05,
+        type: 3}
+      propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1112478813845655034, guid: 16057b68cb8f9f747a05b11654470e05,
