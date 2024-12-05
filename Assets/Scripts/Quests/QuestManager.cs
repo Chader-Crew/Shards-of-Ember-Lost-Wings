@@ -5,8 +5,8 @@ using UnityEngine;
 public class QuestManager : MonoBehaviour
 {
     public List<QuestData> questList; // Lista de quests
-    public QuestDisplay questDisplay;      
-    private int currentQuestIndex = 0; // vai ser o indice da quest atual
+    public QuestDisplay questDisplay;
+    private int currentQuestIndex = 0; // Índice da quest atual
 
     void Start()
     {
@@ -45,10 +45,26 @@ public class QuestManager : MonoBehaviour
         var quest = questList[questIndex];
         Debug.Log($"Nova quest ativa: {quest.questName}");
 
+        // Verifica se a quest ativa é do tipo EnemyKiller
+        if (quest is EnemyKiller enemyKillerQuest)
+        {
+            enemyKillerQuest.Initialize(); // Inicializa a quest de matar inimigos
+        }
+
         // Atualiza o display com a nova quest
         if (questDisplay != null)
         {
             questDisplay.UpdateQuestDisplay(quest);
         }
+    }
+
+    // Método para obter a quest ativa
+    public QuestData GetActiveQuest()
+    {
+        if (currentQuestIndex < questList.Count)
+        {
+            return questList[currentQuestIndex];
+        }
+        return null;
     }
 }

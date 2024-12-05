@@ -3877,7 +3877,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2d205b50c8f676149baf4e3eb8963501, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  quests: {fileID: 0}
+  questManager: {fileID: 0}
   questNameText: {fileID: 2103607778983533245}
   questObjectiveText: {fileID: 4697355979516118885}
 --- !u!1 &6011195697438849465
@@ -3909,8 +3909,8 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 6753566246777773476}
   - {fileID: 7198845785755356872}
+  - {fileID: 6753566246777773476}
   - {fileID: 5242430466287532704}
   - {fileID: 7161065594053129389}
   - {fileID: 1233490262684336723}

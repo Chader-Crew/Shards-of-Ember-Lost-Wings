@@ -243,25 +243,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 74aa90c3b47370443904c9df9d64c6e1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!1 &148676663 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 7207730725229044638, guid: b9a3fb0a2168d7e46af7f50b0abd0f54,
-    type: 3}
-  m_PrefabInstance: {fileID: 1927643245386084315}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &148676669
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 148676663}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 787bd6918ec839d479e11c5beb330345, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  questObjective: {fileID: 11400000, guid: c687bad73322485468bff74f2e257fec, type: 2}
 --- !u!1 &180147819
 GameObject:
   m_ObjectHideFlags: 0
@@ -418,7 +399,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ed0afbc0947e8bd4ea431259f9dadeba, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  questManager: {fileID: 1583477141}
 --- !u!65 &468471178
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -542,6 +522,83 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 4101503275775364173}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &600114006
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 600114007}
+  m_Layer: 0
+  m_Name: Quest
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &600114007
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 600114006}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 692793674}
+  m_Father: {fileID: 1583477138}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &692793673
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 692793674}
+  - component: {fileID: 692793675}
+  m_Layer: 0
+  m_Name: EnemyKillerQues
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &692793674
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 692793673}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 600114007}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &692793675
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 692793673}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 787bd6918ec839d479e11c5beb330345, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  questObjective: {fileID: 11400000, guid: 02f38e2a1bfa5c94484325018477b9b2, type: 2}
 --- !u!1 &721421417 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 9031753165848721221, guid: 16057b68cb8f9f747a05b11654470e05,
@@ -1178,7 +1235,8 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 600114007}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1583477139
@@ -1222,7 +1280,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   questList:
   - {fileID: 11400000, guid: c687bad73322485468bff74f2e257fec, type: 2}
-  - {fileID: 11400000, guid: 04a08aaa6457b884ba2260aedd9e8480, type: 2}
+  - {fileID: 11400000, guid: 02f38e2a1bfa5c94484325018477b9b2, type: 2}
   questDisplay: {fileID: 1887467955}
 --- !u!1 &1587572900
 GameObject:
@@ -2447,16 +2505,6 @@ PrefabInstance:
       objectReference: {fileID: 2060263199}
     - target: {fileID: 5876685055195147422, guid: b9a3fb0a2168d7e46af7f50b0abd0f54,
         type: 3}
-      propertyPath: parentLayer
-      value: 8
-      objectReference: {fileID: 0}
-    - target: {fileID: 5876685055195147422, guid: b9a3fb0a2168d7e46af7f50b0abd0f54,
-        type: 3}
-      propertyPath: questparent
-      value: 
-      objectReference: {fileID: 148676669}
-    - target: {fileID: 5876685055195147422, guid: b9a3fb0a2168d7e46af7f50b0abd0f54,
-        type: 3}
       propertyPath: dialogueText
       value: 
       objectReference: {fileID: 1336582488}
@@ -2490,29 +2538,10 @@ PrefabInstance:
       propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 7207730725229044638, guid: b9a3fb0a2168d7e46af7f50b0abd0f54,
-        type: 3}
-      propertyPath: m_Layer
-      value: 8
-      objectReference: {fileID: 0}
-    - target: {fileID: 7460670467260835924, guid: b9a3fb0a2168d7e46af7f50b0abd0f54,
-        type: 3}
-      propertyPath: m_AnchorMax.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7460670467260835924, guid: b9a3fb0a2168d7e46af7f50b0abd0f54,
-        type: 3}
-      propertyPath: m_AnchorMax.y
-      value: 0
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 7207730725229044638, guid: b9a3fb0a2168d7e46af7f50b0abd0f54,
-        type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 148676669}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b9a3fb0a2168d7e46af7f50b0abd0f54, type: 3}
 --- !u!1001 &4101503275775364173
 PrefabInstance:
@@ -2612,11 +2641,11 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 1102998421462802733, guid: 16057b68cb8f9f747a05b11654470e05,
+    - target: {fileID: 1052025124751358502, guid: 16057b68cb8f9f747a05b11654470e05,
         type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
+      propertyPath: questManager
+      value: 
+      objectReference: {fileID: 1583477141}
     - target: {fileID: 1112478813845655034, guid: 16057b68cb8f9f747a05b11654470e05,
         type: 3}
       propertyPath: m_AnchorMax.y
