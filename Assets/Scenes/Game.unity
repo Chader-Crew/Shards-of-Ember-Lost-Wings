@@ -510,12 +510,6 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 4101503275775364173}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &844954082 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 9086804444008449209, guid: b9a3fb0a2168d7e46af7f50b0abd0f54,
-    type: 3}
-  m_PrefabInstance: {fileID: 1927643245386084315}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &912464297
 GameObject:
   m_ObjectHideFlags: 3
@@ -632,50 +626,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ac0b09e7857660247b1477e93731de29, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!1 &932857396 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 7207730725229044638, guid: b9a3fb0a2168d7e46af7f50b0abd0f54,
-    type: 3}
-  m_PrefabInstance: {fileID: 1927643245386084315}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &932857398
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 932857396}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a7a74662a26fd6c4dbcd7be670b67668, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  nameText: {fileID: 2060263199}
-  dialogueText: {fileID: 1336582488}
-  dialoguePanel: {fileID: 1248242374}
-  _dialogue:
-    name: Solas
-    sentences:
-    - Baby got DRIP
-    - DRIP
-    - Brrrraaa
-    - ASA
---- !u!114 &932857399
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 932857396}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4ba90095e72b56a45a1bbc639d9d2ca9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  npcItem: {fileID: 11400000, guid: f9931be16bdc86543abe2a19b4a51e4a, type: 2}
-  buttonCanva: {fileID: 844954082}
-  chestAudio: {fileID: 0}
-  dialogueManager: {fileID: 932857398}
 --- !u!114 &944963557 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 5737228577469820734, guid: 16057b68cb8f9f747a05b11654470e05,
@@ -2359,6 +2309,26 @@ PrefabInstance:
       propertyPath: m_Name
       value: Zona-Inicial
       objectReference: {fileID: 0}
+    - target: {fileID: 5876685055195147422, guid: b9a3fb0a2168d7e46af7f50b0abd0f54,
+        type: 3}
+      propertyPath: nameText
+      value: 
+      objectReference: {fileID: 2060263199}
+    - target: {fileID: 5876685055195147422, guid: b9a3fb0a2168d7e46af7f50b0abd0f54,
+        type: 3}
+      propertyPath: dialogueText
+      value: 
+      objectReference: {fileID: 1336582488}
+    - target: {fileID: 5876685055195147422, guid: b9a3fb0a2168d7e46af7f50b0abd0f54,
+        type: 3}
+      propertyPath: questManager
+      value: 
+      objectReference: {fileID: 1583477141}
+    - target: {fileID: 5876685055195147422, guid: b9a3fb0a2168d7e46af7f50b0abd0f54,
+        type: 3}
+      propertyPath: dialoguePanel
+      value: 
+      objectReference: {fileID: 1248242374}
     - target: {fileID: 6871777811668005829, guid: b9a3fb0a2168d7e46af7f50b0abd0f54,
         type: 3}
       propertyPath: m_AnchorMax.x
@@ -2389,19 +2359,10 @@ PrefabInstance:
       propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents:
-    - {fileID: 6775312148049762122, guid: b9a3fb0a2168d7e46af7f50b0abd0f54, type: 3}
+    m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 7207730725229044638, guid: b9a3fb0a2168d7e46af7f50b0abd0f54,
-        type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 932857399}
-    - targetCorrespondingSourceObject: {fileID: 7207730725229044638, guid: b9a3fb0a2168d7e46af7f50b0abd0f54,
-        type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 932857398}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b9a3fb0a2168d7e46af7f50b0abd0f54, type: 3}
 --- !u!1001 &4101503275775364173
 PrefabInstance:

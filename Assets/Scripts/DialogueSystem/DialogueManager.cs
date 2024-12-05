@@ -12,6 +12,7 @@ public class DialogueManager : MonoBehaviour
     //public Animator animator; //para implementar uma animacao para a caixa de dialogo depois
     public Queue<string> sentences;
     public Dialogue _dialogue;
+    public QuestManager questManager;
 
     void Start()
     {
