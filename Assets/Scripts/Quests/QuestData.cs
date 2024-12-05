@@ -7,7 +7,7 @@ public class QuestData : ScriptableObject
 {
     public string questName;          
     public string objective; 
-    public bool _isCompleted = false;  
+    public bool _isCompleted = false, _request = false;
 
     public void CompleteQuest() // adicionar uma animação pop up que pode aparacer na tela do player quando a quest é completada
     {

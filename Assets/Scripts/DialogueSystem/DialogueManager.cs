@@ -11,7 +11,9 @@ public class DialogueManager : MonoBehaviour
     public GameObject dialoguePanel;
     //public Animator animator; //para implementar uma animacao para a caixa de dialogo depois
     public Queue<string> sentences;
+
     public Dialogue _dialogue;
+    public QuestParent questparent;
     public QuestManager questManager;
 
     void Start()
@@ -63,7 +65,22 @@ public class DialogueManager : MonoBehaviour
     public void EndDialogue(){
         Debug.Log("Fim do diálogo");
         dialoguePanel.SetActive(false);
-        //animator.SetBool("IsOpen", false);
         FillSentences();
+        CheckQuest();
+    }
+
+    public void CheckQuest(){
+        //pegar qual é o questobjective do questparent e ver se ta requisito
+        //se ta requisito, se nao ta completa
+        //se eh a quest ativa
+
+        if(questparent.questObjective._request && 
+        !questparent.questObjective._isCompleted && 
+        questparent.questObjective.questName == questManager.questList[0].questName){
+            Debug.Log("completinha " + questparent.questObjective.questName);
+            questManager.CompleteCurrentQuest();
+        }else{
+            Debug.Log("ainda nao completa " + questparent.questObjective.questName);
+        }
     }
 }

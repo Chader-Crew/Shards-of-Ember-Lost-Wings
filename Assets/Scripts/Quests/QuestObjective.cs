@@ -2,15 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class QuestObjective : MonoBehaviour
+public abstract class QuestObjective : QuestData
 {
-    public QuestManager questManager;
-
-    private void OnTriggerEnter(Collider other)
-    {
-        if (other.CompareTag("Player"))
-        {
-            questManager.CompleteCurrentQuest();
-        }
-    }
+    public abstract void Objective();
 }

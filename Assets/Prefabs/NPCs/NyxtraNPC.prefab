@@ -429,7 +429,8 @@ GameObject:
   - component: {fileID: 4148066605071414124}
   - component: {fileID: 4376371409211145046}
   - component: {fileID: 3260080038452530461}
-  - component: {fileID: 6080504319218202023}
+  - component: {fileID: 1343468449407897508}
+  - component: {fileID: 856093716294301402}
   m_Layer: 0
   m_Name: NyxtraNPC
   m_TagString: Untagged
@@ -445,7 +446,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1131558217679178287}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0.99278605, z: -0, w: 0.11989951}
+  m_LocalRotation: {x: 0, y: -0.99278563, z: 0, w: 0.11990286}
   m_LocalPosition: {x: -52.676308, y: 9.067122, z: 54.093964}
   m_LocalScale: {x: 1.1, y: 1.1, z: 1.1}
   m_ConstrainProportionsScale: 1
@@ -502,7 +503,7 @@ SphereCollider:
   serializedVersion: 3
   m_Radius: 1.1746958
   m_Center: {x: 0, y: 0.67469597, z: 0}
---- !u!114 &6080504319218202023
+--- !u!114 &1343468449407897508
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -511,11 +512,34 @@ MonoBehaviour:
   m_GameObject: {fileID: 1131558217679178287}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9119c86e335c3494f961e84c0c3a5039, type: 3}
+  m_Script: {fileID: 11500000, guid: a7a74662a26fd6c4dbcd7be670b67668, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  canvasF: {fileID: 4491358132952712798}
-  canvasTutorial: {fileID: 0}
+  nameText: {fileID: 0}
+  dialogueText: {fileID: 0}
+  dialoguePanel: {fileID: 0}
+  _dialogue:
+    name: Nyxtra
+    sentences:
+    - I want you to cry
+    - Cry for me
+  questManager: {fileID: 0}
+--- !u!114 &856093716294301402
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1131558217679178287}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4ba90095e72b56a45a1bbc639d9d2ca9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  npcItem: {fileID: 11400000, guid: 05c28ba4753f1174b9acb0cf75dcd65a, type: 2}
+  buttonCanva: {fileID: 4491358132952712798}
+  chestAudio: {fileID: 0}
+  dialogueManager: {fileID: 1343468449407897508}
 --- !u!1 &1155208910232498391
 GameObject:
   m_ObjectHideFlags: 0
