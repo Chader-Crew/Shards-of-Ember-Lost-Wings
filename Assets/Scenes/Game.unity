@@ -2646,6 +2646,11 @@ PrefabInstance:
       propertyPath: questManager
       value: 
       objectReference: {fileID: 1583477141}
+    - target: {fileID: 1102998421462802733, guid: 16057b68cb8f9f747a05b11654470e05,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1112478813845655034, guid: 16057b68cb8f9f747a05b11654470e05,
         type: 3}
       propertyPath: m_AnchorMax.y
@@ -2710,6 +2715,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_AnchoredPosition.y
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2664650655196747708, guid: 16057b68cb8f9f747a05b11654470e05,
+        type: 3}
+      propertyPath: characterWrapLimit
+      value: 50
       objectReference: {fileID: 0}
     - target: {fileID: 3468108925921890652, guid: 16057b68cb8f9f747a05b11654470e05,
         type: 3}
