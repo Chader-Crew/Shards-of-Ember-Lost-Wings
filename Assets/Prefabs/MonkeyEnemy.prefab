@@ -847,7 +847,6 @@ MonoBehaviour:
   renderer: {fileID: 0}
   damageFlashingMaterial: {fileID: 2100000, guid: ab149d302b16e084293137ac4440abd3,
     type: 2}
-  _invul: 0
 --- !u!114 &927883762648492821
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -869,6 +868,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 483af181f4f1d494eb50a2b03d59fd92, type: 2}
   - {fileID: 11400000, guid: bd7b8fc4e83418b4ea58f1d0fde6e3c2, type: 2}
   - {fileID: 11400000, guid: fe7faa9482881864195d43f2c74b98ac, type: 2}
+  protectedAttackStates: []
   cycleAttackTimer: 0
   timeInState: 0
   waypoints: []
@@ -891,12 +891,13 @@ MonoBehaviour:
   stateMachine: {fileID: 927883762648492821}
   minDropShards: 50
   maxDropShards: 76
-  itemToDrop: {fileID: 11400000, guid: 91132a52d129d4141ae6a07c6e6e901e, type: 2}
+  itemToDrop: {fileID: 11400000, guid: 9e88c6f874be9604b880055219ebd936, type: 2}
   aggroTarget: {fileID: 0}
   _doCharDetection: 1
   charDetectedState: {fileID: 0}
   charDetectionRadius: 8
   aggroTargetTag: Player
+  wanderSmooth: {x: 0, y: 0, z: 0}
 --- !u!114 &1863609584451658796
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -909,6 +910,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 19305ea86cd009e4d94ef55649c7c3cb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  shape: 0
   owner: {fileID: 8335379430622440880}
   tags:
   - Player
@@ -916,9 +918,9 @@ MonoBehaviour:
   - {fileID: 7242480544757956718}
   - {fileID: 468070009547069024}
   - {fileID: 5731302206808758535}
-  pivot: {fileID: 7242480544757956718}
   offsets: {x: 0, y: -1.5, z: 1}
   dimensions: {x: 2, y: 1.2, z: 1}
+  pivot: {fileID: 7242480544757956718}
 --- !u!114 &3454701698797118144
 MonoBehaviour:
   m_ObjectHideFlags: 0

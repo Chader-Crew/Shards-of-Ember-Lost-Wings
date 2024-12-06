@@ -16,4 +16,12 @@ MonoBehaviour:
   objective: Elimine os monstros do abismo na entrada da vila
   _isCompleted: 0
   _request: 1
-  enemies: []
+  enemies:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  enemiesParents: []
+  enemyKiller: {fileID: 0}

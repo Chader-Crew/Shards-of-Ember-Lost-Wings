@@ -485,6 +485,12 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &518837466 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8098861793162160982, guid: 16057b68cb8f9f747a05b11654470e05,
+    type: 3}
+  m_PrefabInstance: {fileID: 4101503275775364173}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &521777410
 GameObject:
   m_ObjectHideFlags: 0
@@ -554,6 +560,99 @@ Transform:
   - {fileID: 692793674}
   m_Father: {fileID: 1583477138}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1001 &611956328
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 181246330913646707, guid: 54ac54eb76f00fa4791847b7fdc9b5b4,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 48.514
+      objectReference: {fileID: 0}
+    - target: {fileID: 181246330913646707, guid: 54ac54eb76f00fa4791847b7fdc9b5b4,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 181246330913646707, guid: 54ac54eb76f00fa4791847b7fdc9b5b4,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 49.77
+      objectReference: {fileID: 0}
+    - target: {fileID: 181246330913646707, guid: 54ac54eb76f00fa4791847b7fdc9b5b4,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.76010287
+      objectReference: {fileID: 0}
+    - target: {fileID: 181246330913646707, guid: 54ac54eb76f00fa4791847b7fdc9b5b4,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 181246330913646707, guid: 54ac54eb76f00fa4791847b7fdc9b5b4,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0.64980286
+      objectReference: {fileID: 0}
+    - target: {fileID: 181246330913646707, guid: 54ac54eb76f00fa4791847b7fdc9b5b4,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 181246330913646707, guid: 54ac54eb76f00fa4791847b7fdc9b5b4,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 181246330913646707, guid: 54ac54eb76f00fa4791847b7fdc9b5b4,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: -81.053
+      objectReference: {fileID: 0}
+    - target: {fileID: 181246330913646707, guid: 54ac54eb76f00fa4791847b7fdc9b5b4,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1310667038718494087, guid: 54ac54eb76f00fa4791847b7fdc9b5b4,
+        type: 3}
+      propertyPath: letterText
+      value: "Querido Elian, Ainda que as sombras nos separem, ainda posso sentir
+        o calor de seus bra\xE7os em noites que o frio parece devorar minha alma.
+        Sei que voc\xEA est\xE1 longe, mas meu cora\xE7\xE3o insiste em esper\xE1-lo.
+        O abismo pode ser infinito, mas nossa liga\xE7\xE3o tamb\xE9m \xE9. Se algum
+        dia voc\xEA encontrar esta carta, saiba que nunca deixei de amar voc\xEA.
+        \u2014 Alleria "
+      objectReference: {fileID: 0}
+    - target: {fileID: 1310667038718494087, guid: 54ac54eb76f00fa4791847b7fdc9b5b4,
+        type: 3}
+      propertyPath: displayText
+      value: 
+      objectReference: {fileID: 4101503275775364175}
+    - target: {fileID: 1310667038718494087, guid: 54ac54eb76f00fa4791847b7fdc9b5b4,
+        type: 3}
+      propertyPath: letterImage
+      value: 
+      objectReference: {fileID: 4101503275775364174}
+    - target: {fileID: 2515906063221896510, guid: 54ac54eb76f00fa4791847b7fdc9b5b4,
+        type: 3}
+      propertyPath: m_Name
+      value: LetterObject (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 2515906063221896510, guid: 54ac54eb76f00fa4791847b7fdc9b5b4,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 54ac54eb76f00fa4791847b7fdc9b5b4, type: 3}
 --- !u!1 &692793673
 GameObject:
   m_ObjectHideFlags: 0
@@ -2000,6 +2099,98 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2d205b50c8f676149baf4e3eb8963501, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1001 &1893734573
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 181246330913646707, guid: 54ac54eb76f00fa4791847b7fdc9b5b4,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 51.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 181246330913646707, guid: 54ac54eb76f00fa4791847b7fdc9b5b4,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 181246330913646707, guid: 54ac54eb76f00fa4791847b7fdc9b5b4,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 46.8
+      objectReference: {fileID: 0}
+    - target: {fileID: 181246330913646707, guid: 54ac54eb76f00fa4791847b7fdc9b5b4,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.37651873
+      objectReference: {fileID: 0}
+    - target: {fileID: 181246330913646707, guid: 54ac54eb76f00fa4791847b7fdc9b5b4,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 181246330913646707, guid: 54ac54eb76f00fa4791847b7fdc9b5b4,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0.926409
+      objectReference: {fileID: 0}
+    - target: {fileID: 181246330913646707, guid: 54ac54eb76f00fa4791847b7fdc9b5b4,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 181246330913646707, guid: 54ac54eb76f00fa4791847b7fdc9b5b4,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 181246330913646707, guid: 54ac54eb76f00fa4791847b7fdc9b5b4,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 135.764
+      objectReference: {fileID: 0}
+    - target: {fileID: 181246330913646707, guid: 54ac54eb76f00fa4791847b7fdc9b5b4,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1310667038718494087, guid: 54ac54eb76f00fa4791847b7fdc9b5b4,
+        type: 3}
+      propertyPath: letterText
+      value: "Isandrel, Se voc\xEA ainda est\xE1 vivo, por favor, volte para casa.
+        Eu te procurei por todo o vilarejo, perguntei a todos, mas ningu\xE9m viu
+        voc\xEA desde aquela manh\xE3. Ouvi rumores sobre uma criatura vagando pelas
+        sombras... mas n\xE3o quero acreditar. Volte para mim, filho, a casa est\xE1
+        vazia sem voc\xEA. "
+      objectReference: {fileID: 0}
+    - target: {fileID: 1310667038718494087, guid: 54ac54eb76f00fa4791847b7fdc9b5b4,
+        type: 3}
+      propertyPath: displayText
+      value: 
+      objectReference: {fileID: 4101503275775364175}
+    - target: {fileID: 1310667038718494087, guid: 54ac54eb76f00fa4791847b7fdc9b5b4,
+        type: 3}
+      propertyPath: letterImage
+      value: 
+      objectReference: {fileID: 4101503275775364174}
+    - target: {fileID: 2515906063221896510, guid: 54ac54eb76f00fa4791847b7fdc9b5b4,
+        type: 3}
+      propertyPath: m_Name
+      value: LetterObject (3)
+      objectReference: {fileID: 0}
+    - target: {fileID: 2515906063221896510, guid: 54ac54eb76f00fa4791847b7fdc9b5b4,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 54ac54eb76f00fa4791847b7fdc9b5b4, type: 3}
 --- !u!1001 &1996864596
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2284,6 +2475,98 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1001 &2066231961
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 181246330913646707, guid: 54ac54eb76f00fa4791847b7fdc9b5b4,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 56.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 181246330913646707, guid: 54ac54eb76f00fa4791847b7fdc9b5b4,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.06
+      objectReference: {fileID: 0}
+    - target: {fileID: 181246330913646707, guid: 54ac54eb76f00fa4791847b7fdc9b5b4,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 45.97
+      objectReference: {fileID: 0}
+    - target: {fileID: 181246330913646707, guid: 54ac54eb76f00fa4791847b7fdc9b5b4,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.99729794
+      objectReference: {fileID: 0}
+    - target: {fileID: 181246330913646707, guid: 54ac54eb76f00fa4791847b7fdc9b5b4,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 181246330913646707, guid: 54ac54eb76f00fa4791847b7fdc9b5b4,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0.07346327
+      objectReference: {fileID: 0}
+    - target: {fileID: 181246330913646707, guid: 54ac54eb76f00fa4791847b7fdc9b5b4,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 181246330913646707, guid: 54ac54eb76f00fa4791847b7fdc9b5b4,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 181246330913646707, guid: 54ac54eb76f00fa4791847b7fdc9b5b4,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 8.426
+      objectReference: {fileID: 0}
+    - target: {fileID: 181246330913646707, guid: 54ac54eb76f00fa4791847b7fdc9b5b4,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1310667038718494087, guid: 54ac54eb76f00fa4791847b7fdc9b5b4,
+        type: 3}
+      propertyPath: letterText
+      value: "Ontem, vi uma crian\xE7a desaparecer nas sombras, levada por alguma
+        coisa. N\xE3o sei o que foi, mas todos aqui est\xE3o morrendo de fome, lentamente.
+        O p\xE2nico toma conta das vilas. A comida desaparece, assim como nossos
+        amigos e familiares. Logo seremos apenas fantasmas no escuro, esquecidos
+        pelo mundo de cima. \u2014 Khalen "
+      objectReference: {fileID: 0}
+    - target: {fileID: 1310667038718494087, guid: 54ac54eb76f00fa4791847b7fdc9b5b4,
+        type: 3}
+      propertyPath: displayText
+      value: 
+      objectReference: {fileID: 4101503275775364175}
+    - target: {fileID: 1310667038718494087, guid: 54ac54eb76f00fa4791847b7fdc9b5b4,
+        type: 3}
+      propertyPath: letterImage
+      value: 
+      objectReference: {fileID: 4101503275775364174}
+    - target: {fileID: 2515906063221896510, guid: 54ac54eb76f00fa4791847b7fdc9b5b4,
+        type: 3}
+      propertyPath: m_Name
+      value: LetterObject (4)
+      objectReference: {fileID: 0}
+    - target: {fileID: 2515906063221896510, guid: 54ac54eb76f00fa4791847b7fdc9b5b4,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 54ac54eb76f00fa4791847b7fdc9b5b4, type: 3}
 --- !u!114 &2096517870 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 523717716928642418, guid: 16057b68cb8f9f747a05b11654470e05,
@@ -2686,6 +2969,11 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
       value: 
       objectReference: {fileID: 2021950206}
+    - target: {fileID: 1592969564906180162, guid: 16057b68cb8f9f747a05b11654470e05,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -23.35791
+      objectReference: {fileID: 0}
     - target: {fileID: 1690571523231442330, guid: 16057b68cb8f9f747a05b11654470e05,
         type: 3}
       propertyPath: m_AnchorMax.y
@@ -2716,10 +3004,17 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
+<<<<<<< Updated upstream
     - target: {fileID: 2664650655196747708, guid: 16057b68cb8f9f747a05b11654470e05,
         type: 3}
       propertyPath: characterWrapLimit
       value: 50
+=======
+    - target: {fileID: 2816271004741749335, guid: 16057b68cb8f9f747a05b11654470e05,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -7.500122
+>>>>>>> Stashed changes
       objectReference: {fileID: 0}
     - target: {fileID: 3468108925921890652, guid: 16057b68cb8f9f747a05b11654470e05,
         type: 3}
@@ -2751,6 +3046,11 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4015711916829491788, guid: 16057b68cb8f9f747a05b11654470e05,
+        type: 3}
+      propertyPath: screen
+      value: 
+      objectReference: {fileID: 518837466}
     - target: {fileID: 4374602254008417110, guid: 16057b68cb8f9f747a05b11654470e05,
         type: 3}
       propertyPath: m_AnchorMax.y
@@ -3056,6 +3356,11 @@ PrefabInstance:
       propertyPath: character
       value: 
       objectReference: {fileID: 335508970260900872}
+    - target: {fileID: 8098861793162160982, guid: 16057b68cb8f9f747a05b11654470e05,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8208636141262766920, guid: 16057b68cb8f9f747a05b11654470e05,
         type: 3}
       propertyPath: m_AnchorMax.y
@@ -3151,6 +3456,24 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 16057b68cb8f9f747a05b11654470e05, type: 3}
+--- !u!1 &4101503275775364174 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8130813376996940938, guid: 16057b68cb8f9f747a05b11654470e05,
+    type: 3}
+  m_PrefabInstance: {fileID: 4101503275775364173}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &4101503275775364175 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4846284208223746288, guid: 16057b68cb8f9f747a05b11654470e05,
+    type: 3}
+  m_PrefabInstance: {fileID: 4101503275775364173}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &4485043408460792894 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4485043409896424950, guid: f020d8f38d821274f9011d9ee6cee02a,
@@ -3180,3 +3503,6 @@ SceneRoots:
   - {fileID: 1469701211}
   - {fileID: 468471181}
   - {fileID: 2144187889}
+  - {fileID: 611956328}
+  - {fileID: 1893734573}
+  - {fileID: 2066231961}
