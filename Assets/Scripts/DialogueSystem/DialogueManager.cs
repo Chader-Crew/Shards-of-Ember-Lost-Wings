@@ -60,7 +60,7 @@ public class DialogueManager : MonoBehaviour
             EndDialogue();
             return;
         }
-
+        
         string sentence = sentences.Dequeue();
         string nome = nomes.Dequeue();
         StopAllCoroutines();
@@ -89,6 +89,8 @@ public class DialogueManager : MonoBehaviour
         //se ta requisito, se nao ta completa
         //se eh a quest ativa
 
+        if (!questparent.questObjective){return;}  //cheque se o bixo tem quest pq ta dando null reference
+        
         if(questparent.questObjective._request && 
         !questparent.questObjective._isCompleted && 
         questparent.questObjective.questName == questManager.questList[0].questName){
