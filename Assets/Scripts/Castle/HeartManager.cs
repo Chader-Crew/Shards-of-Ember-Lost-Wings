@@ -4,24 +4,19 @@ using UnityEngine;
 
 public class HeartManager : MonoBehaviour
 {
-    public List<GameObject> hearts; 
+    public static HeartManager instance;
     public int heartsToDestroy = 3; 
     public GameObject door; 
-    private int destroyedHeartsCount = 0;
+    public int destroyedHeartsCount = 0;
 
-    void Start()
-    {
-        
-        door.SetActive(true);
+    public bool destroyableCrystal = false;
+
+    void Start(){
+        instance = this;
     }
-
-    
     public void HeartDestroyed()
     {
         destroyedHeartsCount++;
-
-        Debug.Log("Corações destruídos: " + destroyedHeartsCount);
-
         
         if (destroyedHeartsCount >= heartsToDestroy)
         {
@@ -32,7 +27,6 @@ public class HeartManager : MonoBehaviour
     
     private void OpenDoor()
     {
-        Debug.Log("Número necessário de corações destruído. Porta aberta!");
         door.SetActive(false); 
     }
 }

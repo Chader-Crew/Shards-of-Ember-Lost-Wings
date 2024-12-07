@@ -6,8 +6,11 @@ public class ActivateMaze : MonoBehaviour
 {
 
     public GameObject portals;
-    void Activate()
+    void OnTriggerEnter(Collider other)
     {
-        portals.SetActive(true);
+        if (other.CompareTag("Player"))
+        {
+            portals.SetActive(true);
+        }
     }
 }

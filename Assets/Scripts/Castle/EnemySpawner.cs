@@ -8,7 +8,6 @@ public class EnemySpawner : MonoBehaviour
     public GameObject[] enemies;
     public GameObject spawnEffectPrefab;
     public float particleEffectDuration = 1f;
-    public GameObject arenaExit;
     public float spawnInterval = 5f;
     public int maxEnemies = 10;
     public GameObject spawnArea;
@@ -16,7 +15,8 @@ public class EnemySpawner : MonoBehaviour
     public bool canSpawn = true;
     public int killCount = 0;
     public GameObject fire;
-    public GameObject fireWall;
+
+    
 
     void Start()
     {
@@ -44,7 +44,7 @@ public class EnemySpawner : MonoBehaviour
                 canSpawn = false;
             }
 
-            arenaExit.SetActive(true);
+  
         }
     }
 
@@ -88,9 +88,9 @@ public class EnemySpawner : MonoBehaviour
     {
         killCount++;
         if(killCount >= 5){
+            HeartManager.instance.destroyableCrystal = true;
             StopSpawning();
             Destroy(fire);
-            Destroy(fireWall);
         }
     }
 }
