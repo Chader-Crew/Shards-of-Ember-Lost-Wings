@@ -12,9 +12,12 @@ GameObject:
   - component: {fileID: 1034386639067497200}
   - component: {fileID: 2602510388684554140}
   - component: {fileID: -8780298359082459925}
+  - component: {fileID: 1344716178327700127}
+  - component: {fileID: 2448453430537970741}
+  - component: {fileID: 7906126347342015627}
   m_Layer: 0
   m_Name: Decoy
-  m_TagString: Untagged
+  m_TagString: Decoy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4845,6 +4848,63 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 484084d576fb24247af9a0d224b88e64, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!136 &1344716178327700127
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2374984070092924806}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.6
+  m_Height: 2.5
+  m_Direction: 2
+  m_Center: {x: 0, y: 0, z: 1}
+--- !u!114 &2448453430537970741
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2374984070092924806}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 04750555ff2348747846cf298aa532a7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hp: 20
+  atk: 0
+  def: 0
+  spd: 0
+  maxHp: 0
+--- !u!114 &7906126347342015627
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2374984070092924806}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7217f4c36a8eb0c419f6ec37d23737b5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  stats: {fileID: 2448453430537970741}
+  col: {fileID: 1344716178327700127}
+  renderer: {fileID: 1715295573816434661}
+  damageFlashingMaterial: {fileID: 2100000, guid: ab149d302b16e084293137ac4440abd3,
+    type: 2}
 --- !u!1001 &3485028009001825
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4941,6 +5001,12 @@ PrefabInstance:
 --- !u!4 &542359262504887434 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 14fdb030a037d7a479325eee91b974f1,
+    type: 3}
+  m_PrefabInstance: {fileID: 3485028009001825}
+  m_PrefabAsset: {fileID: 0}
+--- !u!23 &1715295573816434661 stripped
+MeshRenderer:
+  m_CorrespondingSourceObject: {fileID: -7511558181221131132, guid: 14fdb030a037d7a479325eee91b974f1,
     type: 3}
   m_PrefabInstance: {fileID: 3485028009001825}
   m_PrefabAsset: {fileID: 0}

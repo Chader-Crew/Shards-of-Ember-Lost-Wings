@@ -13,6 +13,7 @@ public class NPCController : MonoBehaviour
     [SerializeField] public NavMeshAgent navAgent;
     [SerializeField] public Animator animator;
     [SerializeField] private Character character;
+    public Character Character { get => character; }
     [SerializeField] private AIStateMachine stateMachine;
     [SerializeField] private int minDropShards;
     [SerializeField] private int maxDropShards;
@@ -104,6 +105,13 @@ public class NPCController : MonoBehaviour
             }
         }
     }
+
+    public void SetAggroTarget(string tag)
+    {
+        aggroTargetTag = tag;
+        aggroTarget = null;
+        DetectCharacters();
+    }
     private void OnDrawGizmosSelected()
     {
         Gizmos.color = Color.cyan;
@@ -125,6 +133,8 @@ public class NPCController : MonoBehaviour
 
     public float DistanceToTarget()
     {
+        if (!aggroTarget) return 0;
+        else
         return Vector3.Distance(transform.position, aggroTarget.transform.position);
     }
 

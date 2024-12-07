@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 using UnityEngine.AI;
 
@@ -9,22 +10,28 @@ public class DecoyBehaviour : MonoBehaviour
 
     private float radius = 7; //talvez esteja grande? gosto da ideia da area ser grande - ana
     private string enemyTag = "Enemy";
-    private Collider[] enimiesInRange;
+    private List<Collider> enemiesInRange;
 
     private void Start(){
-        enimiesInRange = Physics.OverlapSphere(transform.position, radius);
-    }
-
-    void FixedUpdate(){
-        foreach(Collider enemy in enimiesInRange){
-            if(enemy.CompareTag(enemyTag)){
-                //set destination decoy
+        enemiesInRange = new List<Collider>();
+        foreach (Collider enemy in Physics.OverlapSphere(transform.position, radius))
+        {
+            Debug.Log(enemy);
+            if (enemy.CompareTag("Enemy"))
+            {
+                enemiesInRange.Add(enemy);
+                NPCController enemyController = enemy.GetComponent<NPCController>();
+                enemyController.SetAggroTarget("Decoy");
+                enemyController.Character.OnDiedEvent += () => { enemiesInRange.Remove(enemy); };
             }
         }
     }
 
     void OnDisable(){
-        //set destination player
+        foreach (Collider enemy in enemiesInRange)
+        {
+            enemy.GetComponent<NPCController>().SetAggroTarget("Player");
+        }
     }
 
     void OnDrawGizmosSelected()

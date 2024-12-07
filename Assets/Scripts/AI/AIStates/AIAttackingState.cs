@@ -31,7 +31,7 @@ public class AIAttackingState : AIStateBase
     {
         base.StateUpdate(stateMachine);
         
-        if(adjustRotTimer > 0)
+        if(adjustRotTimer > 0 && stateMachine.controller.aggroTarget != null)
         {
             stateMachine.transform.rotation = Quaternion.RotateTowards(
                     stateMachine.transform.rotation,
