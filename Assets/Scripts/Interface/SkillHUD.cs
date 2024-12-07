@@ -48,10 +48,12 @@ public class SkillHUD : MonoBehaviour
             //atribui o evento de cast e habilita os graficos
             PlayerController.Instance.OnCastEvent += StartSkillCooldown;    
             transform.GetChild(0).gameObject.SetActive(true);
+            transform.GetChild(1).gameObject.SetActive(true);
         }else
         {
             PlayerController.Instance.OnCastEvent -= StartSkillCooldown;    
             transform.GetChild(0).gameObject.SetActive(false);
+            transform.GetChild(1).gameObject.SetActive(false);
         }
     }
 
@@ -70,10 +72,10 @@ public class SkillHUD : MonoBehaviour
 
         //rotaciona a seta de acordo com a direcao
         switch(i){
-        case 0: selectArrow.transform.rotation = Quaternion.Euler(0,0,180); break;
-        case 1: selectArrow.transform.rotation = Quaternion.Euler(0,0,-90); break;
-        case 2: selectArrow.transform.rotation = Quaternion.Euler(0,0,90); break;
-        case 3: selectArrow.transform.rotation = Quaternion.Euler(0,0,0); break;
+        //case 0: selectArrow.transform.rotation = Quaternion.Euler(0,0,180); break;
+        case 0: selectArrow.transform.rotation = Quaternion.Euler(0,0,-90); break;
+        case 1: selectArrow.transform.rotation = Quaternion.Euler(0,0,90); break;
+        //case 3: selectArrow.transform.rotation = Quaternion.Euler(0,0,0); break;
         }
         selectBuffer = i;
     }

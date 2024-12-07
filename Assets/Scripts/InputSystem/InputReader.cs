@@ -139,25 +139,25 @@ public class InputReader : ScriptableObject, PlayerInput.IPlayerActions, PlayerI
     {
         if(context.performed)
         {        
-            switch(MathF.Ceiling((Vector2.SignedAngle(Vector2.up, context.ReadValue<Vector2>())+ 180)/90 +.5f))
+            switch(MathF.Ceiling((Vector2.SignedAngle(Vector2.up, context.ReadValue<Vector2>())+ 180)/180 +.5f))
             {
                 case 1:
-                case 5:
-                    OnSkillSelectEvent(3);
+                case 3:
+                    OnSkillSelectEvent(1);
                     Debug.Log("Skill Change Call (4)");
                     break;
                 case 2:
-                    OnSkillSelectEvent(2);
+                    OnSkillSelectEvent(0);
                     Debug.Log("Skill Change Call (3)");
                     break;
-                case 3:
-                    OnSkillSelectEvent(0);
-                    Debug.Log("Skill Change Call (1)");
-                    break;
-                case 4:
-                    OnSkillSelectEvent(1);
-                    Debug.Log("Skill Change Call (2)");
-                    break;
+                //case 3:
+                //    OnSkillSelectEvent(0);
+                //    Debug.Log("Skill Change Call (1)");
+                //    break;
+                //case 4:
+                //    OnSkillSelectEvent(1);
+                //    Debug.Log("Skill Change Call (2)");
+                //    break;
 
                 default:
                     break;
