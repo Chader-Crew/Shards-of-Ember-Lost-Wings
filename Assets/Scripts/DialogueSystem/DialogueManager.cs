@@ -22,7 +22,6 @@ public class DialogueManager : MonoBehaviour
         sentences = new Queue<string>();
         nomes = new Queue<string>();
         FillSentences();
-        StartDialogue();
     }
 
     public void FillSentences(){
