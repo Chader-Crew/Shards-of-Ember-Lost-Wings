@@ -18,6 +18,7 @@ public class PlayerController : Singleton<PlayerController>
     public Animator animator;
     public AudioSource audioSource;
     [SerializeField] Image stateIMG;
+    [SerializeField] Image stateIMGBG;
     [SerializeField] GameObject skilltree;
     [SerializeField] TMP_Text spText;
     private AtakaStateBehaviour atakaState;
@@ -192,7 +193,8 @@ public class PlayerController : Singleton<PlayerController>
         }
         
         state.Enter();
-        //stateIMG.sprite = state.stateIMG;       //troca de interface, mesh e trigger de vfx
+        stateIMG.sprite = state.stateIMG;       //troca de interface, mesh e trigger de vfx
+        stateIMGBG.color = state.particleColor;
         //bodyMesh.sharedMesh = state.BodyMesh;
         //armorMesh.sharedMesh = state.ArmorMesh;
 
