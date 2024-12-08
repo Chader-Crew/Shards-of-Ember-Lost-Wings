@@ -9,10 +9,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: adf54e9945a7e4840a7f43a0e15c43ed, type: 3}
-  m_Name: addmaxHP
+  m_Script: {fileID: 11500000, guid: 87603fe4112c8cf4eb0b34b6b574818e, type: 3}
+  m_Name: PlantStatNode 2
   m_EditorClassIdentifier: 
   canCast: 0
   cooldown: 0
   _onCooldown: 0
-  value: 10
+  maxHP: 0
+  atk: 0
+  def: 0
