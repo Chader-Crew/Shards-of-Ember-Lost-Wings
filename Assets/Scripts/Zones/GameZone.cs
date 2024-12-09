@@ -6,7 +6,7 @@ using UnityEngine;
 // Zonas de jogo conectadas por pontos de warp.
 public class GameZone : MonoBehaviour
 {
-    private static GameZone currentZone;
+    public static GameZone currentZone;
 
     [SerializeField] private Transform[] warpDestinations;
 

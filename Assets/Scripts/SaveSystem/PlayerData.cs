@@ -12,5 +12,6 @@ public struct PlayerData
     public int atk, def, spd, maxHp;
     public string[] unlockedBonfires;
     public string activeTree;
+    public string activeZone;
     public int[] unlockedSkills;
 }

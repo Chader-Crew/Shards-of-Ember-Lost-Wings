@@ -15,6 +15,7 @@ public static class SaveGame
         //atribui o estado elemental atual
         playerData.activeTree = PlayerController.Instance.state.nameState;
 
+        playerData.activeZone = GameObject.FindObjectOfType<GameZone>().name;
         
         //atribui as listas de skills desbloqueadas
         //lista temporaria dos botoes da skilltree pra achar todas as skills
@@ -52,11 +53,14 @@ public static class SaveGame
             Debug.LogError("TENTOU LOADAR EM UMA CENA QUE NAO E A GAME");
             return;
         }
-
+        
         //carrega o arquivo para o struct
         string jsonString = File.ReadAllText(Application.dataPath + "/Save/saveFile.json");
         PlayerData loadedData = JsonUtility.FromJson<PlayerData>(jsonString);
 
+        GameObject newZone = (GameObject)GameObject.Instantiate(Resources.Load(loadedData.activeZone));
+        GameZone.currentZone = newZone.GetComponent<GameZone>();
+        
         //load do estado elemental
         //muda de estado pra frente e para quando acha o certo
         for (int i = 0; i < 3; i++)
