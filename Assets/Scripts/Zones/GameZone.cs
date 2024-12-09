@@ -31,6 +31,7 @@ public class GameZone : MonoBehaviour
 
         Destroy(currentZone.gameObject);
         currentZone = Instantiate(zone, Vector3.zero, Quaternion.identity);
+        currentZone.name = zone.name;
         SaveGame.Save();
     }
 }
