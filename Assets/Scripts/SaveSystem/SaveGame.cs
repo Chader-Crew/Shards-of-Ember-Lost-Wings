@@ -91,4 +91,17 @@ public static class SaveGame
 
         SceneManager.sceneLoaded -= Load;
     }
+
+    public static void LoadBlank(Scene scene, LoadSceneMode mode)
+    {
+        List<currentSkill> tempList = new List<currentSkill>();
+        tempList = GameObject.FindObjectsByType<currentSkill>(FindObjectsInactive.Include, FindObjectsSortMode.None).ToList();
+
+        foreach (currentSkill skillButton in tempList)
+        {
+            skillButton.Skill.canCast = false;
+            skillButton.Skill._onCooldown = false;
+        }
+    }
+    
 }

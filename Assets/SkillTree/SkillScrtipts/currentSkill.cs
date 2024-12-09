@@ -113,6 +113,7 @@ public class currentSkill : MonoBehaviour
     public void LoadSkill()
     {
         skill.canCast = true;
+        skill._onCooldown = false;
         skill.Comprado(PlayerController.Instance.character.Stats);
         BtnProp.enabled = false;
         UpdateStatus();
