@@ -306,6 +306,7 @@ GameObject:
   - component: {fileID: 2685762835342634863}
   - component: {fileID: 9031630011682059662}
   - component: {fileID: 2213405712965510624}
+  - component: {fileID: 8982711090946953154}
   m_Layer: 0
   m_Name: "On\xE7aCerta"
   m_TagString: Untagged
@@ -502,6 +503,20 @@ MonoBehaviour:
   offsets: {x: 0, y: 0.2, z: -0.5}
   dimensions: {x: 1, y: 2, z: 1}
   pivot: {fileID: 5197585687809961548}
+--- !u!114 &8982711090946953154
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1847568946058261341}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 245ec6092400b4f478072dc67bb058d4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  questManager: {fileID: 0}
+  questData: {fileID: 11400000, guid: 5ee0b867eaaf2da458d165f506d7b3d9, type: 2}
 --- !u!1 &1874070818753712052
 GameObject:
   m_ObjectHideFlags: 0

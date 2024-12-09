@@ -16,6 +16,7 @@ public class EnemySpawner1 : MonoBehaviour
     public int killCount = 0;
     public GameObject fire;
     public GameObject portal;
+    public QuestManager questManager;
 
     public int enemiesToKill = 5;
 
@@ -94,6 +95,7 @@ public class EnemySpawner1 : MonoBehaviour
             StopSpawning();
             Destroy(fire);
             Destroy(portal);
+            questManager.CompleteCurrentQuest();
         }
     }
 }
