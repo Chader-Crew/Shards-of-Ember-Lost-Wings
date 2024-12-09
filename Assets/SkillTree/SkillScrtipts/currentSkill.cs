@@ -56,22 +56,23 @@ public class currentSkill : MonoBehaviour
 
     private void UpdateStatus()
     {
-        if(skill.canCast == true)
+        if(skill.canCast)
         {
-           ImgProp.enabled=false;
+           ImgProp.color = Color.gray;
            BtnProp.enabled=false;
+           blockIMG.SetActive(false);
         }
-        else if (prev == null || !prev.ImgProp.enabled)
+        else if (prev == null || prev.Skill.canCast)
         {
-            ImgProp.enabled = true;
             ImgProp.color = Color.white;
             BtnProp.enabled = true;
+            blockIMG.SetActive(false);
         }
         else
         {
-            ImgProp.enabled = true;
             ImgProp.color = Color.gray;
             BtnProp.enabled=false;
+            blockIMG.SetActive(true);
         }
 
         foreach (currentSkill next in nexts)
@@ -89,11 +90,9 @@ public class currentSkill : MonoBehaviour
                 
                 skill.canCast = true;
                 skill.Comprado(PlayerController.Instance.character.Stats);
-                ImgProp.enabled=false;
                 BtnProp.enabled=false;
                 //PlayerController.Instance.SkillShards -= bigCost;
                 PlayerController.Instance.SpendShards(smallCost);
-                blockIMG.SetActive(false);
 
                 
                 UpdateStatus();
@@ -115,7 +114,6 @@ public class currentSkill : MonoBehaviour
     {
         skill.canCast = true;
         skill.Comprado(PlayerController.Instance.character.Stats);
-        ImgProp.enabled = false;
         BtnProp.enabled = false;
         UpdateStatus();
     }
