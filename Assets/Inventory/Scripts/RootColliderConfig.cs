@@ -107,6 +107,10 @@ public class RootColliderConfig : MonoBehaviour
             currentNPC.dialogueManager.StartDialogue();
             //ativa painel de dialogo
             //starta o dialogo
+
+            if(currentNPC.objReference != null){
+                currentNPC.objReference.SetActive(true);
+            }
         }
         if(_bonfire){
             bonfire.BonfireActive();

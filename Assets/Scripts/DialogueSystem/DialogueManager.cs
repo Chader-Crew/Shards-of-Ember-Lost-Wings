@@ -15,7 +15,7 @@ public class DialogueManager : MonoBehaviour
     public Queue<string> nomes;
     public Dialogue _dialogue;
 
-    [SerializeField] private bool firstDialogue = true;
+    public bool firstDialogue = true; //setar como true quando quiser que complete a quest
 
     public QuestManager questManager;
 
@@ -77,7 +77,7 @@ public class DialogueManager : MonoBehaviour
         dialoguePanel.SetActive(false);
         if(firstDialogue){
             questManager.CompleteCurrentQuest();
-            firstDialogue = !firstDialogue; //desativa o first dialogue, funciona apenas para a quest do solas
+            firstDialogue = !firstDialogue;
         }
         //animator.SetBool("IsOpen", false);
         FillSentences();
