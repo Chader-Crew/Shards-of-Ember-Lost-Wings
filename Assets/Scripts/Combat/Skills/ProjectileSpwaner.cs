@@ -12,19 +12,16 @@ public class ProjectileSpwaner : SkillBase
 
     public override void Activate(SkillData context)
     {
-        if (canCast)
-        {
-            Transform ownerTransf = context.owner.transform;
-            Projetil projetil = Instantiate
-                    (projectile, 
-                            ownerTransf.position + 
-                            ownerTransf.right * offset.x +
-                            ownerTransf.forward * offset.z +
-                            ownerTransf.up * offset.y,
-                    context.owner.transform.rotation
-                    ).GetComponent<Projetil>();
-            projetil.skillDT=context;
-        }
+	    Transform ownerTransf = context.owner.transform;
+	    Projetil projetil = Instantiate
+	    (projectile,
+		    ownerTransf.position +
+		    ownerTransf.right * offset.x +
+		    ownerTransf.forward * offset.z +
+		    ownerTransf.up * offset.y,
+		    context.owner.transform.rotation
+	    ).GetComponent<Projetil>();
+	    projetil.skillDT = context;
     }
 
     public override void Comprado(CharStats player)
