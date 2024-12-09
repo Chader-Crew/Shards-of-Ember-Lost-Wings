@@ -5,7 +5,7 @@ using UnityEngine;
 public class OnKillArtefato : MonoBehaviour
 {
     public QuestManager questManager;
-    public DialogueManager dialogueManager; //manager da nyxtra de dialogo
+    public DialogueManager dialogueManager, dialogueManager2; //manager da nyxtra de dialogo
     [SerializeField] private QuestData questData;
 
     public void OnDestroy()
@@ -13,6 +13,9 @@ public class OnKillArtefato : MonoBehaviour
         if (questData != questManager.GetCurrentQuest()) return;
 
         questManager.CompleteCurrentQuest();
+
+        dialogueManager.enabled = false; 
+        dialogueManager2.enabled = true; 
 
     }
 }
