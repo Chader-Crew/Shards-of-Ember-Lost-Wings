@@ -1181,6 +1181,7 @@ GameObject:
   - component: {fileID: 3855796234528554732}
   - component: {fileID: 4276956783210436922}
   - component: {fileID: 4845196304736957847}
+  - component: {fileID: 6641651159496348286}
   m_Layer: 0
   m_Name: Boss
   m_TagString: Untagged
@@ -1282,7 +1283,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 04750555ff2348747846cf298aa532a7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hp: 50
+  hp: 250
   atk: 1
   def: 1
   spd: 1
@@ -1375,6 +1376,19 @@ MonoBehaviour:
   offsets: {x: 0, y: 0, z: 0}
   dimensions: {x: 0, y: 0, z: 0}
   pivot: {fileID: 3221428559781587591}
+--- !u!114 &6641651159496348286
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7645254607634411323}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2a28c119cdc662e489454ee8323d16d6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  winScreen: {fileID: 0}
 --- !u!1 &7947909934506779348
 GameObject:
   m_ObjectHideFlags: 0

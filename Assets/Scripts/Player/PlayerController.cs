@@ -20,7 +20,6 @@ public class PlayerController : Singleton<PlayerController>
     [SerializeField] Image stateIMG;
     [SerializeField] Image stateIMGBG;
     [SerializeField] GameObject skilltree;
-    [SerializeField] TMP_Text spText;
     private AtakaStateBehaviour atakaState;
     public float dashSpeed;
     public float dashTime;
@@ -40,6 +39,7 @@ public class PlayerController : Singleton<PlayerController>
         private set => _statShards = value;
     }
     [SerializeField] ShardsGotPopup shardPopupText;
+    [SerializeField] private TMP_Text shardsTreeText;
     public Action<SkillBase> OnCastEvent;   
     //[SerializeField] private SkinnedMeshRenderer armorMesh;
     //[SerializeField] private SkinnedMeshRenderer bodyMesh;
@@ -79,8 +79,6 @@ public class PlayerController : Singleton<PlayerController>
 
     void Start()
     {
-        //spText.text="Skillpoints "+skillShards;
-        SkillShards = 4;
         GainShards(1000);
         ChangeState(1);
     }
@@ -207,11 +205,13 @@ public class PlayerController : Singleton<PlayerController>
     public void GainShards(int ammount)
     {
         StatShards += ammount;
-        //shardPopupText.Popup(ammount);
+        shardPopupText.Popup(ammount);
+        shardsTreeText.text = _statShards.ToString();
     }
     public void SpendShards(int ammount)
     {
         StatShards -= ammount;
+        shardsTreeText.text = _statShards.ToString();
     }
 
     //coolDown, limita o tempo de uso do Dash
