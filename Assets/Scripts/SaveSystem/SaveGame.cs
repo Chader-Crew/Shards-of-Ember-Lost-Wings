@@ -16,6 +16,7 @@ public static class SaveGame
         playerData.activeTree = PlayerController.Instance.state.nameState;
 
         playerData.activeZone = GameObject.FindObjectOfType<GameZone>().name;
+        playerData.activeZone.Replace("(Clone)", "");
         
         //atribui as listas de skills desbloqueadas
         //lista temporaria dos botoes da skilltree pra achar todas as skills
