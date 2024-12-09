@@ -34,7 +34,7 @@ public class EnemySpawner1 : MonoBehaviour
             {
                 killCount = 0;
                 spawnArea.SetActive(true);
-                    for (int i = 0; i <3; i++)
+                    for (int i = 0; i <2; i++)
                     {
                         Vector3 spawnPosition = GetRandomPositionInArea();
                         GameObject enemyPrefab = enemies[Random.Range(0, enemies.Length)];
