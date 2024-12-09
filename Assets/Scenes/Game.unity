@@ -672,7 +672,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 787bd6918ec839d479e11c5beb330345, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  questObjective: {fileID: 11400000, guid: 02f38e2a1bfa5c94484325018477b9b2, type: 2}
 --- !u!1 &721421417 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 9031753165848721221, guid: 16057b68cb8f9f747a05b11654470e05,
@@ -2674,6 +2673,26 @@ PrefabInstance:
       propertyPath: dialoguePanel
       value: 
       objectReference: {fileID: 1248242374}
+    - target: {fileID: 5876685055195147422, guid: b9a3fb0a2168d7e46af7f50b0abd0f54,
+        type: 3}
+      propertyPath: _dialogue.nomes.Array.data[0]
+      value: Solas
+      objectReference: {fileID: 0}
+    - target: {fileID: 5876685055195147422, guid: b9a3fb0a2168d7e46af7f50b0abd0f54,
+        type: 3}
+      propertyPath: _dialogue.nomes.Array.data[1]
+      value: a
+      objectReference: {fileID: 0}
+    - target: {fileID: 5876685055195147422, guid: b9a3fb0a2168d7e46af7f50b0abd0f54,
+        type: 3}
+      propertyPath: _dialogue.nomes.Array.data[2]
+      value: s
+      objectReference: {fileID: 0}
+    - target: {fileID: 5876685055195147422, guid: b9a3fb0a2168d7e46af7f50b0abd0f54,
+        type: 3}
+      propertyPath: _dialogue.nomes.Array.data[3]
+      value: d
+      objectReference: {fileID: 0}
     - target: {fileID: 6871777811668005829, guid: b9a3fb0a2168d7e46af7f50b0abd0f54,
         type: 3}
       propertyPath: m_AnchorMax.x
@@ -2740,6 +2759,11 @@ PrefabInstance:
     - target: {fileID: 1690571523231442330, guid: 16057b68cb8f9f747a05b11654470e05,
         type: 3}
       propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2191260697900960556, guid: 16057b68cb8f9f747a05b11654470e05,
+        type: 3}
+      propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3468108925921890652, guid: 16057b68cb8f9f747a05b11654470e05,
