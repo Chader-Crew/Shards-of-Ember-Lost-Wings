@@ -105,6 +105,75 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!1 &178568157400420999
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1439336323517072576}
+  - component: {fileID: 2432209046794171133}
+  - component: {fileID: 6637725383342773435}
+  m_Layer: 0
+  m_Name: CasteloWarp
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1439336323517072576
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 178568157400420999}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: 0.14555971, z: -0, w: 0.9893495}
+  m_LocalPosition: {x: 36.84, y: 0, z: 84.65}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 2036233932281932860}
+  m_Father: {fileID: 5464568258658140871}
+  m_LocalEulerAnglesHint: {x: 0, y: 16.739, z: 0}
+--- !u!65 &2432209046794171133
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 178568157400420999}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 14.301232, y: 4.5494204, z: 24.051077}
+  m_Center: {x: -6.6506143, y: 1.7747102, z: 2.574316}
+--- !u!114 &6637725383342773435
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 178568157400420999}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1c34c9b77ca456440813c3608c7e9523, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  zone: {fileID: 7970459934110571364, guid: a2dda77402afaa54bbe607bf926ffb96, type: 3}
+  destinationIndex: 0
 --- !u!1 &363462021127405439
 GameObject:
   m_ObjectHideFlags: 0
@@ -896,6 +965,75 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!1 &1829855155408823178
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2145516007198709212}
+  - component: {fileID: 5924709236674163031}
+  - component: {fileID: 2856244160089656179}
+  m_Layer: 0
+  m_Name: TorreWarp
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2145516007198709212
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1829855155408823178}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: 0.8912982, z: -0, w: 0.45341784}
+  m_LocalPosition: {x: 88.5, y: 0, z: 85}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 1955870935462907972}
+  m_Father: {fileID: 5464568258658140871}
+  m_LocalEulerAnglesHint: {x: 0, y: 126.074, z: 0}
+--- !u!65 &5924709236674163031
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1829855155408823178}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 14.301232, y: 4.5494204, z: 24.051077}
+  m_Center: {x: -6.6506143, y: 1.7747102, z: 2.574316}
+--- !u!114 &2856244160089656179
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1829855155408823178}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1c34c9b77ca456440813c3608c7e9523, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  zone: {fileID: 7970459934110571364, guid: a2dda77402afaa54bbe607bf926ffb96, type: 3}
+  destinationIndex: 0
 --- !u!1 &2430699999708925436
 GameObject:
   m_ObjectHideFlags: 0
@@ -1399,6 +1537,37 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 0.022030044, y: 0.0029853384, z: 0.013911479}
   m_Center: {x: -0.0004283049, y: -7.093455e-10, z: 0.0057385983}
+--- !u!1 &3286618808620178505
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1955870935462907972}
+  m_Layer: 0
+  m_Name: From_Torre
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1955870935462907972
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3286618808620178505}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: 0.77926147, z: -0, w: 0.62669903}
+  m_LocalPosition: {x: 4.3, y: 0, z: -0.63}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 2145516007198709212}
+  m_LocalEulerAnglesHint: {x: 0, y: 102.386, z: 0}
 --- !u!1 &3428637978613205271
 GameObject:
   m_ObjectHideFlags: 0
@@ -3808,6 +3977,37 @@ TerrainCollider:
   serializedVersion: 2
   m_TerrainData: {fileID: 15600000, guid: b18643f776fe80740aa103282f09fa78, type: 2}
   m_EnableTreeColliders: 1
+--- !u!1 &8026503788701796570
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2036233932281932860}
+  m_Layer: 0
+  m_Name: From_CastleLevel
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2036233932281932860
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8026503788701796570}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: 0.77926147, z: -0, w: 0.62669903}
+  m_LocalPosition: {x: 3.66, y: 0, z: 3.22}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1439336323517072576}
+  m_LocalEulerAnglesHint: {x: 0, y: 102.386, z: 0}
 --- !u!1 &8318055013670431301
 GameObject:
   m_ObjectHideFlags: 0
@@ -4251,6 +4451,8 @@ Transform:
   - {fileID: 1855340039630889191}
   - {fileID: 8907966687526042924}
   - {fileID: 3320968179148408992}
+  - {fileID: 1439336323517072576}
+  - {fileID: 2145516007198709212}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &4546198409957810616
@@ -4267,6 +4469,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   warpDestinations:
   - {fileID: 8298944068583974635}
+  - {fileID: 2036233932281932860}
 --- !u!1 &8894622558391465702
 GameObject:
   m_ObjectHideFlags: 0
@@ -12821,7 +13024,7 @@ PrefabInstance:
     - target: {fileID: 6660207937456897972, guid: f0043ffdc5572c1498e357f68082bd95,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 56.76
+      value: 59.65
       objectReference: {fileID: 0}
     - target: {fileID: 6660207937456897972, guid: f0043ffdc5572c1498e357f68082bd95,
         type: 3}
@@ -12831,7 +13034,7 @@ PrefabInstance:
     - target: {fileID: 6660207937456897972, guid: f0043ffdc5572c1498e357f68082bd95,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 17.14
+      value: 15.99
       objectReference: {fileID: 0}
     - target: {fileID: 6660207937456897972, guid: f0043ffdc5572c1498e357f68082bd95,
         type: 3}
