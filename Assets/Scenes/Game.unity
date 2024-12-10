@@ -804,98 +804,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1001 &1188152372
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    serializedVersion: 3
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 181246330913646707, guid: 54ac54eb76f00fa4791847b7fdc9b5b4,
-        type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 47.71
-      objectReference: {fileID: 0}
-    - target: {fileID: 181246330913646707, guid: 54ac54eb76f00fa4791847b7fdc9b5b4,
-        type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0.06
-      objectReference: {fileID: 0}
-    - target: {fileID: 181246330913646707, guid: 54ac54eb76f00fa4791847b7fdc9b5b4,
-        type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 54.72
-      objectReference: {fileID: 0}
-    - target: {fileID: 181246330913646707, guid: 54ac54eb76f00fa4791847b7fdc9b5b4,
-        type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 0.9082916
-      objectReference: {fileID: 0}
-    - target: {fileID: 181246330913646707, guid: 54ac54eb76f00fa4791847b7fdc9b5b4,
-        type: 3}
-      propertyPath: m_LocalRotation.x
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 181246330913646707, guid: 54ac54eb76f00fa4791847b7fdc9b5b4,
-        type: 3}
-      propertyPath: m_LocalRotation.y
-      value: -0.41833764
-      objectReference: {fileID: 0}
-    - target: {fileID: 181246330913646707, guid: 54ac54eb76f00fa4791847b7fdc9b5b4,
-        type: 3}
-      propertyPath: m_LocalRotation.z
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 181246330913646707, guid: 54ac54eb76f00fa4791847b7fdc9b5b4,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 181246330913646707, guid: 54ac54eb76f00fa4791847b7fdc9b5b4,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: -49.459
-      objectReference: {fileID: 0}
-    - target: {fileID: 181246330913646707, guid: 54ac54eb76f00fa4791847b7fdc9b5b4,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1310667038718494087, guid: 54ac54eb76f00fa4791847b7fdc9b5b4,
-        type: 3}
-      propertyPath: letterText
-      value: "N\xE3o sei quantos dias, semanas ou meses se passaram desde que fui
-        jogado aqui. Minhas mem\xF3rias est\xE3o distantes, como se pertencessem
-        a outra pessoa. \xC0s vezes, me pergunto se existe mais algu\xE9m neste abismo.
-        A solid\xE3o corroi a mente. Se algu\xE9m ler isso, por favor, encontre-me...
-        antes que eu desapare\xE7a. \u2014 Alyr "
-      objectReference: {fileID: 0}
-    - target: {fileID: 1310667038718494087, guid: 54ac54eb76f00fa4791847b7fdc9b5b4,
-        type: 3}
-      propertyPath: displayText
-      value: 
-      objectReference: {fileID: 4101503275775364175}
-    - target: {fileID: 1310667038718494087, guid: 54ac54eb76f00fa4791847b7fdc9b5b4,
-        type: 3}
-      propertyPath: letterImage
-      value: 
-      objectReference: {fileID: 4101503275775364174}
-    - target: {fileID: 2515906063221896510, guid: 54ac54eb76f00fa4791847b7fdc9b5b4,
-        type: 3}
-      propertyPath: m_Name
-      value: LetterObject (5)
-      objectReference: {fileID: 0}
-    - target: {fileID: 2515906063221896510, guid: 54ac54eb76f00fa4791847b7fdc9b5b4,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-    m_RemovedGameObjects: []
-    m_AddedGameObjects: []
-    m_AddedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 54ac54eb76f00fa4791847b7fdc9b5b4, type: 3}
 --- !u!1 &1248242374 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 2191260697900960556, guid: 16057b68cb8f9f747a05b11654470e05,
@@ -3108,6 +3016,11 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.x
       value: 79.99997
       objectReference: {fileID: 0}
+    - target: {fileID: 8059604021326016804, guid: 16057b68cb8f9f747a05b11654470e05,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -0.49993134
+      objectReference: {fileID: 0}
     - target: {fileID: 8090718316945259159, guid: 16057b68cb8f9f747a05b11654470e05,
         type: 3}
       propertyPath: m_IsActive
@@ -3319,4 +3232,3 @@ SceneRoots:
   - {fileID: 468471181}
   - {fileID: 1893734573}
   - {fileID: 2066231961}
-  - {fileID: 1188152372}
