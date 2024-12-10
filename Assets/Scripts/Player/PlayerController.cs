@@ -156,6 +156,7 @@ public class PlayerController : Singleton<PlayerController>
     {
         if(state._CanCastSkill)
         {   
+            OnCastEvent(state.ActiveSkill);
             //skill ativada por animacao (se ela existe)
             if (animator.HasState(0, Animator.StringToHash(state.ActiveSkill.name)))
             {
@@ -171,7 +172,6 @@ public class PlayerController : Singleton<PlayerController>
 
             //ativa a skill
             state.ActiveSkill.Activate(data);
-            OnCastEvent(state.ActiveSkill);
             }
         }
     }
