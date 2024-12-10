@@ -95,7 +95,7 @@ public class EnemySpawner1 : MonoBehaviour
             StopSpawning();
             Destroy(fire);
             Destroy(portal);
-            questManager.CompleteCurrentQuest();
+            QuestManager.Instance.CompleteCurrentQuest();
         }
     }
 }

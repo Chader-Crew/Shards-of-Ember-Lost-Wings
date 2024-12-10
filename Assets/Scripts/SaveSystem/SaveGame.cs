@@ -11,11 +11,12 @@ public static class SaveGame
     {
         PlayerData playerData = new PlayerData();   //inicializa o struct
         
-        
         //atribui o estado elemental atual
         playerData.activeTree = PlayerController.Instance.state.nameState;
 
         playerData.activeZone = GameObject.FindObjectOfType<GameZone>().name;
+
+        playerData._altarIsActive = QuestManager.Instance._altarIsActive?1:0;
         
         //atribui as listas de skills desbloqueadas
         //lista temporaria dos botoes da skilltree pra achar todas as skills
@@ -57,6 +58,8 @@ public static class SaveGame
         //carrega o arquivo para o struct
         string jsonString = File.ReadAllText(Application.dataPath + "/Save/saveFile.json");
         PlayerData loadedData = JsonUtility.FromJson<PlayerData>(jsonString);
+
+        QuestManager.Instance._altarIsActive = loadedData._altarIsActive == 1;
 
         GameObject newZone = (GameObject)GameObject.Instantiate(Resources.Load(loadedData.activeZone));
         GameZone.currentZone = newZone.GetComponent<GameZone>();
@@ -105,6 +108,7 @@ public static class SaveGame
         {
             skillButton.Skill.canCast = false;
             skillButton.Skill._onCooldown = false;
+            QuestManager.Instance._altarIsActive = false;
         }
     }
     

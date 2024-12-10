@@ -13,5 +13,6 @@ public struct PlayerData
     public string[] unlockedBonfires;
     public string activeTree;
     public string activeZone;
+    public int _altarIsActive;
     public int[] unlockedSkills;
 }

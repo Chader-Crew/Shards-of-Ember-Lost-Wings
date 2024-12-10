@@ -7,7 +7,7 @@ public class QuestManager : Singleton<QuestManager>
     public List<QuestData> questList; // Lista de quests
     public QuestDisplay questDisplay;      
     private int currentQuestIndex = 0; // vai ser o indice da quest atual
-
+    public bool _altarIsActive;
     public QuestData GetCurrentQuest()
     {
         return questList[currentQuestIndex];

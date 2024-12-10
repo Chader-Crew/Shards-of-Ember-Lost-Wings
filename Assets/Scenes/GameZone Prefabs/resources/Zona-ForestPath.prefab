@@ -1862,6 +1862,7 @@ GameObject:
   - component: {fileID: 8517596565204568810}
   - component: {fileID: 7703868053999443479}
   - component: {fileID: 8204535436251583753}
+  - component: {fileID: 5380495861519350918}
   m_Layer: 0
   m_Name: Altar
   m_TagString: Untagged
@@ -1939,6 +1940,18 @@ MonoBehaviour:
   portal: {fileID: 2363868196172859181}
   questManager: {fileID: 0}
   enemiesToKill: 5
+--- !u!114 &5380495861519350918
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3575372024594304442}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4512eb96cd5deb74fb29398a23b1176e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &4274533297057543008
 GameObject:
   m_ObjectHideFlags: 0
