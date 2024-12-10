@@ -79,7 +79,6 @@ public class PlayerController : Singleton<PlayerController>
 
     void Start()
     {
-        GainShards(1000);
         ChangeState(1);
     }
     

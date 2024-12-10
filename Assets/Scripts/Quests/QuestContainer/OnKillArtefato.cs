@@ -9,7 +9,7 @@ public class OnKillArtefato : MonoBehaviour
     public DialogueManager dialogueManager, dialogueManager2; //manager da nyxtra de dialogo
     //[SerializeField] private QuestData questData;
 
-    private void Start()
+    private void OnEnable()
     {
         Character character = GetComponent<Character>();
         character.OnDiedEvent += () =>

@@ -2768,6 +2768,46 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2134515313096155139, guid: 16057b68cb8f9f747a05b11654470e05,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2134515313096155139, guid: 16057b68cb8f9f747a05b11654470e05,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2134515313096155139, guid: 16057b68cb8f9f747a05b11654470e05,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 2134515313096155139, guid: 16057b68cb8f9f747a05b11654470e05,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: LoadScene
+      objectReference: {fileID: 0}
+    - target: {fileID: 2134515313096155139, guid: 16057b68cb8f9f747a05b11654470e05,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
+      value: Play
+      objectReference: {fileID: 0}
+    - target: {fileID: 2134515313096155139, guid: 16057b68cb8f9f747a05b11654470e05,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: SceneLoader, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 2134515313096155139, guid: 16057b68cb8f9f747a05b11654470e05,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
+      value: UnityEngine.AudioSource, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 2134515313096155139, guid: 16057b68cb8f9f747a05b11654470e05,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_BoolArgument
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2191260697900960556, guid: 16057b68cb8f9f747a05b11654470e05,
         type: 3}
       propertyPath: m_IsActive
@@ -2777,6 +2817,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_TagString
       value: Dialogue
+      objectReference: {fileID: 0}
+    - target: {fileID: 2248435233433179284, guid: 16057b68cb8f9f747a05b11654470e05,
+        type: 3}
+      propertyPath: m_Name
+      value: Menu
+      objectReference: {fileID: 0}
+    - target: {fileID: 2333625389205917164, guid: 16057b68cb8f9f747a05b11654470e05,
+        type: 3}
+      propertyPath: m_text
+      value: Voltar ao Menu
       objectReference: {fileID: 0}
     - target: {fileID: 3468108925921890652, guid: 16057b68cb8f9f747a05b11654470e05,
         type: 3}
@@ -3156,7 +3206,7 @@ PrefabInstance:
     - target: {fileID: 9031753165848721221, guid: 16057b68cb8f9f747a05b11654470e05,
         type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 9178186304382740001, guid: 16057b68cb8f9f747a05b11654470e05,
         type: 3}

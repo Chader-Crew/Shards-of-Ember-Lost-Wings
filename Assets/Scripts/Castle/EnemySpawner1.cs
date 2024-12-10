@@ -63,7 +63,7 @@ public class EnemySpawner1 : MonoBehaviour
 
             GameObject enemyPrefab = enemies[Random.Range(0, enemies.Length)];
 
-            Instantiate(enemyPrefab, spawnPosition, Quaternion.identity);
+            Instantiate(enemyPrefab, spawnPosition, Quaternion.identity, transform);
             
             GameObject particleEffect = Instantiate(spawnEffectPrefab, spawnPosition, Quaternion.identity);
             Destroy(particleEffect, particleEffectDuration);
