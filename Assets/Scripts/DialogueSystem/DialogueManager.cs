@@ -9,8 +9,8 @@ public class DialogueManager : MonoBehaviour
 {
     public TMP_Text nameText;
     public TMP_Text dialogueText;
-    public GameObject dialoguePanel;
-    //public Animator animator; //para implementar uma animacao para a caixa de dialogo depois
+    public toAtivo dialoguePanel;
+
     public Queue<string> sentences;
     public Queue<string> nomes;
     public Dialogue _dialogue;
@@ -21,6 +21,12 @@ public class DialogueManager : MonoBehaviour
 
     void Start()
     {
+        dialoguePanel = (toAtivo)FindObjectOfType(typeof(toAtivo), true);
+        nameText = dialoguePanel.transform.GetChild(0).GetComponent<TMP_Text>();
+        dialogueText = dialoguePanel.transform.GetChild(1).GetComponent<TMP_Text>();
+
+        //dialoguePanel.SetActive(false);
+
         sentences = new Queue<string>();
         nomes = new Queue<string>();
         FillSentences();
@@ -42,7 +48,7 @@ public class DialogueManager : MonoBehaviour
     {
 
         //animator.SetBool("IsOpen", true);
-        dialoguePanel.SetActive(true);
+        dialoguePanel.gameObject.SetActive(true);
         nameText.text = _dialogue.name;
 
         DisplayNextSentence();
@@ -74,12 +80,17 @@ public class DialogueManager : MonoBehaviour
     }
     public void EndDialogue(){
         Debug.Log("Fim do diálogo");
-        dialoguePanel.SetActive(false);
+        dialoguePanel.gameObject.SetActive(false);
         if(firstDialogue){
-            questManager.CompleteCurrentQuest();
+            QuestManager.Instance.CompleteCurrentQuest();
             firstDialogue = !firstDialogue;
         }
         //animator.SetBool("IsOpen", false);
         FillSentences();
+    }
+
+    public void OnEnable(){
+        NPCInteract npcInteract = GetComponent<NPCInteract>();
+        npcInteract.dialogueManager = this;
     }
 }

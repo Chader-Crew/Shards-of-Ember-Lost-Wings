@@ -497,26 +497,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &580866305 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 7603577064946667697, guid: b9a3fb0a2168d7e46af7f50b0abd0f54,
-    type: 3}
-  m_PrefabInstance: {fileID: 1927643245386084315}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &580866317
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 580866305}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 245ec6092400b4f478072dc67bb058d4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  questManager: {fileID: 1583477141}
-  questData: {fileID: 11400000, guid: 75907727f4d04e44bac12c59255fa01d, type: 2}
 --- !u!1 &595886213 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 4494648879699147039, guid: 16057b68cb8f9f747a05b11654470e05,
@@ -551,26 +531,6 @@ MonoBehaviour:
   dialogueManager: {fileID: 1785049039}
   dialogueManager2: {fileID: 1785049043}
   questData: {fileID: 11400000, guid: 37bf89414c85dfb4480f97e5f8453ab4, type: 2}
---- !u!1 &822511053 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 313519341284391498, guid: b9a3fb0a2168d7e46af7f50b0abd0f54,
-    type: 3}
-  m_PrefabInstance: {fileID: 1927643245386084315}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &822511065
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 822511053}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 245ec6092400b4f478072dc67bb058d4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  questManager: {fileID: 1583477141}
-  questData: {fileID: 11400000, guid: 515a15e32ee231543b20028b687ca82e, type: 2}
 --- !u!1 &912464297
 GameObject:
   m_ObjectHideFlags: 3
@@ -943,6 +903,18 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 4101503275775364173}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1248242378
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1248242374}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b897e066b3ff6074ab9403c480bae6fb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &1336582488 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 1582468276618454739, guid: 16057b68cb8f9f747a05b11654470e05,
@@ -1134,26 +1106,6 @@ Transform:
   - {fileID: 1112391902}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &1551034689 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 611272066782533006, guid: b9a3fb0a2168d7e46af7f50b0abd0f54,
-    type: 3}
-  m_PrefabInstance: {fileID: 1927643245386084315}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &1551034701
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1551034689}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 245ec6092400b4f478072dc67bb058d4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  questManager: {fileID: 1583477141}
-  questData: {fileID: 11400000, guid: 7cfcc59268bb6644491990f398bc798f, type: 2}
 --- !u!1 &1553771918
 GameObject:
   m_ObjectHideFlags: 0
@@ -1357,7 +1309,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   questList:
   - {fileID: 11400000, guid: 49aa461ddf836e14e99531c618083777, type: 2}
-  - {fileID: 11400000, guid: 7cfcc59268bb6644491990f398bc798f, type: 2}
+  - {fileID: 11400000, guid: 37bf89414c85dfb4480f97e5f8453ab4, type: 2}
   - {fileID: 11400000, guid: db105bc8fe3c0ed409a94b18a909a118, type: 2}
   - {fileID: 11400000, guid: 5ee0b867eaaf2da458d165f506d7b3d9, type: 2}
   - {fileID: 11400000, guid: 097a20056547b334b8b724a4792709d2, type: 2}
@@ -2010,7 +1962,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nameText: {fileID: 2060263199}
   dialogueText: {fileID: 1336582488}
-  dialoguePanel: {fileID: 1248242374}
+  dialoguePanel: {fileID: 1248242378}
   _dialogue:
     name: Solas
     sentences:
@@ -2018,7 +1970,7 @@ MonoBehaviour:
     nomes:
     - Solas
   firstDialogue: 1
-  questManager: {fileID: 0}
+  questManager: {fileID: 1583477141}
 --- !u!1001 &1788215752
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2728,49 +2680,7 @@ PrefabInstance:
         type: 3}
       propertyPath: dialoguePanel
       value: 
-      objectReference: {fileID: 1248242374}
-    - target: {fileID: 5876685055195147422, guid: b9a3fb0a2168d7e46af7f50b0abd0f54,
-        type: 3}
-      propertyPath: _dialogue.nomes.Array.data[0]
-      value: Solas
-      objectReference: {fileID: 0}
-    - target: {fileID: 5876685055195147422, guid: b9a3fb0a2168d7e46af7f50b0abd0f54,
-        type: 3}
-      propertyPath: _dialogue.nomes.Array.data[1]
-      value: "Pr\xEDncipe"
-      objectReference: {fileID: 0}
-    - target: {fileID: 5876685055195147422, guid: b9a3fb0a2168d7e46af7f50b0abd0f54,
-        type: 3}
-      propertyPath: _dialogue.nomes.Array.data[2]
-      value: Solas
-      objectReference: {fileID: 0}
-    - target: {fileID: 5876685055195147422, guid: b9a3fb0a2168d7e46af7f50b0abd0f54,
-        type: 3}
-      propertyPath: _dialogue.nomes.Array.data[3]
-      value: "Pr\xEDncipe"
-      objectReference: {fileID: 0}
-    - target: {fileID: 5876685055195147422, guid: b9a3fb0a2168d7e46af7f50b0abd0f54,
-        type: 3}
-      propertyPath: _dialogue.sentences.Array.data[0]
-      value: "Meu pr\xEDncipe! Senhor, vossa excel\xEAncia est\xE1 bem?"
-      objectReference: {fileID: 0}
-    - target: {fileID: 5876685055195147422, guid: b9a3fb0a2168d7e46af7f50b0abd0f54,
-        type: 3}
-      propertyPath: _dialogue.sentences.Array.data[1]
-      value: "Onde... ugh. Onde eu estou? Solas, o campe\xE3o do reino? O que faz
-        aqui?"
-      objectReference: {fileID: 0}
-    - target: {fileID: 5876685055195147422, guid: b9a3fb0a2168d7e46af7f50b0abd0f54,
-        type: 3}
-      propertyPath: _dialogue.sentences.Array.data[2]
-      value: "Aqui \xE9 o abismo meu pr\xEDncipe, a cidade. O que aconteceu? Por
-        que voc\xEA caiu do reino?"
-      objectReference: {fileID: 0}
-    - target: {fileID: 5876685055195147422, guid: b9a3fb0a2168d7e46af7f50b0abd0f54,
-        type: 3}
-      propertyPath: _dialogue.sentences.Array.data[3]
-      value: "Ugh... Isso n\xE3o \xE9 da sua conta, n\xE3o \xE9 mesmo?"
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 1248242378}
     - target: {fileID: 6871777811668005829, guid: b9a3fb0a2168d7e46af7f50b0abd0f54,
         type: 3}
       propertyPath: m_AnchorMax.x
@@ -2799,18 +2709,6 @@ PrefabInstance:
         type: 3}
       insertIndex: -1
       addedObject: {fileID: 1785049043}
-    - targetCorrespondingSourceObject: {fileID: 611272066782533006, guid: b9a3fb0a2168d7e46af7f50b0abd0f54,
-        type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1551034701}
-    - targetCorrespondingSourceObject: {fileID: 7603577064946667697, guid: b9a3fb0a2168d7e46af7f50b0abd0f54,
-        type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 580866317}
-    - targetCorrespondingSourceObject: {fileID: 313519341284391498, guid: b9a3fb0a2168d7e46af7f50b0abd0f54,
-        type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 822511065}
     - targetCorrespondingSourceObject: {fileID: 6198383894409024081, guid: b9a3fb0a2168d7e46af7f50b0abd0f54,
         type: 3}
       insertIndex: -1
@@ -2853,6 +2751,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_AnchoredPosition.y
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2191260697900960556, guid: 16057b68cb8f9f747a05b11654470e05,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2191260697900960556, guid: 16057b68cb8f9f747a05b11654470e05,
+        type: 3}
+      propertyPath: m_TagString
+      value: Dialogue
       objectReference: {fileID: 0}
     - target: {fileID: 3468108925921890652, guid: 16057b68cb8f9f747a05b11654470e05,
         type: 3}
@@ -3227,7 +3135,11 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 2191260697900960556, guid: 16057b68cb8f9f747a05b11654470e05,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1248242378}
   m_SourcePrefab: {fileID: 100100000, guid: 16057b68cb8f9f747a05b11654470e05, type: 3}
 --- !u!1 &4101503275775364174 stripped
 GameObject:

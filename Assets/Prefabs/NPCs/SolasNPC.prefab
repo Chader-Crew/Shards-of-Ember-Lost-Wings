@@ -568,6 +568,7 @@ GameObject:
   - component: {fileID: 3416718422530539799}
   - component: {fileID: 36474760291260239}
   - component: {fileID: 1226929323760642422}
+  - component: {fileID: 2912298102383102802}
   - component: {fileID: 2873891235409637510}
   m_Layer: 0
   m_Name: SolasNPC
@@ -642,6 +643,36 @@ SphereCollider:
   serializedVersion: 3
   m_Radius: 1.4689164
   m_Center: {x: -0.0000000025819746, y: 0.8879103, z: 0.43318868}
+--- !u!114 &2912298102383102802
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2153743933453370450}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a7a74662a26fd6c4dbcd7be670b67668, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  nameText: {fileID: 0}
+  dialogueText: {fileID: 0}
+  dialoguePanel: {fileID: 0}
+  _dialogue:
+    name: Solas
+    sentences:
+    - "Meu pr\xEDncipe! Senhor, vossa excel\xEAncia est\xE1 bem?"
+    - "Onde... ugh. Onde eu estou? Solas, o campe\xE3o do reino? O que faz aqui?"
+    - "Aqui \xE9 o abismo meu pr\xEDncipe, a cidade. O que aconteceu? Por que voc\xEA
+      caiu do reino?"
+    - "Ugh... Isso n\xE3o \xE9 da sua conta, n\xE3o \xE9 mesmo?"
+    nomes:
+    - Solas
+    - "Pr\xEDncipe"
+    - Solas
+    - "Pr\xEDncipe"
+  firstDialogue: 1
+  questManager: {fileID: 0}
 --- !u!114 &2873891235409637510
 MonoBehaviour:
   m_ObjectHideFlags: 0

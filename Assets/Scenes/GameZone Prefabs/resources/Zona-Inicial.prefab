@@ -43871,17 +43871,21 @@ PrefabInstance:
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 2153743933453370450, guid: 30a2de4a23c32b04eb0a96d9b11ad7bb,
         type: 3}
-      insertIndex: -1
+      insertIndex: 3
       addedObject: {fileID: 6771674068910924024}
-    - targetCorrespondingSourceObject: {fileID: 2153743933453370450, guid: 30a2de4a23c32b04eb0a96d9b11ad7bb,
-        type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 5876685055195147422}
-    - targetCorrespondingSourceObject: {fileID: 2153743933453370450, guid: 30a2de4a23c32b04eb0a96d9b11ad7bb,
-        type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 3808705708258316698}
   m_SourcePrefab: {fileID: 100100000, guid: 30a2de4a23c32b04eb0a96d9b11ad7bb, type: 3}
+--- !u!114 &5876685055195147422 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2912298102383102802, guid: 30a2de4a23c32b04eb0a96d9b11ad7bb,
+    type: 3}
+  m_PrefabInstance: {fileID: 8783323681839785932}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7207730725229044638}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a7a74662a26fd6c4dbcd7be670b67668, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &6236989706222003931 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3416718422530539799, guid: 30a2de4a23c32b04eb0a96d9b11ad7bb,
@@ -43908,50 +43912,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   npcItem: {fileID: 11400000, guid: f9931be16bdc86543abe2a19b4a51e4a, type: 2}
   buttonCanva: {fileID: 9086804444008449209}
+  objReference: {fileID: 0}
   chestAudio: {fileID: 0}
   dialogueManager: {fileID: 5876685055195147422}
---- !u!114 &5876685055195147422
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7207730725229044638}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a7a74662a26fd6c4dbcd7be670b67668, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  nameText: {fileID: 0}
-  dialogueText: {fileID: 0}
-  dialoguePanel: {fileID: 0}
-  _dialogue:
-    name: Solas
-    sentences:
-    - Baby got DRIP
-    - DRIP
-    - Brrrraaa
-    - ASA
-    nomes:
-    - 
-    - 
-    - 
-    - 
-  questparent: {fileID: 3808705708258316698}
-  questManager: {fileID: 0}
---- !u!114 &3808705708258316698
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7207730725229044638}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 787bd6918ec839d479e11c5beb330345, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  questObjective: {fileID: 11400000, guid: c687bad73322485468bff74f2e257fec, type: 2}
 --- !u!1 &9086804444008449209 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 576023306525123445, guid: 30a2de4a23c32b04eb0a96d9b11ad7bb,
