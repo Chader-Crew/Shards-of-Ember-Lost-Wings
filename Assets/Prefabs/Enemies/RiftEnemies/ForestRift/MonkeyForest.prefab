@@ -721,10 +721,9 @@ GameObject:
   - component: {fileID: 927883762648492821}
   - component: {fileID: 3136884784955652219}
   - component: {fileID: 1863609584451658796}
-  - component: {fileID: 3454701698797118144}
-  - component: {fileID: -1846220870025981154}
+  - component: {fileID: 945541120388128735}
   m_Layer: 0
-  m_Name: MonkeyRift2
+  m_Name: MonkeyForest
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -845,7 +844,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   stats: {fileID: 1012618103760896678}
   col: {fileID: 6381173126587186841}
-  renderer: {fileID: 0}
+  renderer: {fileID: 7388371471869774408}
   damageFlashingMaterial: {fileID: 2100000, guid: ab149d302b16e084293137ac4440abd3,
     type: 2}
 --- !u!114 &927883762648492821
@@ -922,25 +921,7 @@ MonoBehaviour:
   offsets: {x: 0, y: -1.5, z: 1}
   dimensions: {x: 2, y: 1.2, z: 1}
   pivot: {fileID: 7242480544757956718}
---- !u!114 &3454701698797118144
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 766243257054523321}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2950b01e89b1ffb43809d72009c0b220, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _isRepeating: 0
-  interval: 0
-  skill: {fileID: 11400000, guid: 9b06b3e3af00c36438202dc26c9776ef, type: 2}
-  character: {fileID: 8335379430622440880}
-  _isHitBoxActivated: 0
-  hitbox: {fileID: 0}
---- !u!114 &-1846220870025981154
+--- !u!114 &945541120388128735
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}

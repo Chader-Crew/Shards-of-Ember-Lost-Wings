@@ -372,10 +372,9 @@ GameObject:
   - component: {fileID: 8794841732061351590}
   - component: {fileID: 5678586043593400422}
   - component: {fileID: 8197797493940721878}
-  - component: {fileID: -8367252150249831931}
-  - component: {fileID: 8006153106742751486}
+  - component: {fileID: 3579767882633409922}
   m_Layer: 0
-  m_Name: DogRift2
+  m_Name: DogCastle
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -587,7 +586,7 @@ MonoBehaviour:
     type: 3}
   offset: {x: 0, y: 1, z: 0}
   textDuration: 1
---- !u!114 &-8367252150249831931
+--- !u!114 &3579767882633409922
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -597,18 +596,6 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 2ee29ade293918748968590e27430d98, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &8006153106742751486
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1603690898301524332}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c9513124b50e74c4985ddcd39573a8da, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &1640070924571945607
