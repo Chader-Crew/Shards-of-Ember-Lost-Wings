@@ -4,13 +4,13 @@ using UnityEngine;
 
 public class FireBreathBehaviour : MonoBehaviour
 {
-    public float damageDelay = 1f, damage = 3f, lastDamage;
+    public float damageDelay = 1f, damage = 3f, lastDamage, damagePerAtk = 1f;
     [SerializeField] private SkillData skillData;
 
 
     void Start(){
         //alocando o firebreath na posicao do player
-        GameObject player = GameObject.Find("Player");
+        Character player = PlayerController.Instance.character;
         transform.SetParent(player.transform);
         transform.position -= new Vector3 (0,1,0);
         transform.rotation = player.transform.rotation;
@@ -20,7 +20,8 @@ public class FireBreathBehaviour : MonoBehaviour
         if(collider.gameObject.CompareTag("Enemy")){
             if(Time.time - lastDamage >= damageDelay){ //dar dano de segundos em segundo if > 0
                 Character enemy = collider.gameObject.GetComponent<Character>();
-                enemy.GetHit(new SkillData().Damage(damage).Owner(PlayerController.Instance.character));
+                float totalDamage = damage + damagePerAtk * PlayerController.Instance.character.Stats.atk; 
+                enemy.GetHit(new SkillData().Damage(totalDamage).Owner(PlayerController.Instance.character));
                 lastDamage = Time.time;
             }
         }
