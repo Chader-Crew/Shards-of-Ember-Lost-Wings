@@ -27,11 +27,15 @@ public class DecoyBehaviour : MonoBehaviour
         }
     }
 
-    void OnDisable(){
-        foreach (Collider enemy in enemiesInRange)
+    void OnDisable()
+    {
+        try
         {
-            enemy.GetComponent<NPCController>().SetAggroTarget("Player");
-        }
+            foreach (Collider enemy in enemiesInRange)
+            {
+                enemy.GetComponent<NPCController>().SetAggroTarget("Player");
+            }
+        }catch{}
     }
 
     void OnDrawGizmosSelected()
