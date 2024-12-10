@@ -530,7 +530,6 @@ MonoBehaviour:
   questManager: {fileID: 1583477141}
   dialogueManager: {fileID: 1785049039}
   dialogueManager2: {fileID: 1785049043}
-  questData: {fileID: 11400000, guid: 37bf89414c85dfb4480f97e5f8453ab4, type: 2}
 --- !u!1 &912464297
 GameObject:
   m_ObjectHideFlags: 3
@@ -1317,6 +1316,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 6bc2b97a6fe3ce641bbeb24b96e5b9e1, type: 2}
   - {fileID: 11400000, guid: b9b07d9537d22b24fa22394dd2a38794, type: 2}
   questDisplay: {fileID: 1887467955}
+  _altarIsActive: 0
 --- !u!1 &1587572900
 GameObject:
   m_ObjectHideFlags: 0
@@ -1966,7 +1966,13 @@ MonoBehaviour:
   _dialogue:
     name: Solas
     sentences:
-    - teste
+    - "Muito bem, vejo que sua maestria em combate est\xE1 afiada..."
+    - "Mas existe mais um desafio para voc\xEA"
+    - "Al\xE9m da vila, na floresta do abismo, existem monstros e uma fera maligna"
+    - Encontre e elimine a fera
+    - "E depois para prosseguir no caminho, voc\xEA precisa descobrir como passar
+      pela barreira m\xE1gica dos caminhos da floresta"
+    - "Bem, boa sorte meu pr\xEDncipe..."
     nomes:
     - Solas
   firstDialogue: 1
