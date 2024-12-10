@@ -1067,7 +1067,7 @@ BoxCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
@@ -1085,7 +1085,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1c34c9b77ca456440813c3608c7e9523, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  zone: {fileID: 7970459934110571364, guid: a2dda77402afaa54bbe607bf926ffb96, type: 3}
+  zone: {fileID: 6243676599831097850, guid: 7bb58556cfd6ddd4db6301c8df398c31, type: 3}
   destinationIndex: 0
 --- !u!1 &2363868196172859181
 GameObject:
@@ -4681,6 +4681,7 @@ MonoBehaviour:
   warpDestinations:
   - {fileID: 8298944068583974635}
   - {fileID: 2036233932281932860}
+  - {fileID: 1955870935462907972}
 --- !u!1 &8894622558391465702
 GameObject:
   m_ObjectHideFlags: 0
