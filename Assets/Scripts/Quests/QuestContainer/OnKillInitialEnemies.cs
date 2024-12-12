@@ -9,8 +9,8 @@ public class OnKillInitialEnemies : MonoBehaviour
 
     public void OnDestroy()
     {
-        if (questData != questManager.GetCurrentQuest()) return;
-        questManager.CompleteCurrentQuest();
+        if (questData != QuestManager.Instance.GetCurrentQuest()) return;
+        QuestManager.Instance.CompleteCurrentQuest();
 
     }
 }

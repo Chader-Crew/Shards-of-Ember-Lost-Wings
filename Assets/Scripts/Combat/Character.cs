@@ -20,6 +20,8 @@ public class Character : MonoBehaviour, IDamageable
     private bool isPoisonBuffActive;
     private float poisonDuration = 2f; // Duração do efeito de veneno em segundos
     private float poisonDamagePerSecond = 0.5f; // Dano do veneno por segundo
+
+    private List<Material> originalMaterials;  //guarda os materiais originais do objeto para trocar de volta depois de piscar com dano
     
 
     //events
@@ -36,6 +38,10 @@ public class Character : MonoBehaviour, IDamageable
         _invul = false;
 
         stats.hp = stats.maxHp;
+        
+        
+        originalMaterials = new List<Material>();
+        renderer.GetMaterials(originalMaterials);
     }
 
     #region Interfaces
@@ -73,6 +79,7 @@ public class Character : MonoBehaviour, IDamageable
         stats.hp -= totalDamage;
         //Debug.Log($"levou {totalDamage} de dano");
         OnGotHitEvent(data, totalDamage);
+        StopCoroutine(DamageFlashing());
         StartCoroutine(DamageFlashing());
 
         if(stats.hp <= 0) 
@@ -88,23 +95,20 @@ public class Character : MonoBehaviour, IDamageable
     //corotina para trocar os materiais pro feedback de dano e trocar de volta
     private IEnumerator DamageFlashing()
     {
-        List<Material> previousMats = new List<Material>();
-        renderer.GetMaterials(previousMats);
-
-        //checagem para evitar duas corotinas rodarem e bugar
-        if(previousMats[0] != damageFlashingMaterial)
+        List<Material> currentMaterials = new List<Material>();
+        renderer.GetMaterials(currentMaterials);
+        
+        //fazendo lista com so o material do flash pra substituir todos os materiais
+        List<Material> nextMats = new List<Material>();
+        for(int i = 0; i < renderer.materials.Length; i++)
         {
-            //fazendo lista com so o material do flash pra substituir todos os materiais
-            List<Material> nextMats = new List<Material>();
-            for(int i = 0; i < renderer.materials.Length; i++)
-            {
-                nextMats.Add(damageFlashingMaterial);
-            }
-            //substitui todos os materiais e volta eles depois de um tempo
-            renderer.SetMaterials(nextMats);
-            yield return new WaitForSeconds(0.1f);
-            renderer.SetMaterials(previousMats);
+            nextMats.Add(damageFlashingMaterial);
         }
+        //substitui todos os materiais e volta eles depois de um tempo
+        renderer.SetMaterials(nextMats);
+        yield return new WaitForSeconds(0.1f);
+        renderer.SetMaterials(originalMaterials);
+        
     }
 
     public void restoreLife(float value){

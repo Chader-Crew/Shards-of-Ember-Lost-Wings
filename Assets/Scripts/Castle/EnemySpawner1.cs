@@ -24,6 +24,7 @@ public class EnemySpawner1 : MonoBehaviour
 
     void Start()
     {
+        canSpawn = QuestManager.Instance._altarIsActive;
         instance = this;     
     }
 
@@ -63,7 +64,7 @@ public class EnemySpawner1 : MonoBehaviour
 
             GameObject enemyPrefab = enemies[Random.Range(0, enemies.Length)];
 
-            Instantiate(enemyPrefab, spawnPosition, Quaternion.identity, transform);
+            Instantiate(enemyPrefab, spawnPosition, Quaternion.identity, transform.parent);
             
             GameObject particleEffect = Instantiate(spawnEffectPrefab, spawnPosition, Quaternion.identity);
             Destroy(particleEffect, particleEffectDuration);
