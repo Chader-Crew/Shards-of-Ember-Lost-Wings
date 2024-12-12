@@ -18,7 +18,7 @@ public class OnKillArtefato : MonoBehaviour
             QuestManager.Instance.CompleteCurrentQuest();
 
             dialogueManager.enabled = false;
-            dialogueManager2.enabled = true;
+            //dialogueManager2.enabled = true;
         };
     }
 }

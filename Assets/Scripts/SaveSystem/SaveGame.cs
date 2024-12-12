@@ -104,7 +104,7 @@ public static class SaveGame
         List<currentSkill> tempList = new List<currentSkill>();
         tempList = GameObject.FindObjectsByType<currentSkill>(FindObjectsInactive.Include, FindObjectsSortMode.None).ToList();
         QuestManager.Instance._altarIsActive = false;
-        PlayerController.Instance.GainShards(300);
+        PlayerController.Instance.StatShards =300;
 
         foreach (currentSkill skillButton in tempList)
         {

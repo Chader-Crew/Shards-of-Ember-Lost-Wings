@@ -2102,7 +2102,6 @@ Transform:
   - {fileID: 6644199670085145622}
   - {fileID: 724730638008547633}
   - {fileID: 7262000026252932341}
-  - {fileID: 3761002999794903976}
   - {fileID: 6193185013462413298}
   m_Father: {fileID: 1996409699592658233}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -3768,6 +3767,7 @@ Transform:
   - {fileID: 3690784663487221859}
   - {fileID: 7633074493712095206}
   - {fileID: 272411938861204211}
+  - {fileID: 3761002999794903976}
   - {fileID: 4305090546239031318}
   - {fileID: 8383261702398541973}
   - {fileID: 6521065579474997999}
@@ -6291,7 +6291,7 @@ Transform:
   m_GameObject: {fileID: 6668071460881261003}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 29.787487, y: 0.284, z: -37.107834}
+  m_LocalPosition: {x: 66.55749, y: 0.284, z: 24.172165}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -6299,7 +6299,7 @@ Transform:
   - {fileID: 1504280981275533329}
   - {fileID: 5129947132507531245}
   - {fileID: 1532975902988148451}
-  m_Father: {fileID: 7633074493712095206}
+  m_Father: {fileID: 1996409699592658233}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &6685782153251075209
 GameObject:
@@ -24700,6 +24700,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 9cefbabc810d2dc47aa41c37a5fa8470, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &4499703509742101035 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1343468449407897508, guid: efeac39102d7bde45a389c9fc9ef2fcd,
+    type: 3}
+  m_PrefabInstance: {fileID: 3231013803955498383}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2549820084710778784}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a7a74662a26fd6c4dbcd7be670b67668, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1001 &3242641363987808883
@@ -51006,7 +51018,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   questManager: {fileID: 0}
-  dialogueManager: {fileID: 0}
+  dialogueManager: {fileID: 4499703509742101035}
   dialogueManager2: {fileID: 0}
 --- !u!4 &6688010097763633135 stripped
 Transform:

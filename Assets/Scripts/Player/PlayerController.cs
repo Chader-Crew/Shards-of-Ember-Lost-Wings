@@ -36,7 +36,7 @@ public class PlayerController : Singleton<PlayerController>
     public int StatShards
     {
         get => _statShards;
-        private set => _statShards = value;
+        set => _statShards = value;
     }
     [SerializeField] ShardsGotPopup shardPopupText;
     [SerializeField] private TMP_Text shardsTreeText;
