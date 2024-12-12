@@ -62,7 +62,7 @@ public class NPCController : MonoBehaviour
     private void Die()
     {
         animator.Play("DIE");
-        this.enabled = false;
+        
         character.enabled = false;
         navAgent.enabled = false;
         stateMachine.enabled = false;
@@ -74,6 +74,7 @@ public class NPCController : MonoBehaviour
                 InventoryManager.instance.AddItem(itemToDrop);
             }
         }
+        this.enabled = false;
     }
 
     private void RemoveBody()

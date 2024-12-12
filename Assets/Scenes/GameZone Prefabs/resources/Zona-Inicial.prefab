@@ -6828,6 +6828,8 @@ Transform:
   - {fileID: 2223252737674587141}
   - {fileID: 8288340433529882366}
   - {fileID: 2403467359474331365}
+  - {fileID: 3898313412036862364}
+  - {fileID: 4034314569948660933}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!218 &4578224990835029884
@@ -24204,6 +24206,104 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 3777128654160710907}
   m_PrefabAsset: {fileID: 0}
+--- !u!1001 &3790480536219830767
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 1749955258987301389}
+    m_Modifications:
+    - target: {fileID: 181246330913646707, guid: 54ac54eb76f00fa4791847b7fdc9b5b4,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 29.54
+      objectReference: {fileID: 0}
+    - target: {fileID: 181246330913646707, guid: 54ac54eb76f00fa4791847b7fdc9b5b4,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 181246330913646707, guid: 54ac54eb76f00fa4791847b7fdc9b5b4,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 52.93
+      objectReference: {fileID: 0}
+    - target: {fileID: 181246330913646707, guid: 54ac54eb76f00fa4791847b7fdc9b5b4,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.37651873
+      objectReference: {fileID: 0}
+    - target: {fileID: 181246330913646707, guid: 54ac54eb76f00fa4791847b7fdc9b5b4,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 181246330913646707, guid: 54ac54eb76f00fa4791847b7fdc9b5b4,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0.926409
+      objectReference: {fileID: 0}
+    - target: {fileID: 181246330913646707, guid: 54ac54eb76f00fa4791847b7fdc9b5b4,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 181246330913646707, guid: 54ac54eb76f00fa4791847b7fdc9b5b4,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 181246330913646707, guid: 54ac54eb76f00fa4791847b7fdc9b5b4,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 135.764
+      objectReference: {fileID: 0}
+    - target: {fileID: 181246330913646707, guid: 54ac54eb76f00fa4791847b7fdc9b5b4,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1310667038718494087, guid: 54ac54eb76f00fa4791847b7fdc9b5b4,
+        type: 3}
+      propertyPath: letterText
+      value: "Isandrel, Se voc\xEA ainda est\xE1 vivo, por favor, volte para casa.
+        Eu te procurei por todo o vilarejo, perguntei a todos, mas ningu\xE9m viu
+        voc\xEA desde aquela manh\xE3. Ouvi rumores sobre uma criatura vagando pelas
+        sombras... mas n\xE3o quero acreditar. Volte para mim, filho, a casa est\xE1
+        vazia sem voc\xEA. "
+      objectReference: {fileID: 0}
+    - target: {fileID: 1310667038718494087, guid: 54ac54eb76f00fa4791847b7fdc9b5b4,
+        type: 3}
+      propertyPath: displayText
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 1310667038718494087, guid: 54ac54eb76f00fa4791847b7fdc9b5b4,
+        type: 3}
+      propertyPath: letterImage
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 2515906063221896510, guid: 54ac54eb76f00fa4791847b7fdc9b5b4,
+        type: 3}
+      propertyPath: m_Name
+      value: LetterObject (3)
+      objectReference: {fileID: 0}
+    - target: {fileID: 2515906063221896510, guid: 54ac54eb76f00fa4791847b7fdc9b5b4,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 54ac54eb76f00fa4791847b7fdc9b5b4, type: 3}
+--- !u!4 &3898313412036862364 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 181246330913646707, guid: 54ac54eb76f00fa4791847b7fdc9b5b4,
+    type: 3}
+  m_PrefabInstance: {fileID: 3790480536219830767}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &3802107599107196727
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -24579,6 +24679,104 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 3154193488633898236, guid: 4e87c8a623449fd458acd81a2bd50463,
     type: 3}
   m_PrefabInstance: {fileID: 3836727395448761478}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1001 &3854845065999051958
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 1749955258987301389}
+    m_Modifications:
+    - target: {fileID: 181246330913646707, guid: 54ac54eb76f00fa4791847b7fdc9b5b4,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 73.37
+      objectReference: {fileID: 0}
+    - target: {fileID: 181246330913646707, guid: 54ac54eb76f00fa4791847b7fdc9b5b4,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.06
+      objectReference: {fileID: 0}
+    - target: {fileID: 181246330913646707, guid: 54ac54eb76f00fa4791847b7fdc9b5b4,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 40.35
+      objectReference: {fileID: 0}
+    - target: {fileID: 181246330913646707, guid: 54ac54eb76f00fa4791847b7fdc9b5b4,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.99729794
+      objectReference: {fileID: 0}
+    - target: {fileID: 181246330913646707, guid: 54ac54eb76f00fa4791847b7fdc9b5b4,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 181246330913646707, guid: 54ac54eb76f00fa4791847b7fdc9b5b4,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0.07346327
+      objectReference: {fileID: 0}
+    - target: {fileID: 181246330913646707, guid: 54ac54eb76f00fa4791847b7fdc9b5b4,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 181246330913646707, guid: 54ac54eb76f00fa4791847b7fdc9b5b4,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 181246330913646707, guid: 54ac54eb76f00fa4791847b7fdc9b5b4,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 8.426
+      objectReference: {fileID: 0}
+    - target: {fileID: 181246330913646707, guid: 54ac54eb76f00fa4791847b7fdc9b5b4,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1310667038718494087, guid: 54ac54eb76f00fa4791847b7fdc9b5b4,
+        type: 3}
+      propertyPath: letterText
+      value: "Ontem, vi uma crian\xE7a desaparecer nas sombras, levada por alguma
+        coisa. N\xE3o sei o que foi, mas todos aqui est\xE3o morrendo de fome, lentamente.
+        O p\xE2nico toma conta das vilas. A comida desaparece, assim como nossos
+        amigos e familiares. Logo seremos apenas fantasmas no escuro, esquecidos
+        pelo mundo de cima. \u2014 Khalen "
+      objectReference: {fileID: 0}
+    - target: {fileID: 1310667038718494087, guid: 54ac54eb76f00fa4791847b7fdc9b5b4,
+        type: 3}
+      propertyPath: displayText
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 1310667038718494087, guid: 54ac54eb76f00fa4791847b7fdc9b5b4,
+        type: 3}
+      propertyPath: letterImage
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 2515906063221896510, guid: 54ac54eb76f00fa4791847b7fdc9b5b4,
+        type: 3}
+      propertyPath: m_Name
+      value: LetterObject (4)
+      objectReference: {fileID: 0}
+    - target: {fileID: 2515906063221896510, guid: 54ac54eb76f00fa4791847b7fdc9b5b4,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 54ac54eb76f00fa4791847b7fdc9b5b4, type: 3}
+--- !u!4 &4034314569948660933 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 181246330913646707, guid: 54ac54eb76f00fa4791847b7fdc9b5b4,
+    type: 3}
+  m_PrefabInstance: {fileID: 3854845065999051958}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &3865271453128666752
 PrefabInstance:

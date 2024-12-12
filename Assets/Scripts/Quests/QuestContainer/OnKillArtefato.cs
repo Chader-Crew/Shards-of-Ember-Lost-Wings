@@ -15,7 +15,7 @@ public class OnKillArtefato : MonoBehaviour
         character.OnDiedEvent += () =>
         {
             QuestManager.Instance._altarIsActive = true;
-            questManager.CompleteCurrentQuest();
+            QuestManager.Instance.CompleteCurrentQuest();
 
             dialogueManager.enabled = false;
             dialogueManager2.enabled = true;

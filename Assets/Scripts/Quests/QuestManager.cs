@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -12,7 +13,7 @@ public class QuestManager : Singleton<QuestManager>
     {
         return questList[currentQuestIndex];
     }
-    
+
     void Start()
     {
         if (questList.Count > 0)

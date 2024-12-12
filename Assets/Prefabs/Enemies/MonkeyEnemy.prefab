@@ -721,6 +721,7 @@ GameObject:
   - component: {fileID: 927883762648492821}
   - component: {fileID: 3136884784955652219}
   - component: {fileID: 1863609584451658796}
+  - component: {fileID: 6534038092930852036}
   m_Layer: 0
   m_Name: MonkeyEnemy
   m_TagString: Enemy
@@ -920,6 +921,23 @@ MonoBehaviour:
   offsets: {x: 0, y: -1.5, z: 1}
   dimensions: {x: 2, y: 1.2, z: 1}
   pivot: {fileID: 7242480544757956718}
+--- !u!114 &6534038092930852036
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 766243257054523321}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 850d62eb64b80c44c9d6f08685526153, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  character: {fileID: 8335379430622440880}
+  damageTextPrefab: {fileID: 51086786437666801, guid: 3a775e9e188d49944824070ca807fd9a,
+    type: 3}
+  offset: {x: 0, y: 2, z: 0}
+  textDuration: 1
 --- !u!1 &824882618583294279
 GameObject:
   m_ObjectHideFlags: 0

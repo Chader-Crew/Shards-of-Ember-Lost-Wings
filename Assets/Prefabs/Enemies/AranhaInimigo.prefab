@@ -2745,6 +2745,7 @@ GameObject:
   - component: {fileID: 864936216998925236}
   - component: {fileID: 1935448923891935671}
   - component: {fileID: 3876861497237606966}
+  - component: {fileID: 3406002282195334724}
   m_Layer: 0
   m_Name: AranhaInimigo
   m_TagString: Enemy
@@ -2940,6 +2941,23 @@ MonoBehaviour:
   offsets: {x: 0, y: -2, z: 0.5}
   dimensions: {x: 2.5, y: 2, z: 1}
   pivot: {fileID: 2918465333624354002}
+--- !u!114 &3406002282195334724
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7628434335017491420}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 850d62eb64b80c44c9d6f08685526153, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  character: {fileID: 7168840321465089098}
+  damageTextPrefab: {fileID: 51086786437666801, guid: 3a775e9e188d49944824070ca807fd9a,
+    type: 3}
+  offset: {x: 0, y: 2, z: 0}
+  textDuration: 1
 --- !u!1 &7669791559136447251
 GameObject:
   m_ObjectHideFlags: 0
